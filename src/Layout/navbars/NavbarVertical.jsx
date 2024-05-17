@@ -19,7 +19,8 @@ import "simplebar/dist/simplebar.min.css";
 
 // import media files
 // import InverseLogo from '../../assets/images/brand/logo/logo-inverse.svg';
-import Logo from "../../assets/unleashified-logo.png";
+// import Logo from "../../assets/unleashified-logo.png";
+import Logo from "../../assets/LogoList/cote-logo.png"
 import GiftBox from "../../assets/images/background/giftbox.png";
 
 // import routes file

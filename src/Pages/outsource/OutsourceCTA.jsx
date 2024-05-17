@@ -17,7 +17,7 @@ const OutsourceCTA = () => {
             {/* Heading */}
             <div className="pt-6 pt-lg-0">
               <h1 className="text-white display-4 fw-bold pe-lg-8">
-              Elevate Your Efficiency: Outsource Brilliantly with Unleashified!
+              Elevate Your Efficiency: Outsource Brilliantly with Transnumerik!
               </h1>
               <p className="text-white-50 mb-4 lead">
               Take the leap towards efficiency and excellence. Explore our diverse pool of skilled professionals and elevate your projects to new heights!

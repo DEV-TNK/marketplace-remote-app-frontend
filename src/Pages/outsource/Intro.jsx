@@ -16,7 +16,7 @@ const Intro = () => {
                 {/* caption */}
                 <h2 className="text-primary fw-bold">WHO WE ARE</h2>
                 <h1 className="display-2 fw-bold mb-3">
-                At Unleashified, we are more than just an outsourcing platform
+                At Transnumerik, we are more than just an outsourcing platform
                 </h1>
                 
                 {/* para */}

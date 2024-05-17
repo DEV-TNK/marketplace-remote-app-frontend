@@ -17,7 +17,7 @@ const HeroHeader = () => {
           <Col xl={5} lg={6} md={12}>
             <div className="py-5 py-lg-0">
               <h1 className="text-white display-4 fw-bold">
-                Welcome to Unleashified
+                Welcome to Transnumerik
               </h1>
               <p className="text-white-50 mb-4 lead">
                 Carefully chosen mentors and thoughtfully developed resources,

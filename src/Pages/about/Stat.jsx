@@ -7,7 +7,7 @@ import SectionHeading from "./SectionHeading";
 
 const Stat = () => {
   const title = "Our core values";
-  const description = `Innovating the future of employment by connecting job seekers with opportunities that match their skills and aspirations, Unleashified empowers individuals to thrive in their careers while supporting businesses in finding the right talent to succeed`;
+  const description = `Innovating the future of employment by connecting job seekers with opportunities that match their skills and aspirations, Transnumerik empowers individuals to thrive in their careers while supporting businesses in finding the right talent to succeed`;
 
   const counters = [
     {

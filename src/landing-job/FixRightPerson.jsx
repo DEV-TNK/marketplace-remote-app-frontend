@@ -20,7 +20,7 @@ const FixRightPerson = () => {
                 Find the right person to fix your business needs
               </h2>
               <p className="fw-bold mt-3 text-white fs-4">
-                Unleashified brings service providers in different industries
+              Transnumerik brings service providers in different industries
                 and locations together on one platform
               </p>
               <Link to="/authentication/signin">

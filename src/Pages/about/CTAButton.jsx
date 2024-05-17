@@ -17,7 +17,7 @@ const CTAButton = () => {
             {/* Heading */}
             <div className="pt-6 pt-lg-0">
               <h1 className="text-white display-4 fw-bold pe-lg-8">
-                Join the Unleashified team & shape the future of design
+                Join the Transnumerik team & shape the future of design
               </h1>
               <p className="text-white-50 mb-4 lead">
                 If you’re passionate and ready to dive in, we’d love to meet

@@ -7,11 +7,10 @@ import { useGlobalContext } from "../../context/AuthContext";
 import QuickMenu from "../../Layout/QuickMenu";
 import DarkLightMode from "../../Layout/DarkLightMode";
 import { useNavigate } from "react-router-dom";
-import Logo2 from "../../assets/LogoList/cote-logo.png";
 
 // import media files
-import Logo from "../../assets/unleashified-logo.png";
-// import Logo2 from "../../assets/LogoList/cote-logo.png";
+// import Logo from "../../assets/unleashified-logo.png";
+import Logo from "../../assets/LogoList/cote-logo.png";
 
 // import data files
 import NavbarDefaultRoutes from "../../routes/NavbarDefault";
