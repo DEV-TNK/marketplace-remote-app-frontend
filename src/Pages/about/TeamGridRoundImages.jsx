@@ -24,7 +24,7 @@ const TeamGridRoundImages = () => {
               Looking to engage with skilled professionals globally and
               contribute to an innovative platform used by leading
               organizations? Become part of our collaborative team at
-              Unleahified, where you can influence the evolution of job seekers
+              Transnumerik, where you can influence the evolution of job seekers
               and providers. Join us to shape the future of employment
               opportunities and solutions.
             </p>

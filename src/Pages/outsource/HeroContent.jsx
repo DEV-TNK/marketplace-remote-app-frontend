@@ -17,7 +17,7 @@ const HeroContent = () => {
         <h2 className="text-primary fw-bold">WE HELP BUSINESSES SUCCEED BY COMPLEMENTING THEIR STRENGTHS.</h2>
         {/* para */}
         <p className="h3 mb-3 ">
-        At Unleashified, we understand that every business has its strengths. That's why we're here to complement them. Our tailored outsourcing solutions are designed to seamlessly integrate with your operations, allowing you to focus on what you do best while we handle the rest. From administrative tasks to specialized projects, our team of experts is dedicated to driving efficiency, productivity, and growth for your business. Partner with us and unlock the full potential of your enterprise today.
+        At Transnumerik, we understand that every business has its strengths. That's why we're here to complement them. Our tailored outsourcing solutions are designed to seamlessly integrate with your operations, allowing you to focus on what you do best while we handle the rest. From administrative tasks to specialized projects, our team of experts is dedicated to driving efficiency, productivity, and growth for your business. Partner with us and unlock the full potential of your enterprise today.
         </p>
         {/* <p className="mb-0 h4 text-body lh-lg">
           We're creating a vibrant community that fosters growth, collaboration, and innovation. We strive to bridge the gap between entrepreneurs, users, service providers, and job seekers by offering a comprehensive platform that caters to their diverse needs.

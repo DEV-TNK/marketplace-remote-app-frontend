@@ -21,8 +21,8 @@ import DarkLightMode from "../../../Layout/DarkLightMode";
 import { useNavigate } from "react-router-dom";
 
 // import media files
-import Logo from "../../../assets/images/brand/logo/logo.png";
-import Logo2 from "../../../assets/unleashified-logo.png";
+// import Logo from "../../../assets/images/brand/logo/logo.png";
+import Logo from "../../../assets/LogoList/cote-logo.png";
 
 // import data files
 import NavbarDefaultRoutes from "../../../routes/NavbarDefault";

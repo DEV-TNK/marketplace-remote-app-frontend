@@ -8,8 +8,8 @@ import Icon from "@mdi/react";
 import { mdiFacebook, mdiTwitter, mdiInstagram, mdiYoutube } from "@mdi/js";
 
 // import media files
-import FooterLogo from "../../assets/unleashified-logo.png";
-import FooterLogo2 from "../../assets/LogoList/cote-logo.png";
+// import FooterLogo from "../../assets/unleashified-logo.png";
+import FooterLogo from "../../assets/LogoList/cote-logo.png";
 
 // Inside your component
 const currentYear = new Date().getFullYear();
@@ -31,7 +31,7 @@ const FooterWithLinks = () => {
                 />
                 <div className="mt-4">
                   <p>
-                    Unleashified connects job seekers with opportunities and
+                    Transnumerik connects job seekers with opportunities and
                     providers with talent engagement resources.
                   </p>
                   {/* social media */}
@@ -156,7 +156,7 @@ const FooterWithLinks = () => {
                 3rd Floor, Unit 1110, Ogun State Technology Hub, Abeokuta,
                 <br />
                 Ogun State, Nigeria.
-                <p className="mb-1">Email: info@unleashified.com</p>
+                <p className="mb-1">Email: info@transnumerik.com</p>
                 {/* <p>
                   Phone:{" "}
                   <span className="text-dark fw-semi-bold">
@@ -170,7 +170,7 @@ const FooterWithLinks = () => {
             {/* Desc  */}
             <Col lg={4} md={5} sm={12}>
               <span>
-                © {currentYear} UNLEASHIFIED, Inc. All Rights Reserved
+                © {currentYear} Transnumerik, Inc. All Rights Reserved
               </span>
             </Col>
             {/*  Links  */}
