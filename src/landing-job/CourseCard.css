@@ -1,0 +1,31 @@
+.course-cards {
+  height: 200px;
+}
+
+.course-card-inner {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  background: linear-gradient(135deg, #04026d, #3b09af); 
+}
+
+.course-card-inner:hover {
+  transform: translateY(-5px);
+}
+
+.course-card-content {
+  padding: 20px;
+}
+
+.course-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff; /* Text color changed to white for better contrast */
+}
+
+.course-card-description {
+  font-size: 1rem;
+  color: #f0f0f0; /* Text color changed to a lighter shade for better visibility */
+}

@@ -1,0 +1,39 @@
+.fixed-left {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  overflow-y: hidden;
+  left: 0;
+}
+.fixed-left-color{
+  border-radius: 0;
+}
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.button-back {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100px;
+  margin-left: 40px;
+  color: #0056b3;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  background-color: #f0f8ff; 
+  border: 1px solid #0056b3;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-back:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: blue;
+}
