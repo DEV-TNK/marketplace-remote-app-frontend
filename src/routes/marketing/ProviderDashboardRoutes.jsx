@@ -19,13 +19,19 @@ export const DashboardMenu = [
 	},
 	{
 		id: 4,
+		title: 'Employee of records',
+		link: '/Providerdashboard/Employee-of-record',
+		icon: 'employee-sign'
+	},
+	{
+		id: 5,
 		title: 'Job Applicants',
 		link: '/Providerdashboard/Job-Applicants',
 		icon: 'shopping-bag'
 	},
 	
 	{
-		id: 5,
+		id: 6,
 		title: 'Reviews',
 		link: '/Providerdashboard/provider-reviews',
 		icon: 'star'

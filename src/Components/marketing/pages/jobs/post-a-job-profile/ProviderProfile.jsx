@@ -3,13 +3,58 @@ import { Fragment } from "react";
 import { Container, Row, Col, Form, InputGroup, Button } from "react-bootstrap";
 import axios from "axios";
 import { FormSelect } from "../../../../elements/form-select/FormSelect";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useGlobalContext } from "../../../../../context/AuthContext";
 import { showToast } from "../../../../Showtoast";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
+import { useEffect } from "react";
 
 const ProviderProfile = () => {
-  const { userId, email } = useGlobalContext();
+  const [userId, setUserId] = useState(null);
+  const [email, setEmail] = useState(null);
+  const location = useLocation();
+  useEffect(() => {
+    const queryParam = new URLSearchParams(location.search);
+    const userId = queryParam.get("Userid");
+    if (userId) {
+      const getUser = async () => {
+        try {
+          const response = await axios.get(
+            `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-fgn-user-details/${userId}`
+          );
+          if (response.data) {
+            sessionStorage.setItem("accessToken", response.data.accessToken);
+            sessionStorage.setItem("refreshToken", response.data.refreshToken);
+            sessionStorage.setItem("UserId", response.data.data.UserId);
+            sessionStorage.setItem("username", response.data.data.username);
+            sessionStorage.setItem("image", response.data.data.image);
+            sessionStorage.setItem("role", response.data.data.role);
+            sessionStorage.setItem("email", response.data.data.email);
+            setUserId(response.data.data.UserId);
+            setEmail(response.data.data.email);
+          }
+        } catch (error) {
+          console.log("this is error");
+        }
+      };
+      getUser();
+    }
+  }, [location]);
+
+  useEffect(() => {
+    const storedUserId = sessionStorage.getItem("UserId");
+    const storedEmail = sessionStorage.getItem("email");
+
+    if (storedUserId) {
+      setUserId(storedUserId);
+    }
+
+    if (storedEmail) {
+      setEmail(storedEmail);
+    }
+  }, []);
+
+  // const { userId, email } = useGlobalContext();
   // const email = sessionStorage.getItem("email");
 
   console.log("this is userId", userId);
@@ -18,7 +63,7 @@ const ProviderProfile = () => {
     jobPosterId: userId || "",
     firstName: "",
     lastName: "",
-    companyEmail: email,
+    companyEmail: sessionStorage.getItem("email"),
     companyContact: "",
     companyName: "",
     companyWebsite: "",
@@ -44,11 +89,6 @@ const ProviderProfile = () => {
     { value: "Work", label: "Work" },
     { value: "Mobile", label: "Mobile" },
   ];
-
-  const initialValue = `<p>Insert company description</p>
-                        <p><br /></p>        
-                        <p>Some initial <strong>bold</strong> text</p>
-                        <p><br /></p><p><br /></p><p><br /></p><p><br /></p>`;
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
@@ -228,7 +268,7 @@ const ProviderProfile = () => {
                         id="email"
                         placeholder="Write you Email id"
                         required
-                        defaultValue={email}
+                        defaultValue={email || ""}
                         disabled
                       />
                     </Col>

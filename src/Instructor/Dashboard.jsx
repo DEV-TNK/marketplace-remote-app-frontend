@@ -56,7 +56,7 @@ const Dashboard = () => {
       const userId = sessionStorage.getItem("UserId");
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-my-earning/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-earning/${userId}`
         );
 
         if (response.data.userEarning) {
@@ -81,7 +81,7 @@ const Dashboard = () => {
       try {
         const userId = sessionStorage.getItem("UserId");
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/seeker-monthly-applications/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/seeker-monthly-applications/${userId}`
         );
         const result = response.data;
         const monthlyData = result.map((item) => item.data);
@@ -103,7 +103,7 @@ const Dashboard = () => {
       try {
         const userId = sessionStorage.getItem("UserId");
         const response = await fetch(
-          `https://unleashified-backend.azurewebsites.net/api/v1/dashboard/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/dashboard/${userId}`
         );
         const data = await response.json();
         settotalAmount(data.totalAmount);
@@ -125,7 +125,7 @@ const Dashboard = () => {
       try {
         const userId = sessionStorage.getItem("UserId");
         const response = await fetch(
-          `https://unleashified-backend.azurewebsites.net/api/v1/last-approved-jobs/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/last-approved-jobs/${userId}`
         );
         const data = await response.json();
         setLastApprovedJobs(data);
@@ -145,7 +145,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-my-earning/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-earning/${userId}`
         );
 
         if (response.data.userEarning) {
@@ -171,6 +171,24 @@ const Dashboard = () => {
 
     fetchData();
   }, [userId]); // Make sure to include userId as a dependency if it's used inside the useEffect
+  const formatPrice = (currencyName, priceValue) => {
+    switch (currencyName) {
+      case "naira":
+      case "NGN":
+        return `₦${priceValue}`;
+      case "dollars":
+      case "USD":
+        return `$${priceValue}`;
+      case "euros":
+      case "EUR":
+        return `€${priceValue}`;
+      case "pounds":
+      case "GBP":
+        return `£${priceValue}`;
+      default:
+        return `₦${priceValue}`;
+    }
+  };
 
   const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <Link
@@ -196,6 +214,17 @@ const Dashboard = () => {
       {/* Page Content section */}
       <Row>
         <Col lg={4} md={12} sm={12} className="mb-4 mb-lg-0">
+          <Link to="/JobSeekerdashboard/seeker-payouts">
+            <StatRightBadge
+              title={`Available Earning (${selectedCurrency})`}
+              value={`${selectedCurrency}: ${
+                earnings[selectedCurrency] || 0.0
+              }`}
+              colorVariant="success"
+              subtitle="Currency"
+              badgeValue={selectedCurrency}
+            />
+          </Link>
           <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
             <DropdownToggle caret>{selectedCurrency}</DropdownToggle>
             <DropdownMenu>
@@ -213,15 +242,6 @@ const Dashboard = () => {
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
-          <Link to="/JobSeekerdashboard/seeker-payouts">
-            <StatRightBadge
-              title={`Available Earning (${selectedCurrency})`}
-              value={`${selectedCurrency}: ${
-                earnings[selectedCurrency] || 0.0
-              }`}
-              colorVariant="success"
-            />
-          </Link>
         </Col>
         <Col lg={4} md={12} sm={12} className="mb-4 mb-lg-0">
           <Link to="/JobSeekerdashboard/My-Job">
@@ -295,16 +315,22 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody>
-              {lastApprovedJobs.map((job, index) => (
-                <tr key={index}>
-                  <td className="align-middle border-top-0 jobDescriptionCell">
-                    {job.jobDescription}
-                  </td>
+              {lastApprovedJobs && lastApprovedJobs.length > 0 ? (
+                lastApprovedJobs.map((job, index) => (
+                  <tr key={index}>
+                    <td className="align-middle border-top-0 jobDescriptionCell">
+                      {job.jobDescription}
+                    </td>
 
-                  <td className="align-middle border-top-0">{job.jobType}</td>
-                  <td className="align-middle border-top-0">{job.jobSalary}</td>
-                </tr>
-              ))}
+                    <td className="align-middle border-top-0">{job.jobType}</td>
+                    <td className="align-middle border-top-0">
+                      {formatPrice(job.currency, job.jobSalary)}
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <div className="px-5">No Job have been approved</div>
+              )}
             </tbody>
           </Table>
         </Card.Body>

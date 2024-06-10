@@ -17,6 +17,7 @@ import {
   Modal,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "react-feather";
 import {
   flexRender,
   getCoreRowModel,
@@ -25,6 +26,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import axios from "axios";
+import ReactPaginate from "react-paginate";
 import { useGlobalContext } from "../../context/AuthContext";
 import { showToast } from "../../Components/Showtoast";
 import { Trash, Edit, MoreVertical } from "react-feather";
@@ -64,12 +66,15 @@ const Payouts = () => {
   const nairaSign = "\u20A6";
   const [accountName, setAccountName] = useState("");
   const [accountNumber, setAccountNumber] = useState("");
+  const [currency, setCurrency] = useState("");
   const [bankName, setBankName] = useState(null);
   const [totalAmount, setTotalAmount] = useState(null);
   const [loading, setLoading] = useState(false);
   const [selectedBankId, setSelectedBankId] = useState("");
   const [error, setError] = useState("");
   const [errorAcc, setErrorAcc] = useState("");
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [editedAccount, setEditedAccount] = useState(null);
 
   const [earnings, setEarnings] = useState({
     NGN: 0,
@@ -90,7 +95,7 @@ const Payouts = () => {
       const userId = sessionStorage.getItem("UserId");
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-my-earning/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-earning/${userId}`
         );
 
         if (response.data.userEarning) {
@@ -129,12 +134,31 @@ const Payouts = () => {
     }
   };
 
+  const [currentPage, setCurrentPage] = useState(0);
+  const accountsPerPage = 3;
+
+  // Calculate the total number of pages
+  const pageCount = Math.ceil(bankData.length / accountsPerPage);
+
+  // Function to handle page change
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+
+  // Get current accounts
+  const indexOfLastAccount = (currentPage + 1) * accountsPerPage;
+  const indexOfFirstAccount = indexOfLastAccount - accountsPerPage;
+  const currentAccounts = bankData.slice(
+    indexOfFirstAccount,
+    indexOfLastAccount
+  );
+
   useEffect(() => {
     // Function to retrieve bank data from the server
     const fetchBankData = async () => {
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/bank-details/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/bank-details/${userId}`
         );
         const fetchedBankData = response.data.accountDetails; // Access accountDetails array from response data
         setBankData(fetchedBankData);
@@ -148,16 +172,17 @@ const Payouts = () => {
   }, [userId]);
 
   const handleSave = async () => {
-    if (userId && accountName && accountNumber && bankName) {
+    if (userId && accountName && accountNumber && bankName && currency) {
       // Check if userId is present
       try {
         const saveBankData = await axios.post(
-          "https://unleashified-backend.azurewebsites.net/api/v1/save-bank-details",
+          "https://marketplacebackendas-test.azurewebsites.net/api/v1/save-bank-details",
           {
             userId: userId,
             accountName,
             accountNumber,
             bankName,
+            currency,
           }
         );
 
@@ -183,6 +208,38 @@ const Payouts = () => {
     setShowModal(true);
   };
 
+  const handleEdit = (id) => {
+    const editedAccount = currentAccounts.find((account) => account.id === id);
+    if (editedAccount) {
+      setEditedAccount({ ...editedAccount, accountId: id });
+      setShowEditModal(true);
+    } else {
+      console.error("Account not found");
+    }
+  };
+
+  const handleEditSave = async (accountId) => {
+    console.log(accountId);
+    try {
+      await axios.put(
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/edit-account",
+        {
+          userId: userId,
+          accountId: accountId,
+          accountName: editedAccount.accountName,
+          bankName: editedAccount.bankName,
+          accountNumber: editedAccount.accountNumber,
+          currency: editedAccount.currency,
+        }
+      );
+      setShowEditModal(false);
+      showToast("Account update Successfully");
+    } catch (error) {
+      console.error("Error editing account:", error);
+      showToast("Error updating bank details");
+    }
+  };
+
   // const handleBankChange = async (amount, currency) => {
   //   setTotalAmount(amount);
   //   setCurrency(currency);
@@ -200,7 +257,7 @@ const Payouts = () => {
       const totalAmountNumeric = parseFloat(totalAmount);
       if (withdrawAmountNumeric < totalAmountNumeric) {
         const response = await axios.post(
-          "https://unleashified-backend.azurewebsites.net/api/v1/create-payment-request",
+          "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-payment-request",
           {
             userId: parseFloat(userId),
             accountId: selectedBankId,
@@ -208,6 +265,17 @@ const Payouts = () => {
             currency: selectedCurrency,
           }
         );
+
+        
+        // Update the earnings state immediately
+        setEarnings((prevEarnings) => ({
+          ...prevEarnings,
+          [selectedCurrency]:
+            prevEarnings[selectedCurrency] - withdrawAmountNumeric,
+        }));
+        setTotalAmount(totalAmountNumeric - withdrawAmountNumeric);
+        setWithdrawnAmount(""); // Clear the withdrawn amount input
+
         showToast(response.data.message);
         setLoading(false);
         setErrorAcc("");
@@ -270,7 +338,7 @@ const Payouts = () => {
               bg={`${
                 getValue() === "Pending"
                   ? "warning"
-                  : getValue() === "success"
+                  : getValue() === "completed"
                   ? "success"
                   : "danger"
               } `}
@@ -304,6 +372,13 @@ const Payouts = () => {
     onGlobalFilterChange: setFiltering,
     debugTable: false,
   });
+
+  const bankCurrency = [
+    { value: "NGN", label: "Naira" },
+    { value: "EUR", label: "Euros" },
+    { value: "USD", label: "Dollars" },
+    { value: "GBP", label: "Pounds" },
+  ];
 
   const AlertDismissible = () => {
     const [show, setShow] = useState(true);
@@ -511,6 +586,17 @@ const Payouts = () => {
                           onChange={(e) => setBankName(e.target.value)}
                         />
                       </Form.Group>
+                      <Form.Group className="mb-3">
+                        <Form.Label>Currency</Form.Label>
+                        <FormSelect
+                          options={bankCurrency}
+                          placeholder="select currency"
+                          id="course_currency"
+                          name="currency"
+                          value={currency}
+                          onChange={(e) => setCurrency(e.target.value)}
+                        />
+                      </Form.Group>
                     </Form>
                   </Modal.Body>
                   <Modal.Footer>
@@ -526,12 +612,19 @@ const Payouts = () => {
                   </Modal.Footer>
                 </Modal>
                 {bankData.length > 0 && (
-                  <div className="mt-3">
-                    {bankData.map((account, index) => (
+                  <div className="mt-3 mb-3">
+                    {currentAccounts.map((account, index) => (
                       <div
                         key={index}
-                        className="border rounded px-2 mt-2 text-start"
+                        className="border rounded px-2 mt-2 text-start position-relative"
                       >
+                        {/* Edit button */}
+                        <button
+                          className="btn btn-primary btn-sm position-absolute top-0 end-0 m-3"
+                          onClick={() => handleEdit(account.id)}
+                        >
+                          Edit
+                        </button>
                         <p>
                           <strong>Account Name:</strong> {account.accountName}
                         </p>
@@ -549,6 +642,112 @@ const Payouts = () => {
                     ))}
                   </div>
                 )}
+                {bankData.length > accountsPerPage && (
+                  <ReactPaginate
+                    previousLabel={<ChevronLeft size="14px" />}
+                    nextLabel={<ChevronRight size="14px" />}
+                    pageCount={pageCount}
+                    onPageChange={handlePageChange}
+                    containerClassName={
+                      "pagination justify-content-center mb-0"
+                    }
+                    previousLinkClassName={"page-link mx-1 rounded"}
+                    nextLinkClassName={"page-link mx-1 rounded"}
+                    pageClassName={"page-item"}
+                    pageLinkClassName={"page-link mx-1 rounded"}
+                    disabledClassName={"paginationDisabled"}
+                    activeClassName={"active"}
+                  />
+                )}
+
+                {/* Edit Modal */}
+                <Modal
+                  show={showEditModal}
+                  onHide={() => setShowEditModal(false)}
+                >
+                  <Modal.Header closeButton>
+                    <Modal.Title>Edit Account Details</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Form>
+                      <Form.Group className="mb-3" controlId="accountName">
+                        <Form.Label>Account Name</Form.Label>
+                        <Form.Control
+                          type="text"
+                          placeholder="Enter Account Name"
+                          value={editedAccount?.accountName || ""}
+                          onChange={(e) =>
+                            setEditedAccount({
+                              ...editedAccount,
+                              accountName: e.target.value,
+                            })
+                          }
+                        />
+                      </Form.Group>
+                      <Form.Group className="mb-3" controlId="accountNumber">
+                        <Form.Label>Account Number</Form.Label>
+                        <Form.Control
+                          type="text"
+                          placeholder="Enter Account Number"
+                          value={editedAccount?.accountNumber || ""}
+                          onChange={(e) =>
+                            setEditedAccount({
+                              ...editedAccount,
+                              accountNumber: e.target.value,
+                            })
+                          }
+                        />
+                      </Form.Group>
+                      <Form.Group className="mb-3" controlId="bankName">
+                        <Form.Label>Bank Name</Form.Label>
+                        <Form.Control
+                          type="text"
+                          placeholder="Enter Bank Name"
+                          value={editedAccount?.bankName || ""}
+                          onChange={(e) =>
+                            setEditedAccount({
+                              ...editedAccount,
+                              bankName: e.target.value,
+                            })
+                          }
+                        />
+                      </Form.Group>
+                      <Form.Group className="mb-3">
+                        <Form.Label>Currency</Form.Label>
+                        <Form.Control
+                          as="select"
+                          value={editedAccount?.currency || ""}
+                          onChange={(e) =>
+                            setEditedAccount({
+                              ...editedAccount,
+                              currency: e.target.value,
+                            })
+                          }
+                        >
+                          {bankCurrency.map((currency) => (
+                            <option key={currency.value} value={currency.value}>
+                              {currency.label}
+                            </option>
+                          ))}
+                        </Form.Control>
+                      </Form.Group>
+                    </Form>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button
+                      variant="secondary"
+                      onClick={() => setShowEditModal(false)}
+                    >
+                      Close
+                    </Button>
+                    <Button
+                      variant="primary"
+                      onClick={() => handleEditSave(editedAccount.accountId)}
+                    >
+                      Save
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
               </Col>
             </Col>
           </Row>

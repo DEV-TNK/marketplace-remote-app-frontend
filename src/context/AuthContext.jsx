@@ -20,7 +20,7 @@ const UserProvider = ({ children }) => {
     setLoading(true);
     try {
       const response = await axios.post(
-        `https://unleashified-backend.azurewebsites.net/api/v1/login`,
+        `https://marketplacebackendas-test.azurewebsites.net/api/v1/login`,
         {
           email: data.email,
           password: data.password,
@@ -139,6 +139,7 @@ const UserProvider = ({ children }) => {
         userId,
         userRole,
         email,
+        setUserId,
         setUser,
         setUserRole,
         setUserImage,

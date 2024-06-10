@@ -16,7 +16,11 @@ const ProfileCover = ({ dashboardData, browseButton, outsourceButton }) => {
     formData.append("image", file);
     formData.append("userId", sessionStorage.getItem("UserId"));
 
-    axios.post("https://unleashified-backend.azurewebsites.net/api/v1/provider-logo-update", formData)
+    axios
+      .post(
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/provider-logo-update",
+        formData
+      )
       .then((response) => {
         console.log("Image uploaded successfully:", response.data);
         setAvatarImage(response.data.user.imageUrl);
@@ -98,14 +102,6 @@ const ProfileCover = ({ dashboardData, browseButton, outsourceButton }) => {
                 }-primary btn-sm d-none d-md-block ms-2`}
               >
                 {dashboardData.linkname}
-              </Link>
-              <Link
-                to={outsourceButton.link}
-                className={`btn btn${
-                  dashboardData.outlinebutton ? "-outline" : ""
-                }-primary btn-sm d-none d-md-block ms-2`}
-              >
-                {outsourceButton.linkname}
               </Link>
             </div>
           </div>

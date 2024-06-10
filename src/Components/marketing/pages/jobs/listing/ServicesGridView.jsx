@@ -24,8 +24,12 @@ const ServicesGridView = ({ filteredServices, setTotalFilteredServices }) => {
       ? servicesData
           .slice(pagesVisited, pagesVisited + recordsPerPage)
           .map((item, index) => (
-            <Col lg={6} xs={12} className="mb-4" key={item.id || item._id}>
-              <ServiceListingGridviewCard key={index} item={item} viewby="grid" />
+            <Col lg={4} xs={12} className="mb-4" key={item.id || item._id}>
+              <ServiceListingGridviewCard
+                key={index}
+                item={item}
+                viewby="grid"
+              />
             </Col>
           ))
       : null;
@@ -57,7 +61,7 @@ const ServicesGridView = ({ filteredServices, setTotalFilteredServices }) => {
               <Toast.Body>{error}</Toast.Body>
             </Toast>
           )}
-          <Row>{displayRecords || <Col>No jobs found.</Col>}</Row>
+          <Row>{displayRecords || <Col>No Service avaliable .</Col>}</Row>
           <ReactPaginate
             previousLabel={<ChevronLeft size="14px" />}
             nextLabel={<ChevronRight size="14px" />}

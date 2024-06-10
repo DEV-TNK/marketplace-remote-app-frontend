@@ -1,12 +1,15 @@
-import React from 'react';
-import Slider from 'react-slick';
-import './CourseCard.css';
+import React from "react";
+import Slider from "react-slick";
+import "./CourseCard.css";
+import { Link } from "react-router-dom";
 
 const CourseSlider = ({ popular }) => {
   const settings = {
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1024,
@@ -40,7 +43,9 @@ const CourseSlider = ({ popular }) => {
           <div className="item px-md-1" key={index}>
             <div className="course-card-inner course-cards">
               <div className="course-card-content">
-                <h2 className="course-card-title">{course.title}</h2>
+                <h2 className="course-card-title">
+                  <Link to={`/jobs/servicesCategory/${course.title}`}>{course.title}</Link>
+                </h2>
                 <p className="course-card-description">{course.description}</p>
               </div>
             </div>

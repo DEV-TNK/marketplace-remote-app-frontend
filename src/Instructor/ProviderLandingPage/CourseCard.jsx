@@ -18,7 +18,7 @@ const CourseCard = ({ item, viewby, extraclass, link }) => {
     try {
       // Send POST request to bookmark endpoint
       const response = await axios.post(
-        "https://remsana-backend-testing.azurewebsites.net/api/v1/bookmark",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/bookmark",
         {
           courseId: item._id, // Use courseId from item object
           userId: userId, // Use userId from global context

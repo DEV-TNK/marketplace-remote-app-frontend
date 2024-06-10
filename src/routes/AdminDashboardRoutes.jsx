@@ -55,13 +55,6 @@ export const DashboardMenu = [
   },
   {
     id: uuid(),
-    title: "Out-Source",
-    icon: "book",
-    link: "/admin/out-source",
-  },
-
-  {
-    id: uuid(),
     title: "User",
     icon: "user",
     children: [

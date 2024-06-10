@@ -14,7 +14,7 @@ const JobSeekers = () => {
         const fetchJobSeekers = async () => {
             try {
                 setLoading(true); 
-                const response = await axios.get('https://unleashified-backend.azurewebsites.net/api/v1/get-job-seekers');
+                const response = await axios.get('https://marketplacebackendas-test.azurewebsites.net/api/v1/get-job-seekers');
                 setJobSeekersData(response.data.jobSeekers);
                 console.log(response.data.jobSeekers);
             } catch (error) {
@@ -41,8 +41,7 @@ const JobSeekers = () => {
                                     Job Seekers <span className="fs-5 text-muted">({jobSeekersData.length})</span>
                                 </h1>
                                 <Breadcrumb>
-                                    <Breadcrumb.Item href="#">Dashboard</Breadcrumb.Item>
-                                    <Breadcrumb.Item href="#">User</Breadcrumb.Item>
+                                    <Breadcrumb.Item href="/admin/dashboard/overview">Dashboard</Breadcrumb.Item>
                                     <Breadcrumb.Item active>Job Seekers</Breadcrumb.Item>
                                 </Breadcrumb>
                             </div>

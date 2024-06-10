@@ -20,7 +20,7 @@ const CourseSlider = ({ recommended, popular, trending, category }) => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `https://unleashified-backend.azurewebsites.net/api/v1/seeker-recommendation/${userId}`
+        `https://marketplacebackendas-test.azurewebsites.net/api/v1/seeker-recommendation/${userId}`
       );
       const data = response.data;
 

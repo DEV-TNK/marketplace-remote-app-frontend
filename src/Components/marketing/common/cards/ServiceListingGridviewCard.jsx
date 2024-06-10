@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaNairaSign } from "react-icons/fa6";
 import axios from "axios";
 
@@ -55,7 +55,7 @@ const ServiceListingGridviewCard = (props) => {
     const userEmail = sessionStorage.getItem("email") || null;
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/create-activity",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-activity",
         {
           UserAction: name ? name : null,
           UserId: userId,
@@ -69,14 +69,23 @@ const ServiceListingGridviewCard = (props) => {
     }
   };
 
+  const navigate = useNavigate();
+
+  const redirect = async (jobId) => {
+    navigate(`/services/listing?id=${jobId}`);
+  };
+
   return (
     <Card className="card-bordered card-hover cursor-pointer h-100 ">
       <Card.Body className="p-0">
         <div
           className="position-relative  top-0 start-0 w-100 "
+          onClick={() => {
+            redirect(item._id);
+          }}
           style={{
             height: "200px",
-            // or any specific width you prefer
+
             backgroundImage: `url(${item.image})`,
             backgroundSize: "cover",
             borderRadius: "5px 5px 0 0",
@@ -99,7 +108,7 @@ const ServiceListingGridviewCard = (props) => {
           >
             {item.user && item.user.image && (
               <Link
-                to={`/services/listing?id=${item._id}`}
+                // to={`/services/listing?id=${item._id}`}
                 onClick={() => SearchActivity({ name: item.department })}
               >
                 <Image

@@ -95,7 +95,7 @@ const Job = (props) => {
 
     axios
       .post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/seeker-resume",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/seeker-resume",
         formData,
         {
           headers: {

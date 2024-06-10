@@ -33,7 +33,7 @@ const JobsList = () => {
       const userEmail = sessionStorage.getItem("email") || null;
       try {
         const response = await axios.post(
-          "https://unleashified-backend.azurewebsites.net/api/v1/create-activity",
+          "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-activity",
           {
             UserAction: "Job-Page",
             UserId: userId,
@@ -52,7 +52,7 @@ const JobsList = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://unleashified-backend.azurewebsites.net/api/v1/all-jobs"
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/all-jobs"
       );
 
       if (response.data && Array.isArray(response.data.jobs)) {

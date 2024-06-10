@@ -59,7 +59,7 @@ const ServiceListViewCard = (props) => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`https://unleashified-backend.azurewebsites.net/api/v1/delete-service/${item._id}`);
+      await axios.delete(`https://marketplacebackendas-test.azurewebsites.net/api/v1/delete-service/${item._id}`);
       console.log("Service deleted successfully");
       showToast("Service deleted successfully")
       navigate("/JobSeekerdashboard")

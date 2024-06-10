@@ -18,7 +18,7 @@ const Jobs = () => {
         const companyId = searchParams.get('id');
         
         // Fetch jobs for the specified company id
-        const response = await axios.get(`https://unleashified-backend.azurewebsites.net/api/v1/companySingle-all-jobs/${companyId}`);
+        const response = await axios.get(`https://marketplacebackendas-test.azurewebsites.net/api/v1/companySingle-all-jobs/${companyId}`);
         
         // Check response data type and set jobs state
         if (Array.isArray(response.data.jobs)) {

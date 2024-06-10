@@ -20,7 +20,7 @@ export const StatTopSVGIcon = (props) => {
           <div>
             {/* category / heading */}
             <h4 className="mb-0" style={{ height: "40px" }}>
-              {item.category}
+             <Link to={`/jobs/jobsCategory/${item.category}`}>{item.category}</Link> 
             </h4>
             {/* statistics text */}
             <p className="mb-0 text-muted ">{item.totalJobs}</p>

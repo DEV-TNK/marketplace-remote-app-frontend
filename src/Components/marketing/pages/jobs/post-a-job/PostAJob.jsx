@@ -79,7 +79,7 @@ const PostAJob = () => {
       };
   
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/post-job",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/post-job",
         {
           jobPosterId: userId,
           jobTitle,
@@ -146,7 +146,7 @@ const PostAJob = () => {
     { value: "Mobile Developer", label: "Mobile Developer" },
     { value: "Data Analytics", label: "Data Analytics" },
     { value: "Product Manager", label: "Product Manager" },
-    { value: "UI / UX Design", label: "UI / UX Design" },
+    { value: "UI/UX Design", label: "UI / UX Design" },
     { value: "SEO", label: "SEO" },
     { value: "Finance", label: "Finance" },
     { value: "End-to-End Projects", label: "End-to-End Projects" },

@@ -31,7 +31,7 @@ const Reviews = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://unleashified-backend.azurewebsites.net/api/v1/get-seeker-reviews/${userId}`
+        `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-seeker-reviews/${userId}`
       );
       setReviews(
         response.data.reviews.map((review) => ({

@@ -23,9 +23,6 @@ import AllJobs from "../Admin/courses/all-courses/AllJobs";
 import JobCategory from "../Admin/courses/JobCategory";
 import CategorySingle from "../Admin/courses/CategorySingle";
 
-// Import Admin Out-source
-import OutSource from "../Admin/Outsource/OutSource";
-import OutsourceJobSingle from "../Admin/Outsource/OutsourceJobSingle";
 
 // ** Import Admin Users Pages
 import JobProvider from "../Admin/user/JobProvider";
@@ -112,9 +109,10 @@ import ProviderResolution from "../Providerdashboard/Resolution";
 import ProviderSocialProfiles from "../Providerdashboard/account-settings/SocialProfiles";
 import ProviderDeleteProfile from "../Providerdashboard/account-settings/DeleteProfile";
 import ProtectedRoutes from "../Components/ProtectedRoute";
-import OutsourceJobs from "../Providerdashboard/OutsourceJobs";
-import OutsourceAJobs from "../Components/marketing/pages/jobs/outsource-a-job/OutsourceAJob";
-import Outsource from "../Pages/outsource/Outsource";
+import ServicesCategory from "../Components/marketing/pages/jobs/company-list/ServicesCategory";
+import JobsCategory from "../Components/marketing/pages/jobs/listing/JobsCategory";
+import JobsLandingPage from "../Pages/jobsLandingPage/JobsLandingPage";
+import ServicesLandingPage from "../Pages/servicesLandingPage/ServicesLandingPage";
 
 const AllRoutes = () => {
   return (
@@ -174,19 +172,30 @@ const AllRoutes = () => {
         <Route path="/services/listing" element={<ServiceSingle />} />
         <Route path="/jobs/company-list/" element={<CompanyList />} />
         <Route path="/jobs/services-list/" element={<ServicesList />} />
-        <Route path="/jobs/outsource/" element={<Outsource />} />
+        <Route
+          path="/jobs/servicesCategory/:title"
+          element={<ServicesCategory />}
+        />
+        <Route path="/jobs/jobsCategory/:category" element={<JobsCategory />} />
+        <Route path="/jobs/jobs-landing-page" element={<JobsLandingPage />} />
+        <Route
+          path="/jobs/services-landing-page"
+          element={<ServicesLandingPage />}
+        />
         <Route path="/jobs/company/about" element={<CompanyAbout />} />
         <Route path="/jobs/company/reviews/" element={<CompanyReviews />} />
         <Route path="/jobs/company/jobs/" element={<CompanyJobs />} />
         <Route path="/jobs/company/benifits/" element={<CompanyBenifits />} />
         <Route path="/jobs/company/photos/" element={<CompanyPhotos />} />
         <Route path="/jobs/post-a-job" element={<PostAJob />} />
-        <Route path="/jobs/outsource-a-job/" element={<OutsourceAJobs />} />
         <Route path="/jobs/post-a-service" element={<PostAService />} />
         <Route path="/jobs/edit-a-service/:id" element={<EditAService />} />
         <Route path="/jobs/apply-for-this-job" element={<ApplyForJob />} />
         <Route path="/jobs/update-resume/" element={<UpdateResume />} />
       </Route>
+
+      <Route path="/provider-profile" element={<ProviderProfile />} />
+      <Route path="/Providerdashboard" element={<ProviderDashboard />} />
 
       {/* Protected Routes */}
       <Route element={<ProtectedRoutes />}>
@@ -195,16 +204,16 @@ const AllRoutes = () => {
           element={<DashboardJobSingle />}
         />
         {/*seeker Pages */}
-        <Route path="/provider-profile" element={<ProviderProfile />} />
-        <Route
-          path="/Providerdashboard/update-provider-profile"
-          element={<UpdateProviderProfile />}
-        />
+
         <Route path="/jobs/upload-resume/" element={<UploadResume />} />
         <Route path="/JobSeeker" element={<ProviderLanding />} />
         <Route
           path="/JobSeeker/interest-page"
           element={<ProviderInterestPage />}
+        />
+        <Route
+          path="/Providerdashboard/update-provider-profile"
+          element={<UpdateProviderProfile />}
         />
 
         <Route path="/JobSeekerdashboard" element={<JobSeekerDashboard />} />
@@ -250,17 +259,11 @@ const AllRoutes = () => {
           element={<JobSeekerDeleteProfile />}
         />
         {/* Provider Pages */}
-        <Route path="/Providerdashboard" element={<ProviderDashboard />} />
         <Route path="/Providerdashboard/All-Job" element={<ProviderJob />} />
         <Route
           path="/Providerdashboard/My-Contract"
           element={<ProviderContract />}
         />
-        <Route
-          path="/Providerdashboard/Outsource-Jobs"
-          element={<OutsourceJobs />}
-        />
-        {/* <Route path="/Providerdashboard/Outsource-Single" element={<OutsourceSingle />} /> */}
         <Route
           path="/Providerdashboard/Job-Applicants"
           element={<ProviderJobApplicants />}
@@ -300,11 +303,6 @@ const AllRoutes = () => {
         <Route path="/admin/dashboard/overview" element={<Overview />} />
         <Route path="/admin/dashboard/analytics" element={<Analytics />} />
         <Route path="/admin/jobs/all-jobs" element={<AllJobs />} />
-        <Route path="/admin/out-source" element={<OutSource />} />
-        <Route
-          path="/admin/out-source/job-single"
-          element={<OutsourceJobSingle />}
-        />
         <Route path="/admin/jobs/job-category" element={<JobCategory />} />
         <Route
           path="/admin/jobs/category-single"

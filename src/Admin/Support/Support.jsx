@@ -1,10 +1,17 @@
 import React, { Fragment, useState, useMemo, useEffect } from "react";
-import { Card, Row, Table, Button, Spinner } from "react-bootstrap";
-import axios from "axios"; // Import Axios
+import { Col, Row, Card, Spinner, Table, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import axios from "axios";
 import { numberWithCommas } from "../../helper/utils";
 import { showToast } from "../../Components/Showtoast";
 
 const Support = () => {
+  const [dashboardData, setDashboardData] = useState({
+    monthlySeeker: 1,
+    totalSeeker: 1,
+    monthlyProvider: 1,
+    totalProvider: 1,
+  });
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [Cloading, setCLoading] = useState(false);
@@ -13,13 +20,14 @@ const Support = () => {
     fetchData().then((data) => {
       setData(data);
       setLoading(false); // Set loading to false after data is fetched
+      console.log("this is data", data);
     });
   }, []);
 
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://unleashified-backend.azurewebsites.net/api/v1/all-contact-us"
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/all-contact-us"
       );
       return response.data.contactUs || [];
     } catch (error) {
@@ -62,25 +70,6 @@ const Support = () => {
           </Button>
         ),
       },
-      // {
-      //   header: "Action",
-      //   accessorKey: "action",
-      //   cell: ({ row }) => (
-      //     <Fragment>
-      //       <Button
-      //         variant="success"
-      //         onClick={() => row && handleAction(row.id, "Completed")}
-      //         style={{
-      //           backgroundColor: "green",
-      //           borderColor: "#b8f7b2",
-      //           color: "white",
-      //         }}
-      //       >
-      //         View
-      //       </Button>
-      //     </Fragment>
-      //   ),
-      // },
     ],
     []
   );
@@ -135,47 +124,50 @@ const Support = () => {
                 </tr>
               </thead>
               <tbody>
-                {data && data.lenght > 0 ? data.map((row) => (
-                  <tr key={row.id}>
-                    {columns.map((column) => (
-                      <td key={column.accessorKey}>
-                       
-                        {column.accessorKey === "message" &&
-                        row.message.length > 20 ? (
-                          <span
-                            title={row.message}
-                            className="mb-1 text-primary-hover cursor-pointer"
-                          >
-                            {row.message.slice(0, 20)}...
-                          </span>
-                        ) : (
-                          row[column.accessorKey]
-                        )}
-                        {/* Render buttons only in corresponding columns */}
-                        {column.accessorKey === "completed" && (
-                          <Button
-                            variant="success"
-                            onClick={() => handleAction(row.id)}
-                            disabled={
-                              row.status === "completed" || row.Cloading
-                            }
-                            style={{
-                              backgroundColor: "green",
-                              borderColor: "#b8f7b2",
-                              color: "white",
-                              opacity:
+                {data && data.lenght > 0 ? (
+                  data.map((row) => (
+                    <tr key={row.id}>
+                      {columns.map((column) => (
+                        <td key={column.accessorKey}>
+                          {column.accessorKey === "message" &&
+                          row.message.length > 20 ? (
+                            <span
+                              title={row.message}
+                              className="mb-1 text-primary-hover cursor-pointer"
+                            >
+                              {row.message.slice(0, 20)}...
+                            </span>
+                          ) : (
+                            row[column.accessorKey]
+                          )}
+                          {/* Render buttons only in corresponding columns */}
+                          {column.accessorKey === "completed" && (
+                            <Button
+                              variant="success"
+                              onClick={() => handleAction(row.id)}
+                              disabled={
                                 row.status === "completed" || row.Cloading
-                                  ? 0.6
-                                  : 1,
-                            }}
-                          >
-                            {row.Cloading ? "Processing" : "Completed"}
-                          </Button>
-                        )}
-                      </td>
-                    ))}
-                  </tr>
-                )) : <div className="p-12">No Support request available</div>}
+                              }
+                              style={{
+                                backgroundColor: "green",
+                                borderColor: "#b8f7b2",
+                                color: "white",
+                                opacity:
+                                  row.status === "completed" || row.Cloading
+                                    ? 0.6
+                                    : 1,
+                              }}
+                            >
+                              {row.Cloading ? "Processing" : "Completed"}
+                            </Button>
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))
+                ) : (
+                  <div className="p-12">No Support request available</div>
+                )}
               </tbody>
             </Table>
             <div className="mt-4">{/* Pagination */}</div>

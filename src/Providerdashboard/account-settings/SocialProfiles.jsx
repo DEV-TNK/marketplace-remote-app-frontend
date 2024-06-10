@@ -23,7 +23,7 @@ const SocialProfiles = () => {
       try {
         if (!userId) return;
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-social-profile/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-social-profile/${userId}`
         );
         const user = response.data.user;
         // Set the retrieved social profile data into the form fields
@@ -79,7 +79,7 @@ const SocialProfiles = () => {
       };
 
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/update-social",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/update-social",
         formDataToSend
       );
 

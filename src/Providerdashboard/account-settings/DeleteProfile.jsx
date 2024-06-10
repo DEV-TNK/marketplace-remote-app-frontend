@@ -16,7 +16,7 @@ const DeleteProfile = () => {
 
         try {
             const response = await axios.delete(
-              `https://remsana-backend-testing.azurewebsites.net/api/v1/user/${userId}`
+              `https://marketplacebackendas-test.azurewebsites.net/api/v1/user/${userId}`
             );
             showToast(response.data.message);
             sessionStorage.clear();

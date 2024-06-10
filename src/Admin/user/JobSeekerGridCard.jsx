@@ -1,20 +1,14 @@
-import React, { Fragment, useState, useEffect } from 'react';
+
+import React, { Fragment, useState } from 'react';
 import { Col, Card, Image, Row, Form } from 'react-bootstrap';
 import { ChevronLeft, ChevronRight } from 'react-feather';
 import { numberWithCommas } from '../../helper/utils';
-import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 
 const JobSeekersGridCard = ({ jobSeekers }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [pageNumber, setPageNumber] = useState(0);
     const jobSeekersPerPage = 8;
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        setLoading(false);
-    }, []);
 
     const pagesVisited = pageNumber * jobSeekersPerPage;
     const pageCount = Math.ceil(jobSeekers.length / jobSeekersPerPage);
@@ -53,14 +47,6 @@ const JobSeekersGridCard = ({ jobSeekers }) => {
         setSearchTerm(event.target.value);
         setPageNumber(0);
     };
-
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
 
     return (
         <Fragment>

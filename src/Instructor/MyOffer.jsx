@@ -22,7 +22,7 @@ const MyOffer = () => {
     setALoading(true);
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/accept-reject-offer",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/accept-reject-offer",
         {
           status: "true",
           offerId,
@@ -41,7 +41,7 @@ const MyOffer = () => {
     setALoading(true);
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/accept-reject-offer",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/accept-reject-offer",
         {
           status: false,
           offerId,
@@ -61,7 +61,7 @@ const MyOffer = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-my-offers/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-offers/${userId}`
         );
         setOffers(response.data.offerDetails || []);
         setLoading(false);

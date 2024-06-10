@@ -1,13 +1,6 @@
 import React, { Fragment, useState, useMemo, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Trash, Edit, MoreVertical } from "react-feather";
-// import {
-//   flexRender,
-//   getCoreRowModel,
-//   getFilteredRowModel,
-//   getPaginationRowModel,
-//   useReactTable,
-// } from "@tanstack/react-table";
 import {
   Card,
   Row,
@@ -80,7 +73,7 @@ const MyJob = () => {
       try {
         const userId = sessionStorage.getItem("UserId");
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/seeker-jobs/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/seeker-jobs/${userId}`
         );
         setJobs(response.data);
       } catch (error) {
@@ -93,7 +86,7 @@ const MyJob = () => {
       try {
         const userId = sessionStorage.getItem("UserId");
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-my-saved-jobs/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-saved-jobs/${userId}`
         );
 
         if (response.data.savedJobs && response.data.savedJobs.length > 0) {
@@ -110,7 +103,7 @@ const MyJob = () => {
       try {
         const userId = sessionStorage.getItem("UserId");
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/seeker-ongoing-jobs/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/seeker-ongoing-jobs/${userId}`
         );
         setOngoingJobs(response.data);
       } catch (error) {
@@ -122,7 +115,7 @@ const MyJob = () => {
       try {
         const userId = sessionStorage.getItem("UserId");
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/seeker-completed-jobs/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/seeker-completed-jobs/${userId}`
         );
         setCompletedJobs(response.data);
       } catch (error) {

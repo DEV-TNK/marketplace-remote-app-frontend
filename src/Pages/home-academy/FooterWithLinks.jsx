@@ -31,7 +31,7 @@ const FooterWithLinks = () => {
                 />
                 <div className="mt-4">
                   <p>
-                    Transnumerik connects job seekers with opportunities and
+                    Unleashified connects job seekers with opportunities and
                     providers with talent engagement resources.
                   </p>
                   {/* social media */}
@@ -126,7 +126,12 @@ const FooterWithLinks = () => {
                   </ListGroup.Item> */}
                   <ListGroup.Item as="li" bsPrefix=" ">
                     <Link to="/authentication/signup" className="nav-link">
-                      Become Instructor
+                      Become Job Seeker
+                    </Link>
+                  </ListGroup.Item>
+                  <ListGroup.Item as="li" bsPrefix=" ">
+                    <Link to="/authentication/signup" className="nav-link">
+                      Become Job Provider
                     </Link>
                   </ListGroup.Item>
                   {/* <ListGroup.Item as="li" bsPrefix=" ">
@@ -155,8 +160,11 @@ const FooterWithLinks = () => {
                 <br />
                 3rd Floor, Unit 1110, Ogun State Technology Hub, Abeokuta,
                 <br />
-                Ogun State, Nigeria.
-                <p className="mb-1">Email: info@transnumerik.com</p>
+                Ogun State, Nigeria.  
+                <br />
+                <a href="mailto:migration@gfa-tech.com" target="_blank">
+                        support@unleashified.com
+                      </a>
                 {/* <p>
                   Phone:{" "}
                   <span className="text-dark fw-semi-bold">
@@ -170,7 +178,7 @@ const FooterWithLinks = () => {
             {/* Desc  */}
             <Col lg={4} md={5} sm={12}>
               <span>
-                © {currentYear} Transnumerik, Inc. All Rights Reserved
+                © {currentYear} UNLEASHIFIED, Inc. All Rights Reserved
               </span>
             </Col>
             {/*  Links  */}

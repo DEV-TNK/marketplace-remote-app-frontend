@@ -13,7 +13,7 @@ const RecentJobs = ({ title }) => {
   const fetchRecentJobs = async () => {
     try {
       const response = await axios.get(
-        "https://unleashified-backend.azurewebsites.net/api/v1/admin-overview-last-four-jobs"
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/admin-overview-last-four-jobs"
       );
       setJobs(response.data.lastFourJobs);
     } catch (error) {

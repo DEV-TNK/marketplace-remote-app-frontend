@@ -13,7 +13,7 @@ const PopularJobCategory = ({ title }) => {
   const fetchPopularJobCategories = async () => {
     try {
       const response = await axios.get(
-        "https://unleashified-backend.azurewebsites.net/api/v1/admin-overview-most-popular"
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/admin-overview-most-popular"
       );
       setCategories(response.data.providers);
     } catch (error) {

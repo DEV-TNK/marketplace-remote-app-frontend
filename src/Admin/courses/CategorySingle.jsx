@@ -15,7 +15,7 @@ const CategorySingle = () => {
     useEffect(() => {
         const fetchAJob = async () => {
             try {
-                const response = await axios.get(`https://unleashified-backend.azurewebsites.net/api/v1/admin-categorySingle/${jobTitle}`);
+                const response = await axios.get(`https://marketplacebackendas-test.azurewebsites.net/api/v1/admin-categorySingle/${jobTitle}`);
                 setJobCategories(response.data.categorySingle);
                 setLoading(false);
             } catch (error) {

@@ -16,7 +16,7 @@ const ProfileCover = ({ dashboardData }) => {
     formData.append("image", file);
     formData.append("userId", sessionStorage.getItem("UserId"));
 
-    axios.post("https://unleashified-backend.azurewebsites.net/api/v1/seeker-upload-image", formData)
+    axios.post("https://marketplacebackendas-test.azurewebsites.net/api/v1/seeker-upload-image", formData)
       .then((response) => {
         console.log("Image uploaded successfully:", response.data);
         setAvatarImage(response.data.user.imageUrl);

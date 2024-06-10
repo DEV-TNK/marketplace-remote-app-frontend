@@ -42,12 +42,12 @@ export const DashboardMenu = [
 		link: '/JobSeekerdashboard/seeker-payouts',
 		icon: 'naira-sign'
 	},
-	{
-		id: 7,
-		title: 'My Service',
-		link: '/JobSeekerdashboard/my-service',
-		icon: 'shopping-bag'
-	},
+	// {
+	// 	id: 7,
+	// 	title: 'My Service',
+	// 	link: '/JobSeekerdashboard/my-service',
+	// 	icon: 'shopping-bag'
+	// },
 	
 ];
 

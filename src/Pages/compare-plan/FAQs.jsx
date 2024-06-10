@@ -1,19 +1,16 @@
-// import node module libraries
 import { Link } from "react-router-dom";
 import { Row, Col, Container } from "react-bootstrap";
-
-// import data files
 import FAQsData from "../../data/marketing/compare-plans/FAQsData";
-import NavbarDefault from "../home-academy/navbars/NavbarDefault";
+import NavbarJobsPages from "../../Layout/navbars/NavbarJobPages";
 import FooterWithLinks from "../home-academy/FooterWithLinks";
 
 const FAQs = () => {
   return (
     <>
-      <NavbarDefault />
+     <NavbarJobsPages />
       <section className="pb-14 pt-lg-8 bg-white">
         <Container>
-          <Row>
+          <Row className="align-items-center"> 
             <Col xl={6} lg={10} xs={12}>
               <div className="mb-8 pe-8">
                 {/* heading */}

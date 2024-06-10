@@ -48,7 +48,7 @@ const JobTable = ({ data, datas, dataes, header, savedData }) => {
 
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/submit-reviews",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/submit-reviews",
         reviewData
       );
       setLoading(false);
@@ -75,7 +75,7 @@ const JobTable = ({ data, datas, dataes, header, savedData }) => {
       }
 
       const response = await axios.delete(
-        "https://unleashified-backend.azurewebsites.net/api/v1/delete-save-job",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/delete-save-job",
         {
           data: {
             userId: userId,

@@ -16,7 +16,6 @@ import JobHeroBlock3 from "../assets/images/job/job-hero-block-3.svg";
 import serviceCreate from "../assets/images/job/service-create.png";
 import serviceOrder from "../assets/images/job/service-order.svg";
 import serviceApply from "../assets/images/job/service-apply.svg";
-import outSource from "../assets/images/job/new-outsource.png";
 import payment from "../assets/images/job/new-hero-2.svg";
 import team from "../assets/images/job/getTeam.svg";
 
@@ -65,7 +64,7 @@ const FindYourDreamJob = () => {
                     Listed over 10k jobs from 150k+ Job provider
                   </span>
                 </div>
-                <Link to="/jobs/listing/job-list">
+                <Link to="/jobs/jobs-landing-page">
                   <Button className="mt-5">Start Applying</Button>
                 </Link>
               </div>
@@ -110,7 +109,7 @@ const FindYourDreamJob = () => {
                     Listed over 10k services from 150k+ Service provider
                   </span>
                 </div>
-                <Link to="/jobs/services-list">
+                <Link to="/jobs/services-landing-page">
                   <Button className="mt-5 btn-light">Find Services</Button>
                 </Link>
               </div>
@@ -155,7 +154,7 @@ const FindYourDreamJob = () => {
                     Trusted by over 150+ company to organize team
                   </span>
                 </div>
-                <Link to="/jobs/outsource/">
+                <Link to="#">
                   {/* /authentication/signin */}
                   <Button className="mt-5 btn-light">Out-Source Jobs</Button>
                 </Link>
@@ -170,9 +169,9 @@ const FindYourDreamJob = () => {
                 <div className="position-absolute bottom-0 mb-12  end-0 ">
                   <Image src={payment} className="size " />
                 </div>
-                <div className="position-absolute bottom-0 mb-n4 ms-n1 ms-md-n4 ms-lg-n7 start-0">
+                {/* <div className="position-absolute bottom-0 mb-n4 ms-n1 ms-md-n4 ms-lg-n7 start-0">
                   <Image src={outSource} className="size " />
-                </div>
+                </div> */}
               </div>
             </Col>
           </Row>

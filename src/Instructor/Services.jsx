@@ -28,7 +28,7 @@ const Services = () => {
       try {
         setLoading(true); // Set loading to true before making the API request
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-my-services/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-services/${userId}`
         );
         setServices(response.data.myServices);
       } catch (error) {

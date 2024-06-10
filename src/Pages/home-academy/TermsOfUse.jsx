@@ -2,8 +2,8 @@
 import React from "react";
 
 // import layouts
-import NavbarDefault from "../home-academy/navbars/NavbarDefault";
 import FooterWithLinks from "../home-academy/FooterWithLinks";
+import NavbarDefault from "../../Layout/navbars/NavbarJobPages";
 
 const TermsOfUse = () => {
   return (

@@ -24,7 +24,7 @@ const JobsGridView = ({ filteredJobs, setTotalFilteredJobs }) => {
       ? jobsData
           .slice(pagesVisited, pagesVisited + recordsPerPage)
           .map((item, index) => (
-            <Col lg={6} xs={12} className="mb-4" key={item.id || item._id}>
+            <Col lg={4} xs={12} className="mb-4" key={item.id || item._id}>
               <JobListingGridviewCard key={index} item={item} viewby="grid" />
             </Col>
           ))

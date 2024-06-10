@@ -39,7 +39,7 @@ const EditAService = () => {
   useEffect(() => {
     const fetchServiceData = async () => {
       try {
-        const response = await axios.get(`https://unleashified-backend.azurewebsites.net/api/v1/get-a-service/${id}`);
+        const response = await axios.get(`https://marketplacebackendas-test.azurewebsites.net/api/v1/get-a-service/${id}`);
         const serviceData = response.data.service; // Assuming the API response contains service data
   
         // Update state variables with fetched service data

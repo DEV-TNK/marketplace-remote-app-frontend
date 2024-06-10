@@ -7,28 +7,45 @@ import StudentSignUp from "./signupforms/JobSeeker";
 import InstructorSignUp from "./signupforms/Provider";
 import "./signupforms/signup.css"; // Import your CSS file
 import NavbarDefault from "../Pages/home-academy/navbars/NavbarDefault";
+import { FaRegBuilding } from "react-icons/fa6";
+import { FiBriefcase } from "react-icons/fi";
+import { GrBusinessService } from "react-icons/gr";
+import { MdOutlineBusiness } from "react-icons/md";
+import { IoBusinessSharp } from "react-icons/io5";
+import ServiceProviderSignUp from "./signupforms/ServiceProvider";
 
 const SignUp = () => {
   // State to manage which sign-up form to display
   const [showStudentSignUp, setShowStudentSignUp] = useState(false);
   const [showInstructorSignUp, setShowInstructorSignUp] = useState(false);
+  const [showServiceProviderSignUp, setShowServiceProviderSignUp] = useState(false)
 
   // Function to handle showing student sign-up form
   const handleShowStudentSignUp = () => {
     setShowStudentSignUp(true);
     setShowInstructorSignUp(false);
+    setShowServiceProviderSignUp(false);
   };
 
   // Function to handle showing instructor sign-up form
   const handleShowInstructorSignUp = () => {
     setShowStudentSignUp(false);
     setShowInstructorSignUp(true);
+    setShowServiceProviderSignUp(false);
   };
+
+  // Functioon to handle showing seeker provider
+  const handleShowServiceProviderSignUp = () => {
+    setShowInstructorSignUp(false)
+    setShowStudentSignUp(false)
+    setShowServiceProviderSignUp(true)
+  }
 
   // Function to handle hiding sign-up forms
   const handleHideSignUpForms = () => {
     setShowStudentSignUp(false);
     setShowInstructorSignUp(false);
+    setShowServiceProviderSignUp(false)
   };
 
   return (
@@ -71,24 +88,71 @@ const SignUp = () => {
               </div>
             </Card.Body>
             {/* Buttons for Student and Instructor */}
-            {!showStudentSignUp && !showInstructorSignUp && (
-              <Card.Body className="py-6 px-3">
-                <div className="d-grid gap-4">
-                  <Button
-                    variant="primary"
-                    onClick={handleShowStudentSignUp}
-                    className=""
-                  >
-                    Job Seeker
-                  </Button>
-                  <Button
-                    variant="primary"
-                    onClick={handleShowInstructorSignUp}
-                  >
-                    Job Provider
-                  </Button>
-                </div>
-              </Card.Body>
+            {!showStudentSignUp && !showInstructorSignUp && !showServiceProviderSignUp &&(
+                     <Card.Body className="py-4 px-3">
+                     <div className="d-grid">
+                       <Row className="mb-3">
+                         <Col>
+                           <Card className="mt-4">
+                             <Card.Body className="text-center">
+                               <FiBriefcase size={50} className="mb-2" />
+                               <p className="small mb-2">Find your next job opportunity</p>
+                               <Button
+                                 variant="primary"
+                                 onClick={handleShowStudentSignUp}
+                               >
+                                 Job Seeker
+                               </Button>
+                             </Card.Body>
+                           </Card>
+                         </Col>
+                         <Col>
+                           <Card className="mt-4">
+                             <Card.Body className="text-center">
+                             <IoBusinessSharp size={50} className="mb-2" />
+                               <p className="small mb-2">Post jobs and find candidates</p>
+                               <Button
+                                 variant="primary"
+                                 onClick={handleShowInstructorSignUp}
+                               >
+                                 Job Provider
+                               </Button>
+                             </Card.Body>
+                           </Card>
+                         </Col>
+                       </Row>
+                       {/* <Row>
+                         <Col>
+                           <Card className="mt-4">
+                             <Card.Body className="text-center">
+                             <GrBusinessService size={50} className="mb-2" />
+                               <p className="small mb-2">Find services you need</p>
+                               <Button
+                                 variant="primary"
+                                //  onClick={handleShowStudentSignUp}
+                               >
+                                 Service Seeker
+                               </Button>
+                             </Card.Body>
+                           </Card>
+                         </Col>
+                         <Col>
+                           <Card className="mt-4">
+                             <Card.Body className="text-center">
+                             <MdOutlineBusiness size={50} className="mb-2" />
+                               <p className="small mb-2">Offer your services</p>
+                               <Button
+                                 variant="primary"
+                                 onClick={handleShowServiceProviderSignUp}
+                               >
+                                 Service Provider
+                               </Button>
+                             </Card.Body>
+                           </Card>
+                         </Col>
+                       </Row> */}
+                     </div>
+                   </Card.Body>
             )}
             {/* Student Sign-Up Form */}
             {showStudentSignUp && (
@@ -117,6 +181,21 @@ const SignUp = () => {
                 </Button>
                 <Card.Body className="py-6 px-3">
                   <InstructorSignUp />
+                </Card.Body>
+              </Fragment>
+            )}
+            {/* Service Provider Sign-Up Form */}
+            {showServiceProviderSignUp && (
+              <Fragment>
+                <Button
+                  variant="link"
+                  className="button-back"
+                  onClick={handleHideSignUpForms}
+                >
+                  &larr; Back
+                </Button>
+                <Card.Body className="py-6 px-3">
+                  <ServiceProviderSignUp />
                 </Card.Body>
               </Fragment>
             )}

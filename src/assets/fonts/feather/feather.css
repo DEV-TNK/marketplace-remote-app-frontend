@@ -280,6 +280,9 @@
 .fe-dollar-sign:before {
   content: "\e954";
 }
+.fe-employee-sign:before {
+  content: "\e919";
+}
 .fe-download:before {
   content: "\e955";
 }

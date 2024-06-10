@@ -6,6 +6,7 @@ import axios from "axios";
 import { showToast } from "../../../../../Components/Showtoast";
 import { useGlobalContext } from "../../../../../context/AuthContext";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
+import NavbarDefault from "../../../../../Layout/navbars/NavbarJobPages";
 
 const UpdateProviderProfile = () => {
   // const { userId } = useGlobalContext();
@@ -47,7 +48,7 @@ const UpdateProviderProfile = () => {
       try {
         const userId = sessionStorage.getItem("UserId");
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-provider-profile/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-provider-profile/${userId}`
         );
         const profileData = response.data;
 
@@ -97,6 +98,7 @@ const UpdateProviderProfile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const formDataToSend = new FormData();
@@ -107,7 +109,7 @@ const UpdateProviderProfile = () => {
       });
 
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/create-provider",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-provider",
         formDataToSend, // Send the FormData object
         {
           headers: {
@@ -115,11 +117,12 @@ const UpdateProviderProfile = () => {
           },
         }
       );
-
+      setLoading(false);
       showToast(response.data.message);
       navigate("/Providerdashboard");
     } catch (error) {
       console.error("Error updating provider profile:", error);
+      setLoading(false);
       showToast(error.response.data.msg);
     }
   };
@@ -175,6 +178,7 @@ const UpdateProviderProfile = () => {
 
   return (
     <Fragment>
+      <NavbarDefault />
       <section className="py-6 py-lg-12 bg-white">
         <Container>
           <Row>
