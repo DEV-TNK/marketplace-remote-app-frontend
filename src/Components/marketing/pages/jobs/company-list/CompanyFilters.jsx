@@ -65,7 +65,7 @@ const companyFilters = ({ onFilterChange }) => {
       };
 
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/companies/company-list",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/companies/company-list",
         requestData
       );
 
@@ -84,7 +84,7 @@ const companyFilters = ({ onFilterChange }) => {
     const userEmail = sessionStorage.getItem("email") || null;
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/create-activity",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-activity",
         {
           UserAction: selectedFilters.jobDesignation
             ? selectedFilters.jobDesignation

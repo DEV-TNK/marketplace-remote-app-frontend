@@ -46,7 +46,7 @@ const JobApplicantCard = ({
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/send-offer",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/send-offer",
         {
           jobId: jobId,
           jobPoster: sessionStorage.getItem("UserId"),

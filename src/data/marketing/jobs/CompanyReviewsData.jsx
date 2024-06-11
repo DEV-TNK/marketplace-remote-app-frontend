@@ -14,7 +14,7 @@ const CompanyReviewsData = () => {
 	useEffect(() => {
 	  const fetchData = async () => {
 		try {
-			const response = await axios.get(`https://unleashified-backend.azurewebsites.net/api/v1/get-company-reviews/${_id}`);
+			const response = await axios.get(`https://marketplacebackendas-test.azurewebsites.net/api/v1/get-company-reviews/${_id}`);
 
 		if (response.data.reviews && response.data.reviews.length > 0) {
 			const transformedData = response.data.reviews.map(item => ({

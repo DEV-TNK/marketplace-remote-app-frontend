@@ -113,7 +113,7 @@ const PostAService = () => {
       console.log("FormData:", image);
 
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/create-service",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-service",
         formData,
         {
           headers: {
@@ -176,20 +176,20 @@ const PostAService = () => {
   };
 
   const departments = [
-    { value: "Graphics & Design", label: "Graphics & Design" },
+    { value: "Graphics and Design", label: "Graphics & Design" },
     { value: "Digital Marketing", label: "Digital Marketing" },
-    { value: "Video & Animation", label: "Video & Animation" },
-    { value: "Music & Audio", label: "Music & Audio" },
-    { value: "Programming & Tech", label: "Programming & Tech" },
+    { value: "Video and Animation", label: "Video & Animation" },
+    { value: "Music and Audio", label: "Music & Audio" },
+    { value: "Programming and Tech", label: "Programming & Tech" },
     { value: "Business Development", label: "Business Development" },
     { value: "Photography", label: "Photography" },
     { value: "Catering", label: "Catering" },
-    { value: "Lifestyle & Health", label: "Lifestyle & Health" },
+    { value: "Lifestyle and Health", label: "Lifestyle & Health" },
     { value: "Logo Making", label: "Logo Making" },
     { value: "Mobile Developer", label: "Mobile Developer" },
     { value: "Data Analytics", label: "Data Analytics" },
     { value: "Product Manager", label: "Product Manager" },
-    { value: "UI / UX Design", label: "UI / UX Design" },
+    { value: "UI/UX Design", label: "UI / UX Design" },
     { value: "SEO", label: "SEO" },
     { value: "Finance", label: "Finance" },
     { value: "End-to-End Projects", label: "End-to-End Projects" },

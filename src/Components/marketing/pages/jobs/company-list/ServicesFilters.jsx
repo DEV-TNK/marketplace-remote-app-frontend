@@ -29,7 +29,7 @@ const ServicesFilters = ({ onFilterChange }) => {
       console.log("Request Data:", requestData);
       BsetLoading(true);
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/search-services",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/search-services",
         requestData
       );
       console.log("Filtered data:", response.data);
@@ -49,7 +49,7 @@ const ServicesFilters = ({ onFilterChange }) => {
     const userEmail = sessionStorage.getItem("email") || null;
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/create-activity",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-activity",
         {
           UserAction: selectedFilters.department
             ? selectedFilters.department.toString()

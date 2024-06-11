@@ -1,5 +1,5 @@
 // import node module libraries
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Row, Col, Container, Nav, Navbar } from "react-bootstrap";
 import { useGlobalContext } from "../context/AuthContext";
@@ -25,13 +25,32 @@ import NavbarJobPages from "../Layout/navbars/NavbarJobPages";
 const ProfileLayout = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { user, userImage, userId, setUser, setUserRole, setUserImage } =
-    useGlobalContext();
+
+  const {
+    user,
+    userImage,
+    userId,
+    setUser,
+    setUserRole,
+    setUserImage,
+    setUserId,
+  } = useGlobalContext();
+  useEffect(() => {
+    const userRole = sessionStorage.getItem("role");
+    const User = sessionStorage.getItem("username");
+    const UserImage = sessionStorage.getItem("userImage");
+    const UserId = sessionStorage.getItem("userId");
+
+    if (User) setUser(User);
+    if (userRole) setUserRole(userRole);
+    if (UserImage) setUserImage(UserImage);
+    if (UserId) setUserId(UserId);
+  }, [setUser, setUserRole, setUserImage, setUserId]);
 
   const handleLogout = async () => {
     try {
       const response = await axios.delete(
-        `https://unleashified-backend.azurewebsites.net/api/v1/logout/${userId}`
+        `https://marketplacebackendas-test.azurewebsites.net/api/v1/logout/${userId}`
       );
       showToast(response.data.message);
       sessionStorage.clear();

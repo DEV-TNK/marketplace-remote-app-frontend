@@ -38,13 +38,14 @@ const Pricing = () => {
             <Col xl={{ span: 8, offset: 2 }} lg={12} md={12} sm={12}>
               <div className="text-center mb-6 px-md-8">
                 <h1 className="text-white display-3 fw-bold">
-                  Simple pricing that scales with your business
+                  Simple pricing that scales with your needs
                 </h1>
                 <p className="text-white lead mb-4">
-                  Browse pricing that fit your need to start on unleashified
+                  See how we price our users on unleashified
                 </p>
+
                 {/* Switch Toggle */}
-                <div
+                {/* <div
                   id="pricing-switch"
                   className="d-flex justify-content-center align-items-center"
                 >
@@ -60,15 +61,17 @@ const Pricing = () => {
                     />
                   </Form>
                   <span className="text-white ms-2">Yearly</span>
-                </div>
+                </div> */}
               </div>
+              <div></div>
             </Col>
           </Row>
         </Container>
       </section>
 
       {/* Content */}
-      <section className="mt-n8 pb-8">
+
+      {/* <section className="mt-n8 pb-8">
         <Container>
           <Row>
             <Col lg={4} md={12} sm={12}>
@@ -82,7 +85,7 @@ const Pricing = () => {
             </Col>
           </Row>
         </Container>
-      </section>
+      </section> */}
 
       {/* Client logo */}
       {/* <LogosTopHeading2
@@ -92,11 +95,33 @@ const Pricing = () => {
 
       {/* FAQ */}
       <section className="py-lg-10 py-5">
+        <div style={{ textAlign: "center" }}>
+          <div style={{ maxWidth: "1300px", margin: "0 auto" }}>
+            <h3 style={{ textAlign: "center" }}>
+              <span style={{ color: "black" }}>
+                In addition to facilitating contracts between job providers and
+                job seekers, our platform employs an escrow system to ensure
+                security and trust. When a job provider pays for a particular
+                job, the funds are securely held in escrow until the work is
+                completed to the satisfaction of both parties. Upon successful
+                completion, the agreed-upon payment is released to the job
+                seekers. As part of our service, we charge a fee of 5% on the
+                total payment made by the job provider during a contract. This
+                fee covers the use of our platform, including features like
+                escrow protection, dispute resolution, and access to our network
+                of talented job seekers. By providing this service, we aim to
+                create a transparent and reliable marketplace for both job
+                providers and job seekers to thrive.
+              </span>
+            </h3>
+          </div>
+        </div>
+
         <Container>
           <Row>
             {/* Row */}
             <Col md={12} sm={12}>
-              <div className="mb-8 text-center">
+              <div className="mb-8 mt-10 text-center">
                 <h1>Frequently Asked Questions</h1>
               </div>
             </Col>
@@ -122,12 +147,9 @@ const Pricing = () => {
                     <h4 className="mb-0">Have other questions?</h4>
                     <span>
                       Send us a mail via:{" "}
-                      <Link
-                        to="https://codescandy.com/contact-us/"
-                        target="_blank"
-                      >
-                        info@unleashified.com
-                      </Link>
+                      <a href="mailto:migration@gfa-tech.com" target="_blank">
+                        support@unleashified.com
+                      </a>
                     </span>
                   </div>
                 </Card.Body>

@@ -1,0 +1,95 @@
+/* styles.css */
+.hero-section {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 50%;
+    padding: 20px;
+  }
+  
+  .hero-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('./images/unleashifiedDesktop.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+  
+  .slide-in-left {
+    animation: slideInLeft 1.5s ease-out forwards;
+  }
+  
+  .slide-in-right {
+    animation: slideInRight 1.5s ease-out forwards;
+  }
+  
+  .hidden {
+    opacity: 0;
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  [data-aos="new-animation-left"] {
+    opacity: 0;
+    transition-property: transform, opacity;
+  
+    &.aos-animate {
+      opacity: 1;
+    }
+
+    @media screen and (min-width: 768px) {
+      transform: translateX(100px);
+  
+      &.aos-animate {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  [data-aos="new-animation-right"] {
+    opacity: 0;
+    transition-property: transform, opacity;
+  
+    &.aos-animate {
+      opacity: 1;
+    }
+
+    @media screen and (min-width: 768px) {
+      transform: translateX(0px);
+  
+      &.aos-animate {
+        transform: translateX(100);
+      }
+    }
+  }

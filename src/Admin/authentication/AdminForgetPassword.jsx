@@ -34,7 +34,7 @@ const ForgetPassword = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/forgot-password",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/forgot-password",
         {
           email: data.email,
         }

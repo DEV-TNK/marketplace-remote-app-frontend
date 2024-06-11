@@ -45,7 +45,7 @@ const DashboardJobSingle = () => {
     const getAJob = async () => {
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-a-job/${jobId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-a-job/${jobId}`
         );
         setJobDetails(response.data.requiredJob);
       } catch (error) {

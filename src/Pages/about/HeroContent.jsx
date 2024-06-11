@@ -7,7 +7,7 @@ const HeroContent = () => {
 			<Col lg={{ span: 8, offset: 2 }} md={12} sm={12} className="mb-12">
 				{/* caption */}
 				<h1 className="display-2 fw-bold mb-3">
-					Hi there, we’re <span className="text-primary">Transnumerik</span>
+					Hi there, we’re <span className="text-primary">Unleashified</span>
 				</h1>
 				{/* para  */}
 				<p className="h2 mb-3 ">

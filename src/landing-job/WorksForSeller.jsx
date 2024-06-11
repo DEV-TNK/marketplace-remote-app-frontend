@@ -48,8 +48,11 @@ const WorksForSeller = () => {
                   </div>
                   <p className="mb-4">Post your service</p>
                   <h4>
-                    
-Publish your service offering, and then assess different providers by comparing prices, portfolios, delivery time, and community feedback to find the one that aligns best with your requirements. If you have any specific inquiries, feel free to send them directly to the providers.
+                    Publish your service offering, and then assess different
+                    providers by comparing prices, portfolios, delivery time,
+                    and community feedback to find the one that aligns best with
+                    your requirements. If you have any specific inquiries, feel
+                    free to send them directly to the providers.
                   </h4>
                 </div>
               </Col>

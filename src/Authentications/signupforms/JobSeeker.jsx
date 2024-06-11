@@ -52,7 +52,7 @@ const StudentSignUp = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/register",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/register",
         {
           email: data.email,
           userType: "seeker",

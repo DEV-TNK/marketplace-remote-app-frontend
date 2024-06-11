@@ -11,7 +11,7 @@ const EarningData = ({ setTotalAmount }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-my-earning/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-earning/${userId}`
         );
 
         if (response.data.userEarning) {

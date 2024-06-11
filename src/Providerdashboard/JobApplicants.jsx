@@ -19,7 +19,7 @@ const JobApplicants = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-my-applicants/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-applicants/${userId}`
         );
         setJobs(response.data.applicants);
         setError(null);

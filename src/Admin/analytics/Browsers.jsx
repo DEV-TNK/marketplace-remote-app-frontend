@@ -1,33 +1,69 @@
-// import node module libraries
-import { Card, Table, Image } from 'react-bootstrap';
-
-// import data files
-import BrowsersStatistics from '../../routes/marketing/BrowsersStatistics';
+// Import necessary libraries
+import React, { useState, useEffect } from 'react';
+import { Card, Table } from 'react-bootstrap';
+import axios from 'axios';
 
 const Browsers = ({ title }) => {
-	return (
-		<Card className="h-100 ">
-			<Card.Header className="align-items-center card-header-height d-flex justify-content-between align-items-center">
-				<h4 className="mb-0">{title}</h4>
-			</Card.Header>
-			<Card.Body className="p-0">
-				<Table hover className="mb-0 text-nowrap table-centered">
-					<tbody>
-						{BrowsersStatistics.map((item, index) => {
-							return (
-								<tr key={index}>
-									<td>
-										<Image src={item.logo} alt="" className="me-2" />{' '}
-										<span className="align-middle ">{item.browser}</span>
-									</td>
-									<td>{item.percent}%</td>
-								</tr>
-							);
-						})}
-					</tbody>
-				</Table>
-			</Card.Body>
-		</Card>
-	);
+    
+    const [platformData, setPlatformData] = useState([]);
+
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('https://marketplacebackendas-test.azurewebsites.net/api/v1/device-tracking');
+                setPlatformData(response.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    return (
+        <Card className="h-100">
+            <Card.Header
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    minHeight: '3rem',
+                    padding: '0.75rem 1.25rem',
+                    backgroundColor: '#f8f9fa',
+                    borderBottom: '1px solid rgba(0, 0, 0, 0.125)'
+                }}
+            >
+                <h4 className="mb-0">Devices </h4>
+            </Card.Header>
+            <Card.Body className="p-0">
+                <Table hover bordered className="mb-0 text-nowrap table-centered" style={{ backgroundColor: 'white' }}>
+                    <thead>
+                        <tr>
+                            <th>Platform</th>
+                            <th>Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {platformData.length > 0 ? (
+                            platformData.map((item, index) => (
+                                <tr key={index}>
+                                    <td>{item.Platform}</td>
+                                    <td>{item.Count}</td>
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan="2" className="text-center">
+                                    Loading data...
+                                </td>
+                            </tr>
+                        )}
+                    </tbody>
+                </Table>
+            </Card.Body>
+        </Card>
+    );
 };
+
 export default Browsers;

@@ -16,11 +16,16 @@ const NavbarDefault = [
     menuitem: "Services",
     link: "/jobs/services-list",
   },
-  {
-    id: uuid(),
-    menuitem: "Outsource",
-    link: "/jobs/outsource/",
-  },
+  // {
+  //   id: uuid(),
+  //   menuitem: "Outsource",
+  //   link: "/jobs/outsource/",
+  // },
+  // {
+  //   id: uuid(),
+  //   menuitem: "Employee of records",
+  //   link: "/employee-of-records",
+  // },
   {
     id: uuid(),
     menuitem: "Companies",
@@ -36,6 +41,7 @@ const NavbarDefault = [
     menuitem: "Pricing",
     link: "/pricing",
   },
+
   // {
   //   id: uuid(),
   //   menuitem: "Contact-Us",

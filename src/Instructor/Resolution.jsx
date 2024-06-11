@@ -29,7 +29,7 @@ const Resolution = () => {
       try {
         const userId = sessionStorage.getItem("UserId");
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-my-conflict/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-conflict/${userId}`
         );
         setResolution(response.data.conflicts);
       } catch (error) {
@@ -76,7 +76,7 @@ const Resolution = () => {
     console.log("Selected Contact:", selectedContact);
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/create-conflicts",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-conflicts",
         {
           userId: userId,
           role: userRole,

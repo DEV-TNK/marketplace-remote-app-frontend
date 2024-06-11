@@ -57,7 +57,7 @@ const SignUp = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://remsana-backend-testing.azurewebsites.net/api/v1/register",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/register",
         {
           email: data.email,
           userType: "admin",

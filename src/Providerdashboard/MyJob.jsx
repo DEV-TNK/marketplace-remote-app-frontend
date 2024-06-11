@@ -1,13 +1,7 @@
 import React, { Fragment, useState, useMemo, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Trash, Edit, MoreVertical } from "react-feather";
-// import {
-//   flexRender,
-//   getCoreRowModel,
-//   getFilteredRowModel,
-//   getPaginationRowModel,
-//   useReactTable,
-// } from "@tanstack/react-table";
+
 import {
   Card,
   Row,
@@ -63,7 +57,7 @@ const MyJob = () => {
       try {
         const userId = sessionStorage.getItem("UserId");
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-provider-jobs/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-provider-jobs/${userId}`
         );
         setJobs(response.data.jobs);
         setOngoingJobs(response.data.OngoingJobs);

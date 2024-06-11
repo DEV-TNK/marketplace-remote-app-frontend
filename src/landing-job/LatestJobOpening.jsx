@@ -18,7 +18,7 @@ const LatestJobOpening = () => {
     const getJob = async () => {
       try {
         const response = await axios.get(
-          "https://unleashified-backend.azurewebsites.net/api/v1/get-Landing-jobs"
+          "https://marketplacebackendas-test.azurewebsites.net/api/v1/get-Landing-jobs"
         );
         setLatestJob(response.data.jobs);
       } catch (error) {

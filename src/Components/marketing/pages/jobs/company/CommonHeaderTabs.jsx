@@ -19,7 +19,7 @@ const CommonHeaderTabs = (props) => {
       try {
         if (_id) {
           const response = await axios.get(
-            `https://unleashified-backend.azurewebsites.net/api/v1/company-single/${_id}`
+            `https://marketplacebackendas-test.azurewebsites.net/api/v1/company-single/${_id}`
           );
           setCompanyData(response.data.company);
           sessionStorage.setItem(

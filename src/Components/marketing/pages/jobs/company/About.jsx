@@ -24,7 +24,7 @@ const About = () => {
     useEffect(() => {
         const fetchCompanyInfo = async () => {
             try {
-                const response = await axios.get(`https://unleashified-backend.azurewebsites.net/api/v1/companySingle-about-us/${_id}`);
+                const response = await axios.get(`https://marketplacebackendas-test.azurewebsites.net/api/v1/companySingle-about-us/${_id}`);
                 if (response.data && response.data.company) {
                     setCompanyInfo(response.data.company);
                 }

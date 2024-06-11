@@ -34,7 +34,7 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
 const ChartActionMenu = () => {
   return (
     <div>
-      <Dropdown>
+      {/* <Dropdown>
         <Dropdown.Toggle as={CustomToggle}>
           <i className="fe fe-more-vertical text-muted"></i>
         </Dropdown.Toggle>
@@ -50,7 +50,7 @@ const ChartActionMenu = () => {
             <i className="fe fe-download dropdown-item-icon "></i> Download
           </Dropdown.Item>
         </Dropdown.Menu>
-      </Dropdown>
+      </Dropdown> */}
     </div>
   );
 };
@@ -71,7 +71,7 @@ const Overview = () => {
   const fetchDashboardData = async () => {
     try {
       const response = await axios.get(
-        "https://unleashified-backend.azurewebsites.net/api/v1/admin-overview"
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/admin-overview"
       );
       setDashboardData(response.data.dashboardData);
       setLoading(false);
@@ -184,7 +184,7 @@ const Overview = () => {
                                 </Card.Body> */}
               </Card>
             </Col>
-            <Col xl={4} lg={12} md={12} className="mb-4">
+            {/* <Col xl={4} lg={12} md={12} className="mb-4">
               <Card>
                 <Card.Header className="align-items-center card-header-height d-flex justify-content-between align-items-center">
                   <div>
@@ -204,7 +204,7 @@ const Overview = () => {
                   </div>
                 </Card.Body>
               </Card>
-            </Col>
+            </Col> */}
           </Row>
 
           <Row>

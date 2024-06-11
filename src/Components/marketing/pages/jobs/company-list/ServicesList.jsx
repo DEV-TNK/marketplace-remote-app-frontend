@@ -25,7 +25,7 @@ const ServicesList = () => {
       const userEmail = sessionStorage.getItem("email") || null;
       try {
         const response = await axios.post(
-          "https://unleashified-backend.azurewebsites.net/api/v1/create-activity",
+          "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-activity",
           {
             UserAction: "Service-Page",
             UserId: userId,
@@ -52,16 +52,16 @@ const ServicesList = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          "https://unleashified-backend.azurewebsites.net/api/v1/get-all-services"
+          "https://marketplacebackendas-test.azurewebsites.net/api/v1/get-all-services"
         );
 
-        if (response.data && Array.isArray(response.data)) {
-          setFilteredServices(response.data);
-          setTotalFilteredServices(response.data.length);
-        } else {
-          setFilteredServices([]);
-          setTotalFilteredServices(0);
-        }
+        // if (response.data && Array.isArray(response.data)) {
+        //   setFilteredServices(response.data);
+        //   setTotalFilteredServices(response.data.length);
+        // } else {
+        setFilteredServices([]);
+        setTotalFilteredServices(0);
+        // }
       } catch (error) {
         console.error("Error fetching services:", error);
         setFilteredServices([]);
@@ -84,22 +84,6 @@ const ServicesList = () => {
 
   // Calculate the displayed count
   const displayedCoursesCount = endIndex - startIndex + 1;
-
-  // const pagesVisited = pageNumber * RecordsPerPage;
-  // const pageCount = Math.ceil(filteredServices.length / RecordsPerPage);
-
-  // const changePage = ({ selected }) => {
-  //   setPageNumber(selected);
-  // };
-
-  // const displayRecords = filteredServices
-  //   .slice(pagesVisited, pagesVisited + RecordsPerPage)
-  //   .map((record) => (
-  //     <ServicesListingCard
-  //       key={record._id} // Use a unique key for each item
-  //       item={record} // Pass the entire record object as a prop to ServicesListingCard
-  //     />
-  //   ));
 
   return (
     <Fragment>

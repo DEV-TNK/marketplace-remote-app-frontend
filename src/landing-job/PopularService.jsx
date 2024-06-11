@@ -7,7 +7,7 @@ const PopularService = () => {
   // Define the popular courses data
   const popularCourses = [
     {
-      title: "Mobile Development",
+      title: "Mobile Developer",
       description: "Build mobile apps for iOS and Android platforms.",
     },
     {
@@ -16,12 +16,12 @@ const PopularService = () => {
       image: "digital-marketing-image-url.jpg",
     },
     {
-      title: "Web Development",
+      title: "Programming and Tech",
       description: "Create websites and web applications for various purposes.",
       image: "web-development-image-url.jpg",
     },
     {
-      title: "Graphic Design",
+      title: "Graphic and Design",
       description:
         "Learn to create visual content for websites, advertisements, and more.",
       image: "graphic-design-image-url.jpg",
@@ -32,12 +32,12 @@ const PopularService = () => {
       image: "data-science-image-url.jpg",
     },
     {
-      title: "Photography",
+      title: "Data Analytics",
       description: "Master the art of capturing stunning photographs.",
       image: "photography-image-url.jpg",
     },
     {
-      title: "Project Management",
+      title: "Product Manager",
       description:
         "Learn effective project planning, execution, and management strategies.",
       image: "project-management-image-url.jpg",
@@ -49,15 +49,15 @@ const PopularService = () => {
       image: "ui-ux-design-image-url.jpg",
     },
     {
-      title: "Blockchain Development",
+      title: "Finance",
       description:
         "Explore blockchain technology and develop decentralized applications.",
       image: "blockchain-development-image-url.jpg",
     },
     {
-      title: "Artificial Intelligence",
+      title: "Product Manager",
       description:
-        "Discover AI concepts and techniques for problem-solving and automation.",
+        "Manage all product, from small scale to large scale",
       image: "artificial-intelligence-image-url.jpg",
     },
     // Add more courses as needed

@@ -55,7 +55,7 @@ const ServicesSingle = () => {
     const getAService = async () => {
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-a-service/${jobId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-a-service/${jobId}`
         );
         setServiceDetails(response.data.service);
         setUserDetails(response.data.userDetails);

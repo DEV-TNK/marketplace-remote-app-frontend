@@ -30,7 +30,7 @@ const CustomerStories = () => {
               <Col lg={7} md={12} xs={12}>
                 <div className="mb-8 mb-lg-0 me-lg-4">
                   <p className="display-6 mb-4 lh-2">
-                    "Transnumerik has transformed our hiring strategy, providing
+                    "Unleashified has transformed our hiring strategy, providing
                     seamless access to top talent. With its innovative
                     resources, we've streamlined recruitment and built a
                     high-performing team!."

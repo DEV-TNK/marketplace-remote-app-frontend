@@ -34,7 +34,7 @@ const ApplyForJob = () => {
     const getResume = async () => {
       try {
         const response = await axios.post(
-          `https://unleashified-backend.azurewebsites.net/api/v1/apply-for-job`,
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/apply-for-job`,
           {
             userId: userId,
             jobId: jobId,

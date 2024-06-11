@@ -27,7 +27,7 @@ const ProviderInterestPage = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        `https://unleashified-backend.azurewebsites.net/api/v1/save-interest/${userId}`,
+        `https://marketplacebackendas-test.azurewebsites.net/api/v1/save-interest/${userId}`,
         { interests: selectedCategories }
       );
       setLoading(false);

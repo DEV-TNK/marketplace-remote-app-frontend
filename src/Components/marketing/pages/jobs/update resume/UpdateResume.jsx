@@ -20,7 +20,7 @@ const UpdateResume = () => {
     const fetchResumeData = async () => {
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-my-resume/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-resume/${userId}`
         );
         const resumeData = response.data.userResume;
         setFormData(resumeData);

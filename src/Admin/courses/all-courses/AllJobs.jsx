@@ -32,9 +32,9 @@ const AllJobs = () => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const responseAll = await axios.get('https://unleashified-backend.azurewebsites.net/api/v1/admin-all-job');
-                const responseOngoing = await axios.get('https://unleashified-backend.azurewebsites.net/api/v1/admin-jobs-ongoing');
-                const responseCompleted = await axios.get('https://unleashified-backend.azurewebsites.net/api/v1/admin-jobs-completed');
+                const responseAll = await axios.get('https://marketplacebackendas-test.azurewebsites.net/api/v1/admin-all-job');
+                const responseOngoing = await axios.get('https://marketplacebackendas-test.azurewebsites.net/api/v1/admin-jobs-ongoing');
+                const responseCompleted = await axios.get('https://marketplacebackendas-test.azurewebsites.net/api/v1/admin-jobs-completed');
                 if (Array.isArray(responseAll.data.jobs)) {
                     setAllJobs(responseAll.data.jobs);
                 } else {
@@ -83,8 +83,7 @@ const AllJobs = () => {
                         <div className="mb-3 mb-md-0">
                             <h1 className="mb-1 h2 fw-bold">All Jobs</h1>
                             <Breadcrumb>
-                                <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-                                <Breadcrumb.Item href="#">Jobs</Breadcrumb.Item>
+                                <Breadcrumb.Item href="/admin/dashboard/overview">Dashboard</Breadcrumb.Item>
                                 <Breadcrumb.Item active>All</Breadcrumb.Item>
                             </Breadcrumb>
                         </div>

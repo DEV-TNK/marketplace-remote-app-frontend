@@ -4,12 +4,12 @@ import { Outlet } from 'react-router-dom';
 
 // import layouts
 import FooterWithLinks from '../../../../Pages/home-academy/FooterWithLinks';
-import NavbarDefault from '../../../../Pages/home-academy/navbars/NavbarDefault';
+import NavbarJobsPages from "../../../../Layout/navbars/NavbarJobPages";
 
 const HelpCenterTransparentLayout = (props) => {
 	return (
 		<Fragment>
-			<NavbarDefault bg="transparent" className="navbar-transparent" />
+			<NavbarJobsPages bg="transparent" className="navbar-transparent" />
 			<main className="bg-white">
 				{props.children}
 				<Outlet />

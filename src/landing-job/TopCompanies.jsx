@@ -18,7 +18,7 @@ const TopCompanies = () => {
     const fetchTopCompanies = async () => {
       try {
         const response = await axios.get(
-          "https://unleashified-backend.azurewebsites.net/api/v1/top-companies"
+          "https://marketplacebackendas-test.azurewebsites.net/api/v1/top-companies"
         );
         setCompanies(response.data);
       } catch (error) {

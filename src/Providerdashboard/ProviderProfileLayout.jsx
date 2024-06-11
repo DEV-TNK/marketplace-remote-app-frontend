@@ -1,5 +1,5 @@
 // import node module libraries
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Row, Col, Container, Nav, Navbar } from "react-bootstrap";
 import { useGlobalContext } from "../context/AuthContext";
@@ -23,13 +23,37 @@ import NavbarJobPages from "../Layout/navbars/NavbarJobPages";
 const ProfileLayout = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { user, userImage, userId, setUser, setUserRole, setUserImage } =
-    useGlobalContext();
+  //  const [role, setRole] = useState(null);
+  //  const [user, setUser] = useState(null);
+  //   const [Id, setId] = useState(null);
+  //   const [image, image] = useState(null);
+
+  const {
+    user,
+    userImage,
+    userId,
+    setUser,
+    setUserRole,
+    setUserImage,
+    setUserId,
+  } = useGlobalContext();
+
+  useEffect(() => {
+    const userRole = sessionStorage.getItem("role");
+    const User = sessionStorage.getItem("username");
+    const UserImage = sessionStorage.getItem("userImage");
+    const UserId = sessionStorage.getItem("userId");
+
+    if (User) setUser(User);
+    if (userRole) setUserRole(userRole);
+    if (UserImage) setUserImage(UserImage);
+    if (UserId) setUserId(UserId);
+  }, [setUser, setUserRole, setUserImage, setUserId]);
 
   const handleLogout = async () => {
     try {
       const response = await axios.delete(
-        `https://unleashified-backend.azurewebsites.net/api/v1/logout/${userId}`
+        `https://marketplacebackendas-test.azurewebsites.net/api/v1/logout/${userId}`
       );
       showToast(response.data.message);
       sessionStorage.clear();
@@ -58,10 +82,10 @@ const ProfileLayout = (props) => {
     link: "/jobs/services-list/",
   };
 
-  const outsourceButton = {
-    linkname: "Outsource Jobs",
-    link: "/jobs/outsource-a-job/",
-  };
+  // const outsourceButton = {
+  //   linkname: "Outsource Jobs",
+  //   link: "/jobs/outsource-a-job/",
+  // };
 
   return (
     <Fragment>
@@ -72,7 +96,7 @@ const ProfileLayout = (props) => {
           <ProfileCover
             dashboardData={dashboardData}
             browseButton={browseButton}
-            outsourceButton={outsourceButton}
+            // outsourceButton={outsourceButton}
           />
 
           {/* Content */}
@@ -83,17 +107,12 @@ const ProfileLayout = (props) => {
                 className="navbar navbar-expand-md navbar-light shadow-sm mb-4 mb-lg-0 sidenav"
               >
                 <Link
-                  className="btn btn-primary d-xl-none d-lg-none d-md-none text-inherit fw-bold fs-5 float-start py-1"
+                  className="btn btn-primary d-xl-none mt-3 d-lg-none d-md-none text-inherit fw-bold fs-5 float-start py-1"
                   to="/jobs/post-a-job/"
                 >
                   post a job
                 </Link>
-                <Link
-                  className="btn btn-primary d-xl-none d-lg-none d-md-none text-inherit fw-bold fs-5 float-start py-1"
-                  to="/jobs/outsource-a-job/"
-                >
-                  Outsource job
-                </Link>
+
                 <Link
                   className="btn btn-primary d-xl-none  mt-3 d-lg-none d-md-none text-inherit fw-bold fs-5 float-start py-1"
                   to="/jobs/services-list/"

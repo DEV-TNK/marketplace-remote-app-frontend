@@ -15,7 +15,7 @@ const JobCategory = () => {
     const fetchJobCategories = async () => {
       try {
         const response = await axios.get(
-          "https://unleashified-backend.azurewebsites.net/api/v1/admin-jobCategory"
+          "https://marketplacebackendas-test.azurewebsites.net/api/v1/admin-jobCategory"
         );
         setJobCategories(response.data.mostPopularCategories);
         setLoading(false);
@@ -75,8 +75,8 @@ const JobCategory = () => {
             <div className="mb-3 mb-md-0">
               <h1 className="mb-1 h2 fw-bold">Job Category</h1>
               <Breadcrumb>
-                <Breadcrumb.Item href="#">Dashboard</Breadcrumb.Item>
-                <Breadcrumb.Item href="#">Jobs</Breadcrumb.Item>
+                <Breadcrumb.Item href="/admin/dashboard/overview">Dashboard</Breadcrumb.Item>
+                <Breadcrumb.Item href="/admin/jobs/all-jobs">Jobs</Breadcrumb.Item>
                 <Breadcrumb.Item active>Job Category</Breadcrumb.Item>
               </Breadcrumb>
             </div>
@@ -108,14 +108,6 @@ const JobCategory = () => {
                   pagination={true}
                   showRowNumber={true}
                 />
-                {data && data.length > 0 ? (
-                  data.map((row) => (
-                    // your code for rendering each row goes here
-                    <div key={row._id}>Row Data</div>
-                  ))
-                ) : (
-                  <div className="p-12">No Job Category found</div>
-                )}
               </Card.Body>
             </Card>
           </Col>

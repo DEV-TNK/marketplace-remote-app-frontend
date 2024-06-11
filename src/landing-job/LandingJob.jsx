@@ -39,7 +39,7 @@ const LandingJob = () => {
       }
       try {
         const response = await axios.post(
-          "https://unleashified-backend.azurewebsites.net/api/v1/create-activity",
+          "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-activity",
           {
             UserAction: "landing-Page",
             UserId: id,
@@ -69,7 +69,7 @@ const LandingJob = () => {
       {/* <WorksForBuyer />
       <WorksForSeller /> */}
 
-      <PopularService />
+      {/* <PopularService /> */}
 
       {/* Latest Job Opening section */}
       <LatestJobOpening />

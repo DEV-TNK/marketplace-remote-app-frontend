@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Col, Row, Tab, Nav } from "react-bootstrap";
+import { Card, Col, Row, Tab, Nav, Alert } from "react-bootstrap";
 import Icon from "@mdi/react";
 import { mdiHelpCircle, mdiCurrencyNgn } from "@mdi/js";
 import { Link } from "react-router-dom";
@@ -36,7 +36,7 @@ const ContractPage = () => {
     const contract = async () => {
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-my-contract/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-contract/${userId}`
         );
         setAmountProgress(response.data.workInProgress.totalAmount);
         setWorkProgress(response.data.workInProgress.jobsWork);
@@ -49,6 +49,25 @@ const ContractPage = () => {
     };
     contract();
   }, []);
+
+  const formatPrice = (currencyName, priceValue) => {
+    switch (currencyName) {
+      case "naira":
+      case "NGN":
+        return `₦${priceValue}`;
+      case "dollars":
+      case "USD":
+        return `$${priceValue}`;
+      case "euros":
+      case "EUR":
+        return `€${priceValue}`;
+      case "pounds":
+      case "GBP":
+        return `£${priceValue}`;
+      default:
+        return `₦${priceValue}`;
+    }
+  };
   return (
     <InstructorProfileLayout>
       <Card className="border-0">
@@ -79,12 +98,8 @@ const ContractPage = () => {
                                   className="me-2"
                                 />
                               </Col>
+
                               <Col className="d-flex align-items-center">
-                                <Icon
-                                  path={mdiCurrencyNgn}
-                                  size={1}
-                                  className="me-2"
-                                />
                                 <span>
                                   {amountProgress ? amountProgress : "0.00"}
                                 </span>
@@ -105,11 +120,6 @@ const ContractPage = () => {
                                 />
                               </Col>
                               <Col className="d-flex align-items-center">
-                                <Icon
-                                  path={mdiCurrencyNgn}
-                                  size={1}
-                                  className="me-2"
-                                />
                                 <span>
                                   {amountPending ? amountPending : "0.00"}
                                 </span>
@@ -130,11 +140,6 @@ const ContractPage = () => {
                                 />
                               </Col>
                               <Col className="d-flex align-items-center">
-                                <Icon
-                                  path={mdiCurrencyNgn}
-                                  size={1}
-                                  className="me-2"
-                                />
                                 <span>
                                   {availableAmount ? availableAmount : "0.00"}
                                 </span>
@@ -150,6 +155,19 @@ const ContractPage = () => {
                           eventKey="tab1"
                           className="pb-4 p-4 ps-0 pe-0"
                         >
+                          <Col>
+                            <Alert
+                              variant="light-warning"
+                              className="bg-light-warning text-dark-warning border-0"
+                            >
+                              <strong>Note</strong>
+                              <p>
+                                5% of the total payment for a Job will be
+                                deducted upon completion and approval of the
+                                side job
+                              </p>
+                            </Alert>
+                          </Col>
                           <h5 className="mb-3">Work in Progress</h5>
                           <p>
                             View all Ongoing job waiting for Job provider
@@ -182,7 +200,12 @@ const ContractPage = () => {
                                       Job Salary:{" "}
                                     </span>
                                     <span className="job-description">
-                                      {workItem ? workItem.jobSalary : ""}
+                                      {workItem
+                                        ? formatPrice(
+                                            workItem.currency,
+                                            workItem.jobSalary
+                                          )
+                                        : ""}
                                     </span>
                                   </div>
                                   <div>
@@ -203,11 +226,21 @@ const ContractPage = () => {
                           eventKey="tab3"
                           className="pb-4 p-4 ps-0 pe-0"
                         >
+                          <Alert
+                            variant="light-warning"
+                            className="bg-light-warning text-dark-warning border-0"
+                          >
+                            <strong>Note</strong>
+                            <p>
+                              5% of the total payment for a Job will be deducted
+                              after the waiting security period for any job done
+                            </p>
+                          </Alert>
                           <h5 className="mb-3">Pending</h5>
                           <p>
                             View all job which payment have been approved by Job
-                            provider and waiting for admin comfirmation to be
-                            made available for widthdraw
+                            provider and waiting for security check comfirmation
+                            to be made available for widthdraw
                           </p>
                           {pendings.map((pending) => (
                             <div key={pending._id} className="mt-5">
@@ -233,7 +266,12 @@ const ContractPage = () => {
                                     Job Salary:{" "}
                                   </span>
                                   <span className="job-description">
-                                    {pending ? pending.jobSalary : ""}
+                                    {pending
+                                      ? formatPrice(
+                                          pending.currency,
+                                          pending.jobSalary
+                                        )
+                                      : ""}
                                   </span>
                                 </div>
                                 <div>

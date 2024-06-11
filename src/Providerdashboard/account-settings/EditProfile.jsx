@@ -31,7 +31,7 @@ const EditProfile = () => {
       try {
         if (!userId) return; // Add this check to ensure userId is defined
         const response = await axios.get(
-          `https://remsana-backend-testing.azurewebsites.net/api/v1/get-user-details/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-user-details/${userId}`
         );
         const userData = response.data.userDetails;
         setFormData({
@@ -64,7 +64,7 @@ const EditProfile = () => {
       });
 
       const response = await axios.post(
-        `https://remsana-backend-testing.azurewebsites.net/api/v1/update-profile/${userId}`,
+        `https://marketplacebackendas-test.azurewebsites.net/api/v1/update-profile/${userId}`,
         formDataToSend
       );
       showToast(response.data.message);

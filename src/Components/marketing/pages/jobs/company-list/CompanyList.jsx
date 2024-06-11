@@ -24,7 +24,7 @@ const CompanyList = () => {
       const userEmail = sessionStorage.getItem("email") || null;
       try {
         const response = await axios.post(
-          "https://unleashified-backend.azurewebsites.net/api/v1/create-activity",
+          "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-activity",
           {
             UserAction: "Company-Page",
             UserId: userId,
@@ -44,7 +44,7 @@ const CompanyList = () => {
     const fetchCompanies = async () => {
       try {
         const response = await axios.get(
-          "https://unleashified-backend.azurewebsites.net/api/v1/companies"
+          "https://marketplacebackendas-test.azurewebsites.net/api/v1/companies"
         );
         const fetchedCompanies = response.data.companies || []; // Ensure we always have an array
         setCompanies(fetchedCompanies);

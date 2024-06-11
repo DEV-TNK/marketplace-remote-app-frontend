@@ -4,8 +4,8 @@ import { Col, Row, Card, Image, Navbar } from "react-bootstrap";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faArrowLeft, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import Logo from "../assets/unleashified-logo.png";
-import Logo from "../assets/LogoList/cote-logo.png";
+import Logo from "../assets/unleashified-logo.png";
+import Logo2 from "../assets/LogoList/cote-logo.png";
 import axios from "axios";
 import { showToast } from "../Components/Showtoast";
 import { useLocation } from "react-router-dom";
@@ -22,7 +22,7 @@ const VerifyEmail = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        `https://unleashified-backend.azurewebsites.net/api/v1/resend-email`,
+        `https://marketplacebackendas-test.azurewebsites.net/api/v1/resend-email`,
         {
           email: email,
         }

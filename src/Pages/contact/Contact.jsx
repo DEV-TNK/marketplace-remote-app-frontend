@@ -40,7 +40,7 @@ const Contact = () => {
 
                   <p className="fs-4">
                     <EnvelopeOpen size={16} className="text-primary me-2" />{" "}
-                    info@transnumerik.com
+                    info@unleashified.com
                   </p>
                   <p className="fs-4 ">
                     <GeoAlt size={17} className="text-primary me-2" />

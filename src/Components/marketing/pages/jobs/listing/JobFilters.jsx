@@ -41,7 +41,7 @@ const JobFilters = ({ onFilterChange }) => {
       };
 
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/seeker-serch-job",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/seeker-serch-job",
         requestData
       );
       setLoading(false);
@@ -87,7 +87,7 @@ const JobFilters = ({ onFilterChange }) => {
     const userEmail = sessionStorage.getItem("email") || null;
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/create-activity",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-activity",
         {
           UserAction: selectedFilters.department
             ? selectedFilters.department
