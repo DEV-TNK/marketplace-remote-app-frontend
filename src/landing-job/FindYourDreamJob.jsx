@@ -130,37 +130,37 @@ const FindYourDreamJob = () => {
             </Col>
           </Row>
         </div>
-        <div className="bg-success py-lg-14 py-12 px-12 bg-cover">
+        {/* <div className="bg-success py-lg-14 py-12 px-12 bg-cover">
           <Row className="align-items-center">
             <Col lg={6} sm={12}>
               <div>
-                <div className=" text-center text-md-start ">
+                <div className=" text-center text-md-start "> */}
                   {/* heading */}
-                  <h1 className=" display-2 fw-bold  mb-3 text-light">
+                  {/* <h1 className=" display-2 fw-bold  mb-3 text-light">
                     Find the perfect match for your project needs!
-                  </h1>
+                  </h1> */}
                   {/* lead */}
-                  <p className="lead text-light">
+                  {/* <p className="lead text-light">
                     Join our platform to outsource jobs to us and we help
                     interview, conduct tests, and get the best talents to fill
                     your outsourced positions.
-                  </p>
-                </div>
-                <div className="mt-0">
+                  </p> */}
+                {/* </div>
+                <div className="mt-0"> */}
                   {/* job search form */}
                   {/* <JobSearchBox /> */}
                   {/* text */}
-                  <span className=" fs-4 text-light">
+                  {/* <span className=" fs-4 text-light">
                     Trusted by over 150+ company to organize team
-                  </span>
-                </div>
-                <Link to="#">
-                  {/* /authentication/signin */}
+                  </span> */}
+                {/* </div> */}
+                {/* <Link to="#">
+                   /authentication/signin 
                   <Button className="mt-5 btn-light">Out-Source Jobs</Button>
-                </Link>
-              </div>
-            </Col>
-            <Col lg={{ span: 5, offset: 1 }} sm={12} className="text-center">
+                </Link> */}
+              {/* </div>
+            </Col> */}
+            {/* <Col lg={{ span: 5, offset: 1 }} sm={12} className="text-center">
               <div className="position-relative ">
                 <Image src={JobHeroSection3} className="img-fluid " />
                 <div className="position-absolute top-0 mt-7 ms-n6 ms-md-n6 ms-lg-n12 start-0">
@@ -168,14 +168,14 @@ const FindYourDreamJob = () => {
                 </div>
                 <div className="position-absolute bottom-0 mb-12  end-0 ">
                   <Image src={payment} className="size " />
-                </div>
+                </div> */}
                 {/* <div className="position-absolute bottom-0 mb-n4 ms-n1 ms-md-n4 ms-lg-n7 start-0">
                   <Image src={outSource} className="size " />
                 </div> */}
-              </div>
+              {/* </div>
             </Col>
           </Row>
-        </div>
+        </div> */}
       </Slider>
     </section>
   );
