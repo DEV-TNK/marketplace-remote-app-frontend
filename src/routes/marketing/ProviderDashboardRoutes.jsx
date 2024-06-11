@@ -11,18 +11,18 @@ export const DashboardMenu = [
 		link: '/Providerdashboard/All-Job',
 		icon: 'book'
 	},
-	{
-		id: 3,
-		title: 'Outsource Jobs',
-		link: '/Providerdashboard/Outsource-Jobs',
-		icon: 'dollar-sign'
-	},
-	{
-		id: 4,
-		title: 'Employee of records',
-		link: '/Providerdashboard/Employee-of-record',
-		icon: 'employee-sign'
-	},
+	// {
+	// 	id: 3,
+	// 	title: 'Outsource Jobs',
+	// 	link: '/Providerdashboard/Outsource-Jobs',
+	// 	icon: 'dollar-sign'
+	// },
+	// {
+	// 	id: 4,
+	// 	title: 'Employee of records',
+	// 	link: '/Providerdashboard/Employee-of-record',
+	// 	icon: 'employee-sign'
+	// },
 	{
 		id: 5,
 		title: 'Job Applicants',
