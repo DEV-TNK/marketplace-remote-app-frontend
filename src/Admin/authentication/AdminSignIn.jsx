@@ -7,7 +7,7 @@ import * as yup from 'yup';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useGlobalContext } from '../../context/AuthContext';
 
-import Logo from '../../assets/unleashified-logo.png';
+import Logo from '../../assets/LogoList/cote-logo.png';
 
 const AdminSignIn = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
