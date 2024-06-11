@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Card, Col, Image, Row, Navbar } from "react-bootstrap";
 // import Logo from "../assets/unleashified-logo.png";
-import Logo from "../assets/LogoList/cote-logo.png";
+import Logo from "../assets/LogoList/Coted'ivoire-Logo.png";
 import StudentSignUp from "./signupforms/JobSeeker";
 import InstructorSignUp from "./signupforms/Provider";
 import "./signupforms/signup.css"; // Import your CSS file

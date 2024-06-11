@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Col, Row, Card, Form, Button, Image, Alert } from "react-bootstrap";
-import Logo from "../assets/LogoList/cote-logo.png";
+import Logo from "../assets/LogoList/Coted'ivoire-Logo.png";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";

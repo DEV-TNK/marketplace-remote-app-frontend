@@ -136,7 +136,7 @@ const PendingPayment = () => {
     setLoading(true);
     axios
       .post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/admin-acceptorreject-payment",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/admin-acceptorreject-payment",
         {
           pendingId: paymentId,
           status: status === "rejected" ? "false" : "true",

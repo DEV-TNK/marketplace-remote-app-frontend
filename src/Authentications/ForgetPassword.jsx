@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Card, Form, Button, Image } from "react-bootstrap";
 // import Logo from "../assets/unleashified-logo.png";
-import Logo from "../assets/LogoList/cote-logo.png";
+import Logo from "../assets/LogoList/Coted'ivoire-Logo.png";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";

@@ -30,14 +30,14 @@ const CustomerStories = () => {
               <Col lg={7} md={12} xs={12}>
                 <div className="mb-8 mb-lg-0 me-lg-4">
                   <p className="display-6 mb-4 lh-2">
-                    "Unleashified has transformed our hiring strategy, providing
+                    "PME Cote D'Ivoire Marketplace has transformed our hiring strategy, providing
                     seamless access to top talent. With its innovative
                     resources, we've streamlined recruitment and built a
                     high-performing team!."
                   </p>
                   <p className="mb-0 ">Grace Oluwalola</p>
                   <span className="">
-                    Chief Operating Officer at GFA Technologies
+                    Chief Operating Officer at Easereads
                   </span>
                 </div>
               </Col>

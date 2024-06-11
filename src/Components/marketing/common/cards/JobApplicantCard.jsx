@@ -66,7 +66,7 @@ const JobApplicantCard = ({
     setLoadingR(true);
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/send-offer",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/send-offer",
         {
           jobId: jobId,
           jobPoster: sessionStorage.getItem("UserId"),
@@ -172,7 +172,7 @@ const JobApplicantCard = ({
           <div style={{ height: "500px", overflowY: "auto" }}>
             {resumeUrl ? (
               <Document
-                file={`https://unleashified-backend.azurewebsites.net/api/v1/get-a-resume/${formattedResumeUrl}`}
+                file={`https://marketplacebackendas-test.azurewebsites.net/api/v1/get-a-resume/${formattedResumeUrl}`}
                 onLoadSuccess={({ numPages }) => setNumPages(numPages)}
               >
                 {Array.from(new Array(numPages || 0), (el, index) => (

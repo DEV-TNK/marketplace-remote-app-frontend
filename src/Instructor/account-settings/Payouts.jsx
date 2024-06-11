@@ -390,7 +390,7 @@ const Payouts = () => {
           onClose={() => setShow(false)}
           dismissible
         >
-          <strong>payout@unleashified.com</strong>
+          <strong>payout@PME Cote D'Ivoire Marketplace.com</strong>
           <p>
             You will receive your money in your bank account after two business
             working day of making withdrawal request
