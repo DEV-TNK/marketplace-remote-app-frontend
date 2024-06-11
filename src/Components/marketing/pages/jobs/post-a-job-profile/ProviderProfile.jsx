@@ -100,7 +100,7 @@ const ProviderProfile = () => {
         formDataToSend.append(key, value);
       });
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/create-provider",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-provider",
         formDataToSend,
         {
           headers: {
