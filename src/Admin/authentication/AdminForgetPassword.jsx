@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { showToast } from "../../Components/Showtoast";
 
 // import media files
-import Logo from "../../assets/images/brand/logo/logo-icon.svg";
+import Logo from "../../assets/LogoList/cote-logo.png";
 
 const formSchema = yup.object().shape({
   email: yup
