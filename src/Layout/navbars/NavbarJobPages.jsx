@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 // import media files
 // import Logo from "../../assets/unleashified-logo.png";
- import Logo from "../../assets/LogoList/cote-logo.png";
+ import Logo from "../../assets/LogoList/Coted'ivoire-Logo.png";
 
 // import data files
 import NavbarDefaultRoutes from "../../routes/NavbarDefault";

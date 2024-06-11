@@ -41,7 +41,7 @@ const Pricing = () => {
                   Simple pricing that scales with your needs
                 </h1>
                 <p className="text-white lead mb-4">
-                  See how we price our users on unleashified
+                  See how we price our users on PME Cote D'Ivoire Marketplace
                 </p>
 
                 {/* Switch Toggle */}
@@ -148,7 +148,7 @@ const Pricing = () => {
                     <span>
                       Send us a mail via:{" "}
                       <a href="mailto:migration@gfa-tech.com" target="_blank">
-                        support@unleashified.com
+                        support@PME Cote D'Ivoire Marketplace.com
                       </a>
                     </span>
                   </div>

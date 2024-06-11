@@ -83,7 +83,7 @@ const Support = () => {
         setData(updatedData);
 
         const response = await axios.put(
-          `https://unleashified-backend.azurewebsites.net/api/v1/contact-us/${id}/completed`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/contact-us/${id}/completed`
         );
         showToast(response.data.message);
       } catch (error) {

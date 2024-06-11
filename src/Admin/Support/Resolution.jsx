@@ -34,7 +34,7 @@ const Resolution = () => {
         setData(updatedData);
 
         const response = await axios.put(
-          `https://unleashified-backend.azurewebsites.net/api/v1/conflicts/${id}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/conflicts/${id}`
         );
         showToast(response.data.message);
 

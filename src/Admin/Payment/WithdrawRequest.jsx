@@ -39,7 +39,7 @@ const WithdrawPayment = () => {
         setWithdrawalRequests(updatedData);
 
         const response = await axios.post(
-          `https://unleashified-backend.azurewebsites.net/api/v1/admin-mark-payment-request`,
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/admin-mark-payment-request`,
           {
             requestId: id,
             status: "true",

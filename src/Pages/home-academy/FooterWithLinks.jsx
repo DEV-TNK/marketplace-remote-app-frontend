@@ -9,7 +9,7 @@ import { mdiFacebook, mdiTwitter, mdiInstagram, mdiYoutube } from "@mdi/js";
 
 // import media files
 // import FooterLogo from "../../assets/unleashified-logo.png";
-import FooterLogo from "../../assets/LogoList/cote-logo.png";
+import FooterLogo from "../../assets/LogoList/Coted'ivoire-Logo.png";
 
 // Inside your component
 const currentYear = new Date().getFullYear();
@@ -31,7 +31,7 @@ const FooterWithLinks = () => {
                 />
                 <div className="mt-4">
                   <p>
-                    Unleashified connects job seekers with opportunities and
+                  PME Cote D'Ivoire Marketplace connects job seekers with opportunities and
                     providers with talent engagement resources.
                   </p>
                   {/* social media */}
@@ -163,7 +163,7 @@ const FooterWithLinks = () => {
                 Ogun State, Nigeria.  
                 <br />
                 <a href="mailto:migration@gfa-tech.com" target="_blank">
-                        support@unleashified.com
+                        support@PME Cote D'Ivoire Marketplace.com
                       </a>
                 {/* <p>
                   Phone:{" "}
@@ -178,7 +178,7 @@ const FooterWithLinks = () => {
             {/* Desc  */}
             <Col lg={4} md={5} sm={12}>
               <span>
-                © {currentYear} UNLEASHIFIED, Inc. All Rights Reserved
+                © {currentYear} PME Cote D'Ivoire Marketplace, Inc. All Rights Reserved
               </span>
             </Col>
             {/*  Links  */}

@@ -11,7 +11,7 @@ import axios from "axios";
 import { showToast } from "../../Components/Showtoast";
 
 // import media files
-import Logo from "../../assets/LogoList/cote-logo.png";
+import Logo from "../../assets/LogoList/Coted'ivoire-Logo.png";
 
 const formSchema = yup.object().shape({
   fullName: yup.string().required(" name can't be empty"),
