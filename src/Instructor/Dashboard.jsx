@@ -42,13 +42,13 @@ const Dashboard = () => {
   const [data, setData] = useState([]);
 
   const [earnings, setEarnings] = useState({
-    NGN: 0,
-    USD: 0,
-    EUR: 0,
-    GBP: 0,
+    CFA: 0,
+    // USD: 0,
+    // EUR: 0,
+    // GBP: 0,
   });
 
-  const [selectedCurrency, setSelectedCurrency] = useState("NGN");
+  const [selectedCurrency, setSelectedCurrency] = useState("F CFA");
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
@@ -173,20 +173,20 @@ const Dashboard = () => {
   }, [userId]); // Make sure to include userId as a dependency if it's used inside the useEffect
   const formatPrice = (currencyName, priceValue) => {
     switch (currencyName) {
-      case "naira":
-      case "NGN":
-        return `₦${priceValue}`;
+      case "CFA franc":
+      case "F CFA":
+        return `F CFA${priceValue}`;
       case "dollars":
-      case "USD":
-        return `$${priceValue}`;
-      case "euros":
-      case "EUR":
-        return `€${priceValue}`;
-      case "pounds":
-      case "GBP":
-        return `£${priceValue}`;
+      // case "USD":
+      //   return `$${priceValue}`;
+      // case "euros":
+      // case "EUR":
+      //   return `€${priceValue}`;
+      // case "pounds":
+      // case "GBP":
+      //   return `£${priceValue}`;
       default:
-        return `₦${priceValue}`;
+        return `F CFA${priceValue}`;
     }
   };
 
@@ -206,7 +206,7 @@ const Dashboard = () => {
 
   const formatter = new Intl.NumberFormat("en-NG", {
     style: "currency",
-    currency: "NGN",
+    currency: "CFA",
   });
 
   return (
@@ -228,10 +228,10 @@ const Dashboard = () => {
           <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
             <DropdownToggle caret>{selectedCurrency}</DropdownToggle>
             <DropdownMenu>
-              <DropdownItem onClick={() => handleCurrencyChange("NGN")}>
-                NGN
+              <DropdownItem onClick={() => handleCurrencyChange("F CFA")}>
+              F CFA
               </DropdownItem>
-              <DropdownItem onClick={() => handleCurrencyChange("USD")}>
+              {/* <DropdownItem onClick={() => handleCurrencyChange("USD")}>
                 USD
               </DropdownItem>
               <DropdownItem onClick={() => handleCurrencyChange("EUR")}>
@@ -239,7 +239,7 @@ const Dashboard = () => {
               </DropdownItem>
               <DropdownItem onClick={() => handleCurrencyChange("GBP")}>
                 GBP
-              </DropdownItem>
+              </DropdownItem> */}
             </DropdownMenu>
           </Dropdown>
         </Col>

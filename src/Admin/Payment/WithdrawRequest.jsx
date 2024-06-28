@@ -81,7 +81,7 @@ const WithdrawPayment = () => {
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Amount (₦)</th>
+                  <th>Amount (F CFA)</th>
                   <th>Bank Details</th>
                   <th>User Details</th>
                   <th>Date</th>
@@ -93,7 +93,7 @@ const WithdrawPayment = () => {
                 {currentRequests.map((request) => (
                   <tr key={request.id}>
                     <td>#{request.id}</td>
-                    <td>₦{numberWithCommas(request.amount)}</td>{" "}
+                    <td>F CFA{numberWithCommas(request.amount)}</td>{" "}
                     {/* Display in Naira */}
                     <td>
                       <span>{request.Account.accountNumber}</span>

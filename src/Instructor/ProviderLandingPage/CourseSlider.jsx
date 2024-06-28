@@ -71,7 +71,7 @@ const CourseSlider = ({ recommended, popular, trending, category }) => {
 
   return (
     <Fragment>
-      <Slider {...settings} className="pb-sm-5 mb-5 slick-slider-wrapper">
+      <Slider {...settings} className="pb-sm-5 mb-5 slick-slider-wrapper" >
         {jobs.map((item, index) => (
           <div className="item px-md-1 course-card" key={item._id}>
             <CourseCard

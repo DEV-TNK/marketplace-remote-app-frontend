@@ -361,10 +361,10 @@ const PostAService = () => {
                     onChange={(e) => setCurrency(e.target.value)}
                   >
                     <option value="">Select currency</option>
-                    <option value="NGN">Naira</option>
-                    <option value="EUR">Euros</option>
+                    <option value="NGN">CFA franc</option>
+                    {/* <option value="EUR">Euros</option>
                     <option value="USD">Dollars</option>
-                    <option value="GBP">Pounds</option>
+                    <option value="GBP">Pounds</option> */}
                   </Form.Control>
                 </Col>
 

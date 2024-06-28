@@ -42,13 +42,13 @@ const Dashboard = () => {
   const [data, setData] = useState([]);
 
   const [earnings, setEarnings] = useState({
-    NGN: 0,
-    USD: 0,
-    EUR: 0,
-    GBP: 0,
+      CFA: 0,
+    // USD: 0,
+    // EUR: 0,
+    // GBP: 0,
   });
 
-  const [selectedCurrency, setSelectedCurrency] = useState("NGN");
+  const [selectedCurrency, setSelectedCurrency] = useState("F CFA");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [userId, setUserId] = useState(null);
 
@@ -107,7 +107,7 @@ const Dashboard = () => {
           "en-NG",
           {
             style: "currency",
-            currency: "NGN",
+            currency: "F CFA",
           }
         );
         setNewAmount(formattedAmount);
@@ -164,20 +164,20 @@ const Dashboard = () => {
 
   const formatPrice = (currencyName, priceValue) => {
     switch (currencyName) {
-      case "naira":
-      case "NGN":
-        return `₦${priceValue}`;
-      case "dollars":
-      case "USD":
-        return `$${priceValue}`;
-      case "euros":
-      case "EUR":
-        return `€${priceValue}`;
-      case "pounds":
-      case "GBP":
-        return `£${priceValue}`;
+      case "CFA franc":
+      case "F CFA":
+        return `F CFA${priceValue}`;
+      // case "dollars":
+      // case "USD":
+      //   return `$${priceValue}`;
+      // case "euros":
+      // case "EUR":
+      //   return `€${priceValue}`;
+      // case "pounds":
+      // case "GBP":
+      //   return `£${priceValue}`;
       default:
-        return `₦${priceValue}`;
+        return `F CFA${priceValue}`;
     }
   };
   const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
@@ -232,10 +232,10 @@ const Dashboard = () => {
           <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
             <DropdownToggle caret>{selectedCurrency}</DropdownToggle>
             <DropdownMenu>
-              <DropdownItem onClick={() => handleCurrencyChange("NGN")}>
-                NGN
+              <DropdownItem onClick={() => handleCurrencyChange("F CFA")}>
+                F CFA
               </DropdownItem>
-              <DropdownItem onClick={() => handleCurrencyChange("USD")}>
+              {/* <DropdownItem onClick={() => handleCurrencyChange("USD")}>
                 USD
               </DropdownItem>
               <DropdownItem onClick={() => handleCurrencyChange("EUR")}>
@@ -243,7 +243,7 @@ const Dashboard = () => {
               </DropdownItem>
               <DropdownItem onClick={() => handleCurrencyChange("GBP")}>
                 GBP
-              </DropdownItem>
+              </DropdownItem> */}
             </DropdownMenu>
           </Dropdown>
         </Col>
