@@ -131,7 +131,7 @@ const BasicDetails = ({ next }) => {
                 Phone Name<span className="text-danger">*</span>
               </Form.Label>
               <InputGroup className="mb-1">
-                <InputGroup.Text id="phone">+234</InputGroup.Text>
+                <InputGroup.Text id="phone">+225</InputGroup.Text>
                 <Form.Control
                   type="text"
                   name="contact"

@@ -77,13 +77,13 @@ const Payouts = () => {
   const [editedAccount, setEditedAccount] = useState(null);
 
   const [earnings, setEarnings] = useState({
-    NGN: 0,
-    USD: 0,
-    EUR: 0,
-    GBP: 0,
+    CFA: 0,
+    // USD: 0,
+    // EUR: 0,
+    // GBP: 0,
   });
 
-  const [selectedCurrency, setSelectedCurrency] = useState("NGN");
+  const [selectedCurrency, setSelectedCurrency] = useState("F CFA");
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleChange = (event) => {
@@ -117,20 +117,20 @@ const Payouts = () => {
 
   const formatPrice = (currencyName) => {
     switch (currencyName) {
-      case "naira":
-      case "NGN":
-        return `₦`;
-      case "dollars":
-      case "USD":
-        return `$`;
-      case "euros":
-      case "EUR":
-        return `€`;
-      case "pounds":
-      case "GBP":
-        return `£`;
+      case "CFA franc":
+      case "F CFA":
+        return `F CFA`;
+      // case "dollars":
+      // case "USD":
+      //   return `$`;
+      // case "euros":
+      // case "EUR":
+      //   return `€`;
+      // case "pounds":
+      // case "GBP":
+      //   return `£`;
       default:
-        return `₦`;
+        return `F CFA`;
     }
   };
 
@@ -374,10 +374,10 @@ const Payouts = () => {
   });
 
   const bankCurrency = [
-    { value: "NGN", label: "Naira" },
-    { value: "EUR", label: "Euros" },
-    { value: "USD", label: "Dollars" },
-    { value: "GBP", label: "Pounds" },
+    { value: "F CFA", label: "CFA franc" },
+    // { value: "EUR", label: "Euros" },
+    // { value: "USD", label: "Dollars" },
+    // { value: "GBP", label: "Pounds" },
   ];
 
   const AlertDismissible = () => {
@@ -429,10 +429,10 @@ const Payouts = () => {
                 <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
                   <DropdownToggle caret>{selectedCurrency}</DropdownToggle>
                   <DropdownMenu>
-                    <DropdownItem onClick={() => handleCurrencyChange("NGN")}>
-                      NGN
+                    <DropdownItem onClick={() => handleCurrencyChange("F CFA")}>
+                      F CFA
                     </DropdownItem>
-                    <DropdownItem onClick={() => handleCurrencyChange("USD")}>
+                    {/* <DropdownItem onClick={() => handleCurrencyChange("USD")}>
                       USD
                     </DropdownItem>
                     <DropdownItem onClick={() => handleCurrencyChange("EUR")}>
@@ -440,13 +440,13 @@ const Payouts = () => {
                     </DropdownItem>
                     <DropdownItem onClick={() => handleCurrencyChange("GBP")}>
                       GBP
-                    </DropdownItem>
+                    </DropdownItem> */}
                   </DropdownMenu>
                 </Dropdown>
                 <h4 className="mb-1">Your total earnings</h4>
                 <h5 className="mb-0 display-4 fw-bold">
                   {formatPrice(selectedCurrency)}
-                  {earnings[selectedCurrency] || 0.0}{" "}
+                  {earnings[selectedCurrency] }{" "}
                   {/* Display earnings with Naira sign */}
                 </h5>
                 <p className="px-4">You can change your payout account above</p>

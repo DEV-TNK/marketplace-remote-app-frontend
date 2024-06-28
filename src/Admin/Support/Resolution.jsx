@@ -2,17 +2,20 @@ import React, { useState, useEffect, useMemo } from "react";
 import { Col, Row, Card, Spinner, Table, Button } from "react-bootstrap";
 import axios from "axios";
 import { showToast } from "../../Components/Showtoast";
+import SupportModal from "../Support/SupportModal";
 
 const Resolution = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedSupportID, setSelectedSupportID] = useState(null);
+  const [selectedUserMessage, setSelectedUserMessage] = useState("");
 
   const fetchData = async () => {
     try {
       const response = await axios.get(
         "https://marketplacebackendas-test.azurewebsites.net/api/v1/all-conflicts"
       );
-      console.log("Response Data:", response.data);
       setData(response.data.conflicts || []);
       setLoading(false);
     } catch (error) {
@@ -30,7 +33,7 @@ const Resolution = () => {
     if (rowIndex !== -1) {
       try {
         const updatedData = [...data];
-        updatedData[rowIndex].Cloading = true;
+        updatedData[rowIndex].loading = true;
         setData(updatedData);
 
         const response = await axios.put(
@@ -44,10 +47,22 @@ const Resolution = () => {
         showToast(error.response.data.message);
       } finally {
         const updatedData = [...data];
-        updatedData[rowIndex].Cloading = false;
+        updatedData[rowIndex].loading = false;
         setData(updatedData);
       }
     }
+  };
+
+  const handleReply = (id, message) => {
+    setSelectedSupportID(id);
+    setSelectedUserMessage(message);
+    setOpenModal(true);
+  };
+
+  const handleModalClose = () => {
+    setOpenModal(false);
+    setSelectedSupportID(null);
+    setSelectedUserMessage("");
   };
 
   const columns = useMemo(
@@ -55,36 +70,52 @@ const Resolution = () => {
       {
         accessorKey: "id",
         header: "ID",
-        cell: ({ getValue }) => {
-          return "#" + getValue();
-        },
+        cell: ({ row }) => "#" + row.id,
       },
       { accessorKey: "role", header: "Role" },
-      { accessorKey: "userDetails", header: "User Details" },
+      {
+        accessorKey: "userDetails",
+        header: "User Details",
+        cell: ({ row }) => (
+          <div>
+            <span>{row.User.username}</span>
+            <br />
+            <span>{row.User.email}</span>
+          </div>
+        ),
+      },
       { accessorKey: "reason", header: "Reason" },
-      { accessorKey: "message", header: "Message" },
+      {
+        accessorKey: "message",
+        header: "Message",
+        cell: ({ row }) =>
+          row.message.length > 30 ? (
+            <span
+              title={row.message}
+              className="mb-1 text-primary-hover cursor-pointer"
+            >
+              {row.message.slice(0, 30)}...
+            </span>
+          ) : (
+            row.message
+          ),
+      },
       { accessorKey: "status", header: "Status" },
       {
-        header: "Completed",
-        accessorKey: "completed",
+        accessorKey: "reply",
+        header: "Action",
         cell: ({ row }) => (
           <Button
             variant="success"
-            disabled={row && row.status === "completed"}
-            style={{
-              backgroundColor: "green",
-              borderColor: "#b8f7b2",
-              color: "white",
-              opacity: row && row.status === "completed" ? 0.7 : 1,
-            }}
-            onClick={() => handleAction(row.id)}
+            size="sm"
+            onClick={() => handleReply(row.id, row.message)}
           >
-            {row && row.status === "completed" ? "Completed" : "Process"}
+            Reply
           </Button>
         ),
       },
     ],
-    []
+    [data]
   );
 
   return (
@@ -106,96 +137,53 @@ const Resolution = () => {
           </Spinner>
         </div>
       ) : (
-        <div>
-          {/* Content that was here has been removed */}
-        </div>
-      )}
-
-      <Card className="border-0 mt-4">
-        <Card.Header>
-          <h3 className="mb-0 h4">Resolution</h3>
-        </Card.Header>
-        <Card.Body>
-          {loading ? (
-            <div className="text-center">
-              <Spinner animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </Spinner>
-            </div>
-          ) : (
-            <Row className="align-items-center">
-              {/* Your FormSelect components */}
-            </Row>
-          )}
-        </Card.Body>
-        <Card.Body className="p-0 pb-4">
-          {!loading && (
-            <>
-              {data.length === 0 ? (
-                <div>No conflicts found.</div>
-              ) : (
-                <Table hover responsive className="text-nowrap table-centered">
-                  <thead>
-                    <tr>
+        <Card className="border-0 mt-4">
+          <Card.Header>
+            <h3 className="mb-0 h4">Resolution</h3>
+          </Card.Header>
+          <Card.Body className="p-0 pb-4">
+            <Table hover responsive className="text-nowrap table-centered">
+              <thead>
+                <tr>
+                  {columns.map((column) => (
+                    <th key={column.accessorKey}>{column.header}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {data.length > 0 ? (
+                  data.map((row) => (
+                    <tr key={row.id}>
                       {columns.map((column) => (
-                        <th key={column.accessorKey}>{column.header}</th>
+                        <td key={column.accessorKey}>
+                          {column.cell ? column.cell({ row }) : row[column.accessorKey]}
+                        </td>
                       ))}
                     </tr>
-                  </thead>
-                  <tbody>
-                    {data.map((row) => (
-                      <tr key={row.id}>
-                        {columns.map((column) => (
-                          <td key={column.accessorKey}>
-                            {column.accessorKey === "userDetails" && (
-                              <div>
-                                <span>{row.User.username}</span>
-                                <br />
-                                <span>{row.User.email}</span>
-                              </div>
-                            )}
-                            {column.accessorKey === "message" &&
-                            row.message.length > 30 ? (
-                              <span
-                                title={row.message}
-                                className="mb-1 text-primary-hover cursor-pointer"
-                              >
-                                {row.message.slice(0, 30)}...
-                              </span>
-                            ) : (
-                              row[column.accessorKey]
-                            )}
-                            {column.accessorKey === "completed" && (
-                              <Button
-                                variant="success"
-                                disabled={
-                                  row.status === "completed" || row.Cloading
-                                }
-                                style={{
-                                  backgroundColor: "green",
-                                  borderColor: "#b8f7b2",
-                                  color: "white",
-                                  opacity:
-                                    row.status === "completed" || row.Cloading
-                                      ? 0.6
-                                      : 1,
-                                }}
-                                onClick={() => handleAction(row.id)}
-                              >
-                                {row.Cloading ? "Processing" : "Completed"}
-                              </Button>
-                            )}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </Table>
-              )}
-            </>
-          )}
-        </Card.Body>
-      </Card>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan={columns.length} className="text-center">
+                      No conflicts found.
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </Table>
+          </Card.Body>
+        </Card>
+      )}
+
+      {/* SupportModal */}
+      <SupportModal
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+        supportID={selectedSupportID}
+        userMessage={selectedUserMessage}
+        onClose={handleModalClose}
+        type="resolution"
+        fetchData={fetchData} // Pass fetchData function to modal
+      />
     </div>
   );
 };

@@ -60,7 +60,7 @@ const ApplyForJob = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/submit-job-application",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/submit-job-application",
         {
           userId: userId,
           jobId: jobId,
@@ -81,7 +81,7 @@ const ApplyForJob = () => {
     const userEmail = sessionStorage.getItem("email") || null;
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/create-activity",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-activity",
         {
           UserAction: name ? name : null,
           UserId: userId,
@@ -109,7 +109,7 @@ const ApplyForJob = () => {
                 <div style={{ height: "500px", overflowY: "auto" }}>
                   {userDetails ? (
                     <Document
-                      file={`https://unleashified-backend.azurewebsites.net/api/v1/get-a-resume/${userDetails.resumeUrl}`}
+                      file={`https://marketplacebackendas-test.azurewebsites.net/api/v1/get-a-resume/${userDetails.resumeUrl}`}
                       onLoadSuccess={({ numPages }) => setNumPages(numPages)}
                     >
                       {Array.from(new Array(numPages || 0), (el, index) => (

@@ -53,7 +53,7 @@ const ReceivedPayment = () => {
                   <th>ID</th>
                   <th>Email</th>
                   <th>Job Title</th>
-                  <th>Amount (₦)</th>
+                  <th>Amount (F CFA)</th>
                   <th>Method</th>
                   <th>Status</th>
                   <th>Date</th>
@@ -65,7 +65,7 @@ const ReceivedPayment = () => {
                     <td>{payment.id}</td>
                     <td>{payment.email}</td>
                     <td>{payment.jobTitle}</td>
-                    <td>₦{numberWithCommas(payment.amount)}</td>
+                    <td>F CFA{numberWithCommas(payment.amount)}</td>
                     <td>{payment.paymentMethod}</td>
                     <td>{payment.status}</td>
                     <td>{new Date(payment.createdAt).toLocaleDateString()}</td>

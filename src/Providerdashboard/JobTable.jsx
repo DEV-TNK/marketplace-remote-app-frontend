@@ -493,20 +493,20 @@ const JobTable = ({ data, header }) => {
   // Function to format price with currency symbol
   const formatPrice = (currencyName, priceValue) => {
     switch (currencyName) {
-      case "naira":
-      case "NGN":
-        return `₦${priceValue}`;
-      case "dollars":
-      case "USD":
-        return `$${priceValue}`;
-      case "euros":
-      case "EUR":
-        return `€${priceValue}`;
-      case "pounds":
-      case "GBP":
-        return `£${priceValue}`;
+      case "CFA franc":
+      case "F CFA":
+        return `F CFA${priceValue}`;
+      // case "dollars":
+      // case "USD":
+      //   return `$${priceValue}`;
+      // case "euros":
+      // case "EUR":
+      //   return `€${priceValue}`;
+      // case "pounds":
+      // case "GBP":
+      //   return `£${priceValue}`;
       default:
-        return `₦${priceValue}`;
+        return `F CFA${priceValue}`;
     }
   };
 
@@ -687,7 +687,7 @@ const JobTable = ({ data, header }) => {
               jobId: jobId,
               userId: UserId,
               type: "JOB",
-              currency: "NGN",
+              currency: "F CFA",
               provider: "paystack",
             }
           )
