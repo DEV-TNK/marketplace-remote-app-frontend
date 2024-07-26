@@ -38,10 +38,10 @@ const Pricing = () => {
             <Col xl={{ span: 8, offset: 2 }} lg={12} md={12} sm={12}>
               <div className="text-center mb-6 px-md-8">
                 <h1 className="text-white display-3 fw-bold">
-                  Simple pricing that scales with your needs
+                Une tarification simple qui s’adapte à votre entreprise
                 </h1>
                 <p className="text-white lead mb-4">
-                  See how we price our users on PME Cote D'Ivoire Marketplace
+                Parcourez les prix qui correspondent à vos besoins pour commencer sur PME Cote D'Ivoire Marketplace
                 </p>
 
                 {/* Switch Toggle */}

@@ -114,7 +114,7 @@ const ServicesFilters = ({ onFilterChange }) => {
           >
             <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
           </svg>
-          All Filters
+          Tous les filtres
         </h4>
       </Card.Header>
       <Card.Body className="py-3">
@@ -126,7 +126,7 @@ const ServicesFilters = ({ onFilterChange }) => {
           className="fs-5 text-dark fw-semi-bold"
           data-bs-toggle="collapse"
         >
-          Industry
+          Secteur d'activité
           <span className="float-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +154,7 @@ const ServicesFilters = ({ onFilterChange }) => {
                   })
                 }
               >
-                <option>Select Department</option>
+                <option> Sélectionner le département</option>
                 {departments.map((department, index) => (
                   <option key={index}>{department.label}</option>
                 ))}
@@ -172,7 +172,7 @@ const ServicesFilters = ({ onFilterChange }) => {
           className="fs-5 text-dark fw-semi-bold"
           data-bs-toggle="collapse"
         >
-          Price Format
+          Format du prix
           <span className="float-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -200,7 +200,7 @@ const ServicesFilters = ({ onFilterChange }) => {
                   })
                 }
               >
-                <option>Select Price Format</option>
+                <option>Sélectionnez le format de prix</option>
                 {priceFormat.map((priceFormat, index) => (
                   <option key={index}>{priceFormat.label}</option>
                 ))}
@@ -218,7 +218,7 @@ const ServicesFilters = ({ onFilterChange }) => {
           className="fs-5 text-dark fw-semi-bold"
           data-bs-toggle="collapse"
         >
-          Service Format
+          Format du service
           <span className="float-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -246,7 +246,7 @@ const ServicesFilters = ({ onFilterChange }) => {
                   })
                 }
               >
-                <option>Select Service Format</option>
+                <option>Sélectionnez le format du service</option>
                 {serviceFormat.map((serviceFormat, index) => (
                   <option key={index}>{serviceFormat.label}</option>
                 ))}
@@ -273,7 +273,7 @@ const ServicesFilters = ({ onFilterChange }) => {
               className="me-2"
             />
           ) : null}
-          {loading ? "Applying Filter..." : "Apply Filters"}
+          {loading ? "Applying Filter..." : "Appliquer des filtres"}
         </Button>
       </Card.Body>
     </Card>

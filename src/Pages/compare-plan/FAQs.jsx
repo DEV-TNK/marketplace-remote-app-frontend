@@ -15,13 +15,15 @@ const FAQs = () => {
               <div className="mb-8 pe-8">
                 {/* heading */}
                 <h1 className="display-4 fw-bold mb-4">
-                  Frequently asked questions,
-                  <span className="text-primary"> answered.</span>
+                Foire aux questions, 
+
+                  <span className="text-primary">réponses.</span>
                 </h1>
                 {/* para */}
                 <p className="fs-4">
-                  More questions? Visit the{" "}
-                  <Link to="/marketing/help-center/">Help Center.</Link>
+                D’autres questions ? Consultez le 
+                {" "}
+                  <Link to="/marketing/help-center/">centre d’aide.</Link>
                 </p>
               </div>
             </Col>

@@ -10,8 +10,8 @@ const JobFilters = ({ onFilterChange }) => {
   const [openLocation, setOpenLocation] = useState(true);
   const [openSalary, setOpenSalary] = useState(true);
   const [openDepartments, setOpenDepartments] = useState(true);
-  const jobFormat = ["Remote", "Onsite", "Hybrid"];
-  const jobType = ["Part-time", "Contract", "Full-time", "Freelance"];
+  const jobFormat = ["À distance", "sur site", "hybride"];
+  const jobType = ["Temps partiel", "Contrat", "Plein temps", "Freelance"];
   const [selectedJobFormat, setSelectedJobFormat] = useState([]);
   const [selectedJobType, setSelectedJobType] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -139,7 +139,7 @@ const JobFilters = ({ onFilterChange }) => {
           >
             <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
           </svg>
-          All Filters
+          Tous les filtres
         </h4>
       </Card.Header>
       <Card.Body className="border-top py-3">
@@ -151,7 +151,7 @@ const JobFilters = ({ onFilterChange }) => {
           className="fs-5 text-dark fw-semi-bold"
           data-bs-toggle="collapse"
         >
-          Job Format
+          Format de l'offre
           <span className="float-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -195,7 +195,7 @@ const JobFilters = ({ onFilterChange }) => {
           className="fs-5 text-dark fw-semi-bold"
           data-bs-toggle="collapse"
         >
-          Industry
+          Industrie
           <span className="float-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -223,7 +223,7 @@ const JobFilters = ({ onFilterChange }) => {
                   })
                 }
               >
-                <option>Select Industry</option>
+                <option>Sélectionnez le secteur d’activité</option>
                 {departments.map((department, index) => (
                   <option key={index}>{department.label}</option>
                 ))}
@@ -241,7 +241,7 @@ const JobFilters = ({ onFilterChange }) => {
           className="fs-5 text-dark fw-semi-bold"
           data-bs-toggle="collapse"
         >
-          Locations
+          Lieux
           <span className="float-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -280,7 +280,7 @@ const JobFilters = ({ onFilterChange }) => {
           className="fs-5 text-dark fw-semi-bold"
           data-bs-toggle="collapse"
         >
-          Job Type
+          Type d'offre
           <span className="float-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -326,7 +326,7 @@ const JobFilters = ({ onFilterChange }) => {
           disabled={loading}
           style={{ opacity: loading ? 0.7 : 1 }}
         >
-          {loading ? "Processing" : "Apply Filters"}{" "}
+          {loading ? "Processing" : "Appliquer des filtres"}{" "}
         </Button>
       </Card.Body>
     </Card>

@@ -8,7 +8,7 @@ const NavbarDefault = [
   // },
   {
     id: uuid(),
-    menuitem: "Jobs",
+    menuitem: "Offre ",
     link: "/jobs/listing/job-list",
   },
   {
@@ -28,7 +28,7 @@ const NavbarDefault = [
   // },
   {
     id: uuid(),
-    menuitem: "Companies",
+    menuitem: "Entreprises",
     link: "/jobs/company-list",
   },
   // {
@@ -38,7 +38,7 @@ const NavbarDefault = [
   // },
   {
     id: uuid(),
-    menuitem: "Pricing",
+    menuitem: "Tarification",
     link: "/pricing",
   },
 

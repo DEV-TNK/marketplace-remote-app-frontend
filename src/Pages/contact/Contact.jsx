@@ -26,10 +26,10 @@ const Contact = () => {
               {/* content */}
 
               <div className="text-dark">
-                <h1 className="display-4 fw-bold">Get In Touch.</h1>
+                <h1 className="display-4 fw-bold">Contactez-nous.</h1>
                 <p className="lead text-dark">
-                  Fill in the form to the right to get in touch with someone on
-                  our team, and we will reach out shortly.
+                  Remplissez le formulaire à droite pour entrer en contact avec
+                  un membre de notre équipe, et nous vous contacterons sous peu.
                 </p>
                 <div className="mt-8">
                   {/* <p className="fs-4 mb-4">

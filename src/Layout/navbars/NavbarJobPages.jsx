@@ -127,7 +127,7 @@ const NavbarDefault = ({ headerstyle, login }) => {
                   className="btn btn-primary shadow-sm"
                   onClick={redirectDashboard}
                 >
-                  Dashboard
+                  Tableau de bord
                 </Nav.Link>
               ) : (
                 <span className={`ms-auto mt-1`}>

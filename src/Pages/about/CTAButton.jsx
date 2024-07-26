@@ -16,13 +16,14 @@ const CTAButton = () => {
           <Col xl={6} lg={6} md={12} sm={12}>
             {/* Heading */}
             <div className="pt-6 pt-lg-0">
-              <h1 className="text-white display-4 fw-bold pe-lg-8">
-                Join the Unleashified team & shape the future of design
-              </h1>
+              <h3 className="text-white display-4 fw-bold pe-lg-8">
+                Rejoignez l’équipe Unleashified et façonnez l’avenir du design ;
+                Si vous êtes passionné et prêt à vous lancer, nous serions ravis
+                de vous rencontrer.
+              </h3>
               <p className="text-white-50 mb-4 lead">
-                If you’re passionate and ready to dive in, we’d love to meet
-                you. We’re committed to supporting our user professional
-                development and well-being.
+                Nous nous engageons à soutenir le développement professionnel
+                et le bien-être de nos utilisateurs.
               </p>
               {/*Button */}
               <Link to="/jobs/listing/job-list" className="btn btn-dark">

@@ -94,9 +94,9 @@ const ServicesList = () => {
               <div>
                 <div className="mb-4">
                   <h1 className="fw-bold mb-1">
-                    Discover Best Services for your needs!
+                  Découvrez les meilleures services pour vos besoins !
                   </h1>
-                  <p>Services reviews. Prices. Interviews. Jobs.</p>
+                  <p>Avis sur les services. Prix. Entretiens d'embauche. offres</p>
                 </div>
                 {/* <JobSearchBox /> */}
               </div>

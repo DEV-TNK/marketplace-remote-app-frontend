@@ -11,14 +11,14 @@ const companyFilters = ({ onFilterChange }) => {
   const [openDepartments, setOpenDepartments] = useState(true);
   const [loading, setLoading] = useState(false);
   const jobType = [
-    "Individual",
-    "SME",
+    "Particulier",
+    "PME",
     "Startup",
-    "Corporation",
-    "Government ",
-    "Conglomerate",
-    "NGO",
-    "Non of the Above",
+    "Société",
+    "Gouvernement",
+    "Conglomérat",
+    "ONG",
+    "Aucune des propositions ci-dessus ",
   ];
 
   const jobDesignation = [
@@ -128,7 +128,7 @@ const companyFilters = ({ onFilterChange }) => {
           >
             <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
           </svg>
-          All Filters
+          Tous les filtres
         </h4>
       </Card.Header>
 
@@ -141,7 +141,7 @@ const companyFilters = ({ onFilterChange }) => {
           className="fs-5 text-dark fw-semi-bold"
           data-bs-toggle="collapse"
         >
-          Locations
+          Lieux
           <span className="float-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -180,7 +180,7 @@ const companyFilters = ({ onFilterChange }) => {
           className="fs-5 text-dark fw-semi-bold"
           data-bs-toggle="collapse"
         >
-          Company Designation
+          Désignation de l’entreprise
           <span className="float-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -208,7 +208,7 @@ const companyFilters = ({ onFilterChange }) => {
                   })
                 }
               >
-                <option>Select Company Designation</option>
+                <option>Sélectionnez la désignation de l’entreprise</option>
                 {jobDesignation.map((jobDesignation, index) => (
                   <option key={index}>{jobDesignation.label}</option>
                 ))}
@@ -227,7 +227,7 @@ const companyFilters = ({ onFilterChange }) => {
           className="fs-5 text-dark fw-semi-bold"
           data-bs-toggle="collapse"
         >
-          Company Type
+          Type d’entreprise
           <span className="float-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -273,7 +273,7 @@ const companyFilters = ({ onFilterChange }) => {
           disabled={loading}
           style={{ opacity: loading ? ".7" : "1" }}
         >
-          {loading ? "Processing" : "Apply Filters"}
+          {loading ? "Processing" : "Appliquer des filtres"}
         </Button>
       </Card.Body>
     </Card>
