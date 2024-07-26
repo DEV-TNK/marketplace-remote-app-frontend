@@ -6,29 +6,29 @@ import { Col, Row } from "react-bootstrap";
 import SectionHeading from "./SectionHeading";
 
 const Stat = () => {
-  const title = "Our core values";
-  const description = `Innovating the future of employment by connecting job seekers with opportunities that match their skills and aspirations, Unleashified empowers individuals to thrive in their careers while supporting businesses in finding the right talent to succeed`;
+  const title = "Nos valeurs fondamentales";
+  const description = ` Nous faisons innover l’avenir de l’emploi en mettant en relation les fournisseurs de service avec des opportunités qui correspondent à leurs compétences et à leurs aspirations, Unleashified permet aux individus de s’épanouir dans leur carrière tout en aidant les entreprises à trouver les bons talents pour réussir.`;
 
   const counters = [
     {
       id: 1,
-      title: "Job seekers",
-      value: "220k",
+      title: "DEMANDEURS D'EMPLOIS",
+      value: "220 000",
     },
     {
       id: 2,
-      title: "Job providers",
-      value: "150k",
+      title: "RECRUTEURS",
+      value: "150 000",
     },
     {
       id: 3,
-      title: "Jobs Available",
-      value: "10K",
+      title: "EMPLOIS DISPONIBLES",
+      value: "10 000",
     },
     {
       id: 4,
-      title: "Total Transaction",
-      value: "2k",
+      title: "TOTAL TRANSACTION",
+      value: "2 000",
     },
   ];
   return (

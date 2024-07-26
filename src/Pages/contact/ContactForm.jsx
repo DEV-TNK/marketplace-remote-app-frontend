@@ -57,14 +57,14 @@ const ContactForm = () => {
   };
 
   const contact = [
-    { value: "Design", label: "Design" },
-    { value: "Development", label: "Development" },
-    { value: "Sales", label: "Sales" },
+    { value: "Design", label: "Conception" },
+    { value: "Development", label: "Développement" },
+    { value: "Sales", label: "Ventes" },
     { value: "Support", label: "Support" },
     { value: "Marketing", label: "Marketing" },
-    { value: "Billing", label: "Billing" },
-    { value: "Feedback", label: "Feedback" },
-    { value: "Other", label: "Other" },
+    { value: "Billing", label: "Facturation" },
+    { value: "Feedback", label: "Commentaires" },
+    { value: "Other", label: "autre" },
   ];
 
   return (
@@ -75,14 +75,14 @@ const ContactForm = () => {
             <Col md={6} sm={12}>
               <Form.Group className="mb-3" controlId="formFirstName">
                 <Form.Label>
-                  First Name:<span className="text-danger">*</span>
+                Prénom:<span className="text-danger">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleInputChange}
-                  placeholder="First Name"
+                  placeholder="Prénom"
                   required
                 />
               </Form.Group>
@@ -90,14 +90,14 @@ const ContactForm = () => {
             <Col md={6} sm={12}>
               <Form.Group className="mb-3" controlId="formLastName">
                 <Form.Label>
-                  Last Name:<span className="text-danger">*</span>
+                Nom:<span className="text-danger">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleInputChange}
-                  placeholder="Last Name"
+                  placeholder="Nom"
                   required
                 />
               </Form.Group>
@@ -105,14 +105,14 @@ const ContactForm = () => {
             <Col md={6} sm={12}>
               <Form.Group className="mb-3" controlId="formEmail">
                 <Form.Label>
-                  Email:<span className="text-danger">*</span>
+                Messagerie électronique:<span className="text-danger">*</span>
                 </Form.Label>
                 <Form.Control
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="Email"
+                  placeholder="Messagerie électronique"
                   required
                 />
               </Form.Group>
@@ -120,14 +120,14 @@ const ContactForm = () => {
             <Col md={6} sm={12}>
               <Form.Group className="mb-3" controlId="formPhoneNumber">
                 <Form.Label>
-                  Phone Number:<span className="text-danger">*</span>
+                Numéro de téléphone:<span className="text-danger">*</span>
                 </Form.Label>
                 <Form.Control
                   type="tel"
                   name="contact"
                   value={formData.contact}
                   onChange={handleInputChange}
-                  placeholder="Phone Number"
+                  placeholder="Numéro de téléphone"
                   required
                 />
               </Form.Group>
@@ -135,14 +135,14 @@ const ContactForm = () => {
             <Col md={12} sm={12}>
               <Form.Group className="mb-3" controlId="formContact">
                 <Form.Label>
-                  Contact Reason:<span className="text-danger">*</span>
+                Raison du contact: <span className="text-danger">*</span>
                 </Form.Label>
                 <Form.Control
                   as={FormSelect}
                   name="reason"
                   value={formData.reason}
                   onChange={handleInputChange}
-                  placeholder="Select"
+                  placeholder="Sélectionner"
                   options={contact}
                   required
                 />
@@ -163,7 +163,7 @@ const ContactForm = () => {
             </Col>
             <Col md={12} sm={12}>
               <Button variant="primary" type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Processing..." : "Submit"}
+                {isSubmitting ? "Processing..." : "Soumettre"}
               </Button>
             </Col>
           </Row>

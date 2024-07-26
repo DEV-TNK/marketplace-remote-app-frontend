@@ -85,7 +85,7 @@ const JobsList = () => {
         <Container>
           <Row>
             <Col lg={8} md={10} xs={12}>
-              <h1>Browse All Available Jobs </h1>
+              <h1>Parcourir toutes les offres disponibles </h1>
             </Col>
           </Row>
         </Container>

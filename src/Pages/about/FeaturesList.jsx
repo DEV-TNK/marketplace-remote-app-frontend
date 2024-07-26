@@ -14,30 +14,30 @@ import FeatureTopIconCard from "../../Components/marketing/common/features/Featu
 import SectionHeading from "./SectionHeading";
 
 const Features3Columns = () => {
-  const title = "Our Mission";
-  const description = `We are committed to providing a user-friendly, secure, and inclusive platform that empowers our community members to achieve their goals and aspirations.`;
+  const title = "Notre mission";
+  const description = `Nous sommes engagés à fournir une plateforme conviviale, sécurisée et inclusive qui permet aux membres de notre communauté d’atteindre leurs objectifs et leurs aspirations.`;
 
   const features = [
     {
       id: 1,
       icon: mdiSchoolOutline,
-      title: "Smart Job Matches",
+      title: "Correspondances d’emplois intelligentes",
       description:
-        "Our advanced job matching engine connects job seekers with relevant opportunities based on their skills, experience, and preferences. Say goodbye to endless job searches and hello to personalized job recommendations.",
+        "Notre moteur de correspondance d’emploi avancé met en relation les demandeurs d’emploi avec des opportunités pertinentes en fonction de leurs compétences, de leur expérience et de leurs préférences. Dites adieu aux recherches d’emploi interminables et bonjour aux recommandations d’emploi personnalisées.",
     },
     {
       id: 2,
       icon: mdiAccountGroup,
-      title: "Job Opportunities",
+      title: "Opportunités d’emploi",
       description:
-        "Connecting job seekers with job providers is our mission. We provide a seamless platform for finding employment opportunities and building meaningful careers.",
+        "Mettre en relation les demandeurs d’emploi avec les recruteurs est notre mission. Nous fournissons une plateforme transparente pour trouver des opportunités d’emploi et construire des carrières significatives.",
     },
     {
       id: 3,
       icon: mdiFinance,
-      title: "Entrepreneurship Support",
+      title: "Soutien à l’entrepreneuriat",
       description:
-        "For aspiring entrepreneurs, we offer resources, mentorship, and guidance. Our platform fosters innovation and helps turn ideas into successful ventures.",
+        "Pour les nouveaux entrepreneurs, nous offrons des ressources, du mentorat et des conseils. Notre plateforme favorise l’innovation et aide à transformer les idées en entreprises réussies.",
     },
   ];
 

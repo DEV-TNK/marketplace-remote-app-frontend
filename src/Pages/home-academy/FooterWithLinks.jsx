@@ -31,8 +31,9 @@ const FooterWithLinks = () => {
                 />
                 <div className="mt-4">
                   <p>
-                  PME Cote D'Ivoire Marketplace connects job seekers with opportunities and
-                    providers with talent engagement resources.
+                    PME Cote D'Ivoire Marketplace met en relation les demandeurs
+                    d’emploi avec des opportunités et les récruteurs avec des
+                    ressources talentueuses et engagées.
                   </p>
                   {/* social media */}
                   <div className="fs-4 mt-4">
@@ -76,7 +77,7 @@ const FooterWithLinks = () => {
             <Col lg={{ span: 2, offset: 1 }} md={3} sm={6}>
               <div className="mb-4">
                 {/* list */}
-                <h3 className="fw-bold mb-3">Company</h3>
+                <h3 className="fw-bold mb-3">Entreprise</h3>
                 <ListGroup
                   as="ul"
                   bsPrefix="list-unstyled"
@@ -84,12 +85,12 @@ const FooterWithLinks = () => {
                 >
                   <ListGroup.Item as="li" bsPrefix=" ">
                     <Link to="/aboutus" className="nav-link">
-                      About
+                    À propos
                     </Link>
                   </ListGroup.Item>
                   <ListGroup.Item as="li" bsPrefix=" ">
                     <Link to="/pricing" className="nav-link">
-                      Pricing
+                    Tarification
                     </Link>
                   </ListGroup.Item>
                   {/* <ListGroup.Item as="li" bsPrefix=" ">
@@ -126,12 +127,12 @@ const FooterWithLinks = () => {
                   </ListGroup.Item> */}
                   <ListGroup.Item as="li" bsPrefix=" ">
                     <Link to="/authentication/signup" className="nav-link">
-                      Become Job Seeker
+                    Devenir Demandeurs D'emplois
                     </Link>
                   </ListGroup.Item>
                   <ListGroup.Item as="li" bsPrefix=" ">
                     <Link to="/authentication/signup" className="nav-link">
-                      Become Job Provider
+                    Devenir Recruteurs
                     </Link>
                   </ListGroup.Item>
                   {/* <ListGroup.Item as="li" bsPrefix=" ">
@@ -141,7 +142,7 @@ const FooterWithLinks = () => {
                   </ListGroup.Item> */}
                   <ListGroup.Item as="li" bsPrefix=" ">
                     <Link to="/FAQs" className="nav-link">
-                      FAQ’s
+                    Foire aux questions
                     </Link>
                   </ListGroup.Item>
                   {/* <ListGroup.Item as="li" bsPrefix=" ">
@@ -155,16 +156,16 @@ const FooterWithLinks = () => {
             <Col lg={3} md={12} sm={12}>
               {/* contact info */}
               <div className="mb-4">
-                <h3 className="fw-bold mb-3">Get in touch</h3>
-                GetFundedAfrica
+                <h3 className="fw-bold mb-3">Contactez-nous </h3>
+                Côte d’Ivoire PME
                 <br />
                 3rd Floor, Unit 1110, Ogun State Technology Hub, Abeokuta,
                 <br />
-                Ogun State, Nigeria.  
+                Ogun State, Nigeria.
                 <br />
                 <a href="mailto:migration@gfa-tech.com" target="_blank">
-                        support@PME Cote D'Ivoire Marketplace.com
-                      </a>
+                  support@PME Cote D'Ivoire Marketplace.com
+                </a>
                 {/* <p>
                   Phone:{" "}
                   <span className="text-dark fw-semi-bold">
@@ -178,7 +179,7 @@ const FooterWithLinks = () => {
             {/* Desc  */}
             <Col lg={4} md={5} sm={12}>
               <span>
-                © {currentYear} PME Cote D'Ivoire Marketplace, Inc. All Rights Reserved
+                © {currentYear} PME Cote D'Ivoire Marketplace, Inc.Tous droits réservés
               </span>
             </Col>
             {/*  Links  */}
@@ -190,7 +191,7 @@ const FooterWithLinks = () => {
             >
               <nav className="nav nav-footer">
                 <Link className="nav-link ps-0" to="/PrivacyPolicy">
-                  Privacy Policy
+                Politique de confidentialité
                 </Link>
                 {/* <Link className="nav-link px-2 px-md-3" to="#">
                   Cookie Notice
@@ -199,7 +200,7 @@ const FooterWithLinks = () => {
                   Do Not Sell My Personal Information
                 </Link> */}
                 <Link className="nav-link" to="/TermsOfUse">
-                  Terms of Use
+                Conditions d’utilisation
                 </Link>
               </nav>
             </Col>

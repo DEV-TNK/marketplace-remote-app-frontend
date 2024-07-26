@@ -88,9 +88,9 @@ const CompanyList = () => {
               <div>
                 <div className="mb-4">
                   <h1 className="fw-bold mb-1">
-                    Discover Best Companies for your needs!
+                  Découvrez les meilleures entreprises pour vos besoins !
                   </h1>
-                  <p>Companies. reviews. Interviews. Jobs.</p>
+                  <p>Entreprises, avis, entretiens, emplois.</p>
                 </div>
                 {/* <CompaniesSearchBox /> */}
               </div>

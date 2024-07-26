@@ -1,23 +1,33 @@
 // import node module libraries
-import { Col, Row } from 'react-bootstrap';
+import { Col, Row } from "react-bootstrap";
 
 const HeroContent = () => {
-	return (
-		<Row>
-			<Col lg={{ span: 8, offset: 2 }} md={12} sm={12} className="mb-12">
-				{/* caption */}
-				<h1 className="display-2 fw-bold mb-3">
-					Hi there, we’re <span className="text-primary">Unleashified</span>
-				</h1>
-				{/* para  */}
-				<p className="h2 mb-3 ">
-				Our platform is designed to empower individuals and businesses by providing them with the tools, resources, and connections they need to succeed in today's dynamic market. We believe in fostering a collaborative environment where ideas are born, partnerships are formed, and dreams are realized.
-				</p>
-				<p className="mb-0 h4 text-body lh-lg">
-				We're creating a vibrant community that fosters growth, collaboration, and innovation. We strive to bridge the gap between entrepreneurs, users, service providers, and job seekers by offering a comprehensive platform that caters to their diverse needs.
-				</p>
-			</Col>
-		</Row>
-	);
+  return (
+    <Row>
+      <Col lg={{ span: 8, offset: 2 }} md={12} sm={12} className="mb-12">
+        {/* caption */}
+        <h1 className="display-2 fw-bold mb-3">
+          Bonjour, nous sommes{" "}
+          <span className="text-primary">Unleashified</span>
+        </h1>
+        {/* para  */}
+        <p className="h2 mb-3 ">
+          Notre plateforme est conçue pour responsabiliser les particuliers et
+          les entreprises en leur fournissant les outils, les ressources et les
+          connexions dont ils ont besoin pour réussir sur le marché dynamique
+          d’aujourd’hui. Nous croyons qu’il faut favoriser un environnement
+          collaboratif où les idées naissent, les partenariats se forment et les
+          rêves se réalisent.
+        </p>
+        <p className="mb-0 h4 text-body lh-lg">
+          Nous créons une communauté dynamique qui favorise la croissance, la
+          collaboration et l’innovation. Nous nous efforçons de combler le fossé
+          entre les entrepreneurs, les utilisateurs, les fournisseurs de
+          services et les demandeurs d’emploi en offrant une plateforme complète
+          qui répond à leurs divers besoins.
+        </p>
+      </Col>
+    </Row>
+  );
 };
 export default HeroContent;
