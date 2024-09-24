@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Card, Form, Button, Image } from "react-bootstrap";
-// import Logo from "../assets/unleashified-logo.png";
-import Logo from "../assets/LogoList/Coted'ivoire-Logo.png";
+import Logo2 from "../assets/unleashified-logo.png";
+import Logo from "../assets/LogoList/cote-logo.png";
 import "./signupforms/signup.css";
 import { useGlobalContext } from "../context/AuthContext";
 import { useForm } from "react-hook-form";
@@ -21,6 +21,7 @@ const formSchema = yup.object().shape({
       "Invalid email address"
     ),
   password: yup.string().required("Password is required"),
+  role: yup.string().required("Please select a role"),
   // .matches(
   //   /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/,
   //   "invalid Password"
@@ -44,6 +45,13 @@ const SignIn = () => {
   } = useForm({
     resolver: yupResolver(formSchema),
   });
+
+  const roles = [
+    { label: "Job seeker", value: "seeker" },
+    { label: "Job Provider", value: "provider" },
+    { label: "Service seeker/provider", value: "service provider" },
+  ];
+
   return (
     <Fragment>
       {/* <NavbarDefault /> */}
@@ -133,6 +141,25 @@ const SignIn = () => {
                         {errors.password?.message}
                       </small>
                     </Col>
+                    {/* Role selection dropdown */}
+                    <Col lg={12} md={12} className="mb-3">
+                      <Form.Label>Role</Form.Label>
+                      <Form.Select
+                        aria-label="Role select"
+                        {...register("role", { required: true })}
+                      >
+                        <option value="">Select a role</option>
+                        {roles.map((role) => (
+                          <option key={role.value} value={role.value}>
+                            {role.label}
+                          </option>
+                        ))}
+                      </Form.Select>
+                      <small className="text-danger">
+                        {errors.role?.message}
+                      </small>
+                    </Col>
+
                     <Link
                       to="/authentication/Forget-password"
                       className="ms-1 text-bold"
