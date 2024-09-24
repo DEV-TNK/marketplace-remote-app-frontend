@@ -2,8 +2,8 @@
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Card, Form, Button, Image } from "react-bootstrap";
-// import Logo from "../assets/unleashified-logo.png";
-import Logo from "../assets/LogoList/Coted'ivoire-Logo.png";
+import Logo2 from "../assets/unleashified-logo.png";
+import Logo from "../assets/LogoList/cote-logo.png";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -18,6 +18,7 @@ const formSchema = yup.object().shape({
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       "Invalid email address"
     ),
+  role: yup.string().required("Please select a role"),
 });
 
 const ForgetPassword = () => {
@@ -38,6 +39,7 @@ const ForgetPassword = () => {
         "https://marketplacebackendas-test.azurewebsites.net/api/v1/forgot-password",
         {
           email: data.email,
+          userType: data.role,
         }
       );
       setLoading(false);
@@ -95,6 +97,28 @@ const ForgetPassword = () => {
                       {errors.email?.message}
                     </small>
                   </Col>
+
+                  {/* role selection */}
+                  <Col lg={12} md={12} className="mb-3">
+                    <Form.Label>Select Role</Form.Label>
+                    <Form.Select {...register("role", { required: true })}>
+                      <option value="">Select your role</option>
+                      <option value="seeker">Job Seeker</option>
+                      <option value="provider">Job Provider</option>
+                      <option value="service provider">
+                        Service Seeker/Provider
+                      </option>
+                    </Form.Select>
+                    <small
+                      className="text-danger"
+                      style={{
+                        visibility: errors.role ? "visible" : "hidden",
+                      }}
+                    >
+                      {errors.role?.message}
+                    </small>
+                  </Col>
+
                   <Col lg={12} md={12} className="mb-3 d-grid gap-2">
                     {/* Button */}
                     {loading ? (

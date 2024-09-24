@@ -4,7 +4,8 @@ import { Col, Row, Card, Image, Navbar } from "react-bootstrap";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faArrowLeft, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Logo from "../assets/LogoList/Coted'ivoire-Logo.png";
+import Logo2 from "../assets/unleashified-logo.png";
+import Logo from "../assets/LogoList/cote-logo.png";
 import axios from "axios";
 import { showToast } from "../Components/Showtoast";
 import { useLocation } from "react-router-dom";
@@ -16,7 +17,7 @@ const VerifyEmail = () => {
   const queryParams = new URLSearchParams(location.search);
 
   const email = queryParams.get("email");
-
+  const userType = queryParams.get("type");
   const onSubmit = async () => {
     setLoading(true);
     try {
@@ -24,6 +25,7 @@ const VerifyEmail = () => {
         `https://marketplacebackendas-test.azurewebsites.net/api/v1/resend-email`,
         {
           email: email,
+          userType: userType,
         }
       );
       setLoading(false);

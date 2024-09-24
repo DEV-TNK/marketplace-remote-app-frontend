@@ -1,8 +1,8 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Card, Col, Image, Row, Navbar } from "react-bootstrap";
-// import Logo from "../assets/unleashified-logo.png";
-import Logo from "../assets/LogoList/Coted'ivoire-Logo.png";
+import Logo2 from "../assets/unleashified-logo.png";
+import Logo from "../assets/LogoList/cote-logo.png";
 import StudentSignUp from "./signupforms/JobSeeker";
 import InstructorSignUp from "./signupforms/Provider";
 import "./signupforms/signup.css"; // Import your CSS file
@@ -121,7 +121,7 @@ const SignUp = () => {
                            </Card>
                          </Col>
                        </Row>
-                       {/* <Row>
+                       <Row>
                          <Col>
                            <Card className="mt-4">
                              <Card.Body className="text-center">
@@ -129,7 +129,7 @@ const SignUp = () => {
                                <p className="small mb-2">Find services you need</p>
                                <Button
                                  variant="primary"
-                                //  onClick={handleShowStudentSignUp}
+                                 onClick={handleShowServiceProviderSignUp}
                                >
                                  Service Seeker
                                </Button>
@@ -150,7 +150,7 @@ const SignUp = () => {
                              </Card.Body>
                            </Card>
                          </Col>
-                       </Row> */}
+                       </Row>
                      </div>
                    </Card.Body>
             )}
