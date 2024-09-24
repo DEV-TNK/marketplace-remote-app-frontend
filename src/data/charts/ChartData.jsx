@@ -566,6 +566,63 @@ export const OrderColumnChartOptions = {
     marker: { show: !0 },
   },
 };
+export const OrderColumnChartOptionsSP = {
+  chart: { toolbar: { show: !1 }, type: "bar", height: 272 },
+  colors: [theme.primary],
+  plotOptions: {
+    bar: { horizontal: !1, columnWidth: "12%", endingShape: "rounded" },
+  },
+  dataLabels: { enabled: !1 },
+  stroke: { show: !0, width: 1, colors: [theme.transparent] },
+  xaxis: {
+    categories: [
+      "jan",
+      "feb",
+      "mar",
+      "april",
+      "may",
+      "jun",
+      "july",
+      "aug",
+      "sep",
+      "oct",
+      "nov",
+      "dec",
+    ],
+    axisBorder: { show: !1 },
+    labels: {
+      offsetX: 0,
+      offsetY: 5,
+      style: { fontSize: "13px", fontWeight: 400, colors: theme.gray500 },
+    },
+  },
+  grid: {
+    borderColor: theme.borderColor,
+    strokeDashArray: 5,
+    xaxis: { lines: { show: !1 } },
+    yaxis: { lines: { show: !0 } },
+    padding: { top: 0, right: 0, bottom: 0, left: -10 },
+  },
+  yaxis: {
+    title: { text: void 0 },
+    plotOptions: {
+      bar: { horizontal: !1, endingShape: "rounded", columnWidth: "80%" },
+    },
+    labels: {
+      style: { fontSize: "13px", fontWeight: 400, colors: theme.gray500 },
+      offsetX: -10,
+    },
+  },
+  fill: { opacity: 1 },
+  tooltip: {
+    y: {
+      formatter: function (e) {
+        return e + " Gigs ";
+      },
+    },
+    marker: { show: !0 },
+  },
+};
 
 /** Order Column Chart Series and options used in Front side Instructor Dashboard page */
 export const PayoutChartSeries = [

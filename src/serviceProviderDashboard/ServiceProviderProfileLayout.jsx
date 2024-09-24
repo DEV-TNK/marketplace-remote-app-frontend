@@ -53,7 +53,7 @@ const ServiceProviderProfileLayout = (props) => {
   const handleLogout = async () => {
     try {
       const response = await axios.delete(
-        `https://unleashified-backend.azurewebsites.net/api/v1/logout/${userId}`
+        `https://marketplacebackendas-test.azurewebsites.net/api/v1/logout/${userId}`
       );
       showToast(response.data.message);
       sessionStorage.clear();

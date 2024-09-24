@@ -79,7 +79,7 @@ const OutsourcedGigsTable = ({ data, header }) => {
 
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/submit-reviews",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/submit-reviews",
         reviewData
       );
       setRLoading(false);
@@ -127,7 +127,7 @@ const OutsourcedGigsTable = ({ data, header }) => {
     sessionStorage.removeItem("totalAmount");
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/provider-payment",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/provider-payment",
         {
           reference: tx_ref,
           email: emailUser,
@@ -180,7 +180,7 @@ const OutsourcedGigsTable = ({ data, header }) => {
       onSuccess(reference) {
         axios
           .post(
-            "https://unleashified-backend.azurewebsites.net/api/v1/provider-payment",
+            "https://marketplacebackendas-test.azurewebsites.net/api/v1/provider-payment",
             {
               reference: reference.reference,
               email: emailUser,
@@ -221,7 +221,7 @@ const OutsourcedGigsTable = ({ data, header }) => {
     setLoadingC(true);
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/mark-job-completed",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/mark-job-completed",
         {
           jobId: jobId,
           userId: UserId,

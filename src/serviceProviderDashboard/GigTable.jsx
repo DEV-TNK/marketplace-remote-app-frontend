@@ -36,7 +36,7 @@ const GigTable = ({ data, header }) => {
       }));
 
       const response = await axios.put(
-        `https://unleashified-backend.azurewebsites.net/api/v1/complete-service-request`,
+        `https://marketplacebackendas-test.azurewebsites.net/api/v1/complete-service-request`,
         { id: bookingId }
       );
 
@@ -115,7 +115,7 @@ const GigTable = ({ data, header }) => {
 
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/submit-reviews",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/submit-reviews",
         reviewData
       );
       setRLoading(false);
@@ -201,7 +201,7 @@ const GigTable = ({ data, header }) => {
     sessionStorage.removeItem("totalAmount");
     try {
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/provider-payment",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/provider-payment",
         {
           reference: tx_ref,
           email: emailUser,
@@ -254,7 +254,7 @@ const GigTable = ({ data, header }) => {
       onSuccess(reference) {
         axios
           .post(
-            "https://unleashified-backend.azurewebsites.net/api/v1/provider-payment",
+            "https://marketplacebackendas-test.azurewebsites.net/api/v1/provider-payment",
             {
               reference: reference.reference,
               email: emailUser,
