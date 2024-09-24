@@ -13,6 +13,7 @@ import JobsListingData from "../../../../../data/marketing/jobs/JobsListingData"
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+
 function getTimeDifference(updatedAt) {
   // Parse the updatedAt string to a Date object
   const updatedAtDate = new Date(updatedAt);
@@ -46,10 +47,26 @@ const ServicesSingle = () => {
   const [userDetails, setUserDetails] = useState([]);
   const location = useLocation();
   const queryParam = new URLSearchParams(location.search);
+  const serviceId = queryParam.get("id");
+
   const jobId = queryParam.get("id");
   const [showFallback, setShowFallback] = useState(false);
+  const [key, setKey] = useState("basic");
+  const [open, setOpen] = useState(false);
+  const [bookmarked, setBookmarked] = useState(false);
+  const { userId } = useGlobalContext();
+  const [show, setShow] = useState(false);
 
   const url = window.location.href;
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const handleContinue = () => {
+    showToast("Continue button clicked!");
+  };
+
+  let originalImgUrl = serviceDetails.backgroundCover?.[0] || "";
+  let updatedImgUrl = originalImgUrl ? encodeURI(originalImgUrl) : "";
 
   useEffect(() => {
     const getAService = async () => {
@@ -65,6 +82,17 @@ const ServicesSingle = () => {
     };
     getAService();
   }, []);
+
+  const handleToggle = (id) => {
+    setOpen(open === id ? false : id);
+  };
+
+  useEffect(() => {
+    const savedBookmarkStatus = localStorage.getItem(`bookmarked-${serviceId}`);
+    if (savedBookmarkStatus !== null) {
+      setBookmarked(JSON.parse(savedBookmarkStatus));
+    }
+  }, [serviceId]);
 
   const getTimeDifferenceString = (time) => {
     if (time.days > 0) {
