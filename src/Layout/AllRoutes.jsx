@@ -93,6 +93,21 @@ import JobSeekerPayouts from "../Instructor/account-settings/Payouts";
 import JobSeekerResolution from "../Instructor/Resolution";
 import JobSeekerSocialProfiles from "../Instructor/account-settings/SocialProfiles";
 import JobSeekerDeleteProfile from "../Instructor/account-settings/DeleteProfile";
+import ServiceProviderProfile from "../Components/marketing/pages/jobs/serviceProvider-Onboarding/ServiceProviderProfile";
+import Dashboard from "../serviceProviderDashboard/Dashboard";
+import PostService from "../serviceProviderDashboard/postService/PostService";
+import Step1 from "../serviceProviderDashboard/onboardingSteps/ServiceProviderCreate1";
+import Step2 from "../serviceProviderDashboard/onboardingSteps/OnboardService2";
+import Step3 from "../serviceProviderDashboard/onboardingSteps/OnboardingStep3";
+import ServiceProviderGig from "../serviceProviderDashboard/MyGig";
+import ServiceOffer from "../serviceProviderDashboard/ServiceOffer";
+import ServiceProviderPayout from "../serviceProviderDashboard/account-settings/Payouts";
+import ServiceProviderReviews from "../serviceProviderDashboard/Reviews";
+import ServiceProviderSocials from "../serviceProviderDashboard/account-settings/SocialProfiles";
+import ServiceProviderResolution from "../serviceProviderDashboard/Resolution";
+import ServiceProviderDeleteProfile from "../serviceProviderDashboard/account-settings/DeleteProfile";
+import ServiceProviderUpdate from "../serviceProviderDashboard/account-settings/EditProfile";
+
 
 import ProviderLanding from "../Instructor/ProviderLandingPage/ProviderLanding";
 import UpdateProviderProfile from "../Components/marketing/pages/jobs/post-a-job-profile/UpdateProviderProfile";
@@ -113,6 +128,7 @@ import ServicesCategory from "../Components/marketing/pages/jobs/company-list/Se
 import JobsCategory from "../Components/marketing/pages/jobs/listing/JobsCategory";
 import JobsLandingPage from "../Pages/jobsLandingPage/JobsLandingPage";
 import ServicesLandingPage from "../Pages/servicesLandingPage/ServicesLandingPage";
+import OutsourcedGigs from "../serviceProviderDashboard/OutsourcedGigs";
 
 const AllRoutes = () => {
   return (
@@ -196,6 +212,54 @@ const AllRoutes = () => {
 
       <Route path="/provider-profile" element={<ProviderProfile />} />
       <Route path="/Providerdashboard" element={<ProviderDashboard />} />
+
+      {/* service provider routes */}
+      <Route
+        path="/service/onboarding_step4"
+        element={<ServiceProviderProfile />}
+      />
+      <Route path="/service/onboarding_step1" element={<Step1 />} />
+      <Route path="/service/onboarding_step2" element={<Step2 />} />
+      <Route path="/service/onboarding_step3" element={<Step3 />} />
+      <Route path="/ServiceProviderdashboard" element={<Dashboard />} />
+      <Route path="/service/post-a-service" element={<PostService />} />
+      {/* Service Provider Pages */}
+      <Route
+        path="/ServiceProviderdashboard/All-Gig"
+        element={<ServiceProviderGig />}
+      />
+      <Route
+        path="/ServiceProviderDashoard/Outsourced-Gigs"
+        element={<OutsourcedGigs />}
+      />
+      <Route
+        path="/ServiceProviderdashboard/Service-offer"
+        element={<ServiceOffer />}
+      />
+      <Route
+        path="/ServiceProviderdashboard/ServiceProvided-payouts"
+        element={<ServiceProviderPayout />}
+      />
+      <Route
+        path="/ServiceProviderdashboard/ServiceProvider-reviews"
+        element={<ServiceProviderReviews />}
+      />
+      <Route
+        path="/ServiceProviderdashboard/ServiceProvider-social-profiles"
+        element={<ServiceProviderSocials />}
+      />
+      <Route
+        path="/ServiceProviderdashboard/ServiceProvider-conflict-resolution"
+        element={<ServiceProviderResolution />}
+      />
+      <Route
+        path="/ServiceProviderdashboard/ServiceProvider-delete-profile"
+        element={<ServiceProviderDeleteProfile />}
+      />
+      <Route
+        path="/ServiceProviderdashboard/ServiceProvider-update-provider-profile"
+        element={<ServiceProviderUpdate />}
+      />
 
       {/* Protected Routes */}
       <Route element={<ProtectedRoutes />}>

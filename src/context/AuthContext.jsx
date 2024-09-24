@@ -24,6 +24,7 @@ const UserProvider = ({ children }) => {
         {
           email: data.email,
           password: data.password,
+          userType: data.role,
         }
       );
       setLoading(false);
@@ -66,6 +67,12 @@ const UserProvider = ({ children }) => {
             navigate("/Providerdashboard");
           } else {
             navigate("/provider-profile");
+          }
+        } else if (response.data.data.role === "service provider") {
+          if (response.data.data.profile === true) {
+            navigate("/ServiceProviderdashboard");
+          } else {
+            navigate("/service/onboarding_step1");
           }
         } else if (response.data.data.role === "admin") {
           navigate("/admin/dashboard/overview");

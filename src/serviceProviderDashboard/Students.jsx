@@ -16,7 +16,7 @@ const Students = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          "https://remsana-backend-testing.azurewebsites.net/api/v1/get-my-students/41"
+          "https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-students/41"
         );
         setStudents(response.data);
         setLoading(false);
