@@ -37,7 +37,7 @@ const OutsourcedGigs = () => {
       try {
         const userId = sessionStorage.getItem("UserId");
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/provider-employed-gigs/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/provider-employed-gigs/${userId}`
         );
         setGigs(response.data.gigs);
         setOngoingGigs(response.data.ongoingGigs);

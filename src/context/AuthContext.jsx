@@ -24,10 +24,13 @@ const UserProvider = ({ children }) => {
         {
           email: data.email,
           password: data.password,
+          userType: data.role,
         }
       );
+     
       setLoading(false);
       if (response.status === 200) {
+        console.log("Login successful, navigating...");
         const name = response.data.data.username;
         const id = response.data.data.UserId;
         const image = response.data.data.image
@@ -40,7 +43,7 @@ const UserProvider = ({ children }) => {
         setUserImage(image);
         setUserRole(role);
         setEmail(userEmail);
-
+        console.log()
         sessionStorage.setItem("accessToken", response.data.accessToken);
         sessionStorage.setItem("refreshToken", response.data.refreshToken);
         sessionStorage.setItem("UserId", id);
@@ -66,6 +69,13 @@ const UserProvider = ({ children }) => {
             navigate("/Providerdashboard");
           } else {
             navigate("/provider-profile");
+          }
+        } else if (response.data.data.role === "service provider") {
+          if (response.data.data.profile === true) {
+            console.log(response.data.data.profile)
+            navigate("/ServiceProviderdashboard");
+          } else {
+            navigate("/service/onboarding_step1");
           }
         } else if (response.data.data.role === "admin") {
           navigate("/admin/dashboard/overview");

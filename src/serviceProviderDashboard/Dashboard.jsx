@@ -75,7 +75,7 @@ const Dashboard = () => {
       const getUser = async () => {
         try {
           const response = await axios.get(
-            `https://unleashified-backend.azurewebsites.net/api/v1/get-fgn-user-details/${userId}`
+            `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-fgn-user-details/${userId}`
           );
           if (response.data) {
             sessionStorage.setItem("accessToken", response.data.accessToken);
@@ -99,7 +99,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const response = await authFetch.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/service-provider-dashboard/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/service-provider-dashboard/${userId}`
         );
 
         setCompletedJobs(response.data.totalCompleted);
@@ -135,7 +135,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-my-earning/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-earning/${userId}`
         );
         setEarnings(response.data.userEarning);
       } catch (error) {
@@ -150,7 +150,7 @@ const Dashboard = () => {
       try {
         // const userId = sessionStorage.getItem("UserId");
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/service-created-per-month/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/service-created-per-month/${userId}`
         );
         const result = response.data;
         const monthlyData = result.map((item) => item.data);
@@ -171,7 +171,7 @@ const Dashboard = () => {
       try {
         const userId = sessionStorage.getItem("UserId");
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/last-four-paid-gigs/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/last-four-paid-gigs/${userId}`
         );
         setTop4Payment(response.data.lastFourPaidGigs);
       } catch (error) {

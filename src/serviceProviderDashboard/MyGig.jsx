@@ -39,7 +39,7 @@ const MyGig = () => {
     const fetchgigs = async () => {
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/my-gigs/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/my-gigs/${userId}`
         );
         // setGigs(response.data.gigs);
         setOngoingGigs(response.data.ongoingGigs);
@@ -59,7 +59,7 @@ const MyGig = () => {
     const fetchAllGigs = async () => {
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-my-services/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-services/${userId}`
         );
         const allGigsData = response.data.myServices.map((item) => item);
         setGigs(allGigsData);
