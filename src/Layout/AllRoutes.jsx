@@ -128,6 +128,9 @@ import ServicesCategory from "../Components/marketing/pages/jobs/company-list/Se
 import JobsCategory from "../Components/marketing/pages/jobs/listing/JobsCategory";
 import JobsLandingPage from "../Pages/jobsLandingPage/JobsLandingPage";
 import ServicesLandingPage from "../Pages/servicesLandingPage/ServicesLandingPage";
+import ServiceBilling from "../Components/marketing/pages/jobs/listing/ServiceBilling";
+import UserOrderSummary from "../Components/marketing/pages/jobs/listing/OrderSummary";
+import UserOrderSummarySingle from "../Components/marketing/pages/jobs/listing/OrderSummarySingle";
 import OutsourcedGigs from "../serviceProviderDashboard/OutsourcedGigs";
 
 const AllRoutes = () => {
@@ -183,6 +186,15 @@ const AllRoutes = () => {
       {/* Routes with JobListingLayout */}
       <Route element={<JobListingLayout />}>
         <Route path="/jobs/listing/job-list/" element={<JobsList />} />
+        
+        <Route path="/service/billing/:id" element={<ServiceBilling />} />
+        <Route
+          path="/service/order-summary/:id"
+          element={<UserOrderSummary />}
+        />
+        <Route
+          path="/service/order-summary-single/:id"
+          element={<UserOrderSummarySingle />} />
 
         <Route path="/jobs/listing" element={<JobSingle />} />
         <Route path="/services/listing" element={<ServiceSingle />} />
