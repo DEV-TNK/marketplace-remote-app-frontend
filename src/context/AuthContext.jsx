@@ -41,7 +41,7 @@ const UserProvider = ({ children }) => {
         setUserImage(image);
         setUserRole(role);
         setEmail(userEmail);
-
+        console.log()
         sessionStorage.setItem("accessToken", response.data.accessToken);
         sessionStorage.setItem("refreshToken", response.data.refreshToken);
         sessionStorage.setItem("UserId", id);
@@ -70,6 +70,7 @@ const UserProvider = ({ children }) => {
           }
         } else if (response.data.data.role === "service provider") {
           if (response.data.data.profile === true) {
+            console.log(response.data.data.profile)
             navigate("/ServiceProviderdashboard");
           } else {
             navigate("/service/onboarding_step1");
