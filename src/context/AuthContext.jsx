@@ -27,8 +27,10 @@ const UserProvider = ({ children }) => {
           userType: data.role,
         }
       );
+     
       setLoading(false);
       if (response.status === 200) {
+        console.log("Login successful, navigating...");
         const name = response.data.data.username;
         const id = response.data.data.UserId;
         const image = response.data.data.image

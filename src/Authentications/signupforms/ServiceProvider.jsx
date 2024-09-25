@@ -55,7 +55,7 @@ const ServiceProviderSignUp = () => {
         "https://marketplacebackendas-test.azurewebsites.net/api/v1/register",
         {
           email: data.email,
-          userType: "Service provider",
+          userType: "service provider",
           password: data.password,
           username: data.fullName,
         }
