@@ -68,19 +68,19 @@ const BasicDetails = ({ next }) => {
       <Card className="card-bordered shadow-none mb-3 ">
         <Card.Body className="p-6">
           <div className="mb-4">
-            <h2 className="mb-0">Basic Information</h2>
-            <span>Add your personal details in the form.</span>
+            <h2 className="mb-0">Informations de base</h2>
+            <span>Ajoutez vos données personnelles dans le formulaire.</span>
           </div>
           <Row>
             {/* Input fields */}
             <Col md={6} xs={12} className="mb-4">
               <Form.Label htmlFor="firstname">
-                First Name<span className="text-danger">*</span>
+              Prénom<span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
                 id="firstname"
-                placeholder="First Name"
+                placeholder="Prénom"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 required
@@ -88,54 +88,54 @@ const BasicDetails = ({ next }) => {
             </Col>
             <Col md={6} xs={12} className="mb-4">
               <Form.Label htmlFor="lastname">
-                Last Name<span className="text-danger">*</span>
+              Nom <span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
                 id="lastname"
-                placeholder="Last Name"
+                placeholder="Nom"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 required
               />
             </Col>
             <Col md={6} xs={12} className="mb-4">
-              <Form.Label htmlFor="middlename">Middle Name</Form.Label>
+              <Form.Label htmlFor="middlename">Deuxième prénom</Form.Label>
               <Form.Control
                 type="text"
                 id="middlename"
-                placeholder="Middle Name"
+                placeholder="Deuxième prénom"
                 value={middleName}
                 onChange={(e) => setMiddleName(e.target.value)}
               />
             </Col>
             <Col md={6} xs={12} className="mb-4">
               <Form.Label htmlFor="email">
-                Email<span className="text-danger">*</span>
+                E-mail<span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="email"
                 id="email"
-                placeholder="Tell us your Email ID"
+                placeholder="Tell us your E-mail ID"
                 aria-describedby="emailHelpBlock"
                 required
                 disabled
                 defaultValue={myEmail}
               />
               <Form.Text id="emailHelpBlock" className="fs-6" muted>
-                We'll send you relevant jobs in your mail
+              Nous vous enverrons des offres d’emploi pertinentes dans votre courrier
               </Form.Text>
             </Col>
             <Col md={12} xs={12} className="mb-4">
               <Form.Label htmlFor="phone">
-                Phone Name<span className="text-danger">*</span>
+              Numéro de téléphone<span className="text-danger">*</span>
               </Form.Label>
               <InputGroup className="mb-1">
                 <InputGroup.Text id="phone">+225</InputGroup.Text>
                 <Form.Control
                   type="text"
                   name="contact"
-                  placeholder="Mobile Number"
+                  placeholder="Numéro de téléphone"
                   aria-label="Mobile Number"
                   aria-describedby="phoneHelpBlock"
                   value={contact}
@@ -144,15 +144,15 @@ const BasicDetails = ({ next }) => {
                 />
               </InputGroup>
               <Form.Text id="phoneHelpBlock" className="fs-6" muted>
-                Recruiters will call you on this number
+              Les recruteurs vous appelleront sur ce numéro
               </Form.Text>
             </Col>
             <Col md={12} xs={12} className="mb-4">
-              <Form.Label className="d-block">Gender</Form.Label>
+              <Form.Label className="d-block">Sexe</Form.Label>
               <Form.Check
                 type="radio"
                 id="male"
-                label="Male"
+                label="Homme"
                 className="form-check-inline"
                 checked={gender === "male"}
                 onChange={() => setGender("male")}
@@ -161,7 +161,7 @@ const BasicDetails = ({ next }) => {
               <Form.Check
                 type="radio"
                 id="female"
-                label="Female"
+                label="Femme"
                 checked={gender === "female"}
                 className="form-check-inline"
                 onChange={() => setGender("female")}
@@ -170,7 +170,7 @@ const BasicDetails = ({ next }) => {
               <Form.Check
                 type="radio"
                 id="other"
-                label="Other"
+                label=" Autre"
                 className="form-check-inline"
                 checked={gender === "other"}
                 onChange={() => setGender("other")}
@@ -191,7 +191,7 @@ const BasicDetails = ({ next }) => {
             {/* Next button */}
             <Col xs={12}>
               <Button variant="primary" type="submit">
-                Next
+              Suivant
               </Button>
             </Col>
           </Row>

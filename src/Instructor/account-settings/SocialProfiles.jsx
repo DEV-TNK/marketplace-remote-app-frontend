@@ -101,9 +101,9 @@ const SocialProfiles = () => {
       <Card className="border-0">
         <Card.Header>
           <div className="mb-3 mb-lg-0">
-            <h3 className="mb-0">Social Profiles</h3>
+            <h3 className="mb-0">Profils sociaux</h3>
             <p className="mb-0">
-              Add your social profile links in below social accounts.
+            ajoutez les liens de votre profil social sous les comptes sociaux
             </p>
           </div>
         </Card.Header>
@@ -160,13 +160,13 @@ const SocialProfiles = () => {
             {/*  Linked in  */}
             <Row className="mb-5">
               <Col lg={3} md={4} sm={12}>
-                <h5>LinkedIn Profile URL</h5>
+                <h5> URL du profil LinkedIn</h5>
               </Col>
               <Col lg={9} md={8} sm={12}>
                 <Form.Control
                   type="text"
                   name="LinkedIn"
-                  placeholder="LinkedIn Profile URL"
+                  placeholder="URL du profil LinkedIn"
                   className="form-control mb-1"
                   value={formData.LinkedIn}
                   onChange={handleChange}
@@ -208,7 +208,7 @@ const SocialProfiles = () => {
             <Row>
               <Col lg={{ span: 6, offset: 3 }} sm={12}>
                 <Button variant="primary" type="submit" disabled={loading}>
-                  {loading ? "Processing..." : "Save Social Profile"}
+                  {loading ? "Processing..." : "Enregistrer le profil social."}
                 </Button>
               </Col>
             </Row>

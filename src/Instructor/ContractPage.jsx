@@ -73,9 +73,9 @@ const ContractPage = () => {
       <Card className="border-0">
         <Card.Header>
           <div className="mb-3 mb-lg-0">
-            <h3 className="mb-0">Contract Overview</h3>
+            <h3 className="mb-0">Vue d’ensemble du contrat </h3>
             <p className="mb-0">
-              Manage your Current Contract and its updates here
+            Gérez votre contrat actuel et ses mises à jour ici
             </p>
           </div>
         </Card.Header>
@@ -91,7 +91,7 @@ const ContractPage = () => {
                           <Nav.Link eventKey="tab1" className="mb-sm-3 mb-md-0">
                             <Row className="align-items-center d-block">
                               <Col className="d-flex align-items-center">
-                                Work in Progress
+                              Travaux en cours 
                                 <Icon
                                   path={mdiHelpCircle}
                                   size={0.5}
@@ -112,7 +112,7 @@ const ContractPage = () => {
                           <Nav.Link eventKey="tab3" className="mb-sm-3 mb-md-0">
                             <Row className="align-items-center d-block">
                               <Col className="d-flex align-items-center">
-                                Pending
+                              En attente
                                 <Icon
                                   path={mdiHelpCircle}
                                   size={0.5}
@@ -132,7 +132,7 @@ const ContractPage = () => {
                           <Nav.Link eventKey="tab4" className="mb-sm-3 mb-md-0">
                             <Row className="align-items-center d-block">
                               <Col className="d-flex align-items-center">
-                                Available
+                              Disponible
                                 <Icon
                                   path={mdiHelpCircle}
                                   size={0.5}
@@ -160,18 +160,15 @@ const ContractPage = () => {
                               variant="light-warning"
                               className="bg-light-warning text-dark-warning border-0"
                             >
-                              <strong>Note</strong>
+                              <strong> Remarque</strong>
                               <p>
-                                5% of the total payment for a Job will be
-                                deducted upon completion and approval of the
-                                side job
+                              5% du paiement total d’un travail sera déduit à l’achèvement et à l’approbation du travail secondaire
                               </p>
                             </Alert>
                           </Col>
-                          <h5 className="mb-3">Work in Progress</h5>
+                          <h5 className="mb-3"> Travail en cours</h5>
                           <p>
-                            View all Ongoing job waiting for Job provider
-                            approval after completion of Job
+                          affichez tous les travaux en cours en attente de l’approbation du fournisseur de travaux une fois le travail terminé
                           </p>
                           <div className="job-list">
                             {workProgress.map((workItem) => (

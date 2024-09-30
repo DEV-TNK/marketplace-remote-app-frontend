@@ -85,11 +85,11 @@ const SignIn = () => {
                       style={{ height: "100px", width: "160px" }}
                     />
                   </Link>
-                  <h1 className="mb-1 fw-bold">Sign in</h1>
+                  <h1 className="mb-1 fw-bold">Se connecter</h1>
                   <span>
-                    Don’t have an account?
+                  Vous n’avez pas de compte ?
                     <Link to="/authentication/signup" className="ms-1">
-                      Sign up
+                    S’inscrire
                     </Link>
                   </span>
                 </div>
@@ -98,7 +98,7 @@ const SignIn = () => {
                   <Row>
                     <Col lg={12} md={12} className="mb-3">
                       {/* Username or email */}
-                      <Form.Label>Email</Form.Label>
+                      <Form.Label>E-mail</Form.Label>
                       <Form.Control
                         type="email"
                         id="email"
@@ -116,7 +116,7 @@ const SignIn = () => {
                     </Col>
                     <Col lg={12} md={12} className="mb-3">
                       {/* Password */}
-                      <Form.Label>Password</Form.Label>
+                      <Form.Label>Mot de passe</Form.Label>
                       <div className="position-relative">
                         <Form.Control
                           type={passwordVisible ? "text" : "password"}
@@ -164,7 +164,7 @@ const SignIn = () => {
                       to="/authentication/Forget-password"
                       className="ms-1 text-bold"
                     >
-                      Forgot Password
+                      Mot de passe oublié
                     </Link>
 
                     <Col lg={12} md={12} className="mb-0 d-grid gap-2 mt-6">
@@ -183,7 +183,7 @@ const SignIn = () => {
                         </Button>
                       ) : (
                         <Button variant="primary" type="submit">
-                          Sign in
+                          Se connecter
                         </Button>
                       )}
                     </Col>

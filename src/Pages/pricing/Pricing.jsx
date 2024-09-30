@@ -38,10 +38,11 @@ const Pricing = () => {
             <Col xl={{ span: 8, offset: 2 }} lg={12} md={12} sm={12}>
               <div className="text-center mb-6 px-md-8">
                 <h1 className="text-white display-3 fw-bold">
-                Une tarification simple qui s’adapte à votre entreprise
+                  Une tarification simple qui s’adapte à votre entreprise
                 </h1>
                 <p className="text-white lead mb-4">
-                Parcourez les prix qui correspondent à vos besoins pour commencer sur PME Cote D'Ivoire Marketplace
+                  Parcourez les prix qui correspondent à vos besoins pour
+                  commencer sur PME Cote D'Ivoire Marketplace
                 </p>
 
                 {/* Switch Toggle */}
@@ -99,19 +100,22 @@ const Pricing = () => {
           <div style={{ maxWidth: "1300px", margin: "0 auto" }}>
             <h3 style={{ textAlign: "center" }}>
               <span style={{ color: "black" }}>
-                In addition to facilitating contracts between job providers and
-                job seekers, our platform employs an escrow system to ensure
-                security and trust. When a job provider pays for a particular
-                job, the funds are securely held in escrow until the work is
-                completed to the satisfaction of both parties. Upon successful
-                completion, the agreed-upon payment is released to the job
-                seekers. As part of our service, we charge a fee of 5% on the
-                total payment made by the job provider during a contract. This
-                fee covers the use of our platform, including features like
-                escrow protection, dispute resolution, and access to our network
-                of talented job seekers. By providing this service, we aim to
-                create a transparent and reliable marketplace for both job
-                providers and job seekers to thrive.
+                En plus de faciliter les contrats entre les fournisseurs
+                d’emploi et les demandeurs d’emploi, notre plateforme utilise un
+                système de séquestre pour assurer la sécurité et la confiance.
+                Lorsqu’un fournisseur de travaux paie pour un travail
+                particulier, les fonds sont conservés en toute sécurité sous
+                séquestre jusqu’à ce que les travaux soient terminés à la
+                satisfaction des deux parties. Une fois l’achèvement réussi, le
+                paiement convenu est versé aux chercheurs d’emploi. Dans le
+                cadre de notre service, nous facturons des frais de 5% sur le
+                paiement total effectué par le fournisseur de travail lors d’un
+                contrat. Ces frais couvrent l’utilisation de notre plateforme, y
+                compris des fonctionnalités telles que la protection contre le
+                séquestre, la résolution des litiges et l’accès à notre réseau
+                de chercheurs d’emploi talentueux. En fournissant ce service,
+                nous visons à créer un marché transparent et fiable pour que les
+                fournisseurs d’emploi et les chercheurs d’emploi prospèrent.
               </span>
             </h3>
           </div>
@@ -144,11 +148,11 @@ const Pricing = () => {
                 {/* Card body */}
                 <Card.Body>
                   <div className="d-lg-flex justify-content-between align-items-center">
-                    <h4 className="mb-0">Have other questions?</h4>
+                    <h4 className="mb-0">Vous avez d’autres questions ?</h4>
                     <span>
-                      Send us a mail via:{" "}
+                    Envoyez-nous un mail via :{" "}
                       <a href="mailto:migration@gfa-tech.com" target="_blank">
-                        support@PME Cote D'Ivoire Marketplace.com
+                      support@PME Côte d’Ivoire Marketplace.com
                       </a>
                     </span>
                   </div>

@@ -76,7 +76,7 @@ const resolutionTable = ({ data, datas, dataes, header }) => {
       data={data || datas || dataes}
       columns={columns}
       filter={true}
-      filterPlaceholder="Search conflicts"
+      filterPlaceholder="conflits de recherche"
       pagination={true}
     />
   ) : (

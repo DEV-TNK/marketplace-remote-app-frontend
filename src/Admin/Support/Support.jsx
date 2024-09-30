@@ -49,14 +49,14 @@ const Support = () => {
         header: "ID",
         cell: ({ row }) => "#" + row.id,
       },
-      { accessorKey: "firstName", header: "First Name" },
-      { accessorKey: "lastName", header: "Last Name" },
-      { accessorKey: "email", header: "Email" },
+      { accessorKey: "firstName", header: "Prénom" },
+      { accessorKey: "lastName", header: "Nom de famille" },
+      { accessorKey: "email", header: "E-mail" },
       { accessorKey: "contact", header: "Contact" },
-      { accessorKey: "reason", header: "Reason" },
+      { accessorKey: "reason", header: "Raison" },
       {
         accessorKey: "message",
-        header: "Message",
+        header: "du message Action",
         cell: ({ row }) =>
           row.message.length > 20 ? (
             <span
@@ -69,7 +69,7 @@ const Support = () => {
             row.message
           ),
       },
-      { accessorKey: "status", header: "Status" },
+      { accessorKey: "status", header: "Statut" },
       {
         accessorKey: "reply",
         header: "Action",
@@ -79,7 +79,7 @@ const Support = () => {
             size="sm"
             onClick={() => handleReply(row.id, row.message)}
           >
-            Reply
+            Réponse
           </Button>
         ),
       },
@@ -90,7 +90,7 @@ const Support = () => {
   return (
     <Card className="border-0 mt-4">
       <Card.Header>
-        <h3 className="mb-0 h4">Support</h3>
+        <h3 className="mb-0 h4">Assistance</h3>
       </Card.Header>
       <Card.Body>
         <Table hover responsive className="text-nowrap table-centered">

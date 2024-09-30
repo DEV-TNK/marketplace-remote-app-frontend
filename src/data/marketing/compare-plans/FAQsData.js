@@ -3,27 +3,27 @@ import { v4 as uuid } from 'uuid';
 export const FAQsData = [
   {
     id: uuid(),
-    question: "How does PME Cote D'Ivoire Marketplace connect job seekers with opportunities?",
+    question: "Comment PME Cote D’Ivoire Marketplace met-elle en relation les demandeurs d’emploi avec les opportunités ?",
     answer:
-      "PME Cote D'Ivoire Marketplace connects job seekers with opportunities by providing a comprehensive platform where individuals can explore job listings across various industries and locations. Job seekers can create profiles, upload resumes, and apply to relevant job openings easily."
+      "PME Cote D’Ivoire Marketplace met en relation les demandeurs d’emploi avec des opportunités en fournissant une plate-forme complète où les individus peuvent explorer les offres d’emploi dans divers secteurs et lieux. Les demandeurs d’emploi peuvent créer des profils, télécharger des CV et postuler facilement à des offres d’emploi pertinentes."
   },
   {
     id: uuid(),
-    question: "How can I contact PME Cote D'Ivoire Marketplace for support or assistance?",
+    question: "Comment puis-je contacter PME Cote D’Ivoire Marketplace pour obtenir de l’aide ou de l’aide ?",
     answer:
-      "If you need support or assistance, you can contact PME Cote D'Ivoire Marketplace through various channels. You can reach out to our customer support team via email at support@PME Cote D'Ivoire Marketplace.com. Additionally, you can visit our Contact Us page on the PME Cote D'Ivoire Marketplace website, where you can send us support request by filling the form."
+      "Si vous avez besoin de soutien ou d’assistance, vous pouvez contacter PME Côte D’Ivoire Marketplace par différents canaux. Vous pouvez contacter notre équipe d’assistance à la clientèle par e-mail à l’adresse support@PME Côte d’Ivoire Marketplace.com. De plus, vous pouvez visiter notre page Contactez-nous sur le site Web de PME Côte D’Ivoire, où vous pouvez nous envoyer une demande de soutien en remplissant le formulaire."
   },
   {
     id: uuid(),
-    question: "How does PME Cote D'Ivoire Marketplace assist employers in finding talent?",
+    question: "Comment PME Cote D’Ivoire Marketplace aide-t-il les employeurs à trouver des talents ?",
     answer:
-      "PME Cote D'Ivoire Marketplace assists employers in finding talent by providing access to a diverse pool of qualified candidates. Employers can post job openings, search for candidates based on specific criteria, and connect with potential hires through the platform. Additionally, PME Cote D'Ivoire Marketplace offers employer branding solutions and recruitment services to help companies attract and retain top talent."
+      "PME Cote D’Ivoire Marketplace aide les employeurs à trouver des talents en leur donnant accès à un vivier diversifié de candidats qualifiés. Les employeurs peuvent publier des offres d’emploi, rechercher des candidats en fonction de critères spécifiques et entrer en contact avec des recrues potentielles via la plateforme. De plus, PME Côte D’Ivoire Marketplace propose des solutions de marque employeur et des services de recrutement pour aider les entreprises à attirer et à retenir les meilleurs talents."
   },
   {
     id: uuid(),
-    question: "What benefits do employers gain from using PME Cote D'Ivoire Marketplace?",
+    question: "Quels sont les avantages pour les employeurs à utiliser la place de marché PME Côte D’Ivoire ?",
     answer:
-      "Employers benefit from using PME Cote D'Ivoire Marketplace by gaining access to a streamlined recruitment process, a wider talent pool, and advanced hiring tools. By leveraging PME Cote D'Ivoire Marketplace's platform, employers can efficiently manage job postings, streamline candidate screening and selection, and make data-driven hiring decisions. This results in improved efficiency, reduced time-to-hire, and enhanced overall recruitment outcomes."
+      "Les employeurs bénéficient de l’utilisation de PME Côte d’Ivoire Marketplace en accédant à un processus de recrutement rationalisé, à un vivier de talents plus large et à des outils d’embauche avancés. En tirant parti de la plateforme de PME Côte d’Ivoire Marketplace, les employeurs peuvent gérer efficacement les offres d’emploi, rationaliser la sélection et la sélection des candidats et prendre des décisions d’embauche fondées sur des données. Cela se traduit par une efficacité accrue, une réduction du temps d’embauche et de meilleurs résultats globaux en matière de recrutement."
   }
 ];
 

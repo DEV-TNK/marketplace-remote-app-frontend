@@ -885,7 +885,7 @@ const JobTable = ({ data, header }) => {
         data={data}
         columns={columns}
         filter={true}
-        filterPlaceholder="Search Jobs"
+        filterPlaceholder="Recherchez des emplois"
         pagination={true}
       />
       {/* Modal component for submitting review */}

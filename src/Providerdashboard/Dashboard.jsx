@@ -226,7 +226,7 @@ const Dashboard = () => {
               value={earnings[selectedCurrency] || 0.0}
               colorVariant="success"
               badgeValue={selectedCurrency}
-              subtitle="Currency"
+              subtitle=" Devise"
             />
           </Link>
           <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>

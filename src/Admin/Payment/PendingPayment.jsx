@@ -156,7 +156,7 @@ const PendingPayment = () => {
   return (
     <Card className="border-0 mt-4">
       <Card.Header>
-        <h3 className="mb-0 h4">Pending Payment</h3>
+        <h3 className="mb-0 h4">En attente de paiement</h3>
       </Card.Header>
       <Card.Body>
         <Row className="align-items-center">

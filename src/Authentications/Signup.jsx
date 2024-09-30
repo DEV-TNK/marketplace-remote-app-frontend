@@ -78,11 +78,11 @@ const SignUp = () => {
                     style={{ height: "100px", width: "160px" }}
                   />
                 </Navbar.Brand>
-                <h1 className="mb-1 fw-bold">Sign up</h1>
+                <h1 className="mb-1 fw-bold">S’enregistrer</h1>
                 <span>
-                  Already have an account?{" "}
+                Vous avez déjà un compte ?{" "}
                   <Link to="/authentication/signin" className="ms-1">
-                    Sign In
+                  Connexion
                   </Link>
                 </span>
               </div>
@@ -162,7 +162,7 @@ const SignUp = () => {
                   className="button-back"
                   onClick={handleHideSignUpForms}
                 >
-                  &larr; Back
+                  &larr; Précédent
                 </Button>
                 <Card.Body className="py-6 px-3">
                   <StudentSignUp />
@@ -177,7 +177,7 @@ const SignUp = () => {
                   className="button-back"
                   onClick={handleHideSignUpForms}
                 >
-                  &larr; Back
+                  &larr; Précédent
                 </Button>
                 <Card.Body className="py-6 px-3">
                   <InstructorSignUp />

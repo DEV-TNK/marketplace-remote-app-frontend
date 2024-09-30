@@ -37,18 +37,17 @@ const DeleteProfile = () => {
             <Card className="border-0">
                 <Card.Header>
                     <div className="mb-3 mb-lg-0">
-                        <h3 className="mb-0">Delete your account</h3>
-                        <p className="mb-0">Delete or Close your account permanently.</p>
+                        <h3 className="mb-0">Supprimer votre compte</h3>
+                        <p className="mb-0">Supprimez ou fermez votre compte définitivement. </p>
                     </div>
                 </Card.Header>
                 <Card.Body>
-                    <span className="text-danger h4">Warning</span>
+                    <span className="text-danger h4">Avertissement</span>
                     <p>
-                        If you close your account, you will be unsubscribed from all your 0
-                        courses, and will lose access forever.
+                    Si vous fermez votre compte, vous serez désabonné de tous vos cours 0, et vous perdrez définitivement l’accès.
                     </p>
                     <Button variant="danger" onClick={() => setShowModal(true)}>
-                        {processing ? "Processing..." : "Close My Account"}
+                        {processing ? "Processing..." : " Fermer mon compte."}
                     </Button>
 
                     <Modal show={showModal} onHide={() => setShowModal(false)}>

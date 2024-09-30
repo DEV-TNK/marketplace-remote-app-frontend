@@ -320,18 +320,18 @@ const Payouts = () => {
           return "#" + getValue();
         },
       },
-      { accessorKey: "method", header: "Method" },
+      { accessorKey: "method", header: " méthode" },
       { accessorKey: "date", header: "Date" },
       {
         accessorKey: "amount",
-        header: "Amount",
+        header: "montant",
         cell: ({ getValue }) => {
           return nairaSign + numberWithCommas(getValue());
         },
       },
       {
         accessorKey: "status",
-        header: "Status",
+        header: "Statut",
         cell: ({ getValue }) => {
           return (
             <Badge
@@ -390,10 +390,9 @@ const Payouts = () => {
           onClose={() => setShow(false)}
           dismissible
         >
-          <strong>payout@PME Cote D'Ivoire Marketplace.com</strong>
+          <strong>Payout@PME Côte d’Ivoire Marketplace.com </strong>
           <p>
-            You will receive your money in your bank account after two business
-            working day of making withdrawal request
+          Vous recevrez votre argent sur votre compte bancaire après deux jours ouvrables de demande de retrait.
           </p>
         </Alert>
       );
@@ -407,10 +406,9 @@ const Payouts = () => {
       <Card className="border-0">
         <Card.Header>
           <div className="mb-3 mb-lg-0">
-            <h3 className="mb-0">Payout Method</h3>
+            <h3 className="mb-0">Mode de paiement</h3>
             <p className="mb-0">
-              Payouts Dashboard is a quick overview of all current and old
-              payment requests.
+            le tableau de bord des paiements est un aperçu rapide de toutes les demandes de paiement actuelles et anciennes.
             </p>
           </div>
         </Card.Header>
@@ -443,13 +441,13 @@ const Payouts = () => {
                     </DropdownItem> */}
                   </DropdownMenu>
                 </Dropdown>
-                <h4 className="mb-1">Your total earnings</h4>
+                <h4 className="mb-1"> Votre revenu total</h4>
                 <h5 className="mb-0 display-4 fw-bold">
                   {formatPrice(selectedCurrency)}
                   {earnings[selectedCurrency] }{" "}
                   {/* Display earnings with Naira sign */}
                 </h5>
-                <p className="px-4">You can change your payout account above</p>
+                <p className="px-4">Vous pouvez modifier votre compte de paiement ci-dessus</p>
 
                 <Button
                   variant="primary"
@@ -459,7 +457,7 @@ const Payouts = () => {
                     setShowWithdrawModal(true);
                   }}
                 >
-                  Withdraw Earnings
+                  retirer les gains
                 </Button>
 
                 {/* Withdraw Modal */}
@@ -551,7 +549,7 @@ const Payouts = () => {
             <Col xl={8} lg={8} md={12} sm={12}>
               <Col xs={12} className="mt-3 text-center">
                 <Button variant="outline-primary" onClick={handleAddAccount}>
-                  Add Account
+                Ajouter un compte
                 </Button>
                 <Modal show={showModal} onHide={() => setShowModal(false)}>
                   <Modal.Header closeButton>
@@ -806,7 +804,7 @@ const Payouts = () => {
 
       <Card className="border-0 mt-4">
         <Card.Header>
-          <h3 className="mb-0 h4">Withdraw History</h3>
+          <h3 className="mb-0 h4">Historique des retraits</h3>
         </Card.Header>
         <Card.Body className="p-0 pb-4">
           <Table hover responsive className="text-nowrap table-centered">

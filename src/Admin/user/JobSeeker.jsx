@@ -38,11 +38,11 @@ const JobSeekers = () => {
                         <div className="border-bottom pb-4 mb-4 d-flex align-items-center justify-content-between">
                             <div className="mb-3 mb-md-0">
                                 <h1 className="mb-1 h2 fw-bold">
-                                    Job Seekers <span className="fs-5 text-muted">({jobSeekersData.length})</span>
+                                Chercheurs d’emploi <span className="fs-5 text-muted">({jobSeekersData.length})</span>
                                 </h1>
                                 <Breadcrumb>
-                                    <Breadcrumb.Item href="/admin/dashboard/overview">Dashboard</Breadcrumb.Item>
-                                    <Breadcrumb.Item active>Job Seekers</Breadcrumb.Item>
+                                    <Breadcrumb.Item href="/admin/dashboard/overview">Tableau de bord</Breadcrumb.Item>
+                                    <Breadcrumb.Item active>Chercheurs d’emploi</Breadcrumb.Item>
                                 </Breadcrumb>
                             </div>
                             <div>

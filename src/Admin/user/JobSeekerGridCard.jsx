@@ -53,7 +53,7 @@ const JobSeekersGridCard = ({ jobSeekers }) => {
             <div className="mb-4">
                 <Form.Control
                     type="search"
-                    placeholder="Search Job Seekers"
+                    placeholder="Catégorie d’emploi recherchée"
                     value={searchTerm}
                     onChange={handleSearch}
                 />
@@ -62,7 +62,7 @@ const JobSeekersGridCard = ({ jobSeekers }) => {
                 {displayJobSeekers.length > 0 ? (
                     displayJobSeekers
                 ) : (
-                    <Col>No matching job seekers found.</Col>
+                    <Col>Aucun chercheur d’emploi correspondant n’a été trouvé.</Col>
                 )}
             </Row>
 

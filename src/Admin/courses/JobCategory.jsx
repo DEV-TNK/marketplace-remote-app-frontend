@@ -36,12 +36,12 @@ const JobCategory = () => {
     () => [
       {
         id: "serialNumber",
-        header: "S/N",
+        header: " N/S",
         cell: ({ row }) => <div className="px-1">{row.index + 1}</div>,
       },
       {
         accessorKey: "_id",
-        header: "Category",
+        header: "Catégorie",
         cell: ({ row }) => (
           <button
             onClick={() => handleCategoryClick(row.original._id)}
@@ -57,10 +57,10 @@ const JobCategory = () => {
           </button>
         ),
       },
-      { accessorKey: "totalJobs", header: "Total Jobs" },
-      { accessorKey: "averageSalary", header: "Average Salary" },
-      { accessorKey: "OngoingJobs", header: "Ongoing Jobs" },
-      { accessorKey: "completedJobs", header: "Completed Jobs" },
+      { accessorKey: "totalJobs", header: " Nombre total d’emplois" },
+      { accessorKey: "averageSalary", header: "Salaire moyen" },
+      { accessorKey: "OngoingJobs", header: "Emplois en cours" },
+      { accessorKey: "completedJobs", header: "Emplois terminés" },
     ],
     [navigate]
   );
@@ -73,11 +73,11 @@ const JobCategory = () => {
         <Col lg={12} md={12} sm={12}>
           <div className="border-bottom pb-4 mb-4 d-md-flex align-items-center justify-content-between">
             <div className="mb-3 mb-md-0">
-              <h1 className="mb-1 h2 fw-bold">Job Category</h1>
+              <h1 className="mb-1 h2 fw-bold">Catégorie d’emplo</h1>
               <Breadcrumb>
-                <Breadcrumb.Item href="/admin/dashboard/overview">Dashboard</Breadcrumb.Item>
-                <Breadcrumb.Item href="/admin/jobs/all-jobs">Jobs</Breadcrumb.Item>
-                <Breadcrumb.Item active>Job Category</Breadcrumb.Item>
+                <Breadcrumb.Item href="/admin/dashboard/overview">Tableau de bord</Breadcrumb.Item>
+                <Breadcrumb.Item href="/admin/jobs/all-jobs">Emplois,</Breadcrumb.Item>
+                <Breadcrumb.Item active>Catégorie d’emplo</Breadcrumb.Item>
               </Breadcrumb>
             </div>
           </div>
@@ -104,7 +104,7 @@ const JobCategory = () => {
                   data={data}
                   columns={columns}
                   filter={true}
-                  filterPlaceholder="Search Job Category"
+                  filterPlaceholder="Catégorie d’emploi de recherche"
                   pagination={true}
                   showRowNumber={true}
                 />

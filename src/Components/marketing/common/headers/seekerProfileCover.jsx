@@ -75,7 +75,7 @@ const ProfileCover = ({ dashboardData }) => {
                 className="btn-sm"
                 onClick={() => document.getElementById("image-upload").click()}
               >
-                Update Image
+                Mettre à jour les images
               </Button>
               <input
                 type="file"

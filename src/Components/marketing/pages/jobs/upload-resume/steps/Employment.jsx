@@ -34,10 +34,10 @@ const Employment = (props) => {
   };
 
   const radios = [
-    { name: "Full-Time", value: "Full-Time" },
-    { name: "Part-Time", value: "Part-Time" },
+    { name: " Temps plein", value: "Full-Time" },
+    { name: " Temps partiel", value: "Part-Time" },
     { name: "Freelance", value: "Freelance" },
-    { name: "Contract", value: "Contract" },
+    { name: "Contrat", value: "Contract" },
   ];
 
   const handleChange = (e) => {
@@ -92,7 +92,7 @@ const Employment = (props) => {
   return (
     <Form>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="jobTitle">Job title</Form.Label>
+        <Form.Label htmlFor="jobTitle">Titre du poste</Form.Label>
         <Form.Control
           type="text"
           id="jobTitle"
@@ -103,7 +103,7 @@ const Employment = (props) => {
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label className="d-block">Job type</Form.Label>
+        <Form.Label className="d-block">Type de poste</Form.Label>
         <ButtonGroup>
           {radios.map((radio, idx) => (
             <ToggleButton
@@ -122,29 +122,29 @@ const Employment = (props) => {
         </ButtonGroup>
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="companyName">Company Name</Form.Label>
+        <Form.Label htmlFor="companyName"> Nom de l’entreprise</Form.Label>
         <Form.Control
           type="text"
           id="companyName"
           name="companyName"
           value={formData.companyName}
-          placeholder="Company Name"
+          placeholder=" Nom de l’entreprise,"
           onChange={handleChange}
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="companyAddress">Company Address</Form.Label>
+        <Form.Label htmlFor="companyAddress"> Adresse de l’entreprise</Form.Label>
         <Form.Control
           type="text"
           id="companyAddress"
           name="companyAddress"
           value={formData.companyAddress}
-          placeholder="Company Address"
+          placeholder=" Adresse de l’entreprise"
           onChange={handleChange}
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="companyCity">Company City</Form.Label>
+        <Form.Label htmlFor="companyCity"> Ville de l’entreprise</Form.Label>
         <Form.Control
           type="text"
           id="companyCity"
@@ -155,7 +155,7 @@ const Employment = (props) => {
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="companyCountry">Company Country</Form.Label>
+        <Form.Label htmlFor="companyCountry">Pays de l’entreprise</Form.Label>
         <div className="input-group">
           <CountryDropdown
             value={formData.companyCountry}
@@ -165,7 +165,7 @@ const Employment = (props) => {
         </div>
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label>Company State</Form.Label>
+        <Form.Label>État de l’entreprise</Form.Label>
         <div className="input-group">
           <RegionDropdown
             country={formData.companyCountry}
@@ -185,7 +185,7 @@ const Employment = (props) => {
         /> */}
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="dateOfJoining">Date of Joining</Form.Label>
+        <Form.Label htmlFor="dateOfJoining"> Date d’adhésion</Form.Label>
         <FlatPickr
           value={formData.dateOfJoining}
           placeholder="Date of Joining"
@@ -193,7 +193,7 @@ const Employment = (props) => {
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="dateOfRelieving">Date of relieving</Form.Label>
+        <Form.Label htmlFor="dateOfRelieving">Date de relèvement</Form.Label>
         <FlatPickr
           value={formData.dateOfLeaving}
           placeholder="Date of relieving"
@@ -201,7 +201,7 @@ const Employment = (props) => {
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="salary">Annual Salary</Form.Label>
+        <Form.Label htmlFor="salary"> Salaire annuel</Form.Label>
         <Form.Control
           type="text"
           id="salary"
@@ -213,14 +213,14 @@ const Employment = (props) => {
       </Form.Group>
       <div className="d-md-flex justify-content-between mb-3">
         <Button variant="outline-secondary" onClick={previous}>
-          Previous
+        Retournez en arrièr
         </Button>
         <div className="mt-2 mt-md-0 d-flex justify-content-between">
           <Button variant="outline-secondary" className="me-2" onClick={next}>
-            Skip
+          sautez
           </Button>
           <Button variant="primary" onClick={handleSaveAndContinue}>
-            Save and Continue
+          enregistrez et continuez.
           </Button>
         </div>
       </div>

@@ -103,17 +103,17 @@ const AllJobs = () => {
                                 <Nav className="nav-lb-tab">
                                     <Nav.Item>
                                         <Nav.Link eventKey="all" className="mb-sm-3 mb-md-0">
-                                            All Jobs
+                                        Toutes les tâches
                                         </Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
                                         <Nav.Link eventKey="ongoing" className="mb-sm-3 mb-md-0">
-                                            Ongoing Jobs
+                                        Tâches en cours
                                         </Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
                                         <Nav.Link eventKey="completed" className="mb-sm-3 mb-md-0">
-                                            Completed Jobs
+                                           Tâches complètes
                                         </Nav.Link>
                                     </Nav.Item>
                                 </Nav>

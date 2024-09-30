@@ -1,32 +1,32 @@
 export const DashboardMenu = [
 	{
 		id: 1,
-		title: 'My Dashboard',
+		title: 'Mon tableau de bord',
 		link: '/JobSeekerdashboard',
 		icon: 'home'
 	},
 	{
 		id: 2,
-		title: 'My Jobs',
+		title: 'Mes emplois',
 		link: '/JobSeekerdashboard/My-Job',
 		icon: 'book'
 	},
 	{
 		id: 3,
-		title: 'Contract',
+		title: 'Contrat',
 		link: '/JobSeekerdashboard/My-Contract',
 		icon: 'naira-sign'
 	},
 	{
 		id: 4,
-		title: 'My Offer',
+		title: 'Mon offre',
 		link: '/JobSeekerdashboard/My-Offer',
 		icon: 'shopping-bag'
 	},
 	
 	{
 		id: 5,
-		title: 'Reviews',
+		title: 'Critiques',
 		link: '/JobSeekerdashboard/seeker-reviews',
 		icon: 'star'
 	},
@@ -38,7 +38,7 @@ export const DashboardMenu = [
 	// },
 	{
 		id: 7,
-		title: 'Payouts',
+		title: 'Paiements',
 		link: '/JobSeekerdashboard/seeker-payouts',
 		icon: 'naira-sign'
 	},
@@ -55,26 +55,26 @@ export const AccountSettingsMenu = [
 	
 	{
 		id: 1,
-		title: 'Social Profiles',
+		title: 'Profils sociaux',
 		link: '/JobSeekerdashboard/seeker-social-profiles',
 		icon: 'refresh-cw'
 	},
 
 	{
 		id: 1,
-		title: 'Conflict Resolution',
+		title: 'Résolution de conflit',
 		link: '/JobSeekerdashboard/conflict-resolution',
 		icon: 'book'
 	},
 	{
 		id: 2,
-		title: 'Delete Profile',
+		title: 'Supprimer le profil',
 		link: '/JobSeekerdashboard/seeker-delete-profile',
 		icon: 'trash'
 	},
 	{
 		id: 3,
-		title: 'Sign Out',
+		title: 'Se déconnecter',
 		link: '/',
 		icon: 'power'
 	}

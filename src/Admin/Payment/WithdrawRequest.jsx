@@ -66,7 +66,7 @@ const WithdrawPayment = () => {
   return (
     <Card className="border-0 mt-4">
       <Card.Header>
-        <h3 className="mb-0 h4">Withdraw Request</h3>
+        <h3 className="mb-0 h4">Demande de retrait</h3>
       </Card.Header>
       <Card.Body className="p-0 pb-4">
         {loading ? (
@@ -81,11 +81,11 @@ const WithdrawPayment = () => {
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Amount (F CFA)</th>
-                  <th>Bank Details</th>
-                  <th>User Details</th>
+                  <th>Montant (F CFA)</th>
+                  <th>Coordonnées bancaires</th>
+                  <th>Détails utilisateur</th>
                   <th>Date</th>
-                  <th>Status</th>
+                  <th>Statut</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -161,7 +161,7 @@ const WithdrawPayment = () => {
           </>
         )}
         {!loading && withdrawalRequests.length === 0 && (
-          <div className="ml-5">No withdrawal requests found.</div>
+          <div className="ml-5">Aucune demande de retrait n’a été trouvée.</div>
         )}
       </Card.Body>
     </Card>

@@ -36,16 +36,16 @@ const MyJob = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const ongoingJobsHeader = [
-    { accessorKey: "jobTitle", header: "Job Title" },
-    { accessorKey: "jobSalary", header: "Job Salary" },
-    { accessorKey: "deliveryDate", header: "Delivery Date" },
+    { accessorKey: "jobTitle", header: " Intitulé du poste" },
+    { accessorKey: "jobSalary", header: "salaire" },
+    { accessorKey: "deliveryDate", header: " Date de livraison" },
     { accessorKey: "action", header: "Action" },
-    { accessorKey: "paymentStatus", header: "Payment Status" },
+    { accessorKey: "paymentStatus", header: "Statut" },
   ];
 
   const completedJobsHeader = [
-    { accessorKey: "jobTitle", header: "Job Title" },
-    { accessorKey: "jobSalary", header: "Job Salary" },
+    { accessorKey: "jobTitle", header: " Intitulé du poste" },
+    { accessorKey: "jobSalary", header: "salaire" },
     { accessorKey: "userDetails", header: "User Name" },
     { accessorKey: "review", header: "Review" },
     { accessorKey: "completedDate", header: "Completed Date" },
@@ -74,11 +74,11 @@ const MyJob = () => {
   }, []);
 
   const allJobsHeader = [
-    { accessorKey: "jobTitle", header: "Job Title" },
-    { accessorKey: "jobSalary", header: "Job Salary" },
+    { accessorKey: "jobTitle", header: " Intitulé du poste" },
+    { accessorKey: "jobSalary", header: "salaire" },
 
-    { accessorKey: "deliveryDate", header: "Delivery Date" },
-    { accessorKey: "status", header: "Status" },
+    { accessorKey: "deliveryDate", header: "Date de livraison" },
+    { accessorKey: "status", header: "Statut" },
     // { accessorKey: "paymentStatus", header: "Payment Status" },
   ];
 
@@ -105,26 +105,26 @@ const MyJob = () => {
               <Nav className="nav-lb-tab">
                 <Nav.Item>
                   <Nav.Link eventKey="all" className="mb-sm-3 mb-md-0">
-                    All
+                  Tous
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="ongoingjob" className="mb-sm-3 mb-md-0">
-                    Ongoing Jobs
+                  Travaux en cours
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="completedjob" className="mb-sm-3 mb-md-0">
-                    Completed jobs
+                  Travaux terminés
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
             </Card.Header>
             <Card.Header>
               <div className="mb-3 mb-lg-0">
-                <h3 className="mb-0">Jobs</h3>
+                <h3 className="mb-0"> Travaux</h3>
                 <p className="mb-0">
-                  Manage your job and its update like live, draft, and insight.
+                gérez vos travaux et leur mise à jour en direct, en brouillon et en perspicacité.
                 </p>
               </div>
             </Card.Header>

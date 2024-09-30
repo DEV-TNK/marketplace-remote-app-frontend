@@ -248,7 +248,7 @@ const JobTable = ({ data, datas, dataes, header, savedData }) => {
           },
         }))}
         filter={true}
-        filterPlaceholder="Search Jobs"
+        filterPlaceholder="Recherchez des emplois"
         pagination={true}
       />
       <Modal show={showReviewModal} onHide={() => setShowReviewModal(false)}>

@@ -22,13 +22,13 @@ const Intro = () => {
             {/* caption */}
             <h2 className="text-primary fw-bold">WHO WE ARE</h2>
             <h1 className="display-3 fw-bold mb-3">
-              At Unleashified, we are empowering Careers, Connecting Talent with
+              At PME Cote D'Ivoire Marketplace, we are empowering Careers, Connecting Talent with
               Opportunity
             </h1>
 
             {/* para */}
             <p className="h2 mb-3 ">
-              At Unleashified, we believe in the power of connection. Our
+              At PME Cote D'Ivoire Marketplace, we believe in the power of connection. Our
               mission is to bridge the gap between talented individuals and
               organizations in need of their skills. We are a passionate team of
               innovators, dedicated to transforming the job search and hiring

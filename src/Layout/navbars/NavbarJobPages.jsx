@@ -50,6 +50,9 @@ const NavbarDefault = ({ headerstyle, login }) => {
       console.log("this was access");
       navigate("/");
     }
+    if (role === "service provider"){
+      navigate("/")
+    }
   };
 
   const redirectDashboard = async () => {
@@ -59,6 +62,9 @@ const NavbarDefault = ({ headerstyle, login }) => {
     if (role === "provider") {
       console.log("this was access");
       navigate("/Providerdashboard");
+    }
+    if (role === "service provider"){
+      navigate("/ServiceProviderdashboard")
     }
   };
 
