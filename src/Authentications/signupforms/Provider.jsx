@@ -73,9 +73,9 @@ const InstructorSignUp = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <p>Register as a provider to be able to post jobs or outsource jobs</p>
+      <p>Inscrivez-vous en tant que fournisseur pour pouvoir publier des offres d’emploi ou externaliser des offres d’emploi</p>
       <Form.Group className="mb-3" controlId="formBasicName">
-        <Form.Label>Full Name</Form.Label>
+        <Form.Label>Nom complet</Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter your name"
@@ -84,7 +84,7 @@ const InstructorSignUp = () => {
         <small className="text-danger">{errors.fullName?.message}</small>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
+        <Form.Label>Adresse e-mail</Form.Label>
         <Form.Control
           type="email"
           placeholder="Enter email"
@@ -93,7 +93,7 @@ const InstructorSignUp = () => {
         <small className="text-danger">{errors.email?.message}</small>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
+        <Form.Label>Mot de passe</Form.Label>
         <div className="position-relative">
           <Form.Control
             type={passwordVisible ? "text" : "password"}
@@ -112,7 +112,7 @@ const InstructorSignUp = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Confirm Password</Form.Label>
+        <Form.Label>Mot de passe comfer</Form.Label>
         <div className="position-relative">
           <Form.Control
             type={passwordVisible ? "text" : "password"}
@@ -153,7 +153,7 @@ const InstructorSignUp = () => {
         </Button>
       ) : (
         <Button variant="primary" type="submit">
-          Sign Up as Job Provider
+          S’inscrire en tant que fournisseur d’emploi
         </Button>
       )}
     </Form>

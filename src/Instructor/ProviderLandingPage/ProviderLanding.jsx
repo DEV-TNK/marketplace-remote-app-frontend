@@ -19,7 +19,7 @@ const ProviderLanding = () => {
 				<Container>
 					<Row className="mb-4">
 						<Col>
-							<h2 className="mb-0 mx-2">Recommended to you</h2>
+							<h2 className="mb-0 mx-2">Recommandé pour vous</h2>
 						</Col>
 					</Row>
 					<div className="position-relative">

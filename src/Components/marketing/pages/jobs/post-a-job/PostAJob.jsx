@@ -357,7 +357,7 @@ const PostAJob = () => {
                 {/* Job Experience */}
                 <Col md={12} xs={12} className="mb-3">
                   <Form.Label htmlFor="job-experience">
-                    Job Experience
+                    Expérience du poste
                   </Form.Label>
                   <GKTagsInput
                     defaultTags={tags.jobExperience}
@@ -401,7 +401,7 @@ const PostAJob = () => {
                 {/* Job Description */}
                 <Col md={12} xs={12} className="mb-3">
                   <Form.Label htmlFor="job-description">
-                    Job Description<span className="text-danger">*</span>
+                  Description du poste<span className="text-danger">*</span>
                   </Form.Label>
                   <Form.Control
                     as="textarea"
@@ -416,7 +416,7 @@ const PostAJob = () => {
                 {/* Job Roles */}
                 <Col md={12} xs={12} className="mb-3">
                   <Form.Label htmlFor="job-roles">
-                    Job Roles<span className="text-danger">*</span>
+                    Rôle du poste<span className="text-danger">*</span>
                   </Form.Label>
                   <Form.Control
                     as="textarea"
@@ -430,7 +430,7 @@ const PostAJob = () => {
                 {/* Job Responsibilities */}
                 <Col md={12} xs={12} className="mb-3">
                   <Form.Label htmlFor="jobResponsibilities">
-                    Job Responsibilities
+                   Responsabilités du poste
                   </Form.Label>
                   <GKTagsInput
                     defaultTags={tags.jobResponsibilities}
@@ -443,7 +443,7 @@ const PostAJob = () => {
                 {/* Desired Candidate */}
                 <Col md={12} xs={12} className="mb-3">
                   <Form.Label htmlFor="desiredCandidate">
-                    Desired Candidate Profile
+                  Profil du candidat souhaité
                   </Form.Label>
                   <GKTagsInput
                     defaultTags={tags.desiredCandidate}
@@ -456,7 +456,7 @@ const PostAJob = () => {
                 {/* Job Perks and Benefits */}
                 <Col md={12} xs={12} className="mb-3">
                   <Form.Label htmlFor="jobPerksAndBenefits">
-                    Job Perks and Benefits
+                  Avantages et avantages
                   </Form.Label>
                   <GKTagsInput
                     defaultTags={tags.jobPerksAndBenefits}

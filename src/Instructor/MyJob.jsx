@@ -36,33 +36,33 @@ const MyJob = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const allJobsHeader = [
-    { accessorKey: "jobTitle", header: "Job Title" },
-    { accessorKey: "jobSalary", header: "Job Salary" },
-    { accessorKey: "deliveryDate", header: "Delivery Date" },
-    { accessorKey: "status", header: "Status" },
-    { accessorKey: "paymentStatus", header: "Payment Status" },
+    { accessorKey: "jobTitle", header: "Intitulé du poste" },
+    { accessorKey: "jobSalary", header: "salaire" },
+    { accessorKey: "deliveryDate", header: " date de livraison" },
+    { accessorKey: "status", header: "Statut" },
+    { accessorKey: "paymentStatus", header: "statut de paiement." },
   ];
   const savedJobsHeader = [
-    { accessorKey: "Title", header: "Title" },
-    { accessorKey: "jobSalary", header: "Job Salary" },
+    { accessorKey: "Title", header: "Intitulé du poste" },
+    { accessorKey: "jobSalary", header: "salaire" },
     { accessorKey: "jobLocation", header: "Job Location" },
     { accessorKey: "jobType", header: "Job Type" },
-    { accessorKey: "deliveryDate", header: "Delivery Date" },
+    { accessorKey: "deliveryDate", header: " date de livraison" },
     { accessorKey: "action", header: "Action" },
   ];
 
   const ongoingJobsHeader = [
-    { accessorKey: "jobTitle", header: "Job Title" },
+    { accessorKey: "jobTitle", header: "Intitulé du poste" },
     { accessorKey: "companyName", header: "Company Name" },
-    { accessorKey: "jobSalary", header: "Job Salary" },
-    { accessorKey: "deliveryDate", header: "Delivery Date" },
+    { accessorKey: "jobSalary", header: "salaire" },
+    { accessorKey: "deliveryDate", header: " date de livraison" },
     { accessorKey: "paymentStatus", header: "Payment Status" },
   ];
 
   const completedJobsHeader = [
-    { accessorKey: "jobTitle", header: "Job Title" },
+    { accessorKey: "jobTitle", header: "Intitulé du poste" },
     { accessorKey: "companyName", header: "Company Name" },
-    { accessorKey: "jobSalary", header: "Job Salary" },
+    { accessorKey: "jobSalary", header: "salaire" },
     { accessorKey: "review", header: "Review" },
     { accessorKey: "completedDate", header: "Completed Date" },
     { accessorKey: "paymentStatus", header: "Payment Status" },
@@ -152,31 +152,31 @@ const MyJob = () => {
               <Nav className="nav-lb-tab">
                 <Nav.Item>
                   <Nav.Link eventKey="all" className="mb-sm-3 mb-md-0">
-                    All
+                  Tous
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="savedjob" className="mb-sm-3 mb-md-0">
-                    Saved Jobs
+                  Travaux enregistrés
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="ongoingjob" className="mb-sm-3 mb-md-0">
-                    Ongoing Jobs
+                  Travaux en cours
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="completedjob" className="mb-sm-3 mb-md-0">
-                    Completed Jobs
+                  Travaux terminés
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
             </Card.Header>
             <Card.Header>
               <div className="mb-3 mb-lg-0">
-                <h3 className="mb-0">Jobs</h3>
+                <h3 className="mb-0">Travaux</h3>
                 <p className="mb-0">
-                  Manage your job and its update like live, draft, and insight.
+                gérez vos travaux et leur mise à jour en direct, en brouillon et en perspicacité
                 </p>
               </div>
             </Card.Header>

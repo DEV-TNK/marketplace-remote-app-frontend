@@ -8,22 +8,22 @@ const FeaturesList = () => {
 	const features = [
 		{
 			id: 1,
-			title: '2,000+ online jobs',
-			description: 'Explore a diverse range of relevant subjects catered to both job seekers and providers.',
+			title: 'Plus de 2 000 emplois en ligne',
+			description: 'Explorez un large éventail de sujets pertinents destinés à la fois aux demandeurs d’emploi et aux fournisseurs.',
 			icon: 'video',
 			colorclass: 'warning'
 		},
 		{
 			id: 2,
-			title: 'Expert job providers',
-			description: 'Discover skilled professionals to meet your job needs.',
+			title: 'Fournisseurs d’emplois experts',
+			description: 'Découvrez des professionnels qualifiés pour répondre à vos besoins.',
 			icon: 'users',
 			colorclass: 'warning'
 		},
 		{
 			id: 3,
-			title: 'Lifetime access',
-			description: 'Receive job opportunities at your convenience.',
+			title: 'Accès à vie',
+			description: 'Recevez des offres d’emploi à votre convenance.',
 			icon: 'clock',
 			colorclass: 'warning'
 		}

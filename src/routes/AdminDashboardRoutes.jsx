@@ -32,7 +32,7 @@ import { mdiTrello, mdiCalendar } from "@mdi/js";
 export const DashboardMenu = [
   {
     id: uuid(),
-    title: "Dashboard",
+    title: "Tableau de bord",
     icon: "home",
     children: [
       { id: uuid(), link: "admin/dashboard/overview", name: "Overview" },
@@ -42,35 +42,35 @@ export const DashboardMenu = [
 
   {
     id: uuid(),
-    title: "Jobs",
+    title: "Travail",
     icon: "book",
     children: [
-      { id: uuid(), link: "admin/jobs/all-jobs", name: "All Jobs" },
+      { id: uuid(), link: "admin/jobs/all-jobs", name: "Toutes les tâche" },
       {
         id: uuid(),
         link: "admin/jobs/job-category",
-        name: "Job Category",
+        name: "Catégorie d’emploi",
       },
     ],
   },
   {
     id: uuid(),
-    title: "User",
+    title: "Utilisateur",
     icon: "user",
     children: [
-      { id: uuid(), link: "/admin/JobSeeker", name: "JobSeeker" },
-      { id: uuid(), link: "/admin/JobProvider", name: "JobProvider" },
+      { id: uuid(), link: "/admin/JobSeeker", name: "Chercheurs d’emploi" },
+      { id: uuid(), link: "/admin/JobProvider", name: "Fournisseurs d’emplois" },
     ],
   },
   {
     id: uuid(),
-    title: "Payment",
+    title: "Paiement",
     icon: "user",
     children: [
       // { id: uuid(), link: "/admin/all-payment", name: "All" },
-      { id: uuid(), link: "/admin/pending-payment", name: "Pending" },
-      { id: uuid(), link: "/admin/received-payment", name: "Received" },
-      { id: uuid(), link: "/admin/withdraw-request", name: " Withdraw" },
+      { id: uuid(), link: "/admin/pending-payment", name: "En attente de paiement" },
+      { id: uuid(), link: "/admin/received-payment", name: "Reçu Paiement" },
+      { id: uuid(), link: "/admin/withdraw-request", name: " Demande de retrait" },
     ],
   },
   {
@@ -82,7 +82,7 @@ export const DashboardMenu = [
 
   {
     id: uuid(),
-    title: "Resolution",
+    title: "Résolution",
     icon: "help-circle",
     link: "/admin/resolution",
   },

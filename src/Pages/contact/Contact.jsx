@@ -46,9 +46,9 @@ const Contact = () => {
                     <GeoAlt size={17} className="text-primary me-2" />
                     GetFundedAfrica
                     <br />
-                    3rd Floor, Unit 1110, Ogun State Technology Hub, Abeokuta,
+                    3e étage, unité 1110, centre technologique de l’État d’Ogun, Abeokuta,
                     <br />
-                    Ogun State, Nigeria.
+                    État d’Ogun, Nigeria.
                   </p>
                 </div>
 

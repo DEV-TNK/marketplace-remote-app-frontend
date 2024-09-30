@@ -51,7 +51,7 @@ const SupportModal = ({
       style={{ width: "550px" }} 
     >
       <Offcanvas.Header closeButton>
-        <Offcanvas.Title>Response Message</Offcanvas.Title>
+        <Offcanvas.Title>Message de réponse</Offcanvas.Title>
       </Offcanvas.Header>
       <form
         onSubmit={handleSubmit}
@@ -63,7 +63,7 @@ const SupportModal = ({
       >
         <Offcanvas.Body style={{ flex: 1, display: "flex", flexDirection: "column" }}>
           <Form.Group className="mb-3" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-            <Form.Label>User Message</Form.Label>
+            <Form.Label>Message de l’utilisateur</Form.Label>
             <Form.Control
               as="textarea"
               name="user"
@@ -75,7 +75,7 @@ const SupportModal = ({
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Subject</Form.Label>
+            <Form.Label>Objet</Form.Label>
             <Form.Control
               type="text"
               name="subject"
@@ -100,10 +100,10 @@ const SupportModal = ({
         </Offcanvas.Body>
         <div className="d-flex justify-content-end p-3 border-top">
           <Button variant="secondary" onClick={() => onClose()} className="me-2">
-            Close
+          fermer
           </Button>
           <Button variant="primary" type="submit" disabled={loading}>
-            {loading ? "Sending..." : "Send Message"}
+            {loading ? "Sending..." : " envoyer un message"}
           </Button>
         </div>
       </form>

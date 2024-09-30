@@ -1,13 +1,13 @@
 export const DashboardMenu = [
 	{
 		id: 1,
-		title: 'My Dashboard',
+		title: 'Mon tableau de bord',
 		link: '/Providerdashboard',
 		icon: 'home'
 	},
 	{
 		id: 2,
-		title: 'All Jobs',
+		title: 'Mes emplois',
 		link: '/Providerdashboard/All-Job',
 		icon: 'book'
 	},
@@ -32,7 +32,7 @@ export const DashboardMenu = [
 	
 	{
 		id: 6,
-		title: 'Reviews',
+		title: 'Critiques',
 		link: '/Providerdashboard/provider-reviews',
 		icon: 'star'
 	},
@@ -44,7 +44,7 @@ export const DashboardMenu = [
 	// },
 	{
 		id: 7,
-		title: 'Payouts',
+		title: 'Paiements',
 		link: '/Providerdashboard/provider-payouts',
 		icon: 'naira-sign'
 	},
@@ -55,19 +55,19 @@ export const AccountSettingsMenu = [
 	
 	{
 		id: 1,
-		title: 'Social Profiles',
+		title: 'Profils sociaux',
 		link: '/Providerdashboard/provider-social-profiles',
 		icon: 'refresh-cw'
 	},
 	{
 		id: 1,
-		title: 'Conflict Resolution',
+		title: 'Résolution de conflit',
 		link: '/Providerdashboard/conflict-resolution',
 		icon: 'book'
 	},
 	{
 		id: 2,
-		title: 'Delete Profile',
+		title: 'Supprimer le profil',
 		link: '/Providerdashboard/provider-delete-profile',
 		icon: 'trash'
 	},

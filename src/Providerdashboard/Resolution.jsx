@@ -20,9 +20,9 @@ const ProviderResolution = () => {
   const allJobsHeader = [
     { accessorKey: "id", header: "Id" },
     { accessorKey: "date", header: "Date" },
-    { accessorKey: "reason", header: "Reason" },
+    { accessorKey: "reason", header: "Raison" },
     { accessorKey: "message", header: "Message" },
-    { accessorKey: "status", header: "Status" },
+    { accessorKey: "status", header: "Statut" },
   ];
 
   useEffect(() => {
@@ -103,10 +103,9 @@ const ProviderResolution = () => {
             <Card.Header>
               <div className="d-flex justify-content-between align-items-center">
                 <div>
-                  <h3 className="mb-0">Conflict Resolution</h3>
+                  <h3 className="mb-0">Résolution des conflits</h3>
                   <p className="mb-0">
-                    Manage your conflict resolutions and its update like
-                    pending, resolving, and finalized
+                  Gérez vos résolutions de conflits et leur mise à jour comme en attente, résolution et finalisation.
                   </p>
                 </div>
                 {/* <Button variant="primary" onClick={handleResolutionRequest}>
@@ -117,7 +116,7 @@ const ProviderResolution = () => {
                   onClick={handleResolutionRequest}
                   className="btn-sm btn-lg"
                 >
-                  Resolution Request
+                 Demande de résolution. 
                 </Button>
               </div>
             </Card.Header>
@@ -144,7 +143,7 @@ const ProviderResolution = () => {
       {/* Resolution Request Modal */}
       <Modal show={showResolutionModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Resolution Request</Modal.Title>
+          <Modal.Title>Demande de résolution. </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <FormSelect

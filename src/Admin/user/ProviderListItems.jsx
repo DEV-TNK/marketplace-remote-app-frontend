@@ -84,7 +84,7 @@ const ProviderListItems = ({ jobProviders }) => {
             data={jobProviders}
             columns={columns}
             filter={true}
-            filterPlaceholder="Search Job Providers"
+            filterPlaceholder="Recherche fournisseur d’emploi"
             pagination={true}
         />
     );

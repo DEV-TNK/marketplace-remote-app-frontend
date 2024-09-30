@@ -36,7 +36,7 @@ const ReceivedPayment = () => {
   return (
     <Card className="border-0 mt-4">
       <Card.Header>
-        <h3 className="mb-0 h4">Received Payment</h3>
+        <h3 className="mb-0 h4">Reçu Paiement</h3>
       </Card.Header>
       <Card.Body>
         {loading ? (
@@ -51,11 +51,11 @@ const ReceivedPayment = () => {
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Email</th>
-                  <th>Job Title</th>
-                  <th>Amount (F CFA)</th>
-                  <th>Method</th>
-                  <th>Status</th>
+                  <th>E-mail</th>
+                  <th> Titre du poste</th>
+                  <th>Montant (F CFA)</th>
+                  <th>Méthode </th>
+                  <th>Statut</th>
                   <th>Date</th>
                 </tr>
               </thead>
@@ -73,7 +73,7 @@ const ReceivedPayment = () => {
                 ))}
               </tbody>
             </Table>
-            {payments.length === 0 && <div>No payments found.</div>}
+            {payments.length === 0 && <div> Aucun paiement trouvé.</div>}
             <Pagination
               itemsPerPage={itemsPerPage}
               totalItems={payments.length}

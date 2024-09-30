@@ -87,7 +87,7 @@ const Overview = () => {
         <Col lg={12} md={12} sm={12}>
           <div className="border-bottom pb-4 mb-4 d-lg-flex justify-content-between align-items-center">
             <div className="mb-3 mb-lg-0">
-              <h1 className="mb-0 h2 fw-bold">Dashboard</h1>
+              <h1 className="mb-0 h2 fw-bold">Tableau de bord</h1>
             </div>
           </div>
         </Col>
@@ -104,11 +104,11 @@ const Overview = () => {
           <Row>
             <Col xl={3} lg={6} md={12} sm={12}>
               <StatRightIcon
-                title="Total Job Seeker"
+                title="Total des demandeurs d’emploi"
                 value={dashboardData.totalSeeker}
                 iconName="user"
                 iconColorVariant="primary"
-                summary="Monthly Job Seekers"
+                summary=" demandeur d’emploi mensuel"
                 summaryValue={dashboardData.monthlySeeker}
                 summaryIcon="up"
                 showSummaryIcon
@@ -130,11 +130,11 @@ const Overview = () => {
             </Col>
             <Col xl={3} lg={6} md={12} sm={12}>
               <StatRightIcon
-                title="Total Job Created"
+                title="Nombre total d’emplois créés"
                 value={dashboardData.totalJob}
                 iconName="user-check"
                 iconColorVariant="primary"
-                summary="Monthly Jobs"
+                summary="Emplois mensuels"
                 summaryValue={dashboardData.monthlyJob}
                 summaryIcon="up"
                 showSummaryIcon
@@ -143,11 +143,11 @@ const Overview = () => {
             </Col>
             <Col xl={3} lg={6} md={12} sm={12}>
               <StatRightIcon
-                title="Total Services"
+                title="Total des services"
                 value={dashboardData.totalService}
                 iconName="users"
                 iconColorVariant="primary"
-                summary="Monthly Services "
+                summary="Services mensuels"
                 summaryValue={dashboardData.totalService}
                 summaryIcon="up"
                 showSummaryIcon

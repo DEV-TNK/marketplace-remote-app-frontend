@@ -136,7 +136,7 @@ const MyOffer = () => {
           ) : (
             <Row className="justify-content-center">
               <Col className="text-center">
-                <p>No offers available.</p>
+                <p>Aucune offre disponible.</p>
               </Col>
             </Row>
           )}

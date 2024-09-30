@@ -1,39 +1,39 @@
 export const FAQsData = [
 	{
 	  id: 1,
-	  question: "How does PME Cote D'Ivoire Marketplace help job seekers?",
+	  question: "Comment PME Cote D’Ivoire Marketplace aide-t-il les chercheurs d’emploi ?",
 	  answer:
-		"PME Cote D'Ivoire Marketplace offers job seekers a platform to browse through a wide range of job opportunities across various industries and locations. They can create personalized profiles, upload resumes, and apply to relevant job openings easily."
+		"PME Cote D’Ivoire Marketplace offre aux demandeurs d’emploi une plateforme pour parcourir un large éventail d’opportunités d’emploi dans divers secteurs et lieux. Ils peuvent créer des profils personnalisés, télécharger des CV et postuler facilement à des offres d’emploi pertinentes."
 	},
 	{
 	  id: 2,
-	  question: "What types of job opportunities are available on PME Cote D'Ivoire Marketplace?",
+	  question: "Quels types d’opportunités d’emploi sont disponibles sur la Marketplace PME Côte D’Ivoire ?",
 	  answer:
-		"PME Cote D'Ivoire Marketplace hosts a diverse range of job opportunities, including full-time, part-time, freelance, remote, and temporary positions."
+		"PME Cote D’Ivoire Marketplace héberge un large éventail d’opportunités d’emploi, notamment des postes à temps plein, à temps partiel, en freelance, à distance et temporaires."
 	},
 	{
 	  id: 3,
-	  question: 'Can I receive notifications for new job postings?',
+	  question: 'Puis-je recevoir des notifications pour les nouvelles offres d’emploi ?',
 	  answer:
-		"Yes, PME Cote D'Ivoire Marketplace offers job seekers the option to set up email alerts or notifications for new job postings that match their preferences. This ensures that you stay updated on relevant opportunities without constantly checking the platform."
+		"Oui, PME Côte D’Ivoire Marketplace offre aux demandeurs d’emploi la possibilité de configurer des alertes par e-mail ou des notifications pour les nouvelles offres d’emploi qui correspondent à leurs préférences. Cela vous permet de rester à jour sur les opportunités pertinentes sans consulter constamment la plateforme."
 	},
 	{
 	  id: 4,
-	  question: "How do I apply for jobs on PME Cote D'Ivoire Marketplace?",
+	  question: "Comment postuler à des emplois sur PME Côte D’Ivoire Marketplace ",
 	  answer:
-		"Applying for jobs on PME Cote D'Ivoire Marketplace is simple. Once you find a job that interests you, you can click on the 'Apply Now' button and follow the instructions provided by the employer. You may need to submit your resume, cover letter, and any other required documents."
+		"Postuler à des emplois sur la Marketplace PME Côte D’Ivoire est simple. Une fois que vous avez trouvé un emploi qui vous intéresse, vous pouvez cliquer sur le bouton « Postuler maintenant » et suivre les instructions fournies par l’employeur. Vous devrez peut-être soumettre votre curriculum vitae, votre lettre de motivation et tout autre document requis."
 	},
 	{
 	  id: 5,
-	  question: "Are my personal details secure on PME Cote D'Ivoire Marketplace?",
+	  question: "Mes données personnelles sont-elles sécurisées sur la Marketplace de PME Côte d’Ivoire ",
 	  answer:
-		"Yes, PME Cote D'Ivoire Marketplace takes data security and privacy seriously. Your personal details are encrypted and stored securely. We adhere to strict privacy policies to ensure that your information is protected at all times."
+		"Oui, PME Côte d’Ivoire Marketplace prend la sécurité et la confidentialité des données au sérieux. Vos données personnelles sont cryptées et stockées en toute sécurité. Nous adhérons à des politiques de confidentialité strictes pour nous assurer que vos informations sont protégées en tout temps."
 	},
 	{
 		id: 7,
-		question: "How does PME Cote D'Ivoire Marketplace connect job seekers with opportunities and providers with talent engagement resources?",
+		question: "Comment PME Cote D’Ivoire Marketplace met-il en relation les demandeurs d’emploi avec des opportunités et les fournisseurs avec des ressources d’engagement des talents ?",
 		answer:
-		  "PME Cote D'Ivoire Marketplace connects job seekers with opportunities and providers with talent engagement resources by providing a platform where both parties can find each other easily. Job seekers can browse through available opportunities, and providers can access a pool of talented individuals for their talent engagement needs."
+		  "PME Cote D’Ivoire Marketplace met en relation les demandeurs d’emploi avec des opportunités et les fournisseurs avec des ressources d’engagement de talents en fournissant une plateforme où les deux parties peuvent se trouver facilement. Les demandeurs d’emploi peuvent parcourir les opportunités disponibles, et les fournisseurs peuvent accéder à un bassin de personnes talentueuses pour leurs besoins en matière d’engagement des talents."
 	  }
 	  
   ];

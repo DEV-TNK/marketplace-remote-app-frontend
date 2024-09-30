@@ -156,28 +156,28 @@ const Education = (props) => {
       <Card className="card-bordered shadow-none mb-3">
         <Card.Body className="p-6">
           <div className="mb-4">
-            <h2 className="mb-0">Education</h2>
+            <h2 className="mb-0">Éducation</h2>
             <span>
-              Add your education detail like school, degree, and graduate field.
+            Ajoutez des détails sur votre éducation comme l’école, le diplôme et le diplôme.
             </span>
           </div>
           <Row>
             <Col xs={12} className="mb-3">
               <Form.Label htmlFor="school-university">
-                School / University / Bootcamp
+              École / Université / Bootcamp
                 <span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
                 id="school-university"
-                placeholder="School / University / Bootcamp"
+                placeholder="École / Université / Bootcamp"
                 value={school}
                 onChange={(e) => setSchool(e.target.value)}
               />
             </Col>
             <Col md={12} xs={12} className="mb-3">
               <Form.Label htmlFor="degree">
-                Degree / Certificate<span className="text-danger">*</span>
+              Diplôme / Certificat<span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
@@ -189,7 +189,7 @@ const Education = (props) => {
             </Col>
             <Col md={12} xs={12} className="mb-3">
               <Form.Label htmlFor="study">
-                Field of Study<span className="text-danger">*</span>
+              Domaine d’études<span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
@@ -200,7 +200,7 @@ const Education = (props) => {
               />
             </Col>
             <Col md={12} xs={12} className="mb-3">
-              <Form.Label className="d-block">Course Type</Form.Label>
+              <Form.Label className="d-block">Type de cours</Form.Label>
               <ButtonGroup>
                 {radios.map((radio, idx) => (
                   <ToggleButton
@@ -219,7 +219,7 @@ const Education = (props) => {
               </ButtonGroup>
             </Col>
             <Col xs={12}>
-              <Form.Label>From</Form.Label>
+              <Form.Label>De</Form.Label>
             </Col>
             <Col md={6} xs={12} className="mb-3">
               <Form.Control
@@ -242,7 +242,7 @@ const Education = (props) => {
               />
             </Col>
             <Col className="col-12">
-              <Form.Label>To</Form.Label>
+              <Form.Label>À</Form.Label>
             </Col>
             <Col md={6} xs={12} className="mb-3">
               <Form.Control
@@ -266,7 +266,7 @@ const Education = (props) => {
             </Col>
             <div className="d-md-flex justify-content-between mb-3">
               <Button variant="outline-secondary" onClick={previous}>
-                Previous
+              Précédent
               </Button>
               <div className="mt-2 mt-md-0 d-flex justify-content-between">
                 <Button
@@ -274,10 +274,10 @@ const Education = (props) => {
                   className="me-2"
                   onClick={saveToSessionStorage}
                 >
-                  Skip
+                  sautez
                 </Button>
                 <Button variant="primary" onClick={saveToSessionStorage}>
-                  Save and Continue
+                enregistrez et continuez.
                 </Button>
               </div>
             </div>

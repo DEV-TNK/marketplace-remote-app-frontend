@@ -17,21 +17,19 @@ const HeroHeader = () => {
           <Col xl={5} lg={6} md={12}>
             <div className="py-5 py-lg-0">
               <h1 className="text-white display-4 fw-bold">
-                Welcome to Marketplace
+              Bienvenue sur Marketplace
               </h1>
               <p className="text-white-50 mb-4 lead">
-                Carefully chosen mentors and thoughtfully developed resources,
-                customized for individuals seeking employment opportunities and
-                employers looking to fill positions.
+              Des mentors soigneusement choisis et des ressources soigneusement élaborées, adaptées aux personnes à la recherche d’opportunités d’emploi et aux employeurs qui cherchent à pourvoir des postes.
               </p>
               <Link to="/jobs/listing/job-list/" className="btn btn-dark">
-                Browse Jobs
+              Parcourir les offres d’emploi
               </Link>
               <Link
                 to="/authentication/signup"
                 className="btn btn-white m-lg-2 "
               >
-                Are You a Job Provider?
+                Êtes-vous un fournisseur d’emploi ?
               </Link>
             </div>
           </Col>

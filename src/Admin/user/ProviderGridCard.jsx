@@ -58,7 +58,7 @@ const ProviderGridCard = ({ jobProviders }) => {
             <div className="mb-4">
                 <Form.Control
                     type="search"
-                    placeholder="Search Job Providers"
+                    placeholder="Recherche fournisseur d’emploi"
                     value={searchTerm}
                     onChange={handleSearch}
                 />

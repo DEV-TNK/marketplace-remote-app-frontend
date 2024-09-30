@@ -68,7 +68,7 @@ const ProfileLayout = (props) => {
     avatar: userImage || Avatar3,
     name: user,
     username: `@${user}`,
-    linkname: "Update Resume",
+    linkname: "mettre à jour le CV",
     link: "/jobs/update-resume/",
     verified: true,
     outlinebutton: false,
@@ -116,7 +116,7 @@ const ProfileLayout = (props) => {
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="me-auto flex-column" as="ul">
                     <Nav.Item className="navbar-header" as="li">
-                      Dashboard
+                    Tableau de bord
                     </Nav.Item>
                     {DashboardMenu.map((item, index) => (
                       <Nav.Item
@@ -133,7 +133,7 @@ const ProfileLayout = (props) => {
                       </Nav.Item>
                     ))}
                     <Nav.Item className="navbar-header mt-4" as="li">
-                      ACCOUNT SETTINGS
+                    PARAMÈTRES DU COMPTE
                     </Nav.Item>
                     {AccountSettingsMenu.map((item, index) => (
                       <Nav.Item

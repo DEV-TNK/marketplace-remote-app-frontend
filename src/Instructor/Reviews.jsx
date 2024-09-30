@@ -70,9 +70,9 @@ const Reviews = () => {
       <Card className="border-0">
         <Card.Header className="d-lg-flex align-items-center justify-content-between">
           <div className="mb-3 mb-lg-0">
-            <h3 className="mb-0">Reviews</h3>
+            <h3 className="mb-0">Avis</h3>
             <p className="mb-0">
-              You have full control to manage your own account setting.
+            vous avez le contrôle total de la gestion de vos propres paramètres de compte.
             </p>
           </div>
           {/* <div>

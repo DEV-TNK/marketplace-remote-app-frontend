@@ -27,7 +27,7 @@ const HeroContent = () => {
         </h2>
         {/* para */}
         <p className="h3 mb-3 ">
-          Welcome to Unleashified, your go-to destination for finding the
+          Welcome to PME Cote D'Ivoire Marketplace, your go-to destination for finding the
           perfect job. Whether you’re a recent graduate, a seasoned
           professional, or looking for a career change, we have opportunities
           that match your skills and aspirations. Start your journey with us

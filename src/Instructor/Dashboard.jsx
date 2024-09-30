@@ -216,12 +216,12 @@ const Dashboard = () => {
         <Col lg={4} md={12} sm={12} className="mb-4 mb-lg-0">
           <Link to="/JobSeekerdashboard/seeker-payouts">
             <StatRightBadge
-              title={`Available Earning (${selectedCurrency})`}
+              title={`Revenu disponible (${selectedCurrency})`}
               value={`${selectedCurrency}: ${
                 earnings[selectedCurrency] || 0.0
               }`}
               colorVariant="success"
-              subtitle="Currency"
+              subtitle="Devise"
               badgeValue={selectedCurrency}
             />
           </Link>
@@ -229,7 +229,7 @@ const Dashboard = () => {
             <DropdownToggle caret>{selectedCurrency}</DropdownToggle>
             <DropdownMenu>
               <DropdownItem onClick={() => handleCurrencyChange("F CFA")}>
-              F CFA
+                F CFA
               </DropdownItem>
               {/* <DropdownItem onClick={() => handleCurrencyChange("USD")}>
                 USD
@@ -246,8 +246,8 @@ const Dashboard = () => {
         <Col lg={4} md={12} sm={12} className="mb-4 mb-lg-0">
           <Link to="/JobSeekerdashboard/My-Job">
             <StatRightBadge
-              title="Total Job Applied For"
-              subtitle="New Job Applied for"
+              title="Nombre total d’emplois postulés"
+              subtitle="Nouveau poste postulé"
               value={totalJobsApplied}
               badgeValue={newJobsApplied}
               colorVariant="info"
@@ -257,8 +257,8 @@ const Dashboard = () => {
         <Col lg={4} md={12} sm={12} className="mb-4 mb-lg-0">
           <Link to="/JobSeekerdashboard/My-Job">
             <StatRightBadge
-              title="Total Approved Job"
-              subtitle="Pending Jobs"
+              title=" Nombre total d’emplois approuvés"
+              subtitle=" Emplois en attente"
               value={totalJobs}
               badgeValue={pendingJobs}
               colorVariant="warning"
@@ -283,7 +283,7 @@ const Dashboard = () => {
       {/* <!-- Card --> */}
       <Card className="my-4">
         <Card.Header>
-          <h3 className="h4 mb-0">Jobs Application</h3>
+          <h3 className="h4 mb-0">Demande d’emploi</h3>
         </Card.Header>
         <Card.Body>
           <ApexCharts
@@ -297,20 +297,20 @@ const Dashboard = () => {
 
       <Card className="mt-4">
         <Card.Header>
-          <h3 className="mb-0 h4">Last Four Approved Jobs</h3>
+          <h3 className="mb-0 h4">Quatre derniers emplois approuvés</h3>
         </Card.Header>
         <Card.Body className="p-0">
           <Table hover responsive className="mb-0 text-nowrap table-centered">
             <thead className="table-light">
               <tr>
                 <th scope="col" className="border-0 ">
-                  JOB DESCRIPTION
+                  DESCRIPTION DU POSTE
                 </th>
                 <th scope="col" className="border-0">
                   TYPE
                 </th>
                 <th scope="col" className="border-0">
-                  AMOUNT
+                  MONTAN
                 </th>
               </tr>
             </thead>
@@ -329,7 +329,7 @@ const Dashboard = () => {
                   </tr>
                 ))
               ) : (
-                <div className="px-5">No Job have been approved</div>
+                <div className="px-5">Aucun emploi n’a été approuvé</div>
               )}
             </tbody>
           </Table>

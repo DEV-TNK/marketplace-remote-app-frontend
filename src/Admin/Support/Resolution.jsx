@@ -72,10 +72,10 @@ const Resolution = () => {
         header: "ID",
         cell: ({ row }) => "#" + row.id,
       },
-      { accessorKey: "role", header: "Role" },
+      { accessorKey: "role", header: "Rôle" },
       {
         accessorKey: "userDetails",
-        header: "User Details",
+        header: "Détails de l’utilisateur",
         cell: ({ row }) => (
           <div>
             <span>{row.User.username}</span>
@@ -84,7 +84,7 @@ const Resolution = () => {
           </div>
         ),
       },
-      { accessorKey: "reason", header: "Reason" },
+      { accessorKey: "reason", header: "Raison" },
       {
         accessorKey: "message",
         header: "Message",
@@ -100,7 +100,7 @@ const Resolution = () => {
             row.message
           ),
       },
-      { accessorKey: "status", header: "Status" },
+      { accessorKey: "status", header: "Statut" },
       {
         accessorKey: "reply",
         header: "Action",
@@ -110,7 +110,7 @@ const Resolution = () => {
             size="sm"
             onClick={() => handleReply(row.id, row.message)}
           >
-            Reply
+            Réponse
           </Button>
         ),
       },

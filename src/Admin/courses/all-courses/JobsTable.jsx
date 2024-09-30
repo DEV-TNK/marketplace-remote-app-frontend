@@ -25,7 +25,7 @@ const JobsTable = ({ jobs_data }) => {
 
     const handleStatusChange = async (id, status) => {
         try {
-            const response = await axios.put(`https://remsana-backend-testing.azurewebsites.net/api/v1/jobs/${id}`, { status });
+            const response = await axios.put(`https://marketplacebackendas-test.azurewebsites.net/api/v1/jobs/${id}`, { status });
             setStatusChanged(true);
             const message = response.data.message;
             showToast(message); 

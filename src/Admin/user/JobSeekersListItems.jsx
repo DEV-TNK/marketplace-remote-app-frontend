@@ -110,7 +110,7 @@ const JobSeekersListItems = () => {
             data={jobSeekers}
             columns={columns}
             filter={true}
-            filterPlaceholder="Search Job Seekers"
+            filterPlaceholder=" Catégorie d’emploi recherchée"
             pagination={true}
         />
     );
