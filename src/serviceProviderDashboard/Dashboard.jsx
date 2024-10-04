@@ -249,7 +249,7 @@ const Dashboard = () => {
         <Col lg={3} md={12} sm={12} className="mb-4 mb-lg-0">
           <Link to="/ServiceProviderdashboard/ServiceProvided-payouts">
             <StatRightBadge
-              title={`Available Earnings (${selectedCurrency})`}
+              title={`Revenu disponible (${selectedCurrency})`}
               value={
                 [selectedCurrency] +
                 [" "] +
@@ -257,7 +257,7 @@ const Dashboard = () => {
               }
               colorVariant="success"
               badgeValue={selectedCurrency}
-              subtitle="Currency"
+              subtitle=" Devise"
             />
           </Link>
           <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
@@ -281,8 +281,8 @@ const Dashboard = () => {
         <Col lg={3} md={12} sm={12} className="mb-4 mb-lg-0">
           <Link to="/ServiceProviderdashboard/All-Gig">
             <StatRightBadge
-              title="Total service(gigs) Created"
-              subtitle="New this month"
+              title="Total des services (Gigs) créés"
+              subtitle="Nouveau ce mois-ci"
               value={totalGigs || 0}
               badgeValue={monthLyGigs || 0}
               colorVariant="info"
@@ -292,8 +292,8 @@ const Dashboard = () => {
         <Col lg={3} md={12} sm={12} className="mb-4 mb-lg-0">
           <Link to="/ServiceProviderdashboard/All-Gig">
             <StatRightBadge
-              title="Total service(gigs) Completed"
-              subtitle="ongoing"
+              title="Total des services (Gigs) terminés"
+              subtitle=" En cours"
               value={completedJobs || 0}
               badgeValue={ongoingGigs || 0}
               colorVariant="warning"
@@ -303,8 +303,8 @@ const Dashboard = () => {
         <Col lg={3} md={12} sm={12} className="mb-4 mb-lg-0">
           <Link to="/ServiceProviderDashoard/Outsourced-Gigs">
             <StatRightBadge
-              title="Total Service(gigs) Employed"
-              subtitle="Pending"
+              title="Total des services (Gigs) employés"
+              subtitle="En attente"
               value={gigsEmployed || 0}
               badgeValue={ongoingEmployedGigs || 0}
               colorVariant="warning"
@@ -329,7 +329,7 @@ const Dashboard = () => {
       {/* <!-- Card --> */}
       <Card className="my-4">
         <Card.Header>
-          <h3 className="h4 mb-0">Services(Gigs) Created</h3>
+          <h3 className="h4 mb-0">Services (Gigs) créés</h3>
         </Card.Header>
         <Card.Body>
           <ApexCharts
@@ -344,26 +344,26 @@ const Dashboard = () => {
 
       <Card className="mt-4">
         <Card.Header>
-          <h3 className="mb-0 h4">Last Four Paid Gigs</h3>
+          <h3 className="mb-0 h4">Les quatre derniers gigs payés</h3>
         </Card.Header>
         <Card.Body className="p-0 ">
           <Table hover responsive className="mb-0 text-nowrap table-centered">
             <thead className="table-light">
               <tr>
                 <th scope="col" className="border-0">
-                  GIG TITLE
+                Titre du gig
                 </th>
                 <th scope="col" className="border-0">
-                  AMOUNT
+                MONTANT
                 </th>
                 <th scope="col" className="border-0">
-                  Person&apos;s
+                Personne&apos;s
                 </th>
                 <th scope="col" className="border-0">
                   Type
                 </th>
                 <th scope="col" className="border-0">
-                  Status
+                  Statut
                 </th>
               </tr>
             </thead>

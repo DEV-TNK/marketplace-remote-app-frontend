@@ -67,7 +67,7 @@ const ServiceOffer = () => {
       <Row className="mb-3">
         <Col>
           <Form.Select onChange={(e) => handleSelectJob(e.target.value)}>
-            <option value="">Select Service(Gig) Posted</option>
+            <option value="">Sélectionnez les service (gigs) publiés</option>
             {groupByJobTitle().map((jobTitle) => (
               <option key={jobTitle} value={jobTitle}>
                 {jobTitle}
@@ -78,7 +78,7 @@ const ServiceOffer = () => {
       </Row>
       <Row>
         {jobs.length === 0 && !error && (
-          <div className="text-center">No job applicants available.</div>
+          <div className="text-center">Aucun candidat disponible.</div>
         )}
         {displayJobs}
         {jobs.length > perPage && (

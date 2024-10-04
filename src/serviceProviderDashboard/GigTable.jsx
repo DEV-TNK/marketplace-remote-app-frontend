@@ -493,7 +493,7 @@ const GigTable = ({ data, header }) => {
         data={data}
         columns={columns}
         filter={true}
-        filterPlaceholder="Search Gigs"
+        filterPlaceholder="Rechercher des gigs"
         pagination={true}
       />
       {/* Modal component for submitting review */}

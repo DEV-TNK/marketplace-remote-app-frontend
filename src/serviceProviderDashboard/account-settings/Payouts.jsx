@@ -392,10 +392,9 @@ const Payouts = () => {
           onClose={() => setShow(false)}
           dismissible
         >
-          <strong>payout@unleashified.com</strong>
+          <strong>Payout@PME Côte d’Ivoire Marketplace.com</strong>
           <p>
-            You will receive your money in your bank account after two business
-            working day of making withdrawal request
+          Vous recevrez votre argent sur votre compte bancaire après deux jours ouvrables de demande de retrait.
           </p>
         </Alert>
       );
@@ -409,10 +408,9 @@ const Payouts = () => {
       <Card className="border-0">
         <Card.Header>
           <div className="mb-3 mb-lg-0">
-            <h3 className="mb-0">Payout Method</h3>
+            <h3 className="mb-0">Mode de paiement</h3>
             <p className="mb-0">
-              Payouts Dashboard is a quick overview of all current and old
-              payment requests.
+            le tableau de bord des paiements est un aperçu rapide de toutes les demandes de paiement actuelles et anciennes.
             </p>
           </div>
         </Card.Header>
@@ -445,13 +443,13 @@ const Payouts = () => {
                     </DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
-                <h4 className="mb-1">Your total earnings</h4>
+                <h4 className="mb-1">Votre revenu total</h4>
                 <h5 className="mb-0 display-4 fw-bold">
                   {formatPrice(selectedCurrency)}
                   {earnings[selectedCurrency] || 0.0}{" "}
                   {/* Display earnings with Naira sign */}
                 </h5>
-                <p className="px-4">You can change your payout account above</p>
+                <p className="px-4">Vous pouvez modifier votre compte de paiement ci-dessus.</p>
 
                 <Button
                   variant="primary"
@@ -461,7 +459,7 @@ const Payouts = () => {
                     setShowWithdrawModal(true);
                   }}
                 >
-                  Withdraw Earnings
+                  retirer les gains
                 </Button>
 
                 {/* Withdraw Modal */}
@@ -470,13 +468,13 @@ const Payouts = () => {
                   onHide={() => setShowWithdrawModal(false)}
                 >
                   <Modal.Header closeButton>
-                    <Modal.Title>Withdraw Earnings</Modal.Title>
+                    <Modal.Title>retirer les gains</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
                     {/* Display account details */}
 
                     <div className="border p-4 rounded-3 mt-3">
-                      <h4>Select Banks:</h4>
+                      <h4>Sélectionnez les banques:</h4>
                       {/* <p>
                         If the bank currency you select is difference from the
                         currency you withdraw from, the amount will be converted
@@ -499,7 +497,7 @@ const Payouts = () => {
                           ))}
                         </select>
                       ) : (
-                        <p>No accounts found.</p>
+                        <p>Aucun compte trouvé.</p>
                       )}
                       {errorAcc && (
                         <div className="alert alert-danger mt-3">
@@ -511,16 +509,16 @@ const Payouts = () => {
                     {/* Display withdrawal amount input field */}
                     <div className="border p-4 rounded-3 mt-3">
                       <h4>
-                        Available Balance: {formatPrice(selectedCurrency)}
+                      Solde disponible: {formatPrice(selectedCurrency)}
                         {earnings[selectedCurrency] || 0.0}
                       </h4>
                       <Form.Group controlId="withdrawnAmount">
                         <Form.Label>
-                          Withdrawn Amount {formatPrice(selectedCurrency)}
+                        Montant retiré{formatPrice(selectedCurrency)}
                         </Form.Label>
                         <Form.Control
                           type="text"
-                          placeholder={`Enter amount in ${formatPrice(
+                          placeholder={`Entrez le montant en ${formatPrice(
                             selectedCurrency
                           )}`}
                           value={withdrawnAmount}
@@ -543,7 +541,7 @@ const Payouts = () => {
                       </Button>
                     ) : (
                       <Button variant="primary" onClick={handleWithdraw}>
-                        Withdraw
+                        Retirer
                       </Button>
                     )}
                   </Modal.Footer>
@@ -553,46 +551,46 @@ const Payouts = () => {
             <Col xl={8} lg={8} md={12} sm={12}>
               <Col xs={12} className="mt-3 text-center">
                 <Button variant="outline-primary" onClick={handleAddAccount}>
-                  Add Account
+                Ajouter un compte
                 </Button>
                 <Modal show={showModal} onHide={() => setShowModal(false)}>
                   <Modal.Header closeButton>
-                    <Modal.Title>Enter Account Details</Modal.Title>
+                    <Modal.Title>Entrez les détails du compte</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
                     <Form>
                       <Form.Group className="mb-3" controlId="accountName">
-                        <Form.Label>Account Name</Form.Label>
+                        <Form.Label>Nom du compte</Form.Label>
                         <Form.Control
                           type="text"
-                          placeholder="Enter Account Name"
+                          placeholder=" Entrez le nom du compte"
                           value={accountName}
                           onChange={(e) => setAccountName(e.target.value)}
                         />
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="accountNumber">
-                        <Form.Label>Account Number</Form.Label>
+                        <Form.Label> Numéro de compte</Form.Label>
                         <Form.Control
                           type="text"
-                          placeholder="Enter Account Number"
+                          placeholder="Entrez le numéro de compte"
                           value={accountNumber}
                           onChange={(e) => setAccountNumber(e.target.value)}
                         />
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="bankName">
-                        <Form.Label>Bank Name</Form.Label>
+                        <Form.Label>Nom de la banque</Form.Label>
                         <Form.Control
                           type="text"
-                          placeholder="Enter Bank Name"
+                          placeholder="Entrez le nom de la banque"
                           value={bankName}
                           onChange={(e) => setBankName(e.target.value)}
                         />
                       </Form.Group>
                       <Form.Group className="mb-3">
-                        <Form.Label>Currency</Form.Label>
+                        <Form.Label>Devise</Form.Label>
                         <FormSelect
                           options={bankCurrency}
-                          placeholder="select currency"
+                          placeholder="Sélectionnez la devise"
                           id="course_currency"
                           name="currency"
                           value={currency}
@@ -606,10 +604,10 @@ const Payouts = () => {
                       variant="secondary"
                       onClick={() => setShowModal(false)}
                     >
-                      Close
+                      Fermer
                     </Button>
                     <Button variant="primary" onClick={handleSave}>
-                      Save
+                    Enregistrer
                     </Button>
                   </Modal.Footer>
                 </Modal>
@@ -808,7 +806,7 @@ const Payouts = () => {
 
       <Card className="border-0 mt-4">
         <Card.Header>
-          <h3 className="mb-0 h4">Withdraw History</h3>
+          <h3 className="mb-0 h4">Historique des retraits</h3>
         </Card.Header>
         <Card.Body className="p-0 pb-4">
           <Table hover responsive className="text-nowrap table-centered">
