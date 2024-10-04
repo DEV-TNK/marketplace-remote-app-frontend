@@ -162,10 +162,10 @@ const PostAJob = () => {
     { value: "Yearly", label: "Yearly" },
   ];
   const radios = [
-    { name: "Full-Time", value: "Full-Time" },
-    { name: "Part-Time", value: "Part-Time" },
-    { name: "Freelance", value: "Freelance" },
-    { name: "Contract", value: "Contract" },
+    { name: "Temps plein", value: "Full-Time" },
+    { name: "Temps partiel", value: "Part-Time" },
+    { name: "Indépendant", value: "Freelance" },
+    { name: "Contrat", value: "Contract" },
   ];
 
   return (
@@ -174,10 +174,9 @@ const PostAJob = () => {
         <Row>
           <Col md={12} lg={5}>
             <div className="mb-12">
-              <h1 className="display-4 mb-3 fw-bold">Post a job today</h1>
+              <h1 className="display-4 mb-3 fw-bold">Publiez une offre d'emploi aujourd'hui</h1>
               <p className="mb-0 lead">
-                Ready to post a job for your company? Choose your job type below
-                and fill all the job information
+              Prêt à publier une offre d'emploi pour votre entreprise ? Choisissez le type d'emploi ci-dessous et remplissez toutes les informations.
               </p>
             </div>
           </Col>
@@ -208,10 +207,9 @@ const PostAJob = () => {
                   />
                 </svg>
               </div>
-              <h3> Job information</h3>
+              <h3> Informations sur le poste</h3>
               <p>
-                Add Relevant Job Information so that the right candidate can
-                apply for this job
+              Ajoutez des informations pertinentes sur le poste afin que le bon candidat puisse postuler à cet emploi.
               </p>
             </div>
           </Col>
@@ -221,12 +219,12 @@ const PostAJob = () => {
                 {/* Job Title */}
                 <Col md={12} xs={12} className="mb-3">
                   <Form.Label htmlFor="job-title">
-                    Job title<span className="text-danger">*</span>
+                  Titre du poste<span className="text-danger">*</span>
                   </Form.Label>
                   <Form.Control
                     type="text"
                     id="job-title"
-                    placeholder="Write  the Job Title"
+                    placeholder="Écrivez le titre du poste"
                     required
                     value={jobTitle}
                     onChange={(e) => setJobTitle(e.target.value)}
@@ -235,12 +233,12 @@ const PostAJob = () => {
                 {/* Select Department */}
                 <Col md={12} xs={12} className="mb-3">
                   <Form.Label htmlFor="department">
-                    Select Department<span className="text-danger">*</span>
+                  Sélectionnez le Département<span className="text-danger">*</span>
                   </Form.Label>
                   <Form.Control
                     as={FormSelect}
                     options={departments}
-                    placeholder="Select Department"
+                    placeholder="Sélectionnez le Département"
                     defaultValue=""
                     value={department}
                     onChange={(e) => setDepartment(e.target.value)}
@@ -250,25 +248,25 @@ const PostAJob = () => {
 
                 <Col md={12} xs={12} className="mb-3">
                   {/* Job location */}
-                  <Form.Label className="d-block">Job Format</Form.Label>
+                  <Form.Label className="d-block">Format du poste</Form.Label>
                   <Form.Check
                     type="radio"
                     name="job-format"
-                    label="Onsite"
+                    label="Sur site"
                     checked={jobFormat === "Onsite"}
                     onChange={() => setJobFormat("Onsite")}
                   />
                   <Form.Check
                     type="radio"
                     name="job-format"
-                    label="Remote"
+                    label=" À distance"
                     checked={jobFormat === "Remote"}
                     onChange={() => setJobFormat("Remote")}
                   />
                   <Form.Check
                     type="radio"
                     name="job-format"
-                    label="Hybrid"
+                    label="Hybride"
                     checked={jobFormat === "Hybrid"}
                     onChange={() => setJobFormat("Hybrid")}
                   />
@@ -277,7 +275,7 @@ const PostAJob = () => {
                 <Col xs={12} className="mb-3">
                   {/* Company website */}
                   <Form.Label htmlFor="company-location">
-                    Company Location<span className="text-danger">*</span>
+                  Lieu de l'entreprise<span className="text-danger">*</span>
                   </Form.Label>
                   <div className="input-group">
                     <CountryDropdown
@@ -291,7 +289,7 @@ const PostAJob = () => {
                 {/* Job Type */}
                 <Col md={12} xs={12} className="mb-3">
                   <Form.Label className="d-block">
-                    Job Type<span className="text-danger">*</span>
+                  Type d'emploi<span className="text-danger">*</span>
                   </Form.Label>
                   <ButtonGroup>
                     {radios.map((radio, idx) => (
@@ -312,11 +310,11 @@ const PostAJob = () => {
                 </Col>
                 {/* Job Salary */}
                 <Col md={12} xs={12} className="mb-3">
-                  <Form.Label htmlFor="job-salary">Job Salary</Form.Label>
+                  <Form.Label htmlFor="job-salary"> Salaire</Form.Label>
                   <Form.Control
                     type="number"
                     id="job-salary"
-                    placeholder="Enter job salary"
+                    placeholder="Entrez le salaire"
                     value={jobSalary}
                     onChange={(e) => setJobSalary(e.target.value)}
                   />
@@ -325,12 +323,12 @@ const PostAJob = () => {
                 {/* Select Job Format */}
                 <Col md={12} xs={12} className="mb-3">
                   <Form.Label htmlFor="jobSalaryFormat">
-                    Job Salary Format<span className="text-danger">*</span>
+                  Format du salaire<span className="text-danger">*</span>
                   </Form.Label>
                   <Form.Control
                     as={FormSelect}
                     options={jobSalaryFormats}
-                    placeholder="Select Salary price format"
+                    placeholder="Sélectionnez le format du salaire"
                     defaultValue=""
                     value={jobSalaryFormat}
                     onChange={(e) => setJobSalaryFormat(e.target.value)}
@@ -339,7 +337,7 @@ const PostAJob = () => {
                 </Col>
                 {/* Select Currency */}
                 <Col md={12} xs={12} className="mb-3">
-                  <Form.Label htmlFor="currency">Currency</Form.Label>
+                  <Form.Label htmlFor="currency">Devise</Form.Label>
                   <Form.Control
                     as="select"
                     id="currency"
@@ -347,7 +345,7 @@ const PostAJob = () => {
                     onChange={(e) => setCurrency(e.target.value)}
                     required
                   >
-                    <option value="">Select currency</option>
+                    <option value="">Sélectionnez la devise</option>
                     <option value="NGN">CFA franc</option>
                     {/* <option value="EUR">Euros</option>
                     <option value="USD">Dollars</option>
@@ -369,7 +367,7 @@ const PostAJob = () => {
                 {/* Years of Experience */}
                 <Col md={12} xs={12} className="mb-3">
                   <Form.Label htmlFor="years-of-experience">
-                    Years of Experience
+                  Années d'expérience
                   </Form.Label>
                   <Form.Control
                     as="select"
@@ -377,7 +375,7 @@ const PostAJob = () => {
                     value={yearsOfExperience}
                     onChange={(e) => setYearsOfExperience(e.target.value)}
                   >
-                    <option value="">Select years of experience</option>
+                    <option value="">Sélectionnez les années d'expérience</option>
                     {[...Array(21)].map((_, i) => (
                       <option key={i} value={i}>
                         {i}
@@ -388,12 +386,12 @@ const PostAJob = () => {
                 {/* Job Delivery */}
                 <Col md={12} xs={12} className="mb-3">
                   <Form.Label htmlFor="job-delivery">
-                    Delivery (in day(s))
+                  Délai de livraison (en jours)*
                   </Form.Label>
                   <Form.Control
                     type="text"
                     id="job-delivery"
-                    placeholder="Enter delivery days"
+                    placeholder="Entrez le nombre de jours de livraison"
                     value={deliveryDate}
                     onChange={(e) => setDeliveryDate(e.target.value)}
                   />
@@ -406,7 +404,7 @@ const PostAJob = () => {
                   <Form.Control
                     as="textarea"
                     id="job-description"
-                    placeholder="Write the Job description"
+                    placeholder="Écrivez la description du poste"
                     value={jobDescription}
                     onChange={(e) => setJobDescription(e.target.value)}
                     required
@@ -421,7 +419,7 @@ const PostAJob = () => {
                   <Form.Control
                     as="textarea"
                     id="job-roles"
-                    placeholder="Write the Job Roles"
+                    placeholder="Écrivez les rôles du poste"
                     value={jobRoles}
                     onChange={(e) => setJobRoles(e.target.value)}
                     required
@@ -473,7 +471,7 @@ const PostAJob = () => {
                     className="px-6"
                     disabled={loading}
                   >
-                    {loading ? "Loading..." : "Submit"}
+                    {loading ? "Loading..." : "Soumettre"}
                   </Button>
                 </Col>
               </Row>
