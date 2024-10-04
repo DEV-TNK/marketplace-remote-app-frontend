@@ -52,17 +52,17 @@ const DeleteProfile = () => {
 
                     <Modal show={showModal} onHide={() => setShowModal(false)}>
                         <Modal.Header closeButton>
-                            <Modal.Title>Confirm Delete</Modal.Title>
+                            <Modal.Title>Confirmer la suppression</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                            Are you sure you want to delete your account? This action cannot be undone.
+                        Êtes-vous sûr de vouloir supprimer votre compte ? Cette action ne peut pas être annulée.
                         </Modal.Body>
                         <Modal.Footer>
                             <Button variant="secondary" onClick={() => setShowModal(false)}>
-                                Cancel
+                            Annuler
                             </Button>
                             <Button variant="danger" onClick={handleDeleteAccount} disabled={processing}>
-                                {processing ? "Deleting..." : "Delete"}
+                                {processing ? "Deleting..." : "Supprimer"}
                             </Button>
                         </Modal.Footer>
                     </Modal>

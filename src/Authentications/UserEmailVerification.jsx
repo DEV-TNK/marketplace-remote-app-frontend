@@ -51,7 +51,7 @@ const UserEmailVerification = () => {
         `https://marketplacebackendas-test.azurewebsites.net/api/v1/resend-email`,
         {
           email: queryParam.get("email"),
-          
+
         }
       );
       setLoading(false);

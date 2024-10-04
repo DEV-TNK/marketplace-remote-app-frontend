@@ -64,19 +64,19 @@ const Payouts = () => {
           return '#' + getValue();
         }
       },
-      { accessorKey: 'method', header: 'Method' },
+      { accessorKey: 'method', header: 'Méthode' },
       {
         accessorKey: 'amount',
-        header: 'Amount',
+        header: 'Montant',
         cell: ({ getValue }) => {
           return nairaSign + numberWithCommas(getValue());
         }
       },
       { accessorKey: 'date', header: 'Date' },
-      { accessorKey: 'jobTitle', header: 'Job Title' },
+      { accessorKey: 'jobTitle', header: 'Titre Du Poste' },
       {
         accessorKey: 'status',
-        header: 'Status',
+        header: 'Statut',
         cell: ({ getValue }) => {
           return (
             <Badge

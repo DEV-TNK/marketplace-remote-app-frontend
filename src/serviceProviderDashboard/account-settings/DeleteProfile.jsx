@@ -16,7 +16,7 @@ const DeleteProfile = () => {
 
     try {
       const response = await axios.delete(
-        `https://remsana-backend-testing.azurewebsites.net/api/v1/user/${userId}`
+        `https://marketplacebackendas-test.azurewebsites.net/api/v1/user/${userId}`
       );
       showToast(response.data.message);
       sessionStorage.clear();
@@ -37,38 +37,40 @@ const DeleteProfile = () => {
       <Card className="border-0">
         <Card.Header>
           <div className="mb-3 mb-lg-0">
-            <h3 className="mb-0">Delete your account</h3>
-            <p className="mb-0">Delete or Close your account permanently.</p>
+            <h3 className="mb-0">Supprimer votre compte</h3>
+            <p className="mb-0">
+              Supprimez ou fermez votre compte définitivement.{" "}
+            </p>
           </div>
         </Card.Header>
         <Card.Body>
-          <span className="text-danger h4">Warning</span>
+          <span className="text-danger h4">Avertissement</span>
           <p>
-            If you close your account, you will be unsubscribed from all your 0
-            courses, and will lose access forever.
+            Si vous fermez votre compte, vous serez désabonné de tous vos cours
+            0, et vous perdrez définitivement l’accès.
           </p>
           <Button variant="danger" onClick={() => setShowModal(true)}>
-            {processing ? "Processing..." : "Close My Account"}
+            {processing ? "Processing..." : " Fermer mon compte."}
           </Button>
 
           <Modal show={showModal} onHide={() => setShowModal(false)}>
             <Modal.Header closeButton>
-              <Modal.Title>Confirm Delete</Modal.Title>
+              <Modal.Title>Confirmer la suppression</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              Are you sure you want to delete your account? This action cannot
-              be undone.
+              Êtes-vous sûr de vouloir supprimer votre compte ? Cette action ne
+              peut pas être annulée.
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={() => setShowModal(false)}>
-                Cancel
+                Annuler
               </Button>
               <Button
                 variant="danger"
                 onClick={handleDeleteAccount}
                 disabled={processing}
               >
-                {processing ? "Deleting..." : "Delete"}
+                {processing ? "Deleting..." : "Supprimer"}
               </Button>
             </Modal.Footer>
           </Modal>

@@ -94,7 +94,7 @@ const Dashboard = () => {
       try {
         // const userId = sessionStorage.getItem("UserId");
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-provider-dashboardJobs/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-provider-dashboardJobs/${userId}`
         );
 
         setEarnings(response.data.totalAmountSpent);
@@ -131,7 +131,7 @@ const Dashboard = () => {
       try {
         // const userId = sessionStorage.getItem("UserId");
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/jobs-created-by-provider/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/jobs-created-by-provider/${userId}`
         );
         const result = response.data;
         const monthlyData = result.map((item) => item.data);
@@ -152,7 +152,7 @@ const Dashboard = () => {
       try {
         const userId = sessionStorage.getItem("UserId");
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-provider-dashboardPaidJobs/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-provider-dashboardPaidJobs/${userId}`
         );
         setTop4Payment(response.data.jobs);
       } catch (error) {
@@ -222,7 +222,7 @@ const Dashboard = () => {
         <Col lg={4} md={12} sm={12} className="mb-4 mb-lg-0">
           <Link to="/JobSeekerdashboard/seeker-payouts">
             <StatRightBadge
-              title={`Money Spent (${selectedCurrency})`}
+              title={`Argent dépensé (${selectedCurrency})`}
               value={earnings[selectedCurrency] || 0.0}
               colorVariant="success"
               badgeValue={selectedCurrency}
@@ -250,8 +250,8 @@ const Dashboard = () => {
         <Col lg={4} md={12} sm={12} className="mb-4 mb-lg-0">
           <Link to="/Providerdashboard/All-Job">
             <StatRightBadge
-              title="Total Job Created"
-              subtitle="New this month"
+              title="Total des offres d'emploi créées"
+              subtitle="Nouveau ce mois-ci"
               value={totalJobs || 0}
               badgeValue={monthLyJobs || 0}
               colorVariant="info"
@@ -261,8 +261,8 @@ const Dashboard = () => {
         <Col lg={4} md={12} sm={12} className="mb-4 mb-lg-0">
           <Link to="/Providerdashboard/All-Job">
             <StatRightBadge
-              title="Total Completed"
-              subtitle="Pending"
+              title="Total complété"
+              subtitle="En attente"
               value={completedJobs || 0}
               badgeValue={pendingJobs || 0}
               colorVariant="warning"
@@ -287,7 +287,7 @@ const Dashboard = () => {
       {/* <!-- Card --> */}
       <Card className="my-4">
         <Card.Header>
-          <h3 className="h4 mb-0">Jobs Created</h3>
+          <h3 className="h4 mb-0">Offres d'emploi créées</h3>
         </Card.Header>
         <Card.Body>
           <ApexCharts
@@ -302,26 +302,26 @@ const Dashboard = () => {
 
       <Card className="mt-4">
         <Card.Header>
-          <h3 className="mb-0 h4">Last Four Paid Jobs</h3>
+          <h3 className="mb-0 h4">Quatre dernières offres d'emploi payées</h3>
         </Card.Header>
         <Card.Body className="p-0 ">
           <Table hover responsive className="mb-0 text-nowrap table-centered">
             <thead className="table-light">
               <tr>
                 <th scope="col" className="border-0">
-                  JOB TITLE
+                TITRE DU POSTE
                 </th>
                 <th scope="col" className="border-0">
-                  AMOUNT
+                MONTANT
                 </th>
                 <th scope="col" className="border-0">
-                  Person's
+                Type de personne
                 </th>
                 <th scope="col" className="border-0">
                   Type
                 </th>
                 <th scope="col" className="border-0">
-                  Status
+                  Statut
                 </th>
               </tr>
             </thead>

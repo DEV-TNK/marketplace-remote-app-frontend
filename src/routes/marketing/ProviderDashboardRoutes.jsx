@@ -25,7 +25,7 @@ export const DashboardMenu = [
 	// },
 	{
 		id: 5,
-		title: 'Job Applicants',
+		title: "Candidats à l'emploi",
 		link: '/Providerdashboard/Job-Applicants',
 		icon: 'shopping-bag'
 	},
@@ -73,13 +73,13 @@ export const AccountSettingsMenu = [
 	},
 	{
 		id: 3,
-		title: 'Update Profile',
+		title: 'Mettre à jour le profil',
 		link: '/Providerdashboard/update-provider-profile',
 		icon: 'refresh-cw'
 	},
 	{
 		id: 4,
-		title: 'Sign Out',
+		title: 'Se déconnecter',
 		link: '/',
 		icon: 'power'
 	}

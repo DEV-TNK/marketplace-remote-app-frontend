@@ -22,9 +22,9 @@ const ProviderResolution = () => {
   const allJobsHeader = [
     { accessorKey: "id", header: "Id" },
     { accessorKey: "date", header: "Date" },
-    { accessorKey: "reason", header: "Reason" },
+    { accessorKey: "reason", header: "Raison" },
     { accessorKey: "message", header: "Message" },
-    { accessorKey: "status", header: "Status" },
+    { accessorKey: "status", header: "Statut" },
   ];
 
   useEffect(() => {
@@ -65,11 +65,11 @@ const ProviderResolution = () => {
   };
 
   const contactOptions = [
-    { value: "Fraud", label: "Fraud" },
-    { value: "Job Submission", label: "Job Submission" },
+    { value: "Fraud", label: "Fraude" },
+    { value: "Job Submission", label: "Soumission de candidature" },
     { value: "Service", label: "Service" },
-    { value: "Payment Withdrawal", label: "Payment Withdrawal" },
-    { value: "Non Payment", label: "Non Payment" },
+    { value: "Payment Withdrawal", label: "Retrait de paiement" },
+    { value: "Non Payment", label: "Non-paiement" },
   ];
 
   const handleResolutionSubmit = async (e) => {
@@ -142,29 +142,29 @@ const ProviderResolution = () => {
         </Tab.Container>
       </Card>
 
-      {/* Resolution Request Modal */}
-      <Modal show={showResolutionModal} onHide={handleCloseModal}>
+            {/* Resolution Request Modal */}
+            <Modal show={showResolutionModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Resolution Request</Modal.Title>
+          <Modal.Title>Demande de résolution. </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <FormSelect
             options={contactOptions}
             value={selectedContact}
             onChange={(event) => setSelectedContact(event.target.value)}
-            placeholder="Select Reason..."
+            placeholder=" Sélectionnez raison..."
           />
           <textarea
             className="form-control mt-3"
             rows="5"
-            placeholder="Enter your message..."
+            placeholder="Entrez votre message..."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseModal}>
-            Close
+          Fermer
           </Button>
           {loading ? (
             <Button variant="primary" disabled style={{ opacity: ".7" }}>
@@ -172,7 +172,7 @@ const ProviderResolution = () => {
             </Button>
           ) : (
             <Button variant="primary" onClick={handleResolutionSubmit}>
-              Submit
+              Soumettre
             </Button>
           )}
         </Modal.Footer>

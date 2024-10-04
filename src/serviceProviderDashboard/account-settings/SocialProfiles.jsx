@@ -106,7 +106,7 @@ const SocialProfiles = () => {
           <div className="mb-3 mb-lg-0">
             <h3 className="mb-0">Profils sociaux</h3>
             <p className="mb-0">
-            ajoutez les liens de votre profil social sous les comptes sociaux.
+            ajoutez les liens de votre profil social sous les comptes sociaux
             </p>
           </div>
         </Card.Header>
@@ -121,7 +121,7 @@ const SocialProfiles = () => {
                 <Form.Control
                   type="text"
                   name="twitter"
-                  placeholder="Twitter Profile Name"
+                  placeholder="Nom de profil Twitter"
                   className="form-control mb-1"
                   value={formData.twitter}
                   onChange={handleChange}
@@ -137,7 +137,7 @@ const SocialProfiles = () => {
                 <Form.Control
                   type="text"
                   name="facebook"
-                  placeholder="Facebook Profile Name"
+                  placeholder="Nom de profil Facebook"
                   className="form-control mb-1"
                   value={formData.facebook}
                   onChange={handleChange}
@@ -153,7 +153,7 @@ const SocialProfiles = () => {
                 <Form.Control
                   type="text"
                   name="instagram"
-                  placeholder="Instagram Profile Name"
+                  placeholder="Nom de profil Instagram"
                   className="form-control mb-1"
                   value={formData.instagram}
                   onChange={handleChange}
@@ -169,7 +169,7 @@ const SocialProfiles = () => {
                 <Form.Control
                   type="text"
                   name="LinkedIn"
-                  placeholder=" URL du profil LinkedIn"
+                  placeholder="URL du profil LinkedIn"
                   className="form-control mb-1"
                   value={formData.LinkedIn}
                   onChange={handleChange}
@@ -185,7 +185,7 @@ const SocialProfiles = () => {
                 <Form.Control
                   type="text"
                   name="youtube"
-                  placeholder="YouTube URL"
+                  placeholder="URL du profil YouTube"
                   className="form-control mb-1"
                   value={formData.youtube}
                   onChange={handleChange}
