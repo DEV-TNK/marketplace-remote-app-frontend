@@ -17,7 +17,7 @@ const VerifyEmail = () => {
   const queryParams = new URLSearchParams(location.search);
 
   const email = queryParams.get("email");
-  const userType = queryParams.get("type");
+  const userType = queryParams.get("userType");
   const onSubmit = async () => {
     setLoading(true);
     try {

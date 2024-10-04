@@ -126,7 +126,7 @@ const Pricing = () => {
             {/* Row */}
             <Col md={12} sm={12}>
               <div className="mb-8 mt-10 text-center">
-                <h1>Frequently Asked Questions</h1>
+                <h1>Foire aux questions</h1>
               </div>
             </Col>
           </Row>

@@ -12,24 +12,24 @@ const OutsourcedGigs = () => {
 
   const ongoingGigsHeader = [
     // { accessorKey: "gigTitle", header: "Gig Title" },
-    { accessorKey: "ongoingServiceType", header: "Gig Type & Description" },
-    { accessorKey: "totalAmountPaid", header: "Gig Salary" },
-    { accessorKey: "serviceProvider", header: "UserName" },
+    { accessorKey: "ongoingServiceType", header: "Type de gig et description" },
+    { accessorKey: "totalAmountPaid", header: "Salaire du gig" },
+    { accessorKey: "serviceProvider", header: "Nom d'utilisateur" },
     // { accessorKey: "review", header: "Review" },
     { accessorKey: "deliveryDate", header: "Date" },
-    { accessorKey: "status", header: "Status" },
-    { accessorKey: "paymentStatus", header: "Payment Status" },
+    { accessorKey: "status", header: "Statut" },
+    { accessorKey: "paymentStatus", header: "Statut du paiement" },
   ];
 
   const completedGigsHeader = [
     // { accessorKey: "gigTitle", header: "Gig Title" },
-    { accessorKey: "serviceType", header: "Gig Type & Description" },
-    { accessorKey: "totalAmountPaid", header: "Gig Salary" },
-    { accessorKey: "serviceProvider", header: "UserName" },
-    { accessorKey: "review", header: "Review" },
+    { accessorKey: "serviceType", header: "Type de gig et description" },
+    { accessorKey: "totalAmountPaid", header: "Salaire du gig" },
+    { accessorKey: "serviceProvider", header: "Nom d'utilisateur" },
+    { accessorKey: "review", header: "Critique" },
     { accessorKey: "deliveryDate", header: "Date" },
-    { accessorKey: "status", header: "Status" },
-    { accessorKey: "paymentStatus", header: "Payment Status" },
+    { accessorKey: "status", header: "Statut" },
+    { accessorKey: "paymentStatus", header: "Statut du paiement" },
   ];
 
   useEffect(() => {
@@ -54,12 +54,12 @@ const OutsourcedGigs = () => {
   }, []);
 
   const allgigsHeader = [
-    { accessorKey: "serviceType", header: "Gig Type & Description" },
-    { accessorKey: "totalAmountPaid", header: "Gig Salary" },
+    { accessorKey: "serviceType", header: "Type de gig et description" },
+    { accessorKey: "totalAmountPaid", header: "Salaire du gig" },
     // { accessorKey: "username", header: "User Name" },
     { accessorKey: "deliveryDate", header: "Date" },
-    { accessorKey: "status", header: "Status" },
-    { accessorKey: "paymentStatus", header: "Payment Status" },
+    { accessorKey: "status", header: "Statut" },
+    { accessorKey: "paymentStatus", header: "Statut du paiement" },
   ];
 
   return (
@@ -71,17 +71,17 @@ const OutsourcedGigs = () => {
               <Nav className="nav-lb-tab">
                 <Nav.Item>
                   <Nav.Link eventKey="all" className="mb-sm-3 mb-md-0">
-                    All
+                    Tous
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="ongoinggig" className="mb-sm-3 mb-md-0">
-                    Ongoing gigs
+                  Gigs en cours
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="completedgig" className="mb-sm-3 mb-md-0">
-                    Completed gigs
+                  Gigs terminés
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
@@ -90,8 +90,7 @@ const OutsourcedGigs = () => {
               <div className="mb-3 mb-lg-0">
                 <h3 className="mb-0">gigs</h3>
                 <p className="mb-0">
-                  Manage the gigs you employed and its update like all, ongoing
-                  and completed employed gigs.
+                Gérez les gigs que vous avez employés et leurs mises à jour comme tous, en cours, et gigs terminés employés.
                 </p>
               </div>
             </Card.Header>

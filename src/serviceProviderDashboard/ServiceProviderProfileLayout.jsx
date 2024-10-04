@@ -71,14 +71,14 @@ const ServiceProviderProfileLayout = (props) => {
     avatar: userImage || Avatar3,
     name: user || "",
     username: `@${user}`,
-    linkname: "Post a Service",
+    linkname: " Publier un service",
     link: "/service/post-a-service",
     verified: true,
     outlinebutton: false,
     level: "Beginner",
   };
   const browseButton = {
-    linkname: "Browse Services",
+    linkname: "Parcourir les services",
     link: "/services-list/",
   };
 
@@ -110,14 +110,14 @@ const ServiceProviderProfileLayout = (props) => {
                   className="btn btn-primary d-xl-none mt-3 d-lg-none d-md-none text-inherit fw-bold fs-5 float-start py-1"
                   to="/service/post-a-service"
                 >
-                  post a service
+                  Publier un service
                 </Link>
 
                 <Link
                   className="btn btn-primary d-xl-none  mt-3 d-lg-none d-md-none text-inherit fw-bold fs-5 float-start py-1"
                   to="/services-list/"
                 >
-                  Browse Services
+                  Parcourir les services
                 </Link>
                 <Navbar.Toggle
                   aria-controls="basic-navbar-nav"
@@ -139,7 +139,7 @@ const ServiceProviderProfileLayout = (props) => {
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="me-auto flex-column" as="ul">
                     <Nav.Item className="navbar-header" as="li">
-                      Dashboard
+                    Tableau de bord
                     </Nav.Item>
                     {DashboardMenu.map((item, index) => (
                       <Nav.Item
@@ -156,7 +156,7 @@ const ServiceProviderProfileLayout = (props) => {
                       </Nav.Item>
                     ))}
                     <Nav.Item className="navbar-header mt-4" as="li">
-                      ACCOUNT SETTINGS
+                    PARAMÈTRES DU COMPTE
                     </Nav.Item>
                     {AccountSettingsMenu.map((item, index) => (
                       <Nav.Item

@@ -14,25 +14,25 @@ const MyGig = () => {
 
   const ongoingGigsHeader = [
     // { accessorKey: "serviceRequestTitle", header: "Gig Title" },
-    { accessorKey: "serviceType", header: "Gig Type & Description" },
-    { accessorKey: "totalAmountPaid", header: "Gig Salary" },
-    { accessorKey: "username", header: "User Name" },
+    { accessorKey: "serviceType", header: "Type de gig et description" },
+    { accessorKey: "totalAmountPaid", header: "Salaire du gig" },
+    { accessorKey: "username", header: "Nom d'utilisateur" },
     // { accessorKey: "review", header: "Review" },
-    { accessorKey: "deliveryDate", header: "Request Date" },
-    { accessorKey: "status", header: "Status" },
-    { accessorKey: "paymentStatus", header: "Payment Status" },
+    { accessorKey: "deliveryDate", header: "Date de demande" },
+    { accessorKey: "status", header: "Statut" },
+    { accessorKey: "paymentStatus", header: "Statut du paiement" },
     { accessorKey: "action", header: "Action" },
   ];
 
   const completedGigsHeader = [
     // { accessorKey: "serviceRequestTitle", header: "Gig Title" },
-    { accessorKey: "serviceType", header: "Gig Type & Description" },
-    { accessorKey: "totalAmountPaid", header: "Gig Salary" },
-    { accessorKey: "username", header: "User Name" },
-    { accessorKey: "review", header: "Review" },
-    { accessorKey: "deliveryDate", header: "Completed Date" },
-    { accessorKey: "status", header: "Status" },
-    { accessorKey: "paymentStatus", header: "Payment Status" },
+    { accessorKey: "serviceType", header: "Type de gig et description" },
+    { accessorKey: "totalAmountPaid", header: "Salaire du gig" },
+    { accessorKey: "username", header: "Nom d'utilisateur" },
+    { accessorKey: "review", header: "Critique" },
+    { accessorKey: "deliveryDate", header: "Date de fin" },
+    { accessorKey: "status", header: "Statut" },
+    { accessorKey: "paymentStatus", header: "Statut du paiement" },
   ];
 
   useEffect(() => {
@@ -74,13 +74,13 @@ const MyGig = () => {
   const allgigsHeader = [
     {
       accessorKey: "header",
-      header: "Gig Title",
+      header: "Titre du gig ",
       cell: ({ row }) => `${row.original.header} - ${row.original.format}`,
     },
-    { accessorKey: "department", header: "Department" },
+    { accessorKey: "department", header: "Département" },
 
-    { accessorKey: "createdAt", header: "Posted Date" },
-    { accessorKey: "status", header: "Status" },
+    { accessorKey: "createdAt", header: "Date de publication" },
+    { accessorKey: "status", header: "Statut" },
     // { accessorKey: "paymentStatus", header: "Payment Status" },
   ];
 
@@ -107,17 +107,17 @@ const MyGig = () => {
               <Nav className="nav-lb-tab">
                 <Nav.Item>
                   <Nav.Link eventKey="all" className="mb-sm-3 mb-md-0">
-                    All
+                    Tous
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="ongoinggig" className="mb-sm-3 mb-md-0">
-                    Ongoing gigs
+                  Gigs en cours
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="completedgig" className="mb-sm-3 mb-md-0">
-                    Completed gigs
+                  Gigs terminés
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
@@ -126,7 +126,7 @@ const MyGig = () => {
               <div className="mb-3 mb-lg-0">
                 <h3 className="mb-0">gigs</h3>
                 <p className="mb-0">
-                  Manage your gig and its update like live, draft, and insight.
+                Gérer votre gig et ses mises à jour comme en direct, brouillon,et en perspicacité.
                 </p>
               </div>
             </Card.Header>

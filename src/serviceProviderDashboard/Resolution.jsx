@@ -105,10 +105,9 @@ const ProviderResolution = () => {
             <Card.Header>
               <div className="d-flex justify-content-between align-items-center">
                 <div>
-                  <h3 className="mb-0">Conflict Resolution</h3>
+                  <h3 className="mb-0">Résolution des conflits</h3>
                   <p className="mb-0">
-                    Manage your conflict resolutions and its update like
-                    pending, resolving, and finalized
+                  Gérez vos résolutions de conflits et leur mise à jour comme en attente, résolution et finalisation
                   </p>
                 </div>
                 {/* <Button variant="primary" onClick={handleResolutionRequest}>
@@ -119,7 +118,7 @@ const ProviderResolution = () => {
                   onClick={handleResolutionRequest}
                   className="btn-sm btn-lg"
                 >
-                  Resolution Request
+                  Demande de résolution. 
                 </Button>
               </div>
             </Card.Header>
