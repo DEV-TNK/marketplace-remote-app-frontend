@@ -6,8 +6,10 @@ import ResolutionTable from "../Instructor/ResolutionTable";
 import axios from "axios";
 import { showToast } from "../Components/Showtoast";
 import { useGlobalContext } from "../context/AuthContext";
+import AxiosInterceptor from "../Components/AxiosInterceptor";
 
 const ProviderResolution = () => {
+  const authFetch = AxiosInterceptor()
   const [resolution, setResolution] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showResolutionModal, setShowResolutionModal] = useState(false);
@@ -29,7 +31,7 @@ const ProviderResolution = () => {
     const fetchAllResolutions = async () => {
       try {
         const userId = sessionStorage.getItem("UserId");
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-conflict/${userId}`
         );
         setResolution(response.data.conflicts);
@@ -76,7 +78,7 @@ const ProviderResolution = () => {
     console.log("this is submit");
     console.log("Selected Contact:", selectedContact);
     try {
-      const response = await axios.post(
+      const response = await authFetch.post(
         "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-conflicts",
         {
           userId: userId,

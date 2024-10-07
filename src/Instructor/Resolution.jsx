@@ -6,7 +6,9 @@ import ResolutionTable from "./ResolutionTable";
 import axios from "axios";
 import { showToast } from "../Components/Showtoast";
 import { useGlobalContext } from "../context/AuthContext";
+import AxiosInterceptor from "../Components/AxiosInterceptor";
 const Resolution = () => {
+  const authFetch = AxiosInterceptor();
   const [resolution, setResolution] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showResolutionModal, setShowResolutionModal] = useState(false);
@@ -28,7 +30,7 @@ const Resolution = () => {
     const fetchAllResolutions = async () => {
       try {
         const userId = sessionStorage.getItem("UserId");
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-conflict/${userId}`
         );
         setResolution(response.data.conflicts);
@@ -75,7 +77,7 @@ const Resolution = () => {
     console.log("this is submit");
     console.log("Selected Contact:", selectedContact);
     try {
-      const response = await axios.post(
+      const response = await authFetch.post(
         "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-conflicts",
         {
           userId: userId,
@@ -104,7 +106,8 @@ const Resolution = () => {
                 <div>
                   <h3 className="mb-0">Résolution des conflits</h3>
                   <p className="mb-0">
-                  Gérez vos résolutions de conflits et leur mise à jour comme en attente, résolution et finalisation
+                    Gérez vos résolutions de conflits et leur mise à jour comme
+                    en attente, résolution et finalisation
                   </p>
                 </div>
                 {/* <Button variant="primary" onClick={handleResolutionRequest}>
