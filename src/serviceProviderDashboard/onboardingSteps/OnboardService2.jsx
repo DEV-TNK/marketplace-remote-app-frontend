@@ -23,18 +23,16 @@ const Step2 = () => {
           md={6}
           className="d-flex flex-column justify-content-center  mt-5 mt-md-0"
         >
-          <h2>What makes a successful Unleashified profile?</h2>
+          <h2>Qu'est-ce qui fait un profil réussi sur PME Cote D'Ivoire Marketplace ?</h2>
           <p>
-            Your first impression matters! Create a profile that will stand out
-            from the crowd on Fiverr.
+          Votre première impression compte ! Créez un profil qui se démarque de la foule sur Fiverr.
           </p>
           <Row>
             <Col xs={6} className="d-flex mb-4">
               <i className="fa fa-user fa-2x me-3" aria-hidden="true"></i>
               <div>
                 <h5>
-                  Take your time in creating your profile so it’s exactly as you
-                  want it to be.
+                Prenez le temps de créer votre profil pour qu'il soit exactement comme vous le souhaitez.
                 </h5>
               </div>
             </Col>
@@ -42,8 +40,7 @@ const Step2 = () => {
               <i className="fa fa-link fa-2x me-3" aria-hidden="true"></i>
               <div>
                 <h5>
-                  Add credibility by linking out to your relevant professional
-                  networks.
+                Ajoutez de la crédibilité en reliant vos réseaux professionnels pertinents.
                 </h5>
               </div>
             </Col>
@@ -51,8 +48,7 @@ const Step2 = () => {
               <i className="fa fa-camera fa-2x me-3" aria-hidden="true"></i>
               <div>
                 <h5>
-                  Put a face to your name! Upload a profile picture that clearly
-                  shows your face on your dashboard.
+                Mettez un visage sur votre nom ! Téléchargez une photo de profil qui montre clairement votre visage sur votre tableau de bord.
                 </h5>
               </div>
             </Col>
@@ -60,8 +56,7 @@ const Step2 = () => {
               <i className="fa fa-lock fa-2x me-3" aria-hidden="true"></i>
               <div>
                 <h5>
-                  To keep our community secure for everyone, we may ask you to
-                  verify your ID.
+                Pour assurer la sécurité de notre communauté, nous pourrions vous demander de vérifier votre identité.
                 </h5>
               </div>
             </Col>
@@ -69,13 +64,13 @@ const Step2 = () => {
           <div className="d-flex ">
             <Link to="/service/onboarding_step3">
               <Button variant="success" className="me-2">
-                Continue
+                Continuer
               </Button>
             </Link>
 
             <Link to="/service/onboarding_step1">
               <Button variant="link" className="text-muted">
-                Back
+              Retour
               </Button>
             </Link>
           </div>

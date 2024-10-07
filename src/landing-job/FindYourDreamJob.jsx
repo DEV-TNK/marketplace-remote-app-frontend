@@ -48,12 +48,11 @@ const FindYourDreamJob = () => {
                 <div className=" text-center text-md-start ">
                   {/* heading */}
                   <h1 className=" display-2 fw-bold  mb-3">
-                    Find your dream job that you love to do.
+                  Trouvez l'emploi de vos rêves que vous aimez faire.
                   </h1>
                   {/* lead */}
                   <p className="lead">
-                    The largest remote work community in the world. Sign up and
-                    post a job or create your developer profile.
+                  La plus grande communauté de travail à distance au monde. Inscrivez-vous et publiez une offre d'emploi ou créez votre profil de développeur.
                   </p>
                 </div>
                 <div className="mt-0">
@@ -61,11 +60,11 @@ const FindYourDreamJob = () => {
                   {/* <JobSearchBox /> */}
                   {/* text */}
                   <span className=" fs-4">
-                    Listed over 10k jobs from 150k+ Job provider
+                  Plus de 10 000 emplois répertoriés provenant de plus de 150 000 recruteurs.
                   </span>
                 </div>
                 <Link to="/jobs/jobs-landing-page">
-                  <Button className="mt-5">Start Applying</Button>
+                  <Button className="mt-5"> Commencez à postuler</Button>
                 </Link>
               </div>
             </Col>
@@ -93,12 +92,11 @@ const FindYourDreamJob = () => {
                 <div className=" text-center text-md-start ">
                   {/* heading */}
                   <h1 className=" display-2 fw-bold  mb-3 text-light">
-                    Find Services that meet your needs.
+                  Trouvez des services qui répondent à vos besoins
                   </h1>
                   {/* lead */}
                   <p className="lead text-light">
-                    Join our vibrant community to offer your services or find
-                    the perfect service for your needs
+                  Rejoignez notre communauté dynamique pour offrir vos services ou trouver le service parfait pour vos besoins
                   </p>
                 </div>
                 <div className="mt-0">
@@ -106,11 +104,11 @@ const FindYourDreamJob = () => {
                   {/* <JobSearchBox /> */}
                   {/* text */}
                   <span className=" fs-4 text-light">
-                    Listed over 10k services from 150k+ Service provider
+                  Plus de 10 000 services répertoriés provenant de plus de 150 000 prestataires de services
                   </span>
                 </div>
                 <Link to="/jobs/services-landing-page">
-                  <Button className="mt-5 btn-light">Find Services</Button>
+                  <Button className="mt-5 btn-light">Trouver des services</Button>
                 </Link>
               </div>
             </Col>

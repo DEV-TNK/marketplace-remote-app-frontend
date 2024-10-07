@@ -17,15 +17,14 @@ const FixRightPerson = () => {
           <Row>
             <Col md={8} className="px-lg-10 mb-4 mt-2 text-left">
               <h2 className="h1 text-white fw-bold ls-md">
-                Find the right person to fix your business needs
+              Trouvez la bonne personne pour répondre aux besoins de votre entreprise
               </h2>
               <p className="fw-bold mt-3 text-white fs-4">
-                Unleashified brings service providers in different industries
-                and locations together on one platform
+              PME Cote D'Ivoire Marketplace rassemble des prestataires de services de différents secteurs et lieux sur une seule plateforme
               </p>
               <Link to="/authentication/signin">
               <Button variant="primary" className="mt-3">
-                Get Started
+              Commencez
               </Button>
               </Link>
              

@@ -28,10 +28,10 @@ const Process = () => {
               {/* col */}
               <Col md={12} className="px-lg-10 mb-8 mt-6">
                 <span className="text-uppercase text-primary fw-semi-bold ls-md">
-                  Job Upload Process
+                Processus de téléchargement de l'emploi
                 </span>
                 {/* heading */}
-                <h2 className="h1 fw-bold mt-3">How It Works</h2>
+                <h2 className="h1 fw-bold mt-3"> Comment ça marche</h2>
               </Col>
             </Row>
             <Row className="gy-6">
@@ -44,11 +44,10 @@ const Process = () => {
                     1
                   </div>
                   {/* heading */}
-                  <h3>Click on 'Post a job' </h3>
+                  <h3> Cliquez sur 'Publier une offre d'emploi'</h3>
                   {/* text */}
                   <p className="mb-0 px-4">
-                    Fill in the details of the job be sure to include your
-                    location restrictions if you have em!
+                  Remplissez les détails de l'emploi, assurez-vous d'inclure vos restrictions géographiques si vous en avez!
                   </p>
                 </div>
               </Col>
@@ -60,12 +59,10 @@ const Process = () => {
                     2
                   </div>
                   {/* heading */}
-                  <h3>Review </h3>
+                  <h3>Révisez </h3>
                   {/* text */}
                   <p className="mb-0 px-2">
-                    Preview your job draft wordings and details before posting
-                    so as to be sure to attract the right talents, experience
-                    and service provider applying for the job.
+                  Prévisualisez le texte et les détails de votre annonce avant de la publier pour être sûr d'attirer les bons utilisateurs, candidats ou prestataires de services postulant pour le poste
                   </p>
                 </div>
               </Col>
@@ -77,16 +74,16 @@ const Process = () => {
                     3
                   </div>
                   {/* heading */}
-                  <h3>Submit </h3>
+                  <h3>Soumettez </h3>
                   {/* text */}
                   <p className="mb-0 px-3">
-                    Submit your job post and watch as great talents apply.
+                  Soumettez votre annonce et observez les grands talents postuler
                   </p>
                 </div>
               </Col>
               {/* button */}
               <Col sm={12} className="mt-8 text-center">
-                <Button onClick={handleApplyNow}>Apply Now</Button>
+                <Button onClick={handleApplyNow}> Postuler maintenant</Button>
               </Col>
             </Row>
           </Col>

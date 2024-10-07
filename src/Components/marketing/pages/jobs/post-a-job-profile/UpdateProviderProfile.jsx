@@ -13,8 +13,8 @@ const UpdateProviderProfile = () => {
   const navigate = useNavigate();
   const [phoneOption, setPhoneOption] = useState("");
   const phoneOptions = [
-    { value: "Home", label: "Home" },
-    { value: "Work", label: "Work" },
+    { value: "Home", label: "domicile" },
+    { value: "Work", label: "travail" },
     { value: "Mobile", label: "Mobile" },
   ];
   const userId = sessionStorage.getItem("UserId");
@@ -185,11 +185,10 @@ const UpdateProviderProfile = () => {
             <Col md={12} lg={6}>
               <div className="mb-12">
                 <h1 className="display-4 mb-3 fw-bold">
-                  Complete this Profile to Proceed
+                Complétez ce profil pour continuer
                 </h1>
                 <p className="mb-0 lead">
-                  Ready to post a job for your company? Fill the following
-                  information to become a Job Provider
+                Prêt à publier une offre d'emploi pour votre entreprise ? Remplissez les informations suivantes pour devenir un Fournisseur d'emploi
                 </p>
               </div>
             </Col>
@@ -221,10 +220,9 @@ const UpdateProviderProfile = () => {
                     </svg>
                   </div>
                   {/* heading */}
-                  <h3>1. Job poster information</h3>
+                  <h3>1. Informations sur le posteur d'emploi</h3>
                   <p>
-                    Add your Personal information that will be link to your
-                    company profile.
+                  Ajoutez vos informations personnelles qui seront liées à votre profil d'entreprise
                   </p>
                 </div>
               </Col>
@@ -234,13 +232,13 @@ const UpdateProviderProfile = () => {
                     <Col md={6} xs={12} className="mb-3">
                       {/* First Name */}
                       <Form.Label htmlFor="first-name">
-                        First Name<span className="text-danger">*</span>
+                      Prénom<span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
                         id="first-name"
                         name="firstName"
-                        placeholder="First Name"
+                        placeholder="Prénom"
                         required
                         value={formData.firstName}
                         onChange={handleChange}
@@ -249,13 +247,13 @@ const UpdateProviderProfile = () => {
                     <Col md={6} xs={12} className="mb-3">
                       {/* Last Name */}
                       <Form.Label htmlFor="last-name">
-                        Last Name<span className="text-danger">*</span>
+                      Nom de famille<span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
                         id="last-name"
                         name="lastName"
-                        placeholder="Last Name"
+                        placeholder="Nom de famille"
                         required
                         value={formData.lastName}
                         onChange={handleChange}
@@ -270,7 +268,7 @@ const UpdateProviderProfile = () => {
                         type="email"
                         id="email"
                         name="companyEmail"
-                        placeholder="Write you Email id"
+                        placeholder="Entrez votre adresse email"
                         required
                         value={formData.companyEmail}
                         onChange={handleChange}
@@ -280,7 +278,7 @@ const UpdateProviderProfile = () => {
                     <Col md={12} xs={12} className="mb-3">
                       {/* Phone Number */}
                       <Form.Label htmlFor="phone">
-                        Phone Number<span className="text-danger">*</span>
+                      Numéro de téléphone<span className="text-danger">*</span>
                       </Form.Label>
                       <InputGroup className="mb-2">
                         <Form.Control
@@ -294,7 +292,7 @@ const UpdateProviderProfile = () => {
                         <Form.Control
                           as={FormSelect}
                           options={phoneOptions}
-                          placeholder="States"
+                          placeholder="États"
                           defaultselected=""
                           value={phoneOption}
                           onChange={handleChange}
@@ -306,7 +304,7 @@ const UpdateProviderProfile = () => {
                       <Form.Check
                         type="checkbox"
                         id="confirm"
-                        label="Send me important updates in this number."
+                        label="Envoyez-moi des mises à jour importantes à ce numéro."
                         className="fs-6"
                         value=""
                       />
@@ -351,11 +349,10 @@ const UpdateProviderProfile = () => {
                     </svg>
                   </div>
                   {/* heading */}
-                  <h3>2. Company information</h3>
+                  <h3>2. Informations sur l'entreprise</h3>
                   {/* text */}
                   <p>
-                    Add company informations that will help indentify your
-                    company
+                  Ajoutez des informations sur l'entreprise qui aideront à identifier votre entreprise
                   </p>
                 </div>
               </Col>
@@ -365,13 +362,13 @@ const UpdateProviderProfile = () => {
                     <Col xs={12} className="mb-3">
                       {/* Company name */}
                       <Form.Label htmlFor="company-name">
-                        Company name<span className="text-danger">*</span>
+                      Nom de l'entreprise<span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
                         id="company-name"
                         name="companyName"
-                        placeholder="Company name"
+                        placeholder="Nom de l'entreprise"
                         required
                         value={formData.companyName}
                         onChange={handleChange}
@@ -380,13 +377,13 @@ const UpdateProviderProfile = () => {
                     <Col xs={12} className="mb-3">
                       {/* Company website */}
                       <Form.Label htmlFor="company-website">
-                        Company website<span className="text-danger">*</span>
+                      Site Web de l'entreprise<span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
                         id="company-website"
                         name="companyWebsite"
-                        placeholder="Company website"
+                        placeholder="Site Web de l'entreprise"
                         required
                         value={formData.companyWebsite}
                         onChange={handleChange}
@@ -395,13 +392,13 @@ const UpdateProviderProfile = () => {
                     <Col xs={12} className="mb-3">
                       {/* Company website */}
                       <Form.Label htmlFor="company-industry">
-                        Company Industry<span className="text-danger">*</span>
+                      Secteur d'activité de l'entreprise<span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
                         name="CompanyIndustry"
                         id="company-industry"
-                        placeholder="Company Industry e.g Tech"
+                        placeholder="Secteur d'activité de l'entreprise e.g Tech"
                         value={formData.CompanyIndustry}
                         onChange={handleChange}
                       />
@@ -409,7 +406,7 @@ const UpdateProviderProfile = () => {
                     <Col xs={12} className="mb-3">
                       {/* Company website */}
                       <Form.Label htmlFor="company-location">
-                        Company Location<span className="text-danger">*</span>
+                      Localisation de l'entreprise<span className="text-danger">*</span>
                       </Form.Label>
                       <div className="input-group">
                         <CountryDropdown
@@ -435,14 +432,14 @@ const UpdateProviderProfile = () => {
                     <Col xs={12} className="mb-3">
                       {/* Company website */}
                       <Form.Label htmlFor="company-type">
-                        Company Type<span className="text-danger">*</span>
+                      Type d'entreprise<span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Select
                         onChange={handleChange}
                         value={formData.companyType}
                         name="companyType"
                       >
-                        <option>Select Type</option>
+                        <option>sélectionner le type</option>
                         {jobType.map((location, index) => (
                           <option key={index} value={location.value}>
                             {location.label}
@@ -454,7 +451,7 @@ const UpdateProviderProfile = () => {
                     <Col xs={12} className="mb-3">
                       {/* Company website */}
                       <Form.Label htmlFor="company-designation">
-                        Company Designation
+                      Désignation de l'entreprise
                         <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Select
@@ -462,7 +459,7 @@ const UpdateProviderProfile = () => {
                         value={formData.companyDesignation}
                         name="companyDesignation"
                       >
-                        <option>Select Designation</option>
+                        <option>sélectionner le titre</option>
                         {jobDesignation.map((location, index) => (
                           <option key={index} value={location.value}>
                             {location.label}
@@ -473,7 +470,7 @@ const UpdateProviderProfile = () => {
 
                     <Col md={12} xs={12} className="mb-3">
                       {/* Company Logo */}
-                      <Form.Label>Company Logo</Form.Label>
+                      <Form.Label>Logo de l'entreprise</Form.Label>
                       <InputGroup className="mb-2">
                         <Form.Control
                           id="company-logo"
@@ -485,18 +482,17 @@ const UpdateProviderProfile = () => {
                           htmlFor="company-logo"
                           className="input-group-text mb-0"
                         >
-                          Upload
+                          téléverser
                         </Form.Label>
                       </InputGroup>
                       <Form.Text className="fs-6">
-                        Company logo should be a PNG or JPG file of 500 x 500
-                        pixels
+                      Le logo de l'entreprise doit être un fichier PNG ou JPG de 500 x 500 pixels
                       </Form.Text>
                     </Col>
                     <Col md={12} xs={12} className="mb-3">
                       {/* Company description */}
                       <Form.Label htmlFor="company-description">
-                        Company description
+                      Description de l'entreprise
                       </Form.Label>
                       <Form.Control
                         as="textarea"
@@ -504,7 +500,7 @@ const UpdateProviderProfile = () => {
                         id="company-description"
                         name="companyDescription"
                         type="text"
-                        placeholder="Company description"
+                        placeholder="Description de l'entreprise"
                         required
                         value={formData.companyDescription}
                         onChange={handleChange}
@@ -520,8 +516,7 @@ const UpdateProviderProfile = () => {
                           onChange={handleChange}
                         />
                         <Form.Check.Label>
-                          I accept the <Link to="#">terms and conditions</Link>{" "}
-                          for the upload a job listing at company.
+                          J'accepte les <Link to="#">termes et conditions </Link>{" "}pour la publication d'une offre d'emploi dans l'entreprise
                         </Form.Check.Label>
                       </Form.Check>
                     </Col>
@@ -537,7 +532,7 @@ const UpdateProviderProfile = () => {
                         </Button>
                       ) : (
                         <Button variant="primary" onClick={handleSubmit}>
-                          Submit
+                          Soumettre
                         </Button>
                       )}
                     </Col>

@@ -14,15 +14,13 @@ const CustomerStories = () => {
             <Row className="text-center">
               <Col md={12} className="px-md-16 mb-8 mt-6">
                 <span className="text-uppercase text-primary fw-semi-bold ls-md">
-                  Customer stories
+                Témoignages des clients
                 </span>
                 <h2 className="h1 fw-bold mt-3  mb-2">
-                  What our customer stories
+                Ce que disent nos clients
                 </h2>
                 <p className="mb-0 fs-4">
-                  A customer story is an engaging article integrating
-                  testimonial quotes from a happy client or customer praising
-                  the work completed together.
+                Un témoignage de client est un article captivant intégrant des citations de clients satisfaits louant le travail accompli ensemble
                 </p>
               </Col>
             </Row>
@@ -30,10 +28,7 @@ const CustomerStories = () => {
               <Col lg={7} md={12} xs={12}>
                 <div className="mb-8 mb-lg-0 me-lg-4">
                   <p className="display-6 mb-4 lh-2">
-                    "PME Cote D'Ivoire Marketplace has transformed our hiring strategy, providing
-                    seamless access to top talent. With its innovative
-                    resources, we've streamlined recruitment and built a
-                    high-performing team!."
+                    "Le Marketplace PME Côte d'Ivoire a transformé notre stratégie de recrutement, offrant un accès facile aux meilleurs talents. Avec ses ressources innovantes, nous avons rationalisé le recrutement et constitué une équipe très performante."
                   </p>
                   <p className="mb-0 ">Grace Oluwalola</p>
                   <span className="">

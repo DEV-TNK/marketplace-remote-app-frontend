@@ -69,26 +69,27 @@ const PostService = () => {
   });
 
   const departments = [
-    { label: "Select Department" },
-    { value: "Graphics and Design", label: "Graphics and Design" },
-    { value: "Digital Marketing", label: "Digital Marketing" },
-    { value: "Writing & Translation", label: "Writing & Translation" },
-    { value: "Video & Animation", label: "Video & Animation" },
-    { value: "Music & Audio", label: "Music & Audio" },
-    { value: "Programming & Tech", label: "Programming & Tech" },
-    { value: "Business", label: "Business" },
-    { value: "Lifestyle", label: "Lifestyle" },
-    { value: "AI Services", label: "AI Services" },
-    { value: "Project Manager", label: "Project Manager" },
-    { value: "Web Development", label: "Web Development" },
-  ];
+    { label: "Select Department", label_fr: "Sélectionner le département" },
+    { value: "Graphics and Design", label: "Graphics and Design", label_fr: "Graphisme et Design" },
+    { value: "Digital Marketing", label: "Digital Marketing", label_fr: "Marketing Digital" },
+    { value: "Writing & Translation", label: "Writing & Translation", label_fr: "Rédaction et Traduction" },
+    { value: "Video & Animation", label: "Video & Animation", label_fr: "Vidéo et Animation" },
+    { value: "Music & Audio", label: "Music & Audio", label_fr: "Musique et Audio" },
+    { value: "Programming & Tech", label: "Programming & Tech", label_fr: "Programmation et Technologie" },
+    { value: "Business", label: "Business", label_fr: "Affaires" },
+    { value: "Lifestyle", label: "Lifestyle", label_fr: "Style de Vie" },
+    { value: "AI Services", label: "AI Services", label_fr: "Services d'IA" },
+    { value: "Project Manager", label: "Project Manager", label_fr: "Chef de Projet" },
+    { value: "Web Development", label: "Web Development", label_fr: "Développement Web" },
+];
 
-  const formatType = [
-    { label: "Select Format" },
-    { value: "remote", label: "Remote" },
-    { value: "onsite", label: "Onsite" },
-    { value: "hybrid", label: "Hybrid" },
-  ];
+const formatType = [
+    { label: "Select Format", label_fr: "Sélectionner le Format" },
+    { value: "remote", label: "Remote", label_fr: "À distance" },
+    { value: "onsite", label: "Onsite", label_fr: "Sur site" },
+    { value: "hybrid", label: "Hybrid", label_fr: "Hybride" },
+];
+
 
   const currencyType = [
     { value: "NGN", label: "Naira" },
@@ -98,7 +99,7 @@ const PostService = () => {
   ];
 
   const packageOption = [
-    { value: "single", label: "Single" },
+    { value: "single", label: "seul" },
     { value: "multiple", label: "Multiple" },
   ];
 
@@ -288,8 +289,8 @@ const PostService = () => {
   };
 
   const pricingTypes = [
-    { value: "starter", label: "Starter" },
-    { value: "professional", label: "Professional" },
+    { value: "starter", label: "Débutant" },
+    { value: "professional", label: "Professionnel" },
   ];
 
   const addFeature = (planType, packageType = null) => {
@@ -348,11 +349,10 @@ const PostService = () => {
                   className="display-4 mb-3 fw-bold"
                   style={{ color: "#754ffe" }}
                 >
-                  Post a Service
+                  Publier un service
                 </h3>
                 <p className="mb-4 lead">
-                  Empower Your Career: Share Your Expertise with Global Clients
-                  on Our Platform!
+                Boostez votre carrière : partagez votre expertise avec des clients du monde entier sur notre plateforme !
                 </p>
               </Col>
               <Form onSubmit={handleSubmit}>
@@ -380,10 +380,10 @@ const PostService = () => {
                       </svg>
                     </div>
                     <h3 className="display-5" style={{ color: "#754ffe" }}>
-                      Service Details
+                    Détails du service
                     </h3>
                     <p className="text-muted">
-                      Provide the details of your service.
+                    Fournissez les détails de votre service
                     </p>
                   </Col>
                   <Col md={8} className="mb-8">
@@ -393,7 +393,7 @@ const PostService = () => {
                     >
                       <Col md={9} className="mb-3">
                         <Form.Label md={4} htmlFor="header">
-                          Header<span className="text-danger">*</span>
+                        En-tête<span className="text-danger">*</span>
                         </Form.Label>
                         <div className="d-flex">
                           <Form.Select
@@ -407,15 +407,15 @@ const PostService = () => {
                               borderBottomRightRadius: "0",
                             }}
                           >
-                            <option value="I will">I will</option>
+                            <option value="I will">Je vais</option>
                             <option value="Our Agency will">
-                              Our Agency will
+                            Notre agence va
                             </option>
                           </Form.Select>
                           <Form.Control
                             type="text"
                             id="header"
-                            placeholder="Enter header"
+                            placeholder="Entrer l'en-tête"
                             value={header}
                             onChange={(e) => setHeader(e.target.value)}
                             required
@@ -436,7 +436,7 @@ const PostService = () => {
                           as="textarea"
                           id="description"
                           rows={4}
-                          placeholder="Enter description"
+                          placeholder="Entrer la description"
                           value={description}
                           onChange={(e) => setDescription(e.target.value)}
                           required
@@ -444,7 +444,7 @@ const PostService = () => {
                       </Col>
                       <Col md={5} className="mb-3">
                         <Form.Label md={2} htmlFor="department">
-                          Department<span className="text-danger">*</span>
+                        Département<span className="text-danger">*</span>
                         </Form.Label>
                         <Form.Select
                           as="select"
@@ -481,10 +481,10 @@ const PostService = () => {
                       </Col>
                       <Col md={9} className="mb-3">
                         <Form.Label md={4} htmlFor="serviceBackground">
-                          Service Background{" "}
+                        Arrière-plan du service{" "}
                           <small className="text-muted">
                             <em className="text-sm">
-                              (image files only: png, jpeg, jpg, etc....)
+                            (fichiers d'images uniquement : png, jpeg, jpg, etc....)
                             </em>
                           </small>
                           <span className="text-danger">*</span>
@@ -540,10 +540,10 @@ const PostService = () => {
                       />
                     </div>
                     <h3 className="display-5" style={{ color: "#754ffe" }}>
-                      Pricing
+                    Tarification
                     </h3>
                     <p className="text-muted">
-                      Define the pricing for your service.
+                    Définissez la tarification pour votre service
                     </p>
                   </Col>
                   <Col md={8}>
@@ -553,12 +553,12 @@ const PostService = () => {
                     >
                       <Col md={5}>
                         <Form.Label md={2} htmlFor="currency">
-                          Currency<span className="text-danger">*</span>
+                        Devise<span className="text-danger">*</span>
                         </Form.Label>
                         <Form.Select
                           as="select"
                           id="currency"
-                          placeholder="Enter currency"
+                          placeholder="Devise"
                           value={currency}
                           onChange={(e) => setCurrency(e.target.value)}
                           required
@@ -572,7 +572,7 @@ const PostService = () => {
                       </Col>
                       <Col md={5}>
                         <Form.Label md={4} htmlFor="pricingPlan">
-                          Pricing Plan<span className="text-danger">*</span>
+                        Plan tarifaire<span className="text-danger">*</span>
                         </Form.Label>
                         <Form.Select
                           as="select"
@@ -596,7 +596,7 @@ const PostService = () => {
                           className="text-center"
                           style={{ color: "#754ffe" }}
                         >
-                          Starter Plan
+                          Plan de démarrage
                         </h2>
                         <Form.Group
                           as={Row}
@@ -604,12 +604,12 @@ const PostService = () => {
                         >
                           <Col md={5} className="mb-3">
                             <Form.Label md={4} htmlFor="starterHeader">
-                              Header<span className="text-danger">*</span>
+                            En-tête<span className="text-danger">*</span>
                             </Form.Label>
                             <Form.Control
                               type="text"
                               id="starterHeader"
-                              placeholder="Enter header"
+                              placeholder="Entrer l'en-tête"
                               value={pricingPackages.starter.header}
                               onChange={(e) =>
                                 handlePricingPackageChange(
@@ -626,13 +626,13 @@ const PostService = () => {
                               md={4}
                               htmlFor="starterShortDescription"
                             >
-                              Short Description
+                              Brève description
                               <span className="text-danger">*</span>
                             </Form.Label>
                             <Form.Control
                               type="text"
                               id="starterShortDescription"
-                              placeholder="Enter short description"
+                              placeholder="Entrer une brève description"
                               value={pricingPackages.starter.shortDescription}
                               onChange={(e) =>
                                 handlePricingPackageChange(
@@ -646,12 +646,12 @@ const PostService = () => {
                           </Col>
                           <Col md={5} className="mb-3">
                             <Form.Label md={4} htmlFor="starterPrice">
-                              Price<span className="text-danger">*</span>
+                            Prix<span className="text-danger">*</span>
                             </Form.Label>
                             <Form.Control
                               type="number"
                               id="starterPrice"
-                              placeholder="Enter price"
+                              placeholder="Entrer le prix"
                               value={pricingPackages.starter.price}
                               onChange={(e) =>
                                 handlePricingPackageChange(
@@ -665,13 +665,13 @@ const PostService = () => {
                           </Col>
                           <Col md={5} className="mb-3">
                             <Form.Label md={4} htmlFor="starterDeliveryTime">
-                              Delivery Time
+                            Délai de livraison
                               <span className="text-danger">*</span>
                             </Form.Label>
                             <Form.Control
                               type="text"
                               id="starterDeliveryTime"
-                              placeholder="Enter delivery time"
+                              placeholder="Entrer le délai de livraison"
                               value={pricingPackages.starter.deliveryTime}
                               onChange={(e) =>
                                 handlePricingPackageChange(
@@ -686,14 +686,14 @@ const PostService = () => {
                           <Col md={10} xs={12} className="mb-3">
                             {/* What's included */}
                             <Form.Label htmlFor="whatsIncluded">
-                              What&apos;s included ?
+                            Qu'est-ce qui est inclus ?
                               <span className="text-danger">*</span>
                             </Form.Label>
                             <InputGroup>
                               <Form.Control
                                 type="text"
                                 id="whatsIncluded"
-                                placeholder="Add features that comes with this package"
+                                placeholder=" Ajouter des fonctionnalités incluses dans ce package"
                                 value={newFeature}
                                 onChange={(e) => setNewFeature(e.target.value)}
                               />
@@ -701,7 +701,7 @@ const PostService = () => {
                                 variant="primary"
                                 onClick={() => addFeature("starter")}
                               >
-                                Add More
+                                Ajouter plus
                               </Button>
                             </InputGroup>
                             <ul className="mt-2 list-inline">
@@ -731,10 +731,10 @@ const PostService = () => {
 
                           <Col md={5}>
                             <Form.Label md={2} htmlFor="package type">
-                              Package Type
+                            Type de forfait 
                               <small className="text-muted">
                                 <em>
-                                  (Allow single/multiple services per plan.)
+                                (Autoriser des services uniques/multiples par plan.)
                                 </em>
                               </small>
                               <span className="text-danger">*</span>
@@ -762,15 +762,15 @@ const PostService = () => {
                           </Col>
                           <Col md={5} className="mb-3">
                             <Form.Label md={4} htmlFor="CopyrightPrice">
-                              Copyright Price
+                            Prix du copyright
                               <small className="text-muted">
-                                <em>(optional)</em>
+                                <em>(optionnel)</em>
                               </small>
                             </Form.Label>
                             <Form.Control
                               type="number"
                               id="CopyrightPrice"
-                              placeholder="Enter Copyright price"
+                              placeholder="Entrer le prix du droit d'auteur"
                               value={pricingPackages.starter.copyright}
                               onChange={(e) =>
                                 handlePricingPackageChange(
@@ -783,15 +783,15 @@ const PostService = () => {
                           </Col>
                           <Col md={5} className="mb-3">
                             <Form.Label md={4} htmlFor="Fdd">
-                              Fast-1-day delivery price
+                            Prix de la livraison en 1 jour rapide 
                               <small className="text-muted">
-                                <em>(optional)</em>
+                                <em>(optionnel)</em>
                               </small>
                             </Form.Label>
                             <Form.Control
                               type="number"
                               id="Fast-1-day"
-                              placeholder="Enter price"
+                              placeholder="entrer le prix"
                               value={pricingPackages.starter.fdd}
                               onChange={(e) =>
                                 handlePricingPackageChange(
@@ -804,15 +804,15 @@ const PostService = () => {
                           </Col>
                           <Col md={5} className="mb-3">
                             <Form.Label md={4} htmlFor="additionalRevision">
-                              Additional Revision Price
+                            Prix de révision supplémentaire
                               <small className="text-muted">
-                                <em>(optional)</em>
+                                <em>(optionnel)</em>
                               </small>
                             </Form.Label>
                             <Form.Control
                               type="number"
                               id="Additional-revision"
-                              placeholder="Enter price"
+                              placeholder="entrer le prix"
                               value={pricingPackages.starter.additionalRevision}
                               onChange={(e) =>
                                 handlePricingPackageChange(
@@ -894,7 +894,7 @@ const PostService = () => {
                             <Form.Control
                               type="text"
                               id="basicPrice"
-                              placeholder="Enter price"
+                              placeholder="entrer le prix"
                               value={pricingPackages.professional.basic.price}
                               onChange={(e) =>
                                 handlePricingPackageChange(
@@ -1049,7 +1049,7 @@ const PostService = () => {
                             <Form.Control
                               type="number"
                               id="Fast-1-day"
-                              placeholder="Enter price"
+                              placeholder="entrer le prix"
                               value={pricingPackages.professional.basic.fdd}
                               onChange={(e) =>
                                 handlePricingPackageChange(
@@ -1071,7 +1071,7 @@ const PostService = () => {
                             <Form.Control
                               type="number"
                               id="Additional-revision"
-                              placeholder="Enter price"
+                              placeholder="entrer le prix"
                               value={
                                 pricingPackages.professional.basic
                                   .additionalRevision
@@ -1155,7 +1155,7 @@ const PostService = () => {
                             <Form.Control
                               type="text"
                               id="standardPrice"
-                              placeholder="Enter price"
+                              placeholder="entrer le prix"
                               value={
                                 pricingPackages.professional.standard.price
                               }
@@ -1314,7 +1314,7 @@ const PostService = () => {
                             <Form.Control
                               type="number"
                               id="Fast-1-day"
-                              placeholder="Enter price"
+                              placeholder="entrer le prix"
                               value={pricingPackages.professional.standard.fdd}
                               onChange={(e) =>
                                 handlePricingPackageChange(
@@ -1336,7 +1336,7 @@ const PostService = () => {
                             <Form.Control
                               type="number"
                               id="Additional-revision"
-                              placeholder="Enter price"
+                              placeholder="entrer le prix"
                               value={
                                 pricingPackages.professional.standard
                                   .additionalRevision
@@ -1420,7 +1420,7 @@ const PostService = () => {
                             <Form.Control
                               type="text"
                               id="premiumPrice"
-                              placeholder="Enter price"
+                              placeholder="entrer le prix"
                               value={pricingPackages.professional.premium.price}
                               onChange={(e) =>
                                 handlePricingPackageChange(
@@ -1576,7 +1576,7 @@ const PostService = () => {
                             <Form.Control
                               type="number"
                               id="Fast-1-day"
-                              placeholder="Enter price"
+                              placeholder="entrer le prix"
                               value={pricingPackages.professional.premium.fdd}
                               onChange={(e) =>
                                 handlePricingPackageChange(
@@ -1598,7 +1598,7 @@ const PostService = () => {
                             <Form.Control
                               type="number"
                               id="Additional-revision"
-                              placeholder="Enter price"
+                              placeholder="entrer le prix"
                               value={
                                 pricingPackages.professional.premium
                                   .additionalRevision
@@ -1628,7 +1628,7 @@ const PostService = () => {
                       }}
                       disabled={loading}
                     >
-                      {loading ? "Loading..." : "Submit"}
+                      {loading ? "Loading..." : "Soumettre"}
                     </Button>
                   </Col>
                 </Row>

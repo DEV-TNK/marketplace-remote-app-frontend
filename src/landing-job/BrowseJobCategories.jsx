@@ -20,11 +20,11 @@ const BrowseJobCategories = () => {
               <Col md={12} className="px-lg-10 mb-8 mt-6">
                 {/* text */}
                 <span className="text-uppercase text-primary fw-semi-bold ls-md">
-                  Browse Category
+                Parcourir la catégorie
                 </span>
                 {/* heading */}
                 <h2 className="h1 fw-bold mt-3">
-                  Discover jobs across popular categories
+                Découvrez des emplois dans des catégories populaires
                 </h2>
                 {/* text */}
               </Col>
@@ -40,7 +40,7 @@ const BrowseJobCategories = () => {
               {/* view all categories button/link */}
               <Col xs={12} className="mt-8 text-center">
                 <Link to="/jobs/listing/job-list">
-                  <Button variant="outline-primary">View All Category</Button>
+                  <Button variant="outline-primary"> Voir toutes les catégories</Button>
                 </Link>
               </Col>
             </Row>

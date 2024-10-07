@@ -247,7 +247,7 @@ const Payouts = () => {
 
   const handleWithdraw = async () => {
     if (!selectedBankId) {
-      setErrorAcc("Please select a bank account.");
+      setErrorAcc("Veuillez sélectionner un compte bancaire.");
       return;
     }
     setLoading(true);
@@ -466,13 +466,13 @@ const Payouts = () => {
                   onHide={() => setShowWithdrawModal(false)}
                 >
                   <Modal.Header closeButton>
-                    <Modal.Title>Withdraw Earnings</Modal.Title>
+                    <Modal.Title>retirer les gains</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
                     {/* Display account details */}
 
                     <div className="border p-4 rounded-3 mt-3">
-                      <h4>Select Banks:</h4>
+                      <h4>Sélectionnez les banques:</h4>
                       {/* <p>
                         If the bank currency you select is difference from the
                         currency you withdraw from, the amount will be converted
@@ -495,7 +495,7 @@ const Payouts = () => {
                           ))}
                         </select>
                       ) : (
-                        <p>No accounts found.</p>
+                        <p>Aucun compte trouvé.</p>
                       )}
                       {errorAcc && (
                         <div className="alert alert-danger mt-3">
@@ -507,16 +507,16 @@ const Payouts = () => {
                     {/* Display withdrawal amount input field */}
                     <div className="border p-4 rounded-3 mt-3">
                       <h4>
-                        Available Balance: {formatPrice(selectedCurrency)}
+                      Solde disponible: {formatPrice(selectedCurrency)}
                         {earnings[selectedCurrency] || 0.0}
                       </h4>
                       <Form.Group controlId="withdrawnAmount">
                         <Form.Label>
-                          Withdrawn Amount {formatPrice(selectedCurrency)}
+                        Montant retiré {formatPrice(selectedCurrency)}
                         </Form.Label>
                         <Form.Control
                           type="text"
-                          placeholder={`Enter amount in ${formatPrice(
+                          placeholder={`Entrez le montant en ${formatPrice(
                             selectedCurrency
                           )}`}
                           value={withdrawnAmount}
@@ -539,7 +539,7 @@ const Payouts = () => {
                       </Button>
                     ) : (
                       <Button variant="primary" onClick={handleWithdraw}>
-                        Withdraw
+                        Retirer
                       </Button>
                     )}
                   </Modal.Footer>
@@ -553,42 +553,42 @@ const Payouts = () => {
                 </Button>
                 <Modal show={showModal} onHide={() => setShowModal(false)}>
                   <Modal.Header closeButton>
-                    <Modal.Title>Enter Account Details</Modal.Title>
+                    <Modal.Title>Entrez les détails du compte</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
                     <Form>
                       <Form.Group className="mb-3" controlId="accountName">
-                        <Form.Label>Account Name</Form.Label>
+                        <Form.Label>Nom du compte</Form.Label>
                         <Form.Control
                           type="text"
-                          placeholder="Enter Account Name"
+                          placeholder="Entrez le nom du compte"
                           value={accountName}
                           onChange={(e) => setAccountName(e.target.value)}
                         />
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="accountNumber">
-                        <Form.Label>Account Number</Form.Label>
+                        <Form.Label>Numéro de compte</Form.Label>
                         <Form.Control
                           type="text"
-                          placeholder="Enter Account Number"
+                          placeholder="Entrez le numéro de compte"
                           value={accountNumber}
                           onChange={(e) => setAccountNumber(e.target.value)}
                         />
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="bankName">
-                        <Form.Label>Bank Name</Form.Label>
+                        <Form.Label>Nom de la banque</Form.Label>
                         <Form.Control
                           type="text"
-                          placeholder="Enter Bank Name"
+                          placeholder="Entrez le nom de la banque"
                           value={bankName}
                           onChange={(e) => setBankName(e.target.value)}
                         />
                       </Form.Group>
                       <Form.Group className="mb-3">
-                        <Form.Label>Currency</Form.Label>
+                        <Form.Label>Devise</Form.Label>
                         <FormSelect
                           options={bankCurrency}
-                          placeholder="select currency"
+                          placeholder="Sélectionnez la devise"
                           id="course_currency"
                           name="currency"
                           value={currency}
@@ -602,10 +602,10 @@ const Payouts = () => {
                       variant="secondary"
                       onClick={() => setShowModal(false)}
                     >
-                      Close
+                      Fermer
                     </Button>
                     <Button variant="primary" onClick={handleSave}>
-                      Save
+                    Enregistrer
                     </Button>
                   </Modal.Footer>
                 </Modal>

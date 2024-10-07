@@ -88,12 +88,12 @@ const BasicDetails = ({ next }) => {
             </Col>
             <Col md={6} xs={12} className="mb-4">
               <Form.Label htmlFor="lastname">
-              Nom <span className="text-danger">*</span>
+              Nom de famille <span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
                 id="lastname"
-                placeholder="Nom"
+                placeholder="Nom de famille"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 required
@@ -116,7 +116,7 @@ const BasicDetails = ({ next }) => {
               <Form.Control
                 type="email"
                 id="email"
-                placeholder="Tell us your E-mail ID"
+                placeholder="Dites-nous votre identifiant E-mail"
                 aria-describedby="emailHelpBlock"
                 required
                 disabled
@@ -182,7 +182,7 @@ const BasicDetails = ({ next }) => {
               <Form.Check
                 type="checkbox"
                 id="confirm"
-                label="Send me important updates on email"
+                label="Envoyez-moi des mises à jour importantes par e-mail"
                 className="fs-6"
                 value=""
                 onChange={(e) => setConfirmEmailUpdates(e.target.checked)}

@@ -9,26 +9,24 @@ const Step1 = () => {
     <Container fluid className="my-5 px-md-8">
       <Row>
         <Col md={6} className="d-flex flex-column justify-content-center">
-          <h2>Ready to start selling on Unleashified?</h2>
-          <h3>Here&apos;s the breakdown:</h3>
+          <h2>Prêt à commencer à vendre sur PME Cote D'Ivoire Marketplace ?</h2>
+          <h3>Voici&apos;s  un récapitulatif:</h3>
           <div className="my-4">
             <div className="d-flex align-items-center mb-3">
               <i className="fa fa-laptop fa-2x me-3" aria-hidden="true"></i>
               <div>
-                <h5>Learn what makes a successful profile</h5>
+                <h5>Apprenez ce qui fait un profil réussi</h5>
                 <p>
-                  Discover the do&apos;s and don&apos;ts to ensure you&apos;re always on the
-                  right track.
+                Découvrez les choses à faire et à ne pas faire pour vous assurer que vous êtes toujours sur la bonne voie.
                 </p>
               </div>
             </div>
             <div className="d-flex align-items-center mb-3">
               <i className="fa fa-user fa-2x me-3" aria-hidden="true"></i>
               <div>
-                <h5>Create your seller profile</h5>
+                <h5>Créez votre profil de vendeur</h5>
                 <p>
-                  Add your profile picture, description, and professional
-                  information.
+                Ajoutez votre photo de profil, une description et vos informations professionnelles.
                 </p>
               </div>
             </div>
@@ -38,17 +36,16 @@ const Step1 = () => {
                 aria-hidden="true"
               ></i>
               <div>
-                <h5>Publish your Service</h5>
+                <h5>Publiez votre service</h5>
                 <p>
-                  Create a Gig of the service you&apos;re offering and start selling
-                  instantly.
+                Créez une offre (Gig) du service que vous proposez et commencez à vendre instantanément.
                 </p>
               </div>
             </div>
           </div>
           <Link to="/service/onboarding_step2">
             <Button variant="success" size="lg">
-              Continue
+              Continuer
             </Button>
           </Link>
         </Col>

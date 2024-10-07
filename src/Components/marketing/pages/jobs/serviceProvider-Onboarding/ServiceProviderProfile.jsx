@@ -40,7 +40,6 @@ const ServiceProviderProfile = () => {
     }
   }, [location]);
 
-
   const storedUserId = sessionStorage.getItem("UserId");
   const storedEmail = sessionStorage.getItem("email");
   useEffect(() => {
@@ -99,25 +98,25 @@ const ServiceProviderProfile = () => {
       formDataToSend.append("country", formData.country);
       formDataToSend.append("language", formData.language);
       formDataToSend.append("responseTime", formData.responseTime);
-  
+
       formData.skills.forEach((skill, index) => {
         formDataToSend.append(`skills[${index}]`, skill);
       });
-  
+
       formData.certification.forEach((cert, index) => {
         formDataToSend.append(`certification[${index}][name]`, cert.name);
         if (cert.image) {
           formDataToSend.append(`certification[${index}][image]`, cert.image);
         }
       });
-  
+
       formData.portfolio.forEach((port, index) => {
         formDataToSend.append(`portfolio[${index}][name]`, port.name);
         port.images.forEach((image, imgIndex) => {
           formDataToSend.append(`portfolio[${index}][images][]`, image);
         });
       });
-  
+
       const response = await axios.post(
         "https://marketplacebackendas-test.azurewebsites.net/api/v1/onboard-service-provider",
         formDataToSend,
@@ -127,7 +126,7 @@ const ServiceProviderProfile = () => {
           },
         }
       );
-  
+
       console.log("Response:", response.data);
       showToast(response.data.message);
       navigate("/ServiceProviderdashboard");
@@ -153,11 +152,6 @@ const ServiceProviderProfile = () => {
       showToast(error.response.data.msg || error.message);
     }
   };
-  
-  
-  
-  
-  
 
   const updateFormData = (data) => {
     setFormData({ ...formData, ...data });
@@ -186,11 +180,11 @@ const ServiceProviderProfile = () => {
             <Col md={12} lg={6}>
               <div className="mb-12">
                 <h1 className="display-4 mb-3 fw-bold">
-                  Complete this Profile to Proceed
+                  Complétez ce profil pour continuer
                 </h1>
                 <p className="mb-0 lead">
-                  Ready to offer a service? Fill the following information to
-                  become a Service Provider
+                  Prêt à offrir un service ? Remplissez les informations
+                  suivantes pour devenir un Fournisseur de services
                 </p>
               </div>
             </Col>
@@ -222,10 +216,10 @@ const ServiceProviderProfile = () => {
                     </svg>
                   </div>
                   {/* heading */}
-                  <h3>Service provider information</h3>
+                  <h3>Informations sur le fournisseur de services</h3>
                   <p>
-                    Add your Personal information that will be link to your
-                    company profile.
+                    Ajoutez vos informations personnelles qui seront liées à
+                    votre profil d'entreprise
                   </p>
                 </div>
               </Col>
@@ -235,12 +229,12 @@ const ServiceProviderProfile = () => {
                     <Col md={6} xs={12} className="mb-3">
                       {/* First Name */}
                       <Form.Label htmlFor="first-name">
-                        First Name<span className="text-danger">*</span>
+                        Prénom<span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
                         id="first-name"
-                        placeholder="First Name"
+                        placeholder="Prénom"
                         required
                         value={formData.firstName}
                         onChange={(e) =>
@@ -251,12 +245,12 @@ const ServiceProviderProfile = () => {
                     <Col md={6} xs={12} className="mb-3">
                       {/* Last Name */}
                       <Form.Label htmlFor="last-name">
-                        Last Name<span className="text-danger">*</span>
+                        Nom de famille<span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
                         id="last-name"
-                        placeholder="Last Name"
+                        placeholder="Nom de famille"
                         required
                         value={formData.lastName}
                         onChange={(e) =>
@@ -268,11 +262,13 @@ const ServiceProviderProfile = () => {
                   <Row>
                     <Col md={6} xs={12} className="mb-3">
                       {/* Middle Name */}
-                      <Form.Label htmlFor="middle-name">Middle Name</Form.Label>
+                      <Form.Label htmlFor="middle-name">
+                        Deuxième prénom
+                      </Form.Label>
                       <Form.Control
                         type="text"
                         id="middle-name"
-                        placeholder="Middle Name"
+                        placeholder="Deuxième prénom"
                         value={formData.middleName}
                         onChange={(e) =>
                           updateFormData({ middleName: e.target.value })
@@ -282,12 +278,12 @@ const ServiceProviderProfile = () => {
                     <Col md={6} xs={12} className="mb-3">
                       {/* Title */}
                       <Form.Label htmlFor="title">
-                        Title<span className="text-danger">*</span>
+                        Titre<span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
                         id="title"
-                        placeholder="Title"
+                        placeholder="Titre"
                         required
                         value={formData.title}
                         onChange={(e) =>
@@ -317,12 +313,13 @@ const ServiceProviderProfile = () => {
                     <Col md={6} xs={12} className="mb-3">
                       {/* Phone Number */}
                       <Form.Label htmlFor="phone-number">
-                        Phone Number<span className="text-danger">*</span>
+                        Numéro de téléphone
+                        <span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
                         id="phone-number"
-                        placeholder="Phone Number"
+                        placeholder="Numéro de téléphone"
                         required
                         value={formData.phoneNumber}
                         onChange={(e) =>
@@ -335,7 +332,7 @@ const ServiceProviderProfile = () => {
                     <Col md={6} xs={12} className="mb-3">
                       {/* Gender */}
                       <Form.Label htmlFor="gender">
-                        Gender<span className="text-danger">*</span>
+                        Genre<span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         as="select"
@@ -346,16 +343,16 @@ const ServiceProviderProfile = () => {
                           updateFormData({ gender: e.target.value })
                         }
                       >
-                        <option value="">Select Gender</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option value="">Sélectionner le genre</option>
+                        <option value="Male">Homme</option>
+                        <option value="Female">Femme</option>
+                        <option value="Other">Autre</option>
                       </Form.Control>
                     </Col>
                     <Col md={6} xs={12} className="mb-3">
                       {/* Country */}
                       <Form.Label htmlFor="country">
-                        Country<span className="text-danger">*</span>
+                        Pays<span className="text-danger">*</span>
                       </Form.Label>
                       <CountryDropdown
                         id="country"
@@ -370,12 +367,12 @@ const ServiceProviderProfile = () => {
                     <Col md={6} xs={12} className="mb-3">
                       {/* Language */}
                       <Form.Label htmlFor="language">
-                        Language<span className="text-danger">*</span>
+                      Langue<span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
                         id="language"
-                        placeholder="Language"
+                        placeholder="Langue"
                         required
                         value={formData.language}
                         onChange={(e) =>
@@ -386,12 +383,12 @@ const ServiceProviderProfile = () => {
                     <Col md={6} xs={12} className="mb-3">
                       {/* Response Time */}
                       <Form.Label htmlFor="response-time">
-                        Response Time<span className="text-danger">*</span>
+                      Temps de réponse<span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
                         type="text"
                         id="response-time"
-                        placeholder="Response Time"
+                        placeholder="Temps de réponse"
                         required
                         value={formData.responseTime}
                         onChange={(e) =>
@@ -402,8 +399,8 @@ const ServiceProviderProfile = () => {
                   </Row>
                   <Row>
                     {/* <Col md={6} xs={12} className="mb-3"> */}
-                      {/* Date */}
-                      {/* <Form.Label htmlFor="date">
+                    {/* Date */}
+                    {/* <Form.Label htmlFor="date">
                         Date<span className="text-danger">*</span>
                       </Form.Label>
                       <Form.Control
@@ -417,8 +414,8 @@ const ServiceProviderProfile = () => {
                       />
                     </Col> */}
                     {/* <Col md={6} xs={12} className="mb-3"> */}
-                      {/* User Image */}
-                      {/* <Form.Label htmlFor="user-image">
+                    {/* User Image */}
+                    {/* <Form.Label htmlFor="user-image">
                         User Image{" "}
                         <small className="text-muted">
                           <em className="text-sm">
@@ -439,17 +436,17 @@ const ServiceProviderProfile = () => {
                   <Row>
                     <Col md={12} xs={12} className="mb-3">
                       {/* Skills */}
-                      <Form.Label htmlFor="skills">Skills</Form.Label>
+                      <Form.Label htmlFor="skills">Compétences</Form.Label>
                       <InputGroup>
                         <Form.Control
                           type="text"
                           id="skills"
-                          placeholder="Add a skill"
+                          placeholder="Ajouter une compétence"
                           value={newSkill}
                           onChange={(e) => setNewSkill(e.target.value)}
                         />
                         <Button variant="primary" onClick={addSkill}>
-                          Add Skill
+                        Ajouter une compétence
                         </Button>
                       </InputGroup>
                       <ul className="mt-2 list-inline">
@@ -484,7 +481,7 @@ const ServiceProviderProfile = () => {
                           <Col md={10} xs={12} className="mb-3 d-inline-flex">
                             <Form.Control
                               type="text"
-                              placeholder="Certification Name"
+                              placeholder="Nom du certification"
                               value={cert.name}
                               onChange={(e) => {
                                 const updatedCertifications = [
@@ -526,7 +523,7 @@ const ServiceProviderProfile = () => {
                                 });
                               }}
                             >
-                              Remove
+                              Supprimer
                             </Button>
                           </Col>
                         </Row>
@@ -542,7 +539,7 @@ const ServiceProviderProfile = () => {
                           })
                         }
                       >
-                        Add Certification
+                        Ajouter une certification
                       </Button>
                     </Col>
                   </Row>
@@ -554,7 +551,7 @@ const ServiceProviderProfile = () => {
                         <div key={index} className="mb-3">
                           <Form.Control
                             type="text"
-                            placeholder="Portfolio Name"
+                            placeholder="Nom du portfolio"
                             value={port.name}
                             onChange={(e) => {
                               const updatedPortfolio = [...formData.portfolio];
@@ -591,7 +588,7 @@ const ServiceProviderProfile = () => {
                               updateFormData({ portfolio: updatedPortfolio });
                             }}
                           >
-                            Remove Portfolio
+                            Supprimer le portfolio
                           </Button>
                         </div>
                       ))}
@@ -606,13 +603,13 @@ const ServiceProviderProfile = () => {
                           })
                         }
                       >
-                        Add Portfolio
+                         Ajouter un portfolio
                       </Button>
                     </Col>
                   </Row>
                   <div className="mt-4">
                     <Button type="submit" variant="primary" disabled={loading}>
-                      {loading ? "Submitting..." : "Submit"}
+                      {loading ? "Submitting..." : "Soumettre"}
                     </Button>
                   </div>
                 </div>

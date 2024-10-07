@@ -74,20 +74,20 @@ const BasicDetails = ({ next, data }) => {
       <Card className="card-bordered shadow-none mb-3">
         <Card.Body className="p-6">
           <div className="mb-4">
-            <h2 className="mb-0">Basic Information</h2>
-            <span>Add your personal details in the form.</span>
+            <h2 className="mb-0">Informations de base</h2>
+            <span>Ajoutez vos données personnelles dans le formulaire.</span>
           </div>
           <Row>
             {/* Input fields */}
             <Col md={6} xs={12} className="mb-4">
               <Form.Label htmlFor="firstname">
-                First Name<span className="text-danger">*</span>
+              Prénom<span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
                 id="firstname"
                 name="firstName"
-                placeholder="First Name"
+                placeholder="Prénom"
                 value={formData.firstName}
                 onChange={handleChange}
                 required
@@ -95,13 +95,13 @@ const BasicDetails = ({ next, data }) => {
             </Col>
             <Col md={6} xs={12} className="mb-4">
               <Form.Label htmlFor="lastname">
-                Last Name<span className="text-danger">*</span>
+              Nom de famille<span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
                 id="lastname"
                 name="lastName"
-                placeholder="Last Name"
+                placeholder="Nom de famille"
                 value={formData.lastName}
                 onChange={handleChange}
                 required
@@ -109,13 +109,13 @@ const BasicDetails = ({ next, data }) => {
             </Col>
             <Col md={6} xs={12} className="mb-4">
               <Form.Label htmlFor="middlename">
-                Middle Name<span className="text-danger">*</span>
+              Deuxième prénom<span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
                 id="middlename"
                 name="middleName"
-                placeholder="Middle Name"
+                placeholder="Deuxième prénom"
                 value={formData.middleName}
                 onChange={handleChange}
                 required
@@ -123,13 +123,13 @@ const BasicDetails = ({ next, data }) => {
             </Col>
             <Col md={6} xs={12} className="mb-4">
               <Form.Label htmlFor="email">
-                Email<span className="text-danger">*</span>
+                E-mail<span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Tell us your Email ID"
+                placeholder="Dites-nous votre identifiant E-mail."
                 aria-describedby="emailHelpBlock"
                 value={formData.email}
                 onChange={handleChange}
@@ -137,12 +137,12 @@ const BasicDetails = ({ next, data }) => {
                 required
               />
               <Form.Text id="emailHelpBlock" className="fs-6" muted>
-                We'll send you relevant jobs in your mail
+              Nous vous enverrons des offres d’emploi pertinentes dans votre courrier
               </Form.Text>
             </Col>
             <Col md={12} xs={12} className="mb-4">
               <Form.Label htmlFor="phone">
-                Phone Number<span className="text-danger">*</span>
+              Numéro de téléphone<span className="text-danger">*</span>
               </Form.Label>
               <InputGroup className="mb-1">
                 <InputGroup.Text id="phone">+225</InputGroup.Text>
@@ -150,7 +150,7 @@ const BasicDetails = ({ next, data }) => {
                   type="text"
                   id="phone"
                   name="contact"
-                  placeholder="Mobile Number"
+                  placeholder="Numéro de téléphone"
                   aria-label="Mobile Number"
                   aria-describedby="phoneHelpBlock"
                   value={formData.contact}
@@ -159,16 +159,16 @@ const BasicDetails = ({ next, data }) => {
                 />
               </InputGroup>
               <Form.Text id="phoneHelpBlock" className="fs-6" muted>
-                Recruiters will call you on this number
+               Les recruteurs vous appelleront sur ce numéro
               </Form.Text>
             </Col>
             <Col md={12} xs={12} className="mb-4">
-              <Form.Label className="d-block">Gender</Form.Label>
+              <Form.Label className="d-block">Sexe</Form.Label>
               <InputGroup className="mb-3">
                 <Form.Check
                   inline
                   type="radio"
-                  label="Male"
+                  label="Homme"
                   name="gender"
                   id="male"
                   value="male"
@@ -179,7 +179,7 @@ const BasicDetails = ({ next, data }) => {
                 <Form.Check
                   inline
                   type="radio"
-                  label="Female"
+                  label="Femme"
                   name="gender"
                   id="female"
                   value="female"
@@ -190,7 +190,7 @@ const BasicDetails = ({ next, data }) => {
                 <Form.Check
                   inline
                   type="radio"
-                  label="Other"
+                  label="Autre"
                   name="gender"
                   id="other"
                   value="other"
@@ -203,7 +203,7 @@ const BasicDetails = ({ next, data }) => {
             {/* Next button */}
             <Col xs={12}>
               <Button variant="primary" type="submit">
-                Next
+              Suivant
               </Button>
             </Col>
           </Row>
