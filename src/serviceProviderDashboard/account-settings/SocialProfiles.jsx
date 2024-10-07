@@ -81,7 +81,7 @@ const SocialProfiles = () => {
       };
 
       const response = await authFetch.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/update-social",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/update-social",
         formDataToSend
       );
 

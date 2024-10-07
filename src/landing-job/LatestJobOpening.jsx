@@ -35,10 +35,10 @@ const LatestJobOpening = () => {
           <Col xl={{ span: 8, offset: 2 }} md={12} xs={12}>
             <div className="text-center mb-8">
               <span className="text-uppercase text-primary fw-semi-bold ls-md">
-                Latest Job Opening
+              Dernières offres d'emploi
               </span>
               <h2 className="h1 fw-bold mt-3">
-                Explore remote friendly, flexible job opportunities.
+              Explorez des opportunités d'emploi à distance, flexibles
               </h2>
             </div>
             {latestJob.map((item, index) => {
@@ -48,7 +48,7 @@ const LatestJobOpening = () => {
             <div className="mt-6 text-center">
               <Link to="/jobs/listing/job-list">
                 <Button variant="outline-primary">
-                  Browse All Jobs Postings
+                Parcourir toutes les offres d'emploi
                 </Button>
               </Link>
             </div>

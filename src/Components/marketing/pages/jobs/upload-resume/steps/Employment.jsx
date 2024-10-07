@@ -98,7 +98,7 @@ const Employment = (props) => {
           id="jobTitle"
           name="jobTitle"
           value={formData.jobTitle}
-          placeholder="Write the Job Title"
+          placeholder="Titre du poste"
           onChange={handleChange}
         />
       </Form.Group>
@@ -150,7 +150,7 @@ const Employment = (props) => {
           id="companyCity"
           name="companyCity"
           value={formData.companyCity}
-          placeholder="Company City"
+          placeholder="Ville de l’entreprise"
           onChange={handleChange}
         />
       </Form.Group>
@@ -188,7 +188,7 @@ const Employment = (props) => {
         <Form.Label htmlFor="dateOfJoining"> Date d’adhésion</Form.Label>
         <FlatPickr
           value={formData.dateOfJoining}
-          placeholder="Date of Joining"
+          placeholder="Date d’adhésion"
           onChange={handleDateOfJoiningChange}
         />
       </Form.Group>
@@ -196,7 +196,7 @@ const Employment = (props) => {
         <Form.Label htmlFor="dateOfRelieving">Date de relèvement</Form.Label>
         <FlatPickr
           value={formData.dateOfLeaving}
-          placeholder="Date of relieving"
+          placeholder="Date de relèvement"
           onChange={handleDateOfLeavingChange}
         />
       </Form.Group>

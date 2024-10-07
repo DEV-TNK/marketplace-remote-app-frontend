@@ -121,7 +121,7 @@ const UploadResume = () => {
                     <div className="mb-4">
                       <Image src={JobGraphics} alt="" />
                     </div>
-                    <h3 className="mb-3">On registering you can</h3>
+                    <h3 className="mb-3">En vous inscrivant, vous pouvez</h3>
                     <ListGroup
                       bsPrefix="list-unstyled"
                       as="ul"
@@ -137,7 +137,7 @@ const UploadResume = () => {
                           className="text-success me-2"
                           size={0.7}
                         />{" "}
-                        Build your profile and let recruiters find you.
+                        Créez votre profil et laissez les recruteurs vous trouver.
                       </ListGroup.Item>
 
                       <ListGroup.Item
@@ -150,7 +150,7 @@ const UploadResume = () => {
                           className="text-success me-2"
                           size={0.7}
                         />{" "}
-                        Find a Job & grow your career
+                        Trouvez un emploi et faites évoluer votre carrière.
                       </ListGroup.Item>
                       <ListGroup.Item
                         as="li"
@@ -162,7 +162,7 @@ const UploadResume = () => {
                           className="text-success me-2"
                           size={0.7}
                         />{" "}
-                        Complete Job and get Paid
+                        Terminez un travail et soyez payé.
                       </ListGroup.Item>
                     </ListGroup>
                   </Card.Body>

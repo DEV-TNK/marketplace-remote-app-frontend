@@ -65,14 +65,14 @@ const UpdateResume = () => {
   const steps = [
     {
       id: 1,
-      title: "Basic Details",
+      title: "Informations de base",
       content: (
         <BasicDetails data={formData} handleChange={handleChange} next={next} />
       ),
     },
     {
       id: 2,
-      title: "Employment",
+      title: "Emploi",
       content: (
         <Employment
           data={employment}
@@ -84,7 +84,7 @@ const UpdateResume = () => {
     },
     {
       id: 3,
-      title: "Education",
+      title: "Éducation",
       content: (
         <Education
           data={formData}
@@ -96,7 +96,7 @@ const UpdateResume = () => {
     },
     {
       id: 4,
-      title: "Job",
+      title: "Emploi",
       content: (
         <Job
           data={formData}
@@ -116,11 +116,10 @@ const UpdateResume = () => {
           <Col lg={{ span: 7, offset: 1 }} xs={12}>
             <div className="mb-10">
               <h1 className="mb-3 display-4 fw-bold">
-                Find a Job & grow your career
+              Trouver un emploi et faire avancer votre carrière.
               </h1>
               <p className="mb-0 lead pe-lg-10">
-                Build your profile and let recruiters find you. Get job postings
-                delivered right to your email.
+              Construisez votre profil et laissez les recruteurs vous trouver.Recevez les offres d'emploi directement dans votre e-mail.
               </p>
             </div>
           </Col>
@@ -143,7 +142,7 @@ const UpdateResume = () => {
                     <div className="mb-4">
                       <Image src={JobGraphics} alt="" />
                     </div>
-                    <h3 className="mb-3">On registering you can</h3>
+                    <h3 className="mb-3">En vous inscrivant, vous pouvez</h3>
                     <ListGroup
                       bsPrefix="list-unstyled"
                       as="ul"
@@ -159,7 +158,7 @@ const UpdateResume = () => {
                           className="text-success me-2"
                           size={0.7}
                         />
-                        Build your profile and let recruiters find you.
+                        Construire votre profil et laisser les recruteurs vous trouver.
                       </ListGroup.Item>
                       <ListGroup.Item
                         as="li"
@@ -171,7 +170,7 @@ const UpdateResume = () => {
                           className="text-success me-2"
                           size={0.7}
                         />
-                        Find a Job & grow your career
+                        Trouver un emploi et faire avancer votre carrière.
                       </ListGroup.Item>
                     </ListGroup>
                   </Card.Body>

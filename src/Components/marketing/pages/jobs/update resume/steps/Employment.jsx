@@ -125,18 +125,18 @@ const Employment = ({ next, previous, data }) => {
   return (
     <Form>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="jobTitle">Job title</Form.Label>
+        <Form.Label htmlFor="jobTitle">Titre du poste</Form.Label>
         <Form.Control
           type="text"
           id="jobTitle"
           name="jobTitle"
-          placeholder="Write the Job Title"
+          placeholder="Titre du poste"
           value={formData.jobTitle}
           onChange={handleChange}
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label className="d-block">Job type</Form.Label>
+        <Form.Label className="d-block">Type de poste</Form.Label>
         <ButtonGroup>
           {radios.map((radio, idx) => (
             <ToggleButton
@@ -155,51 +155,51 @@ const Employment = ({ next, previous, data }) => {
         </ButtonGroup>
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="companyName">Company Name</Form.Label>
+        <Form.Label htmlFor="companyName">Nom de l’entreprise</Form.Label>
         <Form.Control
           type="text"
           id="companyName"
           name="companyName"
-          placeholder="Company Name"
+          placeholder="Nom de l’entreprise"
           value={formData.companyName}
           onChange={handleChange}
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="companyAddress">Company Address</Form.Label>
+        <Form.Label htmlFor="companyAddress">Adresse de l’entreprise</Form.Label>
         <Form.Control
           type="text"
           id="companyAddress"
           name="companyAddress"
-          placeholder="Company Address"
+          placeholder="Adresse de l’entreprise"
           value={formData.companyAddress}
           onChange={handleChange}
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="companyCity">Company City</Form.Label>
+        <Form.Label htmlFor="companyCity">Ville de l’entreprise</Form.Label>
         <Form.Control
           type="text"
           id="companyCity"
           name="companyCity"
-          placeholder="Company City"
+          placeholder="Ville de l’entreprise"
           value={formData.companyCity}
           onChange={handleChange}
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="companyCountry">Company Country</Form.Label>
+        <Form.Label htmlFor="companyCountry">Pays de l’entreprise</Form.Label>
         <Form.Control
           type="text"
           id="companyCountry"
           name="companyCountry"
-          placeholder="Company Country"
+          placeholder="Pays de l’entreprise"
           value={formData.companyCountry}
           onChange={handleChange}
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label>Company State</Form.Label>
+        <Form.Label>État de l’entreprise</Form.Label>
         <Form.Control
           as={FormSelect}
           options={states}
@@ -208,27 +208,27 @@ const Employment = ({ next, previous, data }) => {
           name="companyState"
         />
         <Form.Text className="text-muted">
-          Please re-select your company's state again from the options above.
+        Veuillez re-sélectionner l'état de votre entreprise parmi les options ci-dessus.
         </Form.Text>
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="dateOfJoining">Date of Joining</Form.Label>
+        <Form.Label htmlFor="dateOfJoining">Date d’adhésion</Form.Label>
         <FlatPickr
           value={formData.dateOfJoining}
-          placeholder="Date of Joining"
+          placeholder="Date d’adhésion"
           onChange={handleDateOfJoiningChange}
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="dateOfRelieving">Date of relieving</Form.Label>
+        <Form.Label htmlFor="dateOfRelieving">Date de relèvement</Form.Label>
         <FlatPickr
           value={formData.dateOfLeaving}
-          placeholder="Date of relieving"
+          placeholder="Date de relèvement"
           onChange={handleDateOfLeavingChange}
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="salary">Annual Salary</Form.Label>
+        <Form.Label htmlFor="salary">Salaire annuel</Form.Label>
         <Form.Control
           type="text"
           id="salary"
@@ -240,14 +240,14 @@ const Employment = ({ next, previous, data }) => {
       </Form.Group>
       <div className="d-md-flex justify-content-between mb-3">
         <Button variant="outline-secondary" onClick={previous}>
-          Go to Back
+        Retourner
         </Button>
         <div className="mt-2 mt-md-0">
           <Button variant="outline-secondary" className="me-2" onClick={next}>
-            Skip
+          Passer
           </Button>
           <Button variant="primary" onClick={handleSaveAndContinue}>
-            Save and Continue
+          Sauvegarder et continuer
           </Button>
         </div>
       </div>

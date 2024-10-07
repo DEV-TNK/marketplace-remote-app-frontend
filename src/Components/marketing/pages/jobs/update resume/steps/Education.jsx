@@ -110,21 +110,22 @@ const Education = (props) => {
       <Card className="card-bordered shadow-none mb-3">
         <Card.Body className="p-6">
           <div className="mb-4">
-            <h2 className="mb-0">Education</h2>
+            <h2 className="mb-0">Éducation</h2>
             <span>
-              Add your education detail like school, degree, and graduate.
+              Ajoutez des détails sur votre éducation comme l’école, le diplôme
+              et le diplôme.
             </span>
           </div>
           <Row>
             <Col xs={12} className="mb-3">
               <Form.Label htmlFor="school-university">
-                School / University / Bootcamp
+                École / Université / Bootcamp
                 <span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
                 id="school-university"
-                placeholder="School / University / Bootcamp"
+                placeholder="École / Université / Bootcamp "
                 value={school}
                 onChange={(e) => setSchool(e.target.value)}
                 required
@@ -132,12 +133,12 @@ const Education = (props) => {
             </Col>
             <Col md={12} xs={12} className="mb-3">
               <Form.Label htmlFor="degree">
-                Degree / Certificate<span className="text-danger">*</span>
+                Diplôme / Certificat<span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
                 id="degree"
-                placeholder="Degree / Certificate"
+                placeholder="Diplôme / Certificat"
                 value={degree}
                 onChange={(e) => setDegree(e.target.value)}
                 required
@@ -145,19 +146,19 @@ const Education = (props) => {
             </Col>
             <Col md={12} xs={12} className="mb-3">
               <Form.Label htmlFor="study">
-                Field of Study<span className="text-danger">*</span>
+                Domaine d’études<span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
                 id="study"
-                placeholder="Field of Study"
+                placeholder="Domaine d’études"
                 value={study}
                 onChange={(e) => setStudy(e.target.value)}
                 required
               />
             </Col>
             <Col md={12} xs={12} className="mb-3">
-              <Form.Label className="d-block">Course Type</Form.Label>
+              <Form.Label className="d-block">Type de cours</Form.Label>
               <ButtonGroup>
                 {radios.map((radio, idx) => (
                   <ToggleButton
@@ -176,7 +177,7 @@ const Education = (props) => {
               </ButtonGroup>
             </Col>
             <Col xs={12}>
-              <Form.Label>From</Form.Label>
+              <Form.Label>De</Form.Label>
             </Col>
             <Col md={6} xs={12} className="mb-3">
               <Form.Control
@@ -187,7 +188,7 @@ const Education = (props) => {
                 required
               />
               <Form.Text className="text-muted">
-                Please re-select your From month again
+                Veuillez re-sélectionner votre mois de départ.
               </Form.Text>
             </Col>
             <Col md={6} xs={12} className="mb-3">
@@ -199,11 +200,11 @@ const Education = (props) => {
                 required
               />
               <Form.Text className="text-muted">
-                Please re-select your From Year again
+                Veuillez re-sélectionner votre année de départ.
               </Form.Text>
             </Col>
             <Col className="col-12">
-              <Form.Label>To</Form.Label>
+              <Form.Label>À</Form.Label>
             </Col>
             <Col md={6} xs={12} className="mb-3">
               <Form.Control
@@ -214,7 +215,7 @@ const Education = (props) => {
                 required
               />
               <Form.Text className="text-muted">
-                Please re-select your To month again
+                Veuillez re-sélectionner votre mois à départ
               </Form.Text>
             </Col>
             <Col md={6} xs={12} className="mb-3">
@@ -226,7 +227,7 @@ const Education = (props) => {
                 required
               />
               <Form.Text className="text-muted">
-                Please re-select your To Year again
+                Veuillez re-sélectionner votre année à départ
               </Form.Text>
             </Col>
             <Col
@@ -235,7 +236,7 @@ const Education = (props) => {
               className="d-md-flex justify-content-between mb-3"
             >
               <Button variant="outline-secondary" onClick={previous}>
-                Previous
+                Précédent
               </Button>
               <Button
                 variant="primary"
@@ -245,7 +246,7 @@ const Education = (props) => {
                 }}
                 disabled={!isFormValid}
               >
-                Next
+                sautez
               </Button>
             </Col>
           </Row>

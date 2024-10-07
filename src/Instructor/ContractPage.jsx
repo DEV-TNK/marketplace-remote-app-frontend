@@ -229,15 +229,12 @@ const ContractPage = () => {
                           >
                             <strong>Note</strong>
                             <p>
-                              5% of the total payment for a Job will be deducted
-                              after the waiting security period for any job done
+                            5 % du montant total du paiement pour un emploi sera déduit après la période de sécurité d'attente pour tout travail effectué.
                             </p>
                           </Alert>
-                          <h5 className="mb-3">Pending</h5>
+                          <h5 className="mb-3">En attente</h5>
                           <p>
-                            View all job which payment have been approved by Job
-                            provider and waiting for security check comfirmation
-                            to be made available for widthdraw
+                          Voir tous les emplois dont le paiement a été approuvé par le fournisseur de services et qui attendent la confirmation du contrôle de sécurité pour être disponibles pour le retrait.
                           </p>
                           {pendings.map((pending) => (
                             <div key={pending._id} className="mt-5">
@@ -290,11 +287,11 @@ const ContractPage = () => {
                           eventKey="tab4"
                           className="pb-4 p-4 ps-0 pe-0"
                         >
-                          <h5 className="mb-3">Available</h5>
+                          <h5 className="mb-3">Disponible</h5>
                           <div className="job-list">
                             <Link to="/JobSeekerdashboard/seeker-payouts">
                               <button type="button" className="btn btn-primary">
-                                Widthdraw Amount
+                              Montant à retirer.
                               </button>
                             </Link>
                           </div>

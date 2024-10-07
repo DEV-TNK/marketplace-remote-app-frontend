@@ -74,7 +74,7 @@ const Dashboard = () => {
     if (userId) {
       const getUser = async () => {
         try {
-          const response = await axios.get(
+          const response = await authFetch.get(
             `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-fgn-user-details/${userId}`
           );
           if (response.data) {
@@ -134,7 +134,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-earning/${userId}`
         );
         setEarnings(response.data.userEarning);
@@ -149,7 +149,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         // const userId = sessionStorage.getItem("UserId");
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/service-created-per-month/${userId}`
         );
         const result = response.data;
@@ -170,7 +170,7 @@ const Dashboard = () => {
     const fetchdata = async () => {
       try {
         const userId = sessionStorage.getItem("UserId");
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/last-four-paid-gigs/${userId}`
         );
         setTop4Payment(response.data.lastFourPaidGigs);

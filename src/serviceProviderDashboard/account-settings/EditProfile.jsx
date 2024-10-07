@@ -33,8 +33,8 @@ const EditProfile = () => {
     const fetchUserData = async () => {
       try {
         if (!userId) return; // Add this check to ensure userId is defined
-        const response = await axios.get(
-          `https://remsana-backend-testing.azurewebsites.net/api/v1/get-user-details/${userId}`
+        const response = await authFetch.get(
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-user-details/${userId}`
         );
         const userData = response.data.userDetails;
         setFormData({
@@ -67,7 +67,7 @@ const EditProfile = () => {
       });
 
       const response = await authFetch.post(
-        `https://remsana-backend-testing.azurewebsites.net/api/v1/update-profile/${userId}`,
+        `https://marketplacebackendas-test.azurewebsites.net/api/v1/update-profile/${userId}`,
         formDataToSend
       );
       showToast(response.data.message);
@@ -156,9 +156,9 @@ const EditProfile = () => {
       <Card className="border-0">
         <Card.Header>
           <div className="mb-3 mb-lg-0">
-            <h3 className="mb-0">Profile Details</h3>
+            <h3 className="mb-0">Détails du profil</h3>
             <p className="mb-0">
-              You have full control to manage your own account setting.
+            Vous avez un contrôle total pour gérer les paramètres de votre compte.
             </p>
           </div>
         </Card.Header>
@@ -173,9 +173,9 @@ const EditProfile = () => {
                   alt="User Avatar"
                 />
                 <div className="ms-3">
-                  <h4 className="mb-0">Your avatar</h4>
+                  <h4 className="mb-0">Votre avatar</h4>
                   <p className="mb-0">
-                    PNG or JPG, no bigger than 800px wide and tall.
+                  PNG ou JPG, pas plus large que 800px de largeur et de hauteur.
                   </p>
                   <input
                     type="file"
@@ -186,29 +186,29 @@ const EditProfile = () => {
               </div>
               <div>
                 <Button variant="outline-secondary" size="sm">
-                  Update
+                Mettre à jour
                 </Button>{" "}
                 <Button variant="outline-danger" size="sm">
-                  Delete
+                Supprimer
                 </Button>
               </div>
             </Form>
           </div>
           <hr className="my-5" />
           <div>
-            <h4 className="mb-0">Personal Details</h4>
-            <p className="mb-4">Edit your personal information and address.</p>
+            <h4 className="mb-0">Détails personnels</h4>
+            <p className="mb-4">Modifiez vos informations personnelles et votre adresse.</p>
             {/* Form */}
             <Form onSubmit={handleSubmit} encType="multipart/form-data">
               <Row>
                 {/* First name */}
                 <Col md={6} sm={12} className="mb-3">
                   <Form.Group className="mb-3" controlId="formFirstName">
-                    <Form.Label>First Name</Form.Label>
+                    <Form.Label> Prénom</Form.Label>
                     <Form.Control
                       type="text"
                       name="firstName"
-                      placeholder="First Name"
+                      placeholder=" Prénom"
                       required
                       value={formData.firstName}
                       onChange={handleChange}
@@ -217,11 +217,11 @@ const EditProfile = () => {
                 </Col>
                 <Col md={6} sm={12} className="mb-3">
                   <Form.Group className="mb-3" controlId="formLastName">
-                    <Form.Label>Last Name</Form.Label>
+                    <Form.Label>Nom de famille</Form.Label>
                     <Form.Control
                       type="text"
                       name="lastName"
-                      placeholder="Last Name"
+                      placeholder="Nom de famille"
                       required
                       value={formData.lastName}
                       onChange={handleChange}
@@ -230,11 +230,11 @@ const EditProfile = () => {
                 </Col>
                 <Col md={6} sm={12} className="mb-3">
                   <Form.Group className="mb-3" controlId="formPhone">
-                    <Form.Label>Phone</Form.Label>
+                    <Form.Label>Téléphone</Form.Label>
                     <Form.Control
                       type="text"
                       name="contact"
-                      placeholder="Phone"
+                      placeholder="Téléphone"
                       required
                       value={formData.contact}
                       onChange={handleChange}
@@ -243,7 +243,8 @@ const EditProfile = () => {
                 </Col>
                 <Col md={6} sm={12} className="mb-3">
                   <Form.Group className="mb-3" controlId="formBirthday">
-                    <Form.Label>Birthday</Form.Label>
+                    <Form.Label>Date de naissance
+                    </Form.Label>
                     <Form.Control
                       as={FlatPickr}
                       name="birthday"
@@ -257,7 +258,7 @@ const EditProfile = () => {
                 
                 <Col md={6} sm={12} className="mb-3">
                   <Form.Group className="mb-3" controlId="formState">
-                    <Form.Label>State</Form.Label>
+                    <Form.Label> État</Form.Label>
                     <FormSelect
                       options={statelist}
                       type="state"
@@ -270,7 +271,7 @@ const EditProfile = () => {
                 </Col>
                 <Col md={6} sm={12} className="mb-3">
                   <Form.Group className="mb-3" controlId="formCountry">
-                    <Form.Label>Country</Form.Label>
+                    <Form.Label>Pays</Form.Label>
                     <FormSelect
                       options={countrylist}
                       type="text"
@@ -284,10 +285,10 @@ const EditProfile = () => {
 
                 <Col md={6} sm={12} className="mb-3">
                   <Form.Group className="mb-3" controlId="formShortPortfolio">
-                    <Form.Label>Short Portfolio</Form.Label>
+                    <Form.Label>Court portfolio</Form.Label>
                     <Form.Control
                       type="text"
-                      placeholder="Enter a short Portfolio e.g (A Frontend Developer)"
+                      placeholder="Entrez un court portfolio, par exemple (Un développeur frontend)"
                       required
                       name="portfolio"
                       value={formData.portfolio}
@@ -299,11 +300,11 @@ const EditProfile = () => {
                 {/* Portfolio Description */}
                 <Col md={6} sm={12} className="mb-3">
                   <Form.Group className="mb-3" controlId="formDescription">
-                    <Form.Label>Portfolio Description</Form.Label>
+                    <Form.Label>Description du portfolio</Form.Label>
                     <Form.Control
                       as="textarea"
                       rows={3}
-                      placeholder="Enter your portfolio description e.g (i am an innovation designer.....)"
+                      placeholder="Entrez la description de votre portfolio, par exemple (Je suis un designer d'innovation...)"
                       required
                       name="description"
                       value={formData.description}
@@ -325,7 +326,7 @@ const EditProfile = () => {
                     </Button>
                   ) : (
                     <Button variant="primary" type="submit">
-                      Update Profile
+                      Mettre à jour le profil
                     </Button>
                   )}
                 </Col>

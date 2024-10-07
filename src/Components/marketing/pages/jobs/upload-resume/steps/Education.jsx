@@ -194,7 +194,7 @@ const Education = (props) => {
               <Form.Control
                 type="text"
                 id="study"
-                placeholder="Field of Study"
+                placeholder="Domaine d’études"
                 value={study}
                 onChange={(e) => setStudy(e.target.value)}
               />

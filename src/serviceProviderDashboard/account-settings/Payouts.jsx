@@ -97,7 +97,7 @@ const Payouts = () => {
       const userId = sessionStorage.getItem("UserId");
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/get-my-earning/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-earning/${userId}`
         );
 
         if (response.data.userEarning) {
@@ -160,7 +160,7 @@ const Payouts = () => {
     const fetchBankData = async () => {
       try {
         const response = await axios.get(
-          `https://unleashified-backend.azurewebsites.net/api/v1/bank-details/${userId}`
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/bank-details/${userId}`
         );
         const fetchedBankData = response.data.accountDetails; // Access accountDetails array from response data
         setBankData(fetchedBankData);
@@ -178,7 +178,7 @@ const Payouts = () => {
       // Check if userId is present
       try {
         const saveBankData = await authFetch.post(
-          "https://unleashified-backend.azurewebsites.net/api/v1/save-bank-details",
+          "https://marketplacebackendas-test.azurewebsites.net/api/v1/save-bank-details",
           {
             userId: userId,
             accountName,
@@ -224,7 +224,7 @@ const Payouts = () => {
     console.log(accountId);
     try {
       await axios.put(
-        "https://unleashified-backend.azurewebsites.net/api/v1/edit-account",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/edit-account",
         {
           userId: userId,
           accountId: accountId,
@@ -249,7 +249,7 @@ const Payouts = () => {
 
   const handleWithdraw = async () => {
     if (!selectedBankId) {
-      setErrorAcc("Please select a bank account.");
+      setErrorAcc("Veuillez sélectionner un compte bancaire.");
       return;
     }
     setLoading(true);
@@ -259,7 +259,7 @@ const Payouts = () => {
       const totalAmountNumeric = parseFloat(totalAmount);
       if (withdrawAmountNumeric < totalAmountNumeric) {
         const response = await axios.post(
-          "https://unleashified-backend.azurewebsites.net/api/v1/create-payment-request",
+          "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-payment-request",
           {
             userId: parseFloat(userId),
             accountId: selectedBankId,

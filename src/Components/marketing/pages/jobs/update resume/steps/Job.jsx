@@ -36,22 +36,21 @@ const Job = (props) => {
   };
 
   const jobTypes = [
-    { label: "Full-Time", value: "Full-Time" },
-    { label: "Part-Time", value: "Part-Time" },
+    { label: "Temps plein", value: "Full-Time" },
+    { label: "Temps partiel", value: "Part-Time" },
     { label: "Freelance", value: "Freelance" },
-    { label: "Contract", value: "Contract" },
+    { label: "Contractuel", value: "Contract" },
   ];
 
   const availabilitiesToJoin = [
-    { value: "Immediately", label: "Immediately" },
-    { value: "In few hours", label: "In few hours" },
-    { value: "A day", label: "A day" },
-    { value: "3 days", label: "3 days" },
-    { value: "7 days", label: "7 days" },
-    { value: "14 days", label: "14 days" },
-    { value: "1 month", label: "1 month" },
+    { value: "Immédiatement", label: "Immediately" },
+    { value: " En quelques heures", label: "In few hours" },
+    { value: " Un jour", label: "A day" },
+    { value: "3 jours", label: "3 days" },
+    { value: "7 jours", label: "7 days" },
+    { value: "14 jours", label: "14 days" },
+    { value: "1 month", label: "1 mois" },
   ];
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -136,14 +135,14 @@ const Job = (props) => {
       <Card className="card-bordered shadow-none mb-3">
         <Card.Body className="p-6">
           <div className="mb-4">
-            <h2 className="mb-0">What kind of job are you looking for?</h2>
+            <h2 className="mb-0">Quel type d’emploi recherchez-vous ?</h2>
             <span>
-              Add the details for are you looking for future opportunity.
+            Ajoutez les détails pour si vous recherchez une opportunité future.
             </span>
           </div>
           <Row>
             <Col xs={12} className="mb-3">
-              <Form.Label htmlFor="resume-headline">Resume Headline</Form.Label>
+              <Form.Label htmlFor="resume-headline">Titre du CV</Form.Label>
               <Form.Control
                 type="text"
                 id="resume-headline"
@@ -153,7 +152,7 @@ const Job = (props) => {
               />
             </Col>
             <Col md={12} xs={12} className="mb-3">
-              <Form.Label>Job Type</Form.Label>
+              <Form.Label>Type d’emploi</Form.Label>
               <Form.Control
                 as={FormSelect}
                 options={jobTypes}
@@ -165,7 +164,7 @@ const Job = (props) => {
               />
             </Col>
             <Col md={12} xs={12} className="mb-3">
-              <Form.Label>Location</Form.Label>
+              <Form.Label>Temps plein</Form.Label>
               <Collapse in={true}>
                 <div id="locations">
                   <div className="input-group">
@@ -179,7 +178,7 @@ const Job = (props) => {
               </Collapse>
             </Col>
             <Col md={12} xs={12} className="mb-3">
-              <Form.Label>Availability to Join</Form.Label>
+              <Form.Label>Disponibilité pour rejoindre</Form.Label>
               <Form.Control
                 as={FormSelect}
                 options={availabilitiesToJoin}
@@ -192,17 +191,16 @@ const Job = (props) => {
             </Col>
             <Col md={12} xs={12} className="mb-4">
               <Form.Label>
-                Resume<span className="text-danger">*</span>
+                CV<span className="text-danger">*</span>
               </Form.Label>
               <Form.Group className="mb-1 input-group">
                 <Form.Control id="resume" type="file" accept=".pdf" />{" "}
                 {/* Add accept=".pdf" */}
                 <Form.Label htmlFor="resume" className="input-group-text mb-0">
-                  Upload
+                Télécharger
                 </Form.Label>
                 <Form.Text className="fs-6">
-                  PDF files only | Max: 2 MB. Recruiters give first preference
-                  to candidates with a good and well-structured resume.
+                fichiers PDF uniquement | Max. : 2 Mo. Les recruteurs privilégient les candidats ayant un CV bien structuré
                 </Form.Text>
               </Form.Group>
             </Col>
@@ -212,14 +210,14 @@ const Job = (props) => {
               className="d-md-flex justify-content-between mb-3"
             >
               <Button variant="outline-secondary" onClick={previous}>
-                Go to Back
+              Retourner
               </Button>
               <Button
                 variant="primary"
                 onClick={handleSubmit}
                 disabled={loading}
               >
-                {loading ? "Processing..." : "Submit Application"}
+                {loading ? "Processing..." : "soumettez la demande"}
               </Button>
             </Col>
           </Row>
