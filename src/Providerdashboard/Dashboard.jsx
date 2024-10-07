@@ -29,8 +29,10 @@ import {
 
 // import profile layout wrapper
 import ProviderProfileLayout from "./ProviderProfileLayout";
+import AxiosInterceptor from "../Components/AxiosInterceptor";
 
 const Dashboard = () => {
+  const authFetch = AxiosInterceptor()
   const [amount, setAmount] = useState(null);
   const [top4Payment, setTop4Payment] = useState([]);
   const [completedJobs, setCompletedJobs] = useState(null);
@@ -68,7 +70,7 @@ const Dashboard = () => {
     if (userId) {
       const getUser = async () => {
         try {
-          const response = await axios.get(
+          const response = await authFetch.get(
             `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-fgn-user-details/${userId}`
           );
           if (response.data) {
@@ -93,7 +95,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         // const userId = sessionStorage.getItem("UserId");
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-provider-dashboardJobs/${userId}`
         );
 
@@ -130,7 +132,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         // const userId = sessionStorage.getItem("UserId");
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/jobs-created-by-provider/${userId}`
         );
         const result = response.data;
@@ -151,7 +153,7 @@ const Dashboard = () => {
     const fetchdata = async () => {
       try {
         const userId = sessionStorage.getItem("UserId");
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-provider-dashboardPaidJobs/${userId}`
         );
         setTop4Payment(response.data.jobs);

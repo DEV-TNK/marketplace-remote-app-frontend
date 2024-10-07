@@ -6,8 +6,10 @@ import axios from "axios";
 import { useGlobalContext } from "../context/AuthContext";
 import ReactPaginate from "react-paginate"; // Import ReactPaginate
 import { ChevronLeft, ChevronRight } from "react-feather"; // Import icons
+import AxiosInterceptor from "../Components/AxiosInterceptor";
 
 const JobApplicants = () => {
+  const authFetch = AxiosInterceptor()
   const { userId } = useGlobalContext();
   const [jobs, setJobs] = useState([]);
   const [selectedJobTitle, setSelectedJobTitle] = useState(null);
@@ -18,7 +20,7 @@ const JobApplicants = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-applicants/${userId}`
         );
         setJobs(response.data.applicants);

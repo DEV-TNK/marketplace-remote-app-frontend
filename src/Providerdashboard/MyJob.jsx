@@ -26,8 +26,10 @@ import { mdiStar } from "@mdi/js";
 import axios from "axios"; // Import axios library
 import { numberWithCommas } from "../helper/utils";
 import { useGlobalContext } from "../context/AuthContext";
+import AxiosInterceptor from "../Components/AxiosInterceptor";
 
 const MyJob = () => {
+  const authFetch = AxiosInterceptor()
   const [filtering, setFiltering] = useState("");
   const [rowSelection, setRowSelection] = useState({});
   const [jobs, setJobs] = useState([]);
@@ -56,7 +58,7 @@ const MyJob = () => {
     const fetchJobs = async () => {
       try {
         const userId = sessionStorage.getItem("UserId");
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-provider-jobs/${userId}`
         );
         setJobs(response.data.jobs);

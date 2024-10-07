@@ -4,8 +4,10 @@ import { useGlobalContext } from "../../context/AuthContext";
 import { showToast } from "../../Components/Showtoast";
 import axios from "axios";
 import ProviderProfileLayout from "../ProviderProfileLayout";
+import AxiosInterceptor from "../../Components/AxiosInterceptor";
 
 const SocialProfiles = () => {
+  const authFetch = AxiosInterceptor();
   const { userId } = useGlobalContext();
   const [formData, setFormData] = useState({
     twitter: "",
@@ -22,7 +24,7 @@ const SocialProfiles = () => {
       const userId = sessionStorage.getItem("UserId");
       try {
         if (!userId) return;
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-social-profile/${userId}`
         );
         const user = response.data.user;
@@ -78,14 +80,14 @@ const SocialProfiles = () => {
         youtube: formData.youtube || "nil",
       };
 
-      const response = await axios.post(
+      const response = await authFetch.post(
         "https://marketplacebackendas-test.azurewebsites.net/api/v1/update-social",
         formDataToSend
       );
 
       if (response.status === 200) {
         showToast("Social profiles updated successfully", "success");
-        setFormData([ ...formData, formDataToSend.data]);
+        setFormData([...formData, formDataToSend.data]);
       } else {
         showToast("Failed to update social profiles", "error");
       }
@@ -104,7 +106,7 @@ const SocialProfiles = () => {
           <div className="mb-3 mb-lg-0">
             <h3 className="mb-0">Profils sociaux</h3>
             <p className="mb-0">
-            ajoutez les liens de votre profil social sous les comptes sociaux
+              ajoutez les liens de votre profil social sous les comptes sociaux
             </p>
           </div>
         </Card.Header>

@@ -25,8 +25,10 @@ import axios from "axios"; // Import axios library
 import { numberWithCommas } from "../helper/utils";
 import { useGlobalContext } from "../context/AuthContext";
 import JobTable from "./JobTable";
+import AxiosInterceptor from "../Components/AxiosInterceptor";
 
 const MyJob = () => {
+  const authFetch = AxiosInterceptor()
   const [filtering, setFiltering] = useState("");
   const [rowSelection, setRowSelection] = useState({});
   const [jobs, setJobs] = useState([]);
@@ -72,7 +74,7 @@ const MyJob = () => {
     const fetchAllJobs = async () => {
       try {
         const userId = sessionStorage.getItem("UserId");
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/seeker-jobs/${userId}`
         );
         setJobs(response.data);
@@ -85,7 +87,7 @@ const MyJob = () => {
     const fetchSavedJobs = async () => {
       try {
         const userId = sessionStorage.getItem("UserId");
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-saved-jobs/${userId}`
         );
 
@@ -102,7 +104,7 @@ const MyJob = () => {
     const fetchOngoingJobs = async () => {
       try {
         const userId = sessionStorage.getItem("UserId");
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/seeker-ongoing-jobs/${userId}`
         );
         setOngoingJobs(response.data);
@@ -114,7 +116,7 @@ const MyJob = () => {
     const fetchCompletedJobs = async () => {
       try {
         const userId = sessionStorage.getItem("UserId");
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/seeker-completed-jobs/${userId}`
         );
         setCompletedJobs(response.data);

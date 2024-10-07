@@ -4,9 +4,12 @@ import { useGlobalContext } from "../../context/AuthContext";
 import { showToast } from "../../Components/Showtoast";
 import axios from "axios";
 import InstructorProfileLayout from "../JobSeekerProfileLayout";
+import AxiosInterceptor from "../../Components/AxiosInterceptor";
 
 const SocialProfiles = () => {
   const { userId } = useGlobalContext();
+  const authFetch = AxiosInterceptor()
+
   const [formData, setFormData] = useState({
     twitter: "",
     youtube: "",
@@ -22,7 +25,7 @@ const SocialProfiles = () => {
       const userId = sessionStorage.getItem("UserId");
       try {
         if (!userId) return;
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-social-profile/${userId}`
         );
         const user = response.data.user;
@@ -77,7 +80,7 @@ const SocialProfiles = () => {
         youtube: formData.youtube || "nil",
       };
 
-      const response = await axios.post(
+      const response = await authFetch.post(
         "https://marketplacebackendas-test.azurewebsites.net/api/v1/update-social",
         formDataToSend
       );

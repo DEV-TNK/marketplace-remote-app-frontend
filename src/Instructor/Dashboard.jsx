@@ -31,8 +31,10 @@ import {
 
 // import profile layout wrapper
 import InstructorProfileLayout from "./JobSeekerProfileLayout";
+import AxiosInterceptor from "../Components/AxiosInterceptor";
 
 const Dashboard = () => {
+  const authFetch = AxiosInterceptor()
   const [lastApprovedJobs, setLastApprovedJobs] = useState([]);
   const [totalAmount, settotalAmount] = useState(null);
   const [totalJobsApplied, setTotalJobsApplied] = useState(null);
@@ -55,7 +57,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       const userId = sessionStorage.getItem("UserId");
       try {
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-earning/${userId}`
         );
 
@@ -80,7 +82,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const userId = sessionStorage.getItem("UserId");
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/seeker-monthly-applications/${userId}`
         );
         const result = response.data;
@@ -102,7 +104,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const userId = sessionStorage.getItem("UserId");
-        const response = await fetch(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/dashboard/${userId}`
         );
         const data = await response.json();
@@ -124,7 +126,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const userId = sessionStorage.getItem("UserId");
-        const response = await fetch(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/last-approved-jobs/${userId}`
         );
         const data = await response.json();
@@ -144,7 +146,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-earning/${userId}`
         );
 
