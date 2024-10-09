@@ -16,9 +16,11 @@ import { showToast } from "../../../../../../Components/Showtoast";
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../../../../../../context/AuthContext";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
+import AxiosInterceptor from "../../../../../AxiosInterceptor";
 
 const Job = (props) => {
   const { userId } = useGlobalContext();
+  const authFetch = AxiosInterceptor()
   const { previous } = props;
   const [headline, setHeadline] = useState("");
   const [radioValue, setRadioValue] = useState("0");
@@ -120,7 +122,7 @@ const Job = (props) => {
     formData.append("workAvailability", availabilityToJoin);
     formData.append("userId", userId);
 
-    axios
+    authFetch
       .post(
         "https://marketplacebackendas-test.azurewebsites.net/api/v1/seeker-resume",
         formData,

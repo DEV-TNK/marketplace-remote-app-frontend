@@ -6,11 +6,13 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { showToast } from "../../../../Showtoast";
 import { CountryDropdown } from "react-country-region-selector";
 import { MdCancel } from "react-icons/md";
+import AxiosInterceptor from "../../../../AxiosInterceptor";
 
 const ServiceProviderProfile = () => {
   const [userId, setUserId] = useState(null);
   const [email, setEmail] = useState(null);
   const location = useLocation();
+  const authFetch = AxiosInterceptor()
 
   useEffect(() => {
     const queryParam = new URLSearchParams(location.search);
@@ -117,7 +119,7 @@ const ServiceProviderProfile = () => {
         });
       });
 
-      const response = await axios.post(
+      const response = await authFetch.post(
         "https://marketplacebackendas-test.azurewebsites.net/api/v1/onboard-service-provider",
         formDataToSend,
         {

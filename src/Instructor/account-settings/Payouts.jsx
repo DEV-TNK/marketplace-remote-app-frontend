@@ -40,6 +40,7 @@ import Pagination from "../../Components/elements/advance-table/Pagination";
 import ApexCharts from "../../Components/elements/charts/ApexCharts";
 import StatTopIcon from "../../Components/marketing/common/stats/StatTopIcon";
 import { FormSelect } from "../../Components/elements/form-select/FormSelect";
+import AxiosInterceptor from "../../Components/AxiosInterceptor";
 
 // import utility file
 import { numberWithCommas } from "../../helper/utils";
@@ -75,6 +76,7 @@ const Payouts = () => {
   const [errorAcc, setErrorAcc] = useState("");
   const [showEditModal, setShowEditModal] = useState(false);
   const [editedAccount, setEditedAccount] = useState(null);
+  const authFetch = AxiosInterceptor()
 
   const [earnings, setEarnings] = useState({
     CFA: 0,
@@ -94,7 +96,7 @@ const Payouts = () => {
     const fetchData = async () => {
       const userId = sessionStorage.getItem("UserId");
       try {
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/get-my-earning/${userId}`
         );
 
@@ -157,7 +159,7 @@ const Payouts = () => {
     // Function to retrieve bank data from the server
     const fetchBankData = async () => {
       try {
-        const response = await axios.get(
+        const response = await authFetch.get(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/bank-details/${userId}`
         );
         const fetchedBankData = response.data.accountDetails; // Access accountDetails array from response data
@@ -175,7 +177,7 @@ const Payouts = () => {
     if (userId && accountName && accountNumber && bankName && currency) {
       // Check if userId is present
       try {
-        const saveBankData = await axios.post(
+        const saveBankData = await authFetch.post(
           "https://marketplacebackendas-test.azurewebsites.net/api/v1/save-bank-details",
           {
             userId: userId,
@@ -221,7 +223,7 @@ const Payouts = () => {
   const handleEditSave = async (accountId) => {
     console.log(accountId);
     try {
-      await axios.put(
+      await authFetch.put(
         "https://marketplacebackendas-test.azurewebsites.net/api/v1/edit-account",
         {
           userId: userId,
@@ -256,7 +258,7 @@ const Payouts = () => {
       const withdrawAmountNumeric = parseFloat(withdrawnAmount);
       const totalAmountNumeric = parseFloat(totalAmount);
       if (withdrawAmountNumeric < totalAmountNumeric) {
-        const response = await axios.post(
+        const response = await authFetch.post(
           "https://marketplacebackendas-test.azurewebsites.net/api/v1/create-payment-request",
           {
             userId: parseFloat(userId),

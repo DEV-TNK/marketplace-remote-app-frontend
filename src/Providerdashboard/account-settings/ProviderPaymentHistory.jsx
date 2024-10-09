@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
 import { useGlobalContext } from "../../context/AuthContext";
 import axios from "axios";
+import AxiosInterceptor from "../../Components/AxiosInterceptor";
     
 export const ProviderPaymentHistory = () => {
     const { userId } = useGlobalContext();
     const [historyData, setHistoryData] = useState([]);
+    const authFetch = AxiosInterceptor()
       
     useEffect(() => {
         const fetchData = async () => {
             try {
-            const response = await axios.get(
+            const response = await authFetch.get(
                 `https://marketplacebackendas-test.azurewebsites.net/api/v1/provider-transactions/${userId}`
             );
         
