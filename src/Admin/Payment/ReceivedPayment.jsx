@@ -3,17 +3,20 @@ import { Card, Table, Spinner } from "react-bootstrap";
 import axios from "axios";
 import Pagination from "../../Components/elements/advance-table/Pagination"; // Ensure this path is correct
 import { numberWithCommas } from "../../helper/utils";
+import AxiosInterceptor from "../../Components/AxiosInterceptor";
 
 const ReceivedPayment = () => {
   const [payments, setPayments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
+  
+  const authFetch = AxiosInterceptor()
 
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const response = await axios.get(
+        const response = await authFetch.get(
           "https://marketplacebackendas-test.azurewebsites.net/api/v1/get-all-payment-records"
         );
         setPayments(response.data.records);

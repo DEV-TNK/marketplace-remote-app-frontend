@@ -197,7 +197,7 @@ const formatType = [
       });
 
       const response = await axios.post(
-        "https://unleashified-backend.azurewebsites.net/api/v1/provider-create-service",
+        "https://marketplacebackendas-test.azurewebsites.net/api/v1/provider-create-service",
         formData,
         {
           headers: {

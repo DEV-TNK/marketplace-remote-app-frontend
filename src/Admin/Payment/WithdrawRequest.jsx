@@ -4,6 +4,7 @@ import axios from "axios";
 import { numberWithCommas } from "../../helper/utils";
 import { showToast } from "../../Components/Showtoast";
 import Pagination from "../../Components/elements/advance-table/Pagination";
+import AxiosInterceptor from "../../Components/AxiosInterceptor"
 
 const WithdrawPayment = () => {
   const [withdrawalRequests, setWithdrawalRequests] = useState([]);
@@ -11,11 +12,12 @@ const WithdrawPayment = () => {
   const [Cloading, SetCloading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
+  const authFetch = AxiosInterceptor()
 
   useEffect(() => {
     const fetchWithdrawalRequests = async () => {
       try {
-        const response = await axios.get(
+        const response = await authFetch.get(
           "https://marketplacebackendas-test.azurewebsites.net/api/v1/all-payment-request"
         );
         setWithdrawalRequests(response.data.paymentRequests);
@@ -38,7 +40,7 @@ const WithdrawPayment = () => {
         updatedData[rowIndex].Cloading = true;
         setWithdrawalRequests(updatedData);
 
-        const response = await axios.post(
+        const response = await authFetch.post(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/admin-mark-payment-request`,
           {
             requestId: id,
