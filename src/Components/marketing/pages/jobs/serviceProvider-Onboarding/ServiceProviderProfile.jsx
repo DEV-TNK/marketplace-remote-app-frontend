@@ -59,7 +59,7 @@ const ServiceProviderProfile = () => {
     firstName: "",
     lastName: "",
     middleName: "",
-    email: storedEmail || "",
+    emailAddress: storedEmail || "",
     phoneNumber: "",
     // userImage: null,
     title: "",
@@ -93,7 +93,7 @@ const ServiceProviderProfile = () => {
       formDataToSend.append("firstName", formData.firstName);
       formDataToSend.append("lastName", formData.lastName);
       formDataToSend.append("middleName", formData.middleName);
-      formDataToSend.append("emailAddress", formData.email);
+      formDataToSend.append("emailAddress", formData.emailAddress);
       formDataToSend.append("phoneNumber", formData.phoneNumber);
       formDataToSend.append("title", formData.title);
       formDataToSend.append("gender", formData.gender);
@@ -130,14 +130,14 @@ const ServiceProviderProfile = () => {
       );
 
       console.log("Response:", response.data);
-      showToast(response.data.message);
+      showToast(response.data.msg);
       navigate("/ServiceProviderdashboard");
       setFormData({
         userId: storedUserId,
         firstName: "",
         lastName: "",
         middleName: "",
-        email: email || "",
+        emailAddress: email || "",
         phoneNumber: "",
         title: "",
         gender: "",
