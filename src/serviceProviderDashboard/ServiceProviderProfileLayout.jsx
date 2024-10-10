@@ -79,7 +79,7 @@ const ServiceProviderProfileLayout = (props) => {
   };
   const browseButton = {
     linkname: "Parcourir les services",
-    link: "/services-list/",
+    link: "/jobs/services-list/",
   };
 
   // const outsourceButton = {
@@ -115,7 +115,7 @@ const ServiceProviderProfileLayout = (props) => {
 
                 <Link
                   className="btn btn-primary d-xl-none  mt-3 d-lg-none d-md-none text-inherit fw-bold fs-5 float-start py-1"
-                  to="/services-list/"
+                  to="/jobs/services-list/"
                 >
                   Parcourir les services
                 </Link>

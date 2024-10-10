@@ -78,7 +78,7 @@ const InstructorSignUp = () => {
         <Form.Label>Nom complet</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Enter your name"
+          placeholder="entrez votre nom complet"
           {...register("fullName", { required: true })}
         />
         <small className="text-danger">{errors.fullName?.message}</small>
@@ -87,7 +87,7 @@ const InstructorSignUp = () => {
         <Form.Label>Adresse e-mail</Form.Label>
         <Form.Control
           type="email"
-          placeholder="Enter email"
+          placeholder="entrez votre e-mail"
           {...register("email", { required: true })}
         />
         <small className="text-danger">{errors.email?.message}</small>
@@ -97,7 +97,7 @@ const InstructorSignUp = () => {
         <div className="position-relative">
           <Form.Control
             type={passwordVisible ? "text" : "password"}
-            placeholder="Password"
+            placeholder="Mot de passe"
             {...register("password", { required: true })}
           />
           <div
@@ -112,11 +112,11 @@ const InstructorSignUp = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Mot de passe comfer</Form.Label>
+        <Form.Label>Confirmer le mot de passe</Form.Label>
         <div className="position-relative">
           <Form.Control
             type={passwordVisible ? "text" : "password"}
-            placeholder="Confirm Password"
+            placeholder="Confirmer le mot de passe"
             {...register("cpassword", { required: true })}
           />
           <div

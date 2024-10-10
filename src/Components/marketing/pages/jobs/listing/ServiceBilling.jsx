@@ -245,7 +245,7 @@ const ServiceBilling = () => {
     setLoading(true);
     try {
       const response = await authFetch.post(
-        `https://unleashified-backend.azurewebsites.net/api/v1/provider-payment`,
+        `https://marketplacebackendas-test.azurewebsites.net/api/v1/provider-payment`,
         {
           reference: tx_ref,
           jobId: serviceId,
