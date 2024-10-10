@@ -73,31 +73,31 @@ const ServiceProviderSignUp = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <p>Register as a service provider to be able to post services or offer services</p>
+      <p>S'inscrire en tant que prestataire de services pour pouvoir publier ou proposer des services      </p>
       <Form.Group className="mb-3" controlId="formBasicName">
-        <Form.Label>Full Name</Form.Label>
+        <Form.Label>Nom complet</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Enter your name"
+          placeholder="entrez votre nom complet"
           {...register("fullName", { required: true })}
         />
         <small className="text-danger">{errors.fullName?.message}</small>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
+        <Form.Label>Adresse e-mail</Form.Label>
         <Form.Control
           type="email"
-          placeholder="Enter email"
+          placeholder="entrez votre e-mail"
           {...register("email", { required: true })}
         />
         <small className="text-danger">{errors.email?.message}</small>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
+        <Form.Label>mot de passe</Form.Label>
         <div className="position-relative">
           <Form.Control
             type={passwordVisible ? "text" : "password"}
-            placeholder="Password"
+            placeholder="mot de passe"
             {...register("password", { required: true })}
           />
           <div
@@ -112,11 +112,11 @@ const ServiceProviderSignUp = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Confirm Password</Form.Label>
+        <Form.Label>Confirmer le mot de passe</Form.Label>
         <div className="position-relative">
           <Form.Control
             type={passwordVisible ? "text" : "password"}
-            placeholder="Confirm Password"
+            placeholder="Confirmer le mot de passe"
             {...register("cpassword", { required: true })}
           />
           <div
@@ -153,7 +153,7 @@ const ServiceProviderSignUp = () => {
         </Button>
       ) : (
         <Button variant="primary" type="submit">
-          Sign Up as Service Provider
+          S'inscrire en tant que prestataire de services
         </Button>
       )}
     </Form>

@@ -42,11 +42,12 @@ const ServicesList = () => {
   }, []);
 
   const handleFilterChange = (filteredData) => {
-    console.log("this is service list filter", filterData);
+    console.log("this is service list filter", filteredData);
     setFilteredServices(filteredData); // Update filtered services state
     setPageNumber(1); // Reset page number when filters change
     setTotalFilteredServices(filteredData.length);
   };
+  
   useEffect(() => {
     const fetchServices = async () => {
       setLoading(true);
@@ -54,14 +55,15 @@ const ServicesList = () => {
         const response = await axios.get(
           "https://marketplacebackendas-test.azurewebsites.net/api/v1/get-all-services"
         );
-
-        // if (response.data && Array.isArray(response.data)) {
-        //   setFilteredServices(response.data);
-        //   setTotalFilteredServices(response.data.length);
-        // } else {
-        setFilteredServices([]);
-        setTotalFilteredServices(0);
-        // }
+  
+        if (response.data && Array.isArray(response.data)) {
+          // Assuming the services are in response.data
+          setFilteredServices(response.data);
+          setTotalFilteredServices(response.data.length);
+        } else {
+          setFilteredServices([]);
+          setTotalFilteredServices(0);
+        }
       } catch (error) {
         console.error("Error fetching services:", error);
         setFilteredServices([]);
@@ -70,9 +72,10 @@ const ServicesList = () => {
         setLoading(false); // Set loading state to false after data fetching is complete
       }
     };
-
+  
     fetchServices();
   }, []);
+  
 
   const startIndex = (pageNumber - 1) * 9 + 1;
 
