@@ -18,7 +18,8 @@ const SignUp = () => {
   // State to manage which sign-up form to display
   const [showStudentSignUp, setShowStudentSignUp] = useState(false);
   const [showInstructorSignUp, setShowInstructorSignUp] = useState(false);
-  const [showServiceProviderSignUp, setShowServiceProviderSignUp] = useState(false)
+  const [showServiceProviderSignUp, setShowServiceProviderSignUp] =
+    useState(false);
 
   // Function to handle showing student sign-up form
   const handleShowStudentSignUp = () => {
@@ -36,16 +37,16 @@ const SignUp = () => {
 
   // Functioon to handle showing seeker provider
   const handleShowServiceProviderSignUp = () => {
-    setShowInstructorSignUp(false)
-    setShowStudentSignUp(false)
-    setShowServiceProviderSignUp(true)
-  }
+    setShowInstructorSignUp(false);
+    setShowStudentSignUp(false);
+    setShowServiceProviderSignUp(true);
+  };
 
   // Function to handle hiding sign-up forms
   const handleHideSignUpForms = () => {
     setShowStudentSignUp(false);
     setShowInstructorSignUp(false);
-    setShowServiceProviderSignUp(false)
+    setShowServiceProviderSignUp(false);
   };
 
   return (
@@ -80,80 +81,89 @@ const SignUp = () => {
                 </Navbar.Brand>
                 <h1 className="mb-1 fw-bold">S’enregistrer</h1>
                 <span>
-                Vous avez déjà un compte ?{" "}
+                  Vous avez déjà un compte ?{" "}
                   <Link to="/authentication/signin" className="ms-1">
-                  Connexion
+                    Connexion
                   </Link>
                 </span>
               </div>
             </Card.Body>
             {/* Buttons for Student and Instructor */}
-            {!showStudentSignUp && !showInstructorSignUp && !showServiceProviderSignUp &&(
-                     <Card.Body className="py-4 px-3">
-                     <div className="d-grid">
-                       <Row className="mb-3">
-                         <Col>
-                           <Card className="mt-4">
-                             <Card.Body className="text-center">
-                               <FiBriefcase size={50} className="mb-2" />
-                               <p className="small mb-2">Find your next job opportunity</p>
-                               <Button
-                                 variant="primary"
-                                 onClick={handleShowStudentSignUp}
-                               >
-                                 Job Seeker
-                               </Button>
-                             </Card.Body>
-                           </Card>
-                         </Col>
-                         <Col>
-                           <Card className="mt-4">
-                             <Card.Body className="text-center">
-                             <IoBusinessSharp size={50} className="mb-2" />
-                               <p className="small mb-2">Post jobs and find candidates</p>
-                               <Button
-                                 variant="primary"
-                                 onClick={handleShowInstructorSignUp}
-                               >
-                                 Job Provider
-                               </Button>
-                             </Card.Body>
-                           </Card>
-                         </Col>
-                       </Row>
-                       <Row>
-                         <Col>
-                           <Card className="mt-4">
-                             <Card.Body className="text-center">
-                             <GrBusinessService size={50} className="mb-2" />
-                               <p className="small mb-2">Find services you need</p>
-                               <Button
-                                 variant="primary"
-                                 onClick={handleShowServiceProviderSignUp}
-                               >
-                                 Service Seeker
-                               </Button>
-                             </Card.Body>
-                           </Card>
-                         </Col>
-                         <Col>
-                           <Card className="mt-4">
-                             <Card.Body className="text-center">
-                             <MdOutlineBusiness size={50} className="mb-2" />
-                               <p className="small mb-2">Offer your services</p>
-                               <Button
-                                 variant="primary"
-                                 onClick={handleShowServiceProviderSignUp}
-                               >
-                                 Service Provider
-                               </Button>
-                             </Card.Body>
-                           </Card>
-                         </Col>
-                       </Row>
-                     </div>
-                   </Card.Body>
-            )}
+            {!showStudentSignUp &&
+              !showInstructorSignUp &&
+              !showServiceProviderSignUp && (
+                <Card.Body className="py-4 px-3">
+                  <div className="d-grid">
+                    <Row className="mb-3">
+                      <Col>
+                        <Card className="mt-4">
+                          <Card.Body className="text-center">
+                            <FiBriefcase size={50} className="mb-2" />
+                            <p className="small mb-2">
+                              Trouvez votre prochaine opportunité d'emploi{" "}
+                            </p>
+                            <Button
+                              variant="primary"
+                              onClick={handleShowStudentSignUp}
+                            >
+                              Rechercheur d'emploi
+                            </Button>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                      <Col>
+                        <Card className="mt-4">
+                          <Card.Body className="text-center">
+                            <IoBusinessSharp size={50} className="mb-2" />
+                            <p className="small mb-2">
+                              Publiez des offres d'emploi et trouvez des
+                              candidats
+                            </p>
+                            <Button
+                              variant="primary"
+                              onClick={handleShowInstructorSignUp}
+                            >
+                              Fournisseur d'emploi
+                            </Button>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <Card className="mt-4">
+                          <Card.Body className="text-center">
+                            <GrBusinessService size={50} className="mb-2" />
+                            <p className="small mb-2">
+                              Trouvez les services dont vous avez besoin
+                            </p>
+                            <Button
+                              variant="primary"
+                              onClick={handleShowServiceProviderSignUp}
+                            >
+                              Demandeur de services
+                            </Button>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                      <Col>
+                        <Card className="mt-4">
+                          <Card.Body className="text-center">
+                            <MdOutlineBusiness size={50} className="mb-2" />
+                            <p className="small mb-2">Offrez vos services</p>
+                            <Button
+                              variant="primary"
+                              onClick={handleShowServiceProviderSignUp}
+                            >
+                              Prestataire de services
+                            </Button>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    </Row>
+                  </div>
+                </Card.Body>
+              )}
             {/* Student Sign-Up Form */}
             {showStudentSignUp && (
               <Fragment>
