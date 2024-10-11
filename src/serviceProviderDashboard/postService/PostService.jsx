@@ -92,6 +92,7 @@ const formatType = [
 
 
   const currencyType = [
+    { value: "", label: "Select Currency" },
     { value: "NGN", label: "Naira" },
     { value: "USD", label: "Dollars" },
     { value: "EUR", label: "Euros" },
