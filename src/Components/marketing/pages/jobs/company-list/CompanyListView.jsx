@@ -60,7 +60,7 @@ const CompanyListView = ({ filteredCompanies, setTotalFilteredCompanies }) => {
               {displayCompanies && displayCompanies.length > 0 ? (
                 displayCompanies
               ) : (
-                <Col>No Company found.</Col>
+                <Col>Aucune entreprise trouvée.</Col>
               )}
             </Row>
             <ReactPaginate

@@ -105,23 +105,26 @@ const JobFilters = ({ onFilterChange }) => {
 
   // Dummy data for dropdowns
   const departments = [
-    { value: "Graphics and Design", label: "Graphics and Design" },
-    { value: "Digital Marketing", label: "Digital Marketing" },
-    { value: "Video and Animation", label: "Video and Animation" },
-    { value: "Music and Audio", label: "Music and Audio" },
-    { value: "Programming and Tech", label: "Programming and Tech" },
-    { value: "Business Development", label: "Business Development" },
-    { value: "Photography", label: "Photography" },
-    { value: "Catering", label: "Catering" },
-    { value: "Lifestyle and Health", label: "Lifestyle and Health" },
-    { value: "Logo Making", label: "Logo Making" },
-    { value: "Mobile Developer", label: "Mobile Developer" },
-    { value: "Data Analytics", label: "Data Analytics" },
-    { value: "Product Manager", label: "Product Manager" },
-    { value: "UI / UX Design", label: "UI / UX Design" },
+    { value: "Graphisme et Design", label: "Graphisme et Design" },
+    { value: "Marketing Numérique", label: "Marketing Numérique" },
+    { value: "Vidéo et Animation", label: "Vidéo et Animation" },
+    { value: "Musique et Audio", label: "Musique et Audio" },
+    {
+      value: "Programmation et Technologie",
+      label: "Programmation et Technologie",
+    },
+    { value: "Développement Commercial", label: "Développement Commercial" },
+    { value: "Photographie", label: "Photographie" },
+    { value: "Restauration", label: "Restauration" },
+    { value: "Style de Vie et Santé", label: "Style de Vie et Santé" },
+    { value: "Création de Logos", label: "Création de Logos" },
+    { value: "Développeur Mobile", label: "Développeur Mobile" },
+    { value: "Analyse de Données", label: "Analyse de Données" },
+    { value: "Responsable Produit", label: "Responsable Produit" },
+    { value: "Design UI / UX", label: "Design UI / UX" },
     { value: "SEO", label: "SEO" },
     { value: "Finance", label: "Finance" },
-    { value: "End-to-End Projects", label: "End-to-End Projects" },
+    { value: "Projets de A à Z", label: "Projets de A à Z" },
     { value: "SEO", label: "SEO" },
   ];
 
@@ -265,6 +268,7 @@ const JobFilters = ({ onFilterChange }) => {
                 value={selectedFilters.jobLocation}
                 onChange={(val) => handleLocationChange(val)}
                 className="form-control"
+                defaultOptionLabel="Sélectionner un pays" 
               />
             </div>
           </div>

@@ -58,7 +58,7 @@ const JobsListView = ({ filteredJobs, setTotalFilteredJobs }) => {
             {displayJobs && displayJobs.length > 0 ? (
               displayJobs
             ) : (
-              <Col>No Job(s) found.</Col>
+              <Col>Aucun emploi(s) trouvé.</Col>
             )}
           </Row>
           <ReactPaginate

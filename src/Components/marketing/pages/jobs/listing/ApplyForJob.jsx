@@ -12,6 +12,7 @@ import axios from "axios";
 
 import { useLocation, useNavigate } from "react-router-dom";
 import { showToast } from "../../../../Showtoast";
+import AxiosInterceptor from "../../../../AxiosInterceptor";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
@@ -19,6 +20,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 const ApplyForJob = () => {
+  const authFetch = AxiosInterceptor ();
   const [userDetails, setUserDetails] = useState(null);
   const [jobDetails, setJobDetails] = useState(null);
   const [numPages, setNumPages] = useState(null);
@@ -33,7 +35,7 @@ const ApplyForJob = () => {
   useEffect(() => {
     const getResume = async () => {
       try {
-        const response = await axios.post(
+        const response = await authFetch.post(
           `https://marketplacebackendas-test.azurewebsites.net/api/v1/apply-for-job`,
           {
             userId: userId,
@@ -59,7 +61,7 @@ const ApplyForJob = () => {
   const submitApplication = async () => {
     setLoading(true);
     try {
-      const response = await axios.post(
+      const response = await authFetch.post(
         "https://marketplacebackendas-test.azurewebsites.net/api/v1/submit-job-application",
         {
           userId: userId,
@@ -98,14 +100,14 @@ const ApplyForJob = () => {
   return (
     <Fragment>
       {/* Page header */}
-      <PageHeading pagetitle="Apply for this Job" />
+      <PageHeading pagetitle="Postuler à cet emploi" />
       <Container>
         <Row>
           {/* Resume Card */}
           <Col lg={8} md={12} sm={12} className="mt-lg-3">
             <Card className="mb-3">
               <Card.Body>
-                <h3 className="mb-3">Resume</h3>
+                <h3 className="mb-3">CV</h3>
                 <div style={{ height: "500px", overflowY: "auto" }}>
                   {userDetails ? (
                     <Document
@@ -120,7 +122,7 @@ const ApplyForJob = () => {
                       ))}
                     </Document>
                   ) : (
-                    <p>No resume uploaded</p>
+                    <p>Aucun CV téléchargé</p>
                   )}
                 </div>
               </Card.Body>
@@ -135,23 +137,23 @@ const ApplyForJob = () => {
             className="bg-white mt-lg-n12 mb-4 rounded-2"
           >
             <Card.Body>
-              <h3 className="mb-3 mt-3">Applier Profile</h3>
+              <h3 className="mb-3 mt-3">Profil du candidat</h3>
               <Row>
                 <Col xs={12} className="mt-3">
                   <Row>
                     <Col>
                       <p>
-                        <strong>Name:</strong>{" "}
+                        <strong>Nom:</strong>{" "}
                         {userDetails
                           ? userDetails.firstName + " " + userDetails.lastName
                           : ""}
                       </p>
                       <p>
-                        <strong>Gender:</strong>{" "}
+                        <strong>Genre:</strong>{" "}
                         {userDetails ? userDetails.gender : ""}
                       </p>
                       <p>
-                        <strong>Portfolio:</strong>{" "}
+                        <strong>Portefeuille:</strong>{" "}
                         {userDetails ? userDetails.headline : ""}
                       </p>
                     </Col>
@@ -159,15 +161,15 @@ const ApplyForJob = () => {
                   <Row>
                     <Col>
                       <p>
-                        <strong>Job Type:</strong>{" "}
+                        <strong>Type d'emploi:</strong>{" "}
                         {userDetails ? userDetails.workType : ""}
                       </p>
                       <p>
-                        <strong>Location:</strong>{" "}
+                        <strong>Emplacement:</strong>{" "}
                         {userDetails ? userDetails.workLocation : ""}
                       </p>
                       <p>
-                        <strong>Availability to Join:</strong>{" "}
+                        <strong> Disponibilité à rejoindre:</strong>{" "}
                         {userDetails ? userDetails.workAvailability : ""}
                       </p>
                     </Col>
@@ -177,35 +179,35 @@ const ApplyForJob = () => {
             </Card.Body>
             <hr />
             <Card.Body>
-              <h3 className="mb-3">Applying for</h3>
+              <h3 className="mb-3">Candidature pour</h3>
               <div>
                 <Row>
                   <Col xs={12}>
                     <p>
-                      <strong>Job Title:</strong>{" "}
+                      <strong>Intitulé du poste:</strong>{" "}
                       {jobDetails ? jobDetails.jobTitle : ""}
                     </p>
                     <p>
-                      <strong>Price :</strong>{" "}
+                      <strong>Prix :</strong>{" "}
                       {jobDetails ? jobDetails.jobSalary : ""}
                     </p>
                     <p>
-                      <strong>Work Mode :</strong>{" "}
+                      <strong>Mode de travail :</strong>{" "}
                       {jobDetails ? jobDetails.jobType : ""}
                     </p>
                     <p>
-                      <strong>Location:</strong>{" "}
+                      <strong> Emplacement:</strong>{" "}
                       {jobDetails ? jobDetails.jobLocation : ""}
                     </p>
                     <p>
-                      <strong>Delivery Date:</strong>{" "}
+                      <strong>Date de livraison:</strong>{" "}
                       {jobDetails ? jobDetails.deliveryDate : ""}
                     </p>
                   </Col>
                 </Row>
                 <p></p>
                 <p>
-                  <strong>Job Description:</strong>{" "}
+                  <strong>Description du poste:</strong>{" "}
                   {jobDetails ? jobDetails.jobDescription : ""}
                 </p>
               </div>
@@ -215,7 +217,7 @@ const ApplyForJob = () => {
             <div className="p-4">
               <Link to="/jobs/update-resume/">
                 <Button variant="primary" className="mb-3 d-block w-100">
-                  Edit Resume
+                Modifier le CV
                 </Button>
               </Link>
 
@@ -226,7 +228,7 @@ const ApplyForJob = () => {
                   style={{ opacity: 0.7 }}
                   disabled
                 >
-                  Processing
+                  Traitement
                 </Button>
               ) : (
                 <Button
@@ -237,7 +239,7 @@ const ApplyForJob = () => {
                     SearchActivity({ name: jobDetails.department });
                   }}
                 >
-                  Submit Application
+                 Soumettre la candidature
                 </Button>
               )}
             </div>

@@ -23,24 +23,24 @@ const companyFilters = ({ onFilterChange }) => {
 
   const jobDesignation = [
     { value: "Agriculture", label: "Agriculture" },
-    { value: "Mining", label: "Mining" },
-    { value: "Fishing", label: "Fishing" },
-    { value: "Forestry", label: "Forestry" },
-    { value: "Manufacturing", label: "Manufacturing" },
+    { value: "Extraction", label: "Extraction" },
+    { value: "Pêche", label: "Pêche" },
+    { value: "Foresterie", label: "Foresterie" },
+    { value: "Fabrication", label: "Fabrication" },
     { value: "Construction", label: "Construction" },
-    { value: "Retail", label: "Retail" },
-    { value: "Beauty and Healthcare", label: "Beauty and Healthcare" },
-    { value: "Hospitality", label: "Hospitality" },
-    { value: "Education", label: "Education" },
+    { value: "Vente au détail", label: "Vente au détail" },
+    { value: "Beauté et Santé", label: "Beauté et Santé" },
+    { value: "Hôtellerie", label: "Hôtellerie" },
+    { value: "Éducation", label: "Éducation" },
     { value: "Finance", label: "Finance" },
-    { value: "Transportation", label: "Transportation" },
-    { value: "Information Technology", label: "Information Technology" },
-    { value: "Research and Development", label: "Research and Development" },
-    { value: "Consultancy", label: "Consultancy" },
-    { value: "Energy", label: "Energy" },
-    { value: "Real Estate", label: "Real Estate" },
-    { value: "Media and Entertainment", label: "Media and Entertainment" },
-    { value: "Government", label: "Government" },
+    { value: "Transports", label: "Transports" },
+    { value: "Technologies de l'information", label: "Technologies de l'information" },
+    { value: "Recherche et Développement", label: "Recherche et Développement" },
+    { value: "Consultation", label: "Consultation" },
+    { value: "Énergie", label: "Énergie" },
+    { value: "Immobilier", label: "Immobilier" },
+    { value: "Médias et Divertissement", label: "Médias et Divertissement" },
+    { value: "Gouvernement", label: "Gouvernement" },
   ];
   const [selectedJobDesignation, setSelectedJobDesignation] = useState([]);
   const [selectedJobType, setSelectedJobType] = useState([]);
@@ -159,16 +159,17 @@ const companyFilters = ({ onFilterChange }) => {
           </span>
         </Link>
         <Collapse in={openLocation}>
-          <div id="locations">
-            <div className="input-group">
-              <CountryDropdown
-                value={selectedFilters.jobLocation}
-                onChange={(val) => handleLocationChange(val)}
-                className="form-control"
-              />
-            </div>
-          </div>
-        </Collapse>
+  <div id="locations">
+    <div className="input-group">
+      <CountryDropdown
+        value={selectedFilters.jobLocation}
+        onChange={(val) => handleLocationChange(val)}
+        className="form-control"
+        defaultOptionLabel="Sélectionner un pays" // Set the French placeholder here
+      />
+    </div>
+  </div>
+</Collapse>
       </Card.Body>
 
       <Card.Body className="py-3">

@@ -39,13 +39,13 @@ const TopCompanies = () => {
             <Row className="text-center">
               <Col md={12} className="px-lg-10 mb-8 mt-6">
                 <span className="text-uppercase text-primary fw-semi-bold ls-md">
-                Meilleures entreprises qui embauchent
+                  Meilleures entreprises qui embauchent
                 </span>
                 <h2 className="h1 fw-bold mt-3 mb-2">
-                Entreprises en vedette qui recrutent activement
+                  Entreprises en vedette qui recrutent activement
                 </h2>
                 <p className="fs-4 mb-0">
-                Explorez des opportunités de carrière passionnantes au sein de ces entreprises avant-gardistes{" "}
+                  Explorez des opportunités de carrière passionnantes au sein de ces entreprises avant-gardistes{" "}
                 </p>
               </Col>
             </Row>

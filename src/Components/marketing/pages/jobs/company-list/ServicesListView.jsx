@@ -62,7 +62,7 @@ const ServicesListView = ({ filteredServices, setTotalFilteredServices }) => {
             {displayServices && displayServices.length > 0 ? (
               displayServices
             ) : (
-              <Col>No Service(s) found.</Col>
+              <Col>Aucun service(s) trouvé.</Col>
             )}
           </Row>
           <ReactPaginate
