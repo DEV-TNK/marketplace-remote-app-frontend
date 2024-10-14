@@ -166,7 +166,7 @@ const ProfileLayout = (props) => {
                           item.link === location.pathname ? "active" : ""
                         }`}
                       >
-                        {item.title === "Sign Out" ? (
+                        {item.title === "Se déconnecter" ? (
                           <button className="nav-link" onClick={handleLogout}>
                             <i className={`fe fe-${item.icon} nav-icon`}></i>
                             {item.title}

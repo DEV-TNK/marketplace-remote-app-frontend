@@ -114,7 +114,7 @@ const JobSingle = () => {
           return;
         }
         const response = await axios.post(
-          `https://unleashified-backend.azurewebsites.net/api/v1/save-job/${jobId}`,
+          `https://marketplacebackendas-test.azurewebsites.net/api/v1/save-job/${jobId}`,
           { userId }
         );
         if (
@@ -240,7 +240,7 @@ const JobSingle = () => {
                         {" "}
                         <i className="fe fe-briefcase text-muted"></i>
                         <span className="ms-1 ">
-                          {jobDetails.jobFormat} Job
+                          {jobDetails.jobFormat} Emploi
                         </span>
                       </span>
                       {/* text */}
@@ -256,7 +256,7 @@ const JobSingle = () => {
                       </span>
                       <span className="me-2">
                         <span className="ms-1 ">
-                          {jobDetails.jobSalaryFormat} Payment
+                          {jobDetails.jobSalaryFormat} Paiement
                         </span>
                       </span>
                       {/* location */}
@@ -278,7 +278,7 @@ const JobSingle = () => {
             <div>
               <p>
                 <span>
-                  Job Applicants:{" "}
+                Candidats à l'emploi:{" "}
                   <span className="text-dark">{jobDetails.jobApplicants}</span>
                 </span>
               </p>
@@ -290,15 +290,15 @@ const JobSingle = () => {
             /> */}
             {/* button */}
             <div className="mt-5">
-              <h1 className="fs-3">Job description</h1>
+              <h1 className="fs-3">Description de l'emploi</h1>
               <p>{jobDetails.jobDescription}</p>
             </div>
             <div className="mt-5">
-              <h1 className="fs-3">Role</h1>
+              <h1 className="fs-3">Rôle</h1>
               <p>{jobDetails.jobRoles}</p>
             </div>
             <div className="mt-5">
-              <h1 className="fs-3">Experience</h1>
+              <h1 className="fs-3">Expérience</h1>
               <span className="">
                 <span className="">
                   {Array.isArray(jobDetails.jobExperience) ? (
@@ -308,13 +308,13 @@ const JobSingle = () => {
                       ))}
                     </ul>
                   ) : (
-                    <span>No job experience available</span>
+                    <span>Aucune expérience professionnelle disponible</span>
                   )}
                 </span>
               </span>
             </div>
             <div className="mt-2">
-              <h3 className="fe-3">Responsibilities:</h3>
+              <h3 className="fe-3">Responsabilités :</h3>
               {jobDetails.jobResponsibilities &&
               jobDetails.jobResponsibilities.length > 0 ? (
                 <div>
@@ -323,11 +323,11 @@ const JobSingle = () => {
                   ))}
                 </div>
               ) : (
-                <p>No responsibilities specified</p>
+                <p>Aucune responsabilité spécifiée</p>
               )}
             </div>
             <div className="mt-5">
-              <h3 className="fe-3">Desired Candidate Profile:</h3>
+              <h3 className="fe-3">Profil du candidat souhaité :</h3>
               {jobDetails.desiredCandidate &&
               jobDetails.desiredCandidate.length > 0 ? (
                 <div>
@@ -336,11 +336,11 @@ const JobSingle = () => {
                   ))}
                 </div>
               ) : (
-                <p>No Desired Candidate Profile </p>
+                <p>Aucun profil de candidat souhaité </p>
               )}
             </div>
             <div className="mt-5">
-              <h3 className="fe-3">Perks and Benefits:</h3>
+              <h3 className="fe-3">Avantages et bénéfices :</h3>
               {jobDetails.jobPerksAndBenefits &&
               jobDetails.jobPerksAndBenefits.length > 0 ? (
                 <div>
@@ -349,7 +349,7 @@ const JobSingle = () => {
                   ))}
                 </div>
               ) : (
-                <p>No Perks and Benefits</p>
+                <p>Aucun avantage et bénéfice</p>
               )}
             </div>
 
@@ -361,7 +361,7 @@ const JobSingle = () => {
                   onClick={handleApplyClick}
                   className="w-100"
                 >
-                  Apply for this Job
+                 Postuler pour cet emploi
                 </Button>
               )}
               {show && (
@@ -371,7 +371,7 @@ const JobSingle = () => {
                   onClick={handleSaveJobClick}
                   className="w-100 mt-3 mt-lg-0 "
                 >
-                  Save this Job
+                  Enregistrer cet emploi
                 </Button>
               )}
             </div>
@@ -390,12 +390,12 @@ const JobSingle = () => {
         {showFallback && (
           <Modal show={showFallback} onHide={() => setShowFallback(false)}>
             <Modal.Header closeButton>
-              <Modal.Title>Copy Job Link</Modal.Title>
+              <Modal.Title>Copier le lien de l'emploi</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <input type="text" value={url} readOnly /> <br />
               <Button className="mt-5 " onClick={handleCopy}>
-                Copy
+              Copier
               </Button>
             </Modal.Body>
             <Modal.Footer>
@@ -403,7 +403,7 @@ const JobSingle = () => {
                 variant="secondary"
                 onClick={() => setShowFallback(false)}
               >
-                Cancel
+                Annuler
               </Button>
             </Modal.Footer>
           </Modal>

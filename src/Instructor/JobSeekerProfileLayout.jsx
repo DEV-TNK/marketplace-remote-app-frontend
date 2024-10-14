@@ -94,7 +94,7 @@ const ProfileLayout = (props) => {
                   className="btn btn-primary d-xl-none d-lg-none d-md-none text-inherit fw-bold fs-5 float-start py-1"
                   to="/jobs/update-resume/"
                 >
-                  Update Resume
+                  mettre à jour le CV
                 </Link>
                 <Navbar.Toggle
                   aria-controls="basic-navbar-nav"
@@ -143,7 +143,7 @@ const ProfileLayout = (props) => {
                           item.link === location.pathname ? "active" : ""
                         }`}
                       >
-                        {item.title === "Sign Out" ? (
+                        {item.title === "Se déconnecter" ? (
                           <button className="nav-link" onClick={handleLogout}>
                             <i className={`fe fe-${item.icon} nav-icon`}></i>
                             {item.title}

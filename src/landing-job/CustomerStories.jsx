@@ -32,7 +32,7 @@ const CustomerStories = () => {
                   </p>
                   <p className="mb-0 ">Grace Oluwalola</p>
                   <span className="">
-                    Chief Operating Officer at Easereads
+                  Directeur des opérations chez Easereads
                   </span>
                 </div>
               </Col>

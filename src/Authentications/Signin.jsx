@@ -47,10 +47,10 @@ const SignIn = () => {
   });
 
   const roles = [
-    { label: "Job seeker", value: "seeker" },
-    { label: "Job Provider", value: "provider" },
-    { label: "Service seeker/provider", value: "service provider" },
-  ];
+    { label: "Chercheur d'emploi", value: "seeker" },
+    { label: "Fournisseur d'emploi", value: "provider" },
+    { label: "Chercheur/Fournisseur de service", value: "service provider" },
+];
 
   return (
     <Fragment>
@@ -143,12 +143,12 @@ const SignIn = () => {
                     </Col>
                     {/* Role selection dropdown */}
                     <Col lg={12} md={12} className="mb-3">
-                      <Form.Label>Role</Form.Label>
+                      <Form.Label>Rôle</Form.Label>
                       <Form.Select
                         aria-label="Role select"
                         {...register("role", { required: true })}
                       >
-                        <option value="">Select a role</option>
+                        <option value="">Sélectionner un rôle</option>
                         {roles.map((role) => (
                           <option key={role.value} value={role.value}>
                             {role.label}

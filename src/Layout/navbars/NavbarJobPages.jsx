@@ -143,7 +143,7 @@ const NavbarDefault = ({ headerstyle, login }) => {
                     bsPrefix="btn"
                     className="btn btn-white shadow-sm me-2"
                   >
-                    Sign In
+                    Se connecter
                   </Nav.Link>
                   <Nav.Link
                     as={Link}
@@ -151,7 +151,7 @@ const NavbarDefault = ({ headerstyle, login }) => {
                     bsPrefix="btn"
                     className="btn btn-primary shadow-sm"
                   >
-                    Sign Up
+                    S'inscrire
                   </Nav.Link>
                 </span>
               )}
